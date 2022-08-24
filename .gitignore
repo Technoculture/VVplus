@@ -104,3 +104,6 @@ dist
 .tern-port
 
 **/build/
+
+# Do not commit lock files, they tend to go out of sync
+**/*-lock.yaml
