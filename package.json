@@ -10,12 +10,18 @@
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prepare": "husky install",
+    "test": "echo 'no tests added yet'"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.8",
     "eslint-config-custom": "workspace:*",
+    "postcss": "^8.4.16",
     "prettier": "latest",
-    "turbo": "^1.4.3"
+    "tailwindcss": "^3.1.8",
+    "turbo": "^1.4.3",
+    "husky": "^8.0.0"
   },
   "engines": {
     "npm": ">=7.0.0",
