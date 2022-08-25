@@ -3,4 +3,4 @@ module.exports = {
   extends: ["custom"],
 };
 
-//next/babel","next/core-web-vitals
+//"next/babel","next/core-web-vitals
