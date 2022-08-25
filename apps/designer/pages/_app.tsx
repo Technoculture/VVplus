@@ -1,17 +1,19 @@
-import '../styles/globals.css'
-import Layout from '../components/Layout'
-import type { AppProps } from 'next/app'
+import "../styles/globals.css";
+import Layout from "../components/Layout";
+import { AppContext, AppInitialProps, AppLayoutProps } from "next/app";
+import type { NextComponentType } from "next";
 
-function MyApp({ Component, pageProps }: AppProps) {
+const MyApp: NextComponentType<AppContext, AppInitialProps, AppLayoutProps> = ({
+  Component,
+  pageProps,
+}: AppLayoutProps) => {
   return (
- <>
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
- </>
-  
-  
-  )
-}
+    <>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
+  );
+};
 
-export default MyApp
+export default MyApp;

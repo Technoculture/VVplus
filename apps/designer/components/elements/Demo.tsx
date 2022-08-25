@@ -4,7 +4,7 @@ import {
   Scene,
   useBeforeRender,
   useClick,
-  useHover
+  useHover,
 } from "react-babylonjs";
 
 import { Mesh } from "@babylonjs/core/Meshes/mesh";
@@ -34,11 +34,10 @@ const SpinningBox = (props: SpinningBoxProps) => {
     boxRef
   );
 
-
   const rpm = 5;
   useBeforeRender((scene) => {
     if (boxRef.current) {
-      var deltaTimeInMillis = scene.getEngine().getDeltaTime();
+      const deltaTimeInMillis = scene.getEngine().getDeltaTime();
       boxRef.current.rotation.y +=
         (rpm / 60) * Math.PI * 2 * (deltaTimeInMillis / 1000);
     }
