@@ -1,8 +1,10 @@
 import Navbar from "./Navbar";
+import React from "react";
 import Footer from "./Footer";
-// import { NextComponentType } from "next";
+import {  ScriptProps } from "next/script";
 
-const Layout = ({children}: React.PropsWithChildren<{}>) => {
+
+const Layout : React.FC<ScriptProps> = ({children} ) => {
   // TODO: improve this type later
   return (
     <>
