@@ -95,7 +95,7 @@ export const SceneWithSpinningBoxes = () => (
 
 export default function Demo() {
   return (
-    <div className="align-center font-serif">
+    <div className="font-serif align-center">
       <SceneWithSpinningBoxes />
     </div>
   );
