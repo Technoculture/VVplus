@@ -1,5 +1,9 @@
 {
   "extends": "tsconfig/nextjs.json",
   "include": ["next.d.ts", "**/*.ts", "**/*.tsx"],
+  "types":[
+    "babylonjs",
+    "anotherAwesomeDependency"
+  ],
   "exclude": ["node_modules"]
 }

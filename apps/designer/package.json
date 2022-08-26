@@ -23,9 +23,11 @@
     "@babylonjs/materials": "^5.20.0",
     "@types/node": "^17.0.12",
     "@types/react": "17.0.48",
+    "@types/react-dom": "^18.0.6",
     "autoprefixer": "^10.4.8",
     "babylonjs-gltf2interface": "^5.20.0",
     "babylonjs-hook": "^0.1.1",
+    "config": "workspace:*",
     "eslint": "7.32.0",
     "eslint-config-custom": "workspace:*",
     "next-transpile-modules": "9.0.0",
@@ -33,7 +35,6 @@
     "react-icons": "^4.4.0",
     "tailwindcss": "^3.1.8",
     "tsconfig": "workspace:*",
-    "typescript": "^4.5.3",
-    "config": "workspace:*"
+    "typescript": "^4.5.3"
   }
 }
