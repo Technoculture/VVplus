@@ -15,7 +15,7 @@ const myStyle = {
 };
 
 const ReactCanvas = (props: any) => {
-  var canvasRef = useRef(null);
+  const canvasRef = useRef(null);
   useEffect(() => {
     const canvas = canvasRef.current;
     const engine = new Engine(canvas, true);
