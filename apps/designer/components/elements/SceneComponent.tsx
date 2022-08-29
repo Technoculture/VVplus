@@ -37,8 +37,9 @@ const ReactCanvas = (props: any) => {
         "../../assets/",
         "02_EUROPA_ground_floor.gltf",
         scene,
-        function(){
-          console.log("done");
+        (newMeshes) => {
+          newMeshes[0].position.y = 1;
+          newMeshes[0].scaling = new Vector3(80, 80, 80);
         }
       );
       return scene;
