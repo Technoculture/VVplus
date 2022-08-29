@@ -2,11 +2,11 @@ import React, { useRef, useEffect } from "react";
 import {
   Engine,
   Scene,
-  MeshBuilder,
   ArcRotateCamera,
   HemisphericLight,
   Vector3,
 } from "@babylonjs/core";
+import "@babylonjs/loaders/glTF";
 import * as BABYLON from "@babylonjs/core";
 
 const myStyle = {
@@ -32,10 +32,14 @@ const ReactCanvas = (props: any) => {
       camera.attachControl(canvas, true);
       const light = new HemisphericLight("light", new Vector3(1, 1, 0), scene);
       light.intensity = 0.7;
-      BABYLON.SceneLoader.Append(
+      BABYLON.SceneLoader.ImportMesh(
+        "",
         "../../assets/",
-        "02 EUROPA ground floor.gltf",
-        scene
+        "02_EUROPA_ground_floor.gltf",
+        scene,
+        function(){
+          console.log("done");
+        }
       );
       return scene;
     };
