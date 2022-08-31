@@ -14,8 +14,19 @@ const myStyle = {
   height: "100%",
 };
 
+const config = {
+  amount: { x: 50, z: 50 },
+  separation: 2,
+  frameRate: 60,
+  animation: {
+    length: 360,
+    speed: 8
+  }
+}
+
 const ReactCanvas = (props: any) => {
   const canvasRef = useRef(null);
+  const minZ = -((config.amount.z * config.separation) / 2)
   useEffect(() => {
     const canvas = canvasRef.current;
     const engine = new Engine(canvas, true);
@@ -26,10 +37,12 @@ const ReactCanvas = (props: any) => {
         "camera",
         -Math.PI / 2,
         Math.PI / 2.5,
-        15,
-        new Vector3(0, 0, 0)
+        minZ,
+        new Vector3(-100, -40, -450)
       );
       camera.attachControl(canvas, true);
+      camera.lowerRadiusLimit = 10
+      camera.upperRadiusLimit = 1
       const light = new HemisphericLight("light", new Vector3(1, 1, 0), scene);
       light.intensity = 0.7;
       BABYLON.SceneLoader.ImportMesh(
@@ -38,8 +51,10 @@ const ReactCanvas = (props: any) => {
         "groundfloor.gltf",
         scene,
         (newMeshes) => {
-          newMeshes[0].position.y = 1;
-          newMeshes[0].scaling = new Vector3(3, 3, 3);
+          newMeshes[0].position.y = -200;
+          newMeshes[0].position.x = -100;
+          // newMeshes[0].position.z = -100;
+          newMeshes[0].scaling = new Vector3(1, 1, 1);
         }
       );
       return scene;
