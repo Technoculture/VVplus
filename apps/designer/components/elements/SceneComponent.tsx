@@ -34,12 +34,12 @@ const ReactCanvas = (props: any) => {
       light.intensity = 0.7;
       BABYLON.SceneLoader.ImportMesh(
         "",
-        "../../assets/",
-        "02_EUROPA_ground_floor.gltf",
+        "https://vvplus3d.s3.ap-southeast-1.amazonaws.com/gltf/",
+        "groundfloor.gltf",
         scene,
         (newMeshes) => {
           newMeshes[0].position.y = 1;
-          newMeshes[0].scaling = new Vector3(80, 80, 80);
+          newMeshes[0].scaling = new Vector3(3, 3, 3);
         }
       );
       return scene;
