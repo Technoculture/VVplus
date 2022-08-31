@@ -8,6 +8,11 @@ import {
 } from "@babylonjs/core";
 import "@babylonjs/loaders/glTF";
 import * as BABYLON from "@babylonjs/core";
+import { useQuery } from "react-query";
+import axios from "axios";
+const fetchBabylon = () => {
+  return axios.get("http://localhost:3000");
+};
 
 const myStyle = {
   width: "100%",
@@ -16,6 +21,19 @@ const myStyle = {
 
 const ReactCanvas = (props: any) => {
   const canvasRef = useRef(null);
+
+  const { isLoading, data, isError, error, isFetching } = useQuery(
+    "/",
+    fetchBabylon,
+    {
+      cacheTime: 30000,
+    }
+  );
+  console.log({ isLoading, isFetching });
+  if (isLoading) {
+    console.log("loading in progress");
+  }
+
   useEffect(() => {
     const canvas = canvasRef.current;
     const engine = new Engine(canvas, true);
