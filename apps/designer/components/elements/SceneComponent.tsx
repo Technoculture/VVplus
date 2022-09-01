@@ -10,8 +10,9 @@ import "@babylonjs/loaders/glTF";
 import * as BABYLON from "@babylonjs/core";
 import { useQuery } from "react-query";
 import axios from "axios";
+
 const fetchBabylon = () => {
-  return axios.get("http://localhost:3000");
+  return axios.get("https://vvplus3d.s3.ap-southeast-1.amazonaws.com/gltf/");
 };
 
 const myStyle = {
@@ -22,16 +23,19 @@ const myStyle = {
 const ReactCanvas = (props: any) => {
   const canvasRef = useRef(null);
 
-  const { isLoading, data, isError, error, isFetching } = useQuery(
-    "/",
+  const { data, isLoading, isFetching, error } = useQuery(
+    "LoadFile",
     fetchBabylon,
     {
-      cacheTime: 30000,
+      cacheTime: 50000,
+      staleTime: 30000,
     }
   );
-  console.log({ isLoading, isFetching });
   if (isLoading) {
-    console.log("loading in progress");
+    console.log("file is loading...");
+  }
+  if (isFetching) {
+    console.log("file is fetching");
   }
 
   useEffect(() => {
