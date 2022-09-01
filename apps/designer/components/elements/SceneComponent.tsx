@@ -5,9 +5,11 @@ import {
   ArcRotateCamera,
   HemisphericLight,
   Vector3,
+  Color4,
 } from "@babylonjs/core";
 import "@babylonjs/loaders/glTF";
 import * as BABYLON from "@babylonjs/core";
+import house from "../../public/house.json"
 
 const myStyle = {
   width: "100%",
@@ -20,40 +22,92 @@ const config = {
   frameRate: 60,
   animation: {
     length: 360,
-    speed: 8
-  }
-}
+    speed: 8,
+  },
+};
 
 const ReactCanvas = (props: any) => {
   const canvasRef = useRef(null);
-  const minZ = -((config.amount.z * config.separation) / 2)
+  const minZ = -((config.amount.z * config.separation) / 2);
   useEffect(() => {
     const canvas = canvasRef.current;
     const engine = new Engine(canvas, true);
     const createScene = function () {
       const scene = new Scene(engine);
+      // scene.clearColor=new Color4(211, 235, 231, 1.0)
       //   MeshBuilder.CreateBox("box", {});
       const camera = new ArcRotateCamera(
         "camera",
         -Math.PI / 2,
         Math.PI / 2.5,
         minZ,
-        new Vector3(-100, -40, -450)
+        // new Vector3(0, 100, -400)
+        new Vector3(1, 200, -600)
       );
       camera.attachControl(canvas, true);
-      camera.lowerRadiusLimit = 10
-      camera.upperRadiusLimit = 1
+      // camera.wheelPrecision=1
+      // camera.panningSensibility=10
+      camera.lowerRadiusLimit = 100;
+      camera.upperRadiusLimit = 50;
       const light = new HemisphericLight("light", new Vector3(1, 1, 0), scene);
       light.intensity = 0.7;
       BABYLON.SceneLoader.ImportMesh(
         "",
-        "https://vvplus3d.s3.ap-southeast-1.amazonaws.com/gltf/",
-        "groundfloor.gltf",
+        house[0].url,
+        house[0]["plot"].file,
         scene,
         (newMeshes) => {
-          newMeshes[0].position.y = -200;
-          newMeshes[0].position.x = -100;
-          // newMeshes[0].position.z = -100;
+          newMeshes[0].position.y = 0;
+          newMeshes[0].position.x = 0;
+          newMeshes[0].position.z = 0;
+          newMeshes[0].scaling = new Vector3(1, 1, 1);
+        }
+      );
+      BABYLON.SceneLoader.ImportMesh(
+        "",
+        house[0].url,
+        house[0]["ground-floor"].file,
+        scene,
+        (newMeshes) => {
+          newMeshes[0].position.y = 0;
+          newMeshes[0].position.x = 0;
+          newMeshes[0].position.z = 0;
+          newMeshes[0].scaling = new Vector3(1, 1, 1);
+        }
+      );
+      BABYLON.SceneLoader.ImportMesh(
+        "",
+        house[0].url,
+        house[0]["first-floor"].file,
+        scene,
+        (newMeshes) => {
+          newMeshes[0].position.y = 0;
+          newMeshes[0].position.x = 0;
+          newMeshes[0].position.z = 0;
+          newMeshes[0].scaling = new Vector3(1, 1, 1);
+        }
+      );
+      BABYLON.SceneLoader.ImportMesh(
+        "",
+        house[0].url,
+        house[0]["second-floor"].file,
+        scene,
+        (newMeshes) => {
+          newMeshes[0].position.y = 0;
+          newMeshes[0].position.x = 0;
+          newMeshes[0].position.z = 0;
+          newMeshes[0].scaling = new Vector3(1, 1, 1);
+        }
+      );
+      BABYLON.SceneLoader.ImportMesh(
+        "",
+        house[0].url,
+        house[0]["roof"].file,
+        scene,
+        (newMeshes) => {
+          newMeshes[0].position.y = 0;
+          newMeshes[0].position.x = 0;
+          newMeshes[0].position.z = 0;
           newMeshes[0].scaling = new Vector3(1, 1, 1);
         }
       );
@@ -66,7 +120,7 @@ const ReactCanvas = (props: any) => {
     window.addEventListener("resize", function () {
       engine.resize();
     });
-  }, []);
+  }, [minZ]);
 
   return <canvas style={myStyle} ref={canvasRef} {...props}></canvas>;
 };
