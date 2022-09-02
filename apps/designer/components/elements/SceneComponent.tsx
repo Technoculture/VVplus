@@ -9,7 +9,7 @@ import {
 } from "@babylonjs/core";
 import "@babylonjs/loaders/glTF";
 import * as BABYLON from "@babylonjs/core";
-import house from "../../public/house.json"
+import data from "../../public/data.json"
 
 const myStyle = {
   width: "100%",
@@ -51,66 +51,23 @@ const ReactCanvas = (props: any) => {
       camera.upperRadiusLimit = 50;
       const light = new HemisphericLight("light", new Vector3(1, 1, 0), scene);
       light.intensity = 0.7;
-      BABYLON.SceneLoader.ImportMesh(
-        "",
-        house[0].url,
-        house[0]["plot"].file,
-        scene,
-        (newMeshes) => {
-          newMeshes[0].position.y = 0;
-          newMeshes[0].position.x = 0;
-          newMeshes[0].position.z = 0;
-          newMeshes[0].scaling = new Vector3(1, 1, 1);
-        }
-      );
-      BABYLON.SceneLoader.ImportMesh(
-        "",
-        house[0].url,
-        house[0]["ground-floor"].file,
-        scene,
-        (newMeshes) => {
-          newMeshes[0].position.y = 0;
-          newMeshes[0].position.x = 0;
-          newMeshes[0].position.z = 0;
-          newMeshes[0].scaling = new Vector3(1, 1, 1);
-        }
-      );
-      BABYLON.SceneLoader.ImportMesh(
-        "",
-        house[0].url,
-        house[0]["first-floor"].file,
-        scene,
-        (newMeshes) => {
-          newMeshes[0].position.y = 0;
-          newMeshes[0].position.x = 0;
-          newMeshes[0].position.z = 0;
-          newMeshes[0].scaling = new Vector3(1, 1, 1);
-        }
-      );
-      BABYLON.SceneLoader.ImportMesh(
-        "",
-        house[0].url,
-        house[0]["second-floor"].file,
-        scene,
-        (newMeshes) => {
-          newMeshes[0].position.y = 0;
-          newMeshes[0].position.x = 0;
-          newMeshes[0].position.z = 0;
-          newMeshes[0].scaling = new Vector3(1, 1, 1);
-        }
-      );
-      BABYLON.SceneLoader.ImportMesh(
-        "",
-        house[0].url,
-        house[0]["roof"].file,
-        scene,
-        (newMeshes) => {
-          newMeshes[0].position.y = 0;
-          newMeshes[0].position.x = 0;
-          newMeshes[0].position.z = 0;
-          newMeshes[0].scaling = new Vector3(1, 1, 1);
-        }
-      );
+      //code to be refactored more later
+      data[0].floors.map((element)=>{
+        return(
+          BABYLON.SceneLoader.ImportMesh(
+            "",
+            data[0].url,
+            element.file,
+            scene,
+            (newMeshes)=>{
+              newMeshes[0].position.x=0
+              newMeshes[0].position.y=0
+              newMeshes[0].position.z=0
+              newMeshes[0].scaling = new Vector3(1,1,1)
+            }
+          )
+        )
+      })
       return scene;
     };
     const scene = createScene();
