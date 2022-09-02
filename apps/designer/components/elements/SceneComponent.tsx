@@ -8,11 +8,12 @@ import {
 } from "@babylonjs/core";
 import "@babylonjs/loaders/glTF";
 import * as BABYLON from "@babylonjs/core";
-import { useQuery } from "react-query";
+import data from "../../public/data.json";
+import { useQuery, QueryCache } from "react-query";
 import axios from "axios";
 
-const fetchBabylon = () => {
-  return axios.get("https://vvplus3d.s3.ap-southeast-1.amazonaws.com/gltf/");
+const fetchGltf = () => {
+  return axios.get(data[0].url);
 };
 
 const myStyle = {
@@ -25,12 +26,17 @@ const ReactCanvas = (props: any) => {
 
   const { data, isLoading, isFetching, error } = useQuery(
     "LoadFile",
-    fetchBabylon,
+    fetchGltf,
     {
-      cacheTime: 50000,
-      staleTime: 30000,
+      cacheTime: 300000,
+      // staleTime: 100000,
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+      refetchOnReconnect: false,
+      staleTime: 600000,
     }
   );
+  console.log({ isFetching, isLoading });
   if (isLoading) {
     console.log("file is loading...");
   }

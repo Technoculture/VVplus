@@ -1,0 +1,37 @@
+[{
+    "id": 1,
+    "type": "designer",
+    "url": "https://vvplus3d.s3.ap-southeast-1.amazonaws.com/gltf/",
+    "floors":[
+    {
+        "floorId": 0,
+        "type": "plot",
+        "description": "Green Lawn Plot",
+        "file": "plot.gltf"
+    },
+    {
+        "floorId": 1,
+        "type": "ground-floor",
+        "description": "....",
+        "file": "groundfloor.gltf"
+    },
+    {
+        "floorId": 2,
+        "type": "first-floor",
+        "description": "....",
+        "file": "firstfloor.gltf"
+    },
+    {
+        "floorId": 3,
+        "type": "second-floor",
+        "description": "....",
+        "file": "secondfloor.gltf"
+    },
+    {
+        "floorId": 4,
+        "type": "roof",
+        "description": "....",
+        "file": "roof.gltf"
+    }
+]
+}]
