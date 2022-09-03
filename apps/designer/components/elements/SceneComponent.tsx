@@ -5,25 +5,19 @@ import {
   ArcRotateCamera,
   HemisphericLight,
   Vector3,
-  Color4,
 } from "@babylonjs/core";
 import "@babylonjs/loaders/glTF";
 import * as BABYLON from "@babylonjs/core";
-import data from "../../public/data.json"
+import data from "../../public/data.json";
 
 const myStyle = {
-  width: "100%",
-  height: "100%",
+  width: "70vw",
+  height: "90vh",
 };
 
 const config = {
   amount: { x: 50, z: 50 },
   separation: 2,
-  frameRate: 60,
-  animation: {
-    length: 360,
-    speed: 8,
-  },
 };
 
 const ReactCanvas = (props: any) => {
@@ -34,19 +28,17 @@ const ReactCanvas = (props: any) => {
     const engine = new Engine(canvas, true);
     const createScene = function () {
       const scene = new Scene(engine);
-      // scene.clearColor=new Color4(211, 235, 231, 1.0)
-      //   MeshBuilder.CreateBox("box", {});
       const camera = new ArcRotateCamera(
         "camera",
         -Math.PI / 2,
         Math.PI / 2.5,
         minZ,
-        // new Vector3(0, 100, -400)
-        new Vector3(1, 200, -600)
+        new Vector3(1, 370, -800),
+        scene
       );
       camera.attachControl(canvas, true);
-      // camera.wheelPrecision=1
-      // camera.panningSensibility=10
+      camera.wheelPrecision=1
+      camera.panningSensibility=10
       camera.lowerRadiusLimit = 100;
       camera.upperRadiusLimit = 50;
       const light = new HemisphericLight("light", new Vector3(1, 1, 0), scene);
