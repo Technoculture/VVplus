@@ -1,5 +1,7 @@
 import ReactCanvas from "../components/elements/SceneComponent";
 import Slider from "../components/elements/Slider";
+// import "@babylonjs/core/Debug/debugLayer";
+// import "@babylonjs/inspector";
 
 export default function Web(): JSX.Element {
   return (
