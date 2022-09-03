@@ -47,6 +47,7 @@ const ReactCanvas = (props: any) => {
   useEffect(() => {
     const canvas = canvasRef.current;
     const engine = new Engine(canvas, true);
+    engine.displayLoadingUI();
     const createScene = function () {
       const scene = new Scene(engine);
       //   MeshBuilder.CreateBox("box", {});
@@ -68,6 +69,7 @@ const ReactCanvas = (props: any) => {
         (newMeshes) => {
           newMeshes[0].position.y = 1;
           newMeshes[0].scaling = new Vector3(3, 3, 3);
+          engine.hideLoadingUI();
         }
       );
       return scene;
