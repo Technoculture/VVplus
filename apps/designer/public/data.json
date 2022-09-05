@@ -1,7 +1,7 @@
 [{
     "id": 1,
     "type": "designer",
-    "url": "https://vvplus3d.s3.ap-southeast-1.amazonaws.com/gltf/",
+    "url": "https://assets.vvplus.cc/gltf/",
     "floors":[
     {
         "floorId": 0,
