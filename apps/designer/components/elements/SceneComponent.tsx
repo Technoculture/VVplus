@@ -30,17 +30,17 @@ const ReactCanvas = (props: any) => {
       const scene = new Scene(engine);
       const camera = new ArcRotateCamera(
         "camera",
-        -Math.PI / 2,
+        -Math.PI / 3,
         Math.PI / 2.5,
-        minZ,
-        new Vector3(1, 370, -800),
+        500,
+        new Vector3(0,400,100),
         scene
       );
       camera.attachControl(canvas, true);
       camera.wheelPrecision=1
       camera.panningSensibility=10
-      camera.lowerRadiusLimit = 100;
-      camera.upperRadiusLimit = 50;
+      camera.lowerRadiusLimit = 2000;
+      camera.upperRadiusLimit = 5000;
       const light = new HemisphericLight("light", new Vector3(1, 1, 0), scene);
       light.intensity = 0.7;
       //code to be refactored more later
@@ -52,10 +52,10 @@ const ReactCanvas = (props: any) => {
             element.file,
             scene,
             (newMeshes)=>{
-              newMeshes[0].position.x=0
-              newMeshes[0].position.y=0
-              newMeshes[0].position.z=0
-              newMeshes[0].scaling = new Vector3(1,1,1)
+              // newMeshes[0].position.x=0
+              newMeshes[0].position.y=10
+              // newMeshes[0].position.z=0
+              newMeshes[0].scaling = new Vector3(3,3,3)
             }
           )
         )
