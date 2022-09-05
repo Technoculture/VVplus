@@ -8,12 +8,12 @@ import {
 } from "@babylonjs/core";
 import "@babylonjs/loaders/glTF";
 import * as BABYLON from "@babylonjs/core";
-import data from "../../public/data.json";
+import Data from "../../public/data.json";
 import { useQuery, QueryCache } from "react-query";
 import axios from "axios";
 
 const fetchGltf = () => {
-  return axios.get(data[0].url);
+  return axios.get(Data[0].url);
 };
 
 const myStyle = {
@@ -47,7 +47,7 @@ const ReactCanvas = (props: any) => {
   useEffect(() => {
     const canvas = canvasRef.current;
     const engine = new Engine(canvas, true);
-    engine.displayLoadingUI();
+    // engine.displayLoadingUI();
     const createScene = function () {
       const scene = new Scene(engine);
       //   MeshBuilder.CreateBox("box", {});
@@ -63,13 +63,12 @@ const ReactCanvas = (props: any) => {
       light.intensity = 0.7;
       BABYLON.SceneLoader.ImportMesh(
         "",
-        "https://vvplus3d.s3.ap-southeast-1.amazonaws.com/gltf/",
+        Data[0].url,
         "groundfloor.gltf",
         scene,
         (newMeshes) => {
           newMeshes[0].position.y = 1;
           newMeshes[0].scaling = new Vector3(3, 3, 3);
-          engine.hideLoadingUI();
         }
       );
       return scene;
@@ -81,6 +80,7 @@ const ReactCanvas = (props: any) => {
     window.addEventListener("resize", function () {
       engine.resize();
     });
+    // engine.hideLoadingUI();
   }, []);
 
   return <canvas style={myStyle} ref={canvasRef} {...props}></canvas>;
