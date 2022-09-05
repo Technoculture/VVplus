@@ -33,14 +33,14 @@ const ReactCanvas = (props: any) => {
         -Math.PI / 3,
         Math.PI / 2.5,
         500,
-        new Vector3(0,400,100),
+        new Vector3(0,100,100),
         scene
       );
       camera.attachControl(canvas, true);
       camera.wheelPrecision=1
       camera.panningSensibility=10
-      camera.lowerRadiusLimit = 2000;
-      camera.upperRadiusLimit = 5000;
+      camera.lowerRadiusLimit = 1000;
+      camera.upperRadiusLimit = 2000;
       const light = new HemisphericLight("light", new Vector3(1, 1, 0), scene);
       light.intensity = 0.7;
       //code to be refactored more later
@@ -53,9 +53,9 @@ const ReactCanvas = (props: any) => {
             scene,
             (newMeshes)=>{
               // newMeshes[0].position.x=0
-              newMeshes[0].position.y=10
+              newMeshes[0].position.y=0
               // newMeshes[0].position.z=0
-              newMeshes[0].scaling = new Vector3(3,3,3)
+              newMeshes[0].scaling = new Vector3(1,1,1)
             }
           )
         )
