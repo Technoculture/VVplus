@@ -5,7 +5,7 @@ export default function Web(): JSX.Element {
   return (
     <div>
       {/* <Demo/> */}
-      <ReactCanvas/>
+      {/* <ReactCanvas /> */}
     </div>
   );
 }
