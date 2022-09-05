@@ -1,5 +1,7 @@
 # VV+
 
+[Figma file for UI Concept](https://www.figma.com/file/P5ysFXqNFwINuyKiecaJJo/VVplusDesigner?node-id=0%3A1)
+
 ## TODO
 
 - [x] Setup tailwind in apps/designer
