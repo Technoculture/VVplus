@@ -1,37 +1,37 @@
 [{
     "id": 1,
     "type": "designer",
-    "url": "https://assets.vvplus.cc/gltf/",
+    "url": "https://assets.vvplus.cc/glb/",
     "floors":[
     {
         "floorId": 0,
         "type": "plot",
         "description": "Green Lawn Plot",
-        "file": "plot.gltf"
+        "file": "plot.glb"
     },
     {
         "floorId": 1,
         "type": "ground-floor",
         "description": "....",
-        "file": "groundfloor.gltf"
+        "file": "groundfloor.glb"
     },
     {
         "floorId": 2,
         "type": "first-floor",
         "description": "....",
-        "file": "firstfloor.gltf"
+        "file": "firstfloor.glb"
     },
     {
         "floorId": 3,
         "type": "second-floor",
         "description": "....",
-        "file": "secondfloor.gltf"
+        "file": "secondfloor.glb"
     },
     {
         "floorId": 4,
         "type": "roof",
         "description": "....",
-        "file": "roof.gltf"
+        "file": "roof.glb"
     }
 ]
 }]
