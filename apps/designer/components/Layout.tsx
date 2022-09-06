@@ -1,8 +1,8 @@
 import Navbar from "./Navbar";
 import React from "react";
-import Footer from "./Footer";
 import { ScriptProps } from "next/script";
-import HomePage from "./elements/HomePage";
+import HomePage from "./HomePage";
+import Welcome from "./Welcome";
 
 const Layout: React.FC<ScriptProps> = ({ children }) => {
   // TODO: improve this type later
@@ -11,6 +11,7 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
       <Navbar />
       {children}
       <HomePage />
+      {/* <Welcome /> */}
     </>
   );
 };
