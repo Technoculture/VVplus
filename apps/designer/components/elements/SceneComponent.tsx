@@ -9,6 +9,7 @@ import {
 import "@babylonjs/loaders/glTF";
 import * as BABYLON from "@babylonjs/core";
 import data from "../../public/data.json";
+import useStore from "../../public/store";
 
 const myStyle = {
   width: "70vw",
@@ -22,6 +23,8 @@ const config = {
 
 const ReactCanvas = (props: any) => {
   const canvasRef = useRef(null);
+  const store = useStore();
+  // console.log(store.floor);
   const minZ = -((config.amount.z * config.separation) / 2);
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -32,19 +35,20 @@ const ReactCanvas = (props: any) => {
         "camera",
         -Math.PI / 3,
         Math.PI / 2.5,
-        500,
+        1000,
         new Vector3(0,100,100),
         scene
       );
       camera.attachControl(canvas, true);
       camera.wheelPrecision=1
       camera.panningSensibility=10
-      camera.lowerRadiusLimit = 1000;
+      camera.lowerRadiusLimit = 500;
       camera.upperRadiusLimit = 2000;
       const light = new HemisphericLight("light", new Vector3(1, 1, 0), scene);
       light.intensity = 0.7;
       //code to be refactored more later
-      data[0].floors.map((element)=>{
+      const buildingData = data[0].floors
+      /* data[0].floors.map((element)=>{
         return(
           BABYLON.SceneLoader.ImportMesh(
             "",
@@ -59,7 +63,19 @@ const ReactCanvas = (props: any) => {
             }
           )
         )
-      })
+      }) */
+      for(let i=0; i<=store.floor; i++){
+        BABYLON.SceneLoader.ImportMesh(
+          "",
+          data[0].url,
+          buildingData[i].file,
+          scene,
+          (newMeshes)=>{
+            newMeshes[0].position.y = 0
+            newMeshes[0].scaling = new Vector3(1,1,1)
+          }
+        )
+      }
       return scene;
     };
     const scene = createScene();
@@ -69,7 +85,7 @@ const ReactCanvas = (props: any) => {
     window.addEventListener("resize", function () {
       engine.resize();
     });
-  }, [minZ]);
+  }, [minZ, store.floor]);
 
   return <canvas style={myStyle} ref={canvasRef} {...props}></canvas>;
 };

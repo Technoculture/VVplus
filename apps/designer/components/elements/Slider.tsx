@@ -1,9 +1,12 @@
 import React from "react";
 import { Range } from "react-range";
 import data from "../../public/data.json";
+import useStore from "../../public/store"
 
 export default function Slider() {
+  const store = useStore();
   const [values, setValues] = React.useState([0]);
+  // console.log(store.floor);
   return (
     <div className="w-full flex justify-center">
       <div className="w-80 p-10 border-4 border-red-300">
@@ -34,6 +37,9 @@ export default function Slider() {
         <span>Floor: {values[0]}</span>
         <br/>
         <span>Set on 0 for plot and {data[0].floors.length-1} for roof</span>
+        <br/>
+        <br/>
+        <button className="border-4" onClick={()=>store.changeFloor(values[0])}>Submit</button>
       </div>
     </div>
   );
