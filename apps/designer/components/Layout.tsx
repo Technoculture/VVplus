@@ -2,8 +2,7 @@ import Navbar from "./Navbar";
 import React from "react";
 import { ScriptProps } from "next/script";
 import HomePage from "./HomePage";
-import Welcome from "./Welcome";
-
+import LoadingBar from "./elements/LoadingBar";
 const Layout: React.FC<ScriptProps> = ({ children }) => {
   // TODO: improve this type later
   return (
@@ -11,7 +10,7 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
       <Navbar />
       {children}
       <HomePage />
-      {/* <Welcome /> */}
+      <LoadingBar />
     </>
   );
 };
