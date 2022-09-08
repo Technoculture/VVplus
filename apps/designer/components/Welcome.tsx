@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-const Welcome = () => {
+const Welcome = ({ setMyNavBar }: any) => {
   const [isActive, setIsActive] = useState(false);
   const welcomeClick = () => {
     setIsActive(true);
+    setMyNavBar(true);
   };
   return (
     <div

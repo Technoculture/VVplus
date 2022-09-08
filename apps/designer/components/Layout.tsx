@@ -8,16 +8,17 @@ import NewDesign from "./NewDesign";
 const Layout: React.FC<ScriptProps> = ({ children }) => {
   // TODO: improve this type later
   const [state, setState] = useState(false);
+  const [myNavbar, setMyNavBar] = useState(false);
 
   const handleClick = () => {
     setState(true);
   };
   return (
     <>
-      <Navbar />
+      <Navbar myNavbar={myNavbar} />
       {children}
       {state === false && <NewDesign handleClick={handleClick} />}
-      {state === true && <Welcome />}
+      {state === true && <Welcome setMyNavBar={setMyNavBar} />}
       <LoadingBar />
     </>
   );
