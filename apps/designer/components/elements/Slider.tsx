@@ -5,7 +5,7 @@ import useStore from "../../public/store"
 
 export default function Slider() {
   const store = useStore();
-  const [values, setValues] = React.useState([0]);
+  const [values, setValues] = React.useState([4]);
   // console.log(store.floor);
   return (
     <div className="w-full flex justify-center">
@@ -18,6 +18,7 @@ export default function Slider() {
           values={values}
           onChange={(values) => {
             setValues(values);
+            store.changeFloor(values[0])
           }}
           renderTrack={({ props, children }) => (
             <div
@@ -39,7 +40,6 @@ export default function Slider() {
         <span>Set on 0 for plot and {data[0].floors.length-1} for roof</span>
         <br/>
         <br/>
-        <button className="border-4" onClick={()=>store.changeFloor(values[0])}>Submit</button>
       </div>
     </div>
   );

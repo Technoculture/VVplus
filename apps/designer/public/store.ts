@@ -6,7 +6,7 @@ type Store = {
 }
 
 const useStore = create<Store>((set)=>({
-    floor: 0,
+    floor: 4,
     changeFloor(val){
         set((state)=>({floor: val}))
     }
