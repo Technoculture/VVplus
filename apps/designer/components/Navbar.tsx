@@ -2,10 +2,6 @@ import React, { useState } from "react";
 
 const Navbar = () => {
   const [myNavbar, setMyNavBar] = useState(false);
-  const changeNavbar = () => {
-    setMyNavBar(true);
-  };
-
   return (
     <div className="flex items-center h-32 ">
       <nav

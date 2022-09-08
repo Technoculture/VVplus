@@ -13,7 +13,12 @@ const Welcome = () => {
         width: isActive ? "400px" : "",
       }}
     >
-      <h2 className="cursor-pointer" onClick={welcomeClick}>
+      <h2
+        className="cursor-pointer"
+        onClick={() => {
+          welcomeClick();
+        }}
+      >
         {isActive === false ? "Welcome " : ""}
       </h2>
     </div>
