@@ -1,11 +1,11 @@
 import create from "zustand";
 type store  = {
-  openWelcome : Boolean;
+  openWelcome : boolean;
   handleClick : Function;
-  myNavbar: Boolean;
+  myNavbar: boolean;
   welcomeClick: Function;
-  isActive: Boolean;
-  toggleButton : Boolean;
+  isActive: boolean;
+  toggleButton : boolean;
   myToggleButton : Function;
   newButtonClick : Function;
 }
@@ -27,7 +27,7 @@ const useStore = create<store>((set)=>({
   },
 
   toggleButton:false,
-  myToggleButton :(val : Boolean)  =>{
+  myToggleButton :(val : boolean)  =>{
     set((state)=>({
       toggleButton : !val
     }))

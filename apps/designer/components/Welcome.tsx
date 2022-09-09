@@ -1,6 +1,6 @@
 import React from "react";
 
-const Welcome = ({ isActive, welcomeClick, toggleButton }: any) => {
+const Welcome = ({ isActive, welcomeClick }: any) => {
   return (
     <div
       className="flex items-center justify-center mx-auto duration-300 bg-gray-100 rounded-xl w-96 "
