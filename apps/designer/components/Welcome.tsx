@@ -1,10 +1,6 @@
-import React, { useState } from "react";
-const Welcome = ({ setMyNavBar }: any) => {
-  const [isActive, setIsActive] = useState(false);
-  const welcomeClick = () => {
-    setIsActive(true);
-    setMyNavBar(true);
-  };
+import React from "react";
+
+const Welcome = ({ isActive, welcomeClick, toggleButton }: any) => {
   return (
     <div
       className="flex items-center justify-center mx-auto duration-300 bg-gray-100 rounded-xl w-96 "

@@ -2,23 +2,35 @@ import Navbar from "./Navbar";
 import React from "react";
 import { ScriptProps } from "next/script";
 import LoadingBar from "./elements/LoadingBar";
-import { useState } from "react";
 import Welcome from "./Welcome";
 import NewDesign from "./NewDesign";
+import useStore from "../pages/store";
 const Layout: React.FC<ScriptProps> = ({ children }) => {
   // TODO: improve this type later
-  const [state, setState] = useState(false);
-  const [myNavbar, setMyNavBar] = useState(false);
+  const {
+    myNavbar,
+    isActive,
+    welcomeClick,
+    openWelcome,
+    handleClick,
+    toggleButton,
+    myToggleButton,
+    newButtonClick,
+  } = useStore();
 
-  const handleClick = () => {
-    setState(true);
-  };
   return (
     <>
-      <Navbar myNavbar={myNavbar} />
+      <Navbar
+        myNavbar={myNavbar}
+        toggleButton={toggleButton}
+        myToggleButton={myToggleButton}
+        newButtonClick={newButtonClick}
+      />
       {children}
-      {state === false && <NewDesign handleClick={handleClick} />}
-      {state === true && <Welcome setMyNavBar={setMyNavBar} />}
+      {openWelcome === false && <NewDesign handleClick={handleClick} />}
+      {openWelcome === true && (
+        <Welcome welcomeClick={welcomeClick} isActive={isActive} />
+      )}
       <LoadingBar />
     </>
   );
