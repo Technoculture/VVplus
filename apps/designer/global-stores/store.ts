@@ -2,13 +2,13 @@ import create from 'zustand'
 
 type Store = {
     floor: number;
-    changeFloor: (event: any)=>void;
+    changeFloor: (val: number)=>void;
 }
 
 const useStore = create<Store>((set)=>({
     floor: 4,
     changeFloor(val){
-        set((state)=>({floor: val}))
+        set(()=>({floor: val}))
     }
 }))
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Range } from "react-range";
 import data from "../../public/data.json";
-import useStore from "../../public/store"
+import useStore from "../../global-stores/store"
 
 export default function Slider() {
   const store = useStore();
