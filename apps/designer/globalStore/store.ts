@@ -31,7 +31,7 @@ const useStore = create<store>((set) => ({
 
   toggleButton: false,
   myToggleButton: (val: boolean) => {
-    set((state) => ({
+    set(() => ({
       toggleButton: !val,
     }));
   },

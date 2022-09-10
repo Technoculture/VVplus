@@ -3,7 +3,7 @@ import React from "react";
 const Welcome = ({ isActive, welcomeClick, toggleButton }: any) => {
   return (
     <div
-      className="flex items-center justify-center mx-auto   bg-gray-100 rounded-xl  w-96 pb-5 "
+      className="flex items-center justify-center  mx-auto  bg-gray-100 rounded-xl  w-96 pb-5 "
       style={{
         height: "800px",
         marginRight: isActive ? "3%" : "",
