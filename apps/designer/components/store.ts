@@ -1,16 +1,16 @@
 import create from "zustand";
 type store = {
   openWelcome: boolean;
-  handleClick: Function;
+  handleClick: CallableFunction;
   myNavbar: boolean;
-  welcomeClick: Function;
+  welcomeClick: CallableFunction;
   isActive: boolean;
   toggleButton: boolean;
-  myToggleButton: Function;
-  newButtonClick: Function;
+  myToggleButton: CallableFunction;
+  newButtonClick: CallableFunction;
   openPopup: boolean;
-  clickSaveButton: Function;
-  closeSaveButton: Function;
+  clickSaveButton: CallableFunction;
+  closeSaveButton: CallableFunction;
 };
 const useStore = create<store>((set) => ({
   openWelcome: false,
