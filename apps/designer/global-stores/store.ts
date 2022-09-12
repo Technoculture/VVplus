@@ -1,15 +1,15 @@
-import create from 'zustand'
+import create from "zustand";
 
 type Store = {
-    floor: number;
-    changeFloor: (val: number)=>void;
-}
+  floor: number;
+  changeFloor: (val: number) => void;
+};
 
-const useStore = create<Store>((set)=>({
-    floor: 4,
-    changeFloor(val){
-        set(()=>({floor: val}))
-    }
-}))
+const useStore = create<Store>((set) => ({
+  floor: 4,
+  changeFloor(val) {
+    set(() => ({ floor: val }));
+  },
+}));
 
-export default useStore
+export default useStore;

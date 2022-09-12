@@ -10,7 +10,7 @@ import "@babylonjs/loaders/glTF";
 import * as BABYLON from "@babylonjs/core";
 import data from "../../public/data.json";
 import useStore from "../../global-stores/store";
-// import useModel from "../../util/useModel";
+import useModel from "../../util/useModel";
 
 const myStyle = {
   width: "70vw",
