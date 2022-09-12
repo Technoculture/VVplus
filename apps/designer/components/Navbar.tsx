@@ -9,8 +9,10 @@ const Navbar = ({
 }: any) => {
   return (
     <div className="flex items-center h-32 ">
-      <nav className="container flex items-center justify-center h-16 gap-12 p-3 m-auto mt-6 text-lg duration-500 bg-gray-300 w-fit rounded-xl">
-        <h1>VV + | Designer</h1>
+      <nav className="container flex items-center justify-center h-16 gap-12 p-4 m-auto mt-6 text-lg duration-500 bg-gray-300 w-fit rounded-xl">
+        <h1>
+          VV + <span> | Designer</span>
+        </h1>
 
         {myNavbar === true ? (
           <div className="flex gap-2">
