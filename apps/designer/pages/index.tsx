@@ -8,7 +8,7 @@ export default function Web(): JSX.Element {
   return (
     <div className="flex flex-row items-center justify-center">
       {/* <ReactCanvas /> */}
-      <Canvas/>
+      <Canvas />
       <Slider />
     </div>
   );

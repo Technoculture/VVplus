@@ -1,5 +1,4 @@
-import React, { useEffect, useRef } from "react";
-// import * as BABYLON from "@babylonjs/core";
+import React, { useEffect, useState } from "react";
 import {
   Engine,
   Vector3,
@@ -7,8 +6,12 @@ import {
   ArcRotateCamera,
   HemisphericLight,
 } from "@babylonjs/core";
+import useModel from "./useModel";
+import useStore from "../global-stores/store";
+import data from "../public/data.json";
 
 export default function useScene(canvasRef: React.MutableRefObject<null>) {
+  const [sceneModel, setScene] = useState<any>();
   useEffect(() => {
     const canvas = canvasRef.current;
     const engine = new Engine(canvas, true);
@@ -34,5 +37,9 @@ export default function useScene(canvasRef: React.MutableRefObject<null>) {
     window.addEventListener("resize", function () {
       engine.resize();
     });
-  });
+    setScene(scene);
+  }, [canvasRef]);
+  //   const store = useStore();
+  const buildingData = data[0].floors;
+  useModel(buildingData[0].file, sceneModel);
 }

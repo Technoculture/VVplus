@@ -1,17 +1,10 @@
 import React, { useRef } from "react";
-// import {
-//   Engine,
-//   Scene,
-//   ArcRotateCamera,
-//   HemisphericLight,
-//   Vector3,
-// } from "@babylonjs/core";
 import "@babylonjs/loaders/glTF";
 // import * as BABYLON from "@babylonjs/core";
 import useScene from "../../util/useScene";
-// import data from "../../public/data.json";
-// import useStore from "../../global-stores/store";
-// import useModel from "../../util/useModel";
+import data from "../../public/data.json";
+import useStore from "../../global-stores/store";
+import useModel from "../../util/useModel";
 
 const myStyle = {
   width: "70vw",
@@ -19,8 +12,13 @@ const myStyle = {
 };
 
 const Canvas = () => {
+  const store = useStore();
   const canvasRef = useRef(null);
-  useScene(canvasRef)
+  const sceneModel = useScene(canvasRef);
+  const buildingData = data[0].floors;
+  // for(let i=0; i<=store.floor;i++){
+  //   useModel(buildingData[i].file, sceneModel)
+  // }
   return <canvas style={myStyle} ref={canvasRef}></canvas>;
 };
 export default Canvas;
