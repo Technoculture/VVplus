@@ -16,9 +16,7 @@ const Canvas = () => {
   const canvasRef = useRef(null);
   const sceneModel = useScene(canvasRef);
   const buildingData = data[0].floors;
-  // for(let i=0; i<=store.floor;i++){
-  //   useModel(buildingData[i].file, sceneModel)
-  // }
+  useModel(buildingData[0].file, sceneModel);
   return <canvas style={myStyle} ref={canvasRef}></canvas>;
 };
 export default Canvas;
