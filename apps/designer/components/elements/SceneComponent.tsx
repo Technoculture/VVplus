@@ -12,6 +12,8 @@ import * as BABYLON from "@babylonjs/core";
 const myStyle = {
   width: "100%",
   height: "100%",
+  position: "absolute",
+  top: "0px",
 };
 
 const ReactCanvas = (props: any) => {
@@ -34,8 +36,8 @@ const ReactCanvas = (props: any) => {
       light.intensity = 0.7;
       BABYLON.SceneLoader.ImportMesh(
         "",
-        "https://vvplus3d.s3.ap-southeast-1.amazonaws.com/gltf/",
-        "groundfloor.gltf",
+        "https://assets.vvplus.cc/draco/",
+        "groundfloor.glb",
         scene,
         (newMeshes) => {
           newMeshes[0].position.y = 1;

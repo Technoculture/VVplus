@@ -36,7 +36,7 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
         newButtonClick={newButtonClick}
         clickSaveButton={clickSaveButton}
       />
-      {children}
+      {isActive === true && children}
       {openWelcome === false && <NewDesign handleClick={handleClick} />}
       {openWelcome === true && (
         <Welcome
