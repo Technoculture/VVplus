@@ -11,7 +11,7 @@ import {
 // import data from "../public/data.json";
 
 export default function useScene(canvasRef: React.MutableRefObject<null>) {
-  const [sceneModel, setScene] = useState<any>();
+  const [sceneModel, setScene] = useState<Scene>();
   useEffect(() => {
     const canvas = canvasRef.current;
     const engine = new Engine(canvas, true);
@@ -39,6 +39,6 @@ export default function useScene(canvasRef: React.MutableRefObject<null>) {
     });
     setScene(scene);
   }, [canvasRef]);
-    
-  return sceneModel
+
+  return sceneModel as Scene;
 }
