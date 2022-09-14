@@ -22,7 +22,7 @@ const Canvas = () => {
   // useModel(buildingData[2].file, sceneModel, store.floor>=2);
   // useModel(buildingData[3].file, sceneModel, store.floor>=3);
   // useModel(buildingData[4].file, sceneModel, store.floor>=4);
-  return <canvas style={myStyle} ref={canvasRef} ></canvas>;
+  return <canvas style={myStyle} ref={canvasRef}></canvas>;
 };
 export default Canvas;
 

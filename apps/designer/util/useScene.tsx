@@ -42,3 +42,5 @@ export default function useScene(canvasRef: React.MutableRefObject<null>) {
 
   return sceneModel as Scene;
 }
+
+// fix camera angles
