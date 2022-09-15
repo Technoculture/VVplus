@@ -1,58 +1,57 @@
 [{
-    "id": 1,
     "type": "designer",
     "url": "https://assets.vvplus.cc/draco/",
     "floors":[
     {
-        "floorId": 0,
+        "uuid": 0,
         "type": "first-molding",
         "description": "...",
         "file": "first_moldings.glb"
     },
     {
-        "floorId": 1,
+        "uuid": 1,
         "type": "first-structure",
         "description": "...",
         "file": "first_structure.glb"
     },
     {
-        "floorId": 2,
+        "uuid": 2,
         "type": "ground-molding",
         "description": "...",
         "file": "ground_molding.glb"
     },
     {
-        "floorId": 3,
+        "uuid": 3,
         "type": "mumty-structure",
         "description": "...",
         "file": "mumty_structure.glb"
     },
     {
-        "floorId": 4,
+        "uuid": 4,
         "type": "roof-molding",
         "description": "...",
         "file": "roof_moldings.glb"
     },
     {
-        "floorId": 5,
+        "uuid": 5,
         "type": "roof-structure",
         "description": "...",
         "file": "roof_structure.glb"
     },
     {
-        "floorId": 6,
+        "uuid": 6,
         "type": "second-molding",
         "description": "...",
         "file": "second_moldings.glb"
     },
     {
-        "floorId": 7,
+        "uuid": 7,
         "type": "ground-structure",
         "description": "...",
         "file": "ground_structure.glb"
     },
     {
-        "floorId": 8,
+        "uuid": 8,
         "type": "second-structure",
         "description": "...",
         "file": "second_structure.glb"
