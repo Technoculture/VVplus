@@ -34,7 +34,7 @@ const ReactCanvas = () => {
       const scene = new Scene(engine);
       const camera = new ArcRotateCamera(
         "camera",
-        (-Math.PI)*3,
+        -Math.PI * 3,
         Math.PI / 2,
         1000,
         new Vector3(-300, 200, 230),
