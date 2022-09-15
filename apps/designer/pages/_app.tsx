@@ -8,7 +8,7 @@ const MyApp: NextComponentType<AppContext, AppInitialProps, AppLayoutProps> = ({
   pageProps,
 }: AppLayoutProps) => {
   return (
-    <div className="h-full bg-pink-200 ">
+    <div className="bg-pink-300">
       <Layout>
         <Component {...pageProps} />
       </Layout>

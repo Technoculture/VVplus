@@ -9,7 +9,7 @@ const Navbar = ({
 }: any) => {
   return (
     <div className="flex items-center h-32 ">
-      <nav className="container z-10 flex items-center justify-center h-16 gap-6 p-4 m-auto mt-6 text-lg duration-500 bg-gray-300 w-fit rounded-xl">
+      <nav className="container z-20 flex items-center justify-center h-16 gap-6 p-4 m-auto mt-6 text-lg duration-500 bg-gray-300 w-fit rounded-xl">
         <h1>
           VV + <span className="hidden md:inline"> | Designer</span>
         </h1>
@@ -54,7 +54,7 @@ const Navbar = ({
               Save
             </button>
             <button
-              className="justify-center hidden h-12 p-2 text-xl text-center bg-gray-400  w-14 md:flex rounded-xl"
+              className="justify-center hidden h-12 p-2 text-xl text-center bg-gray-400 w-14 md:flex rounded-xl"
               onClick={() => {
                 myToggleButton(toggleButton);
               }}

@@ -23,12 +23,7 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
   } = useStore();
 
   return (
-    <div
-      className="h-full"
-      style={{
-        height: toggleButton === true ? "100vh" : "",
-      }}
-    >
+    <>
       <Navbar
         myNavbar={myNavbar}
         toggleButton={toggleButton}
@@ -36,18 +31,19 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
         newButtonClick={newButtonClick}
         clickSaveButton={clickSaveButton}
       />
-      {isActive === true && children}
+      {children}
       {openWelcome === false && <NewDesign handleClick={handleClick} />}
       {openWelcome === true && (
         <Welcome
           welcomeClick={welcomeClick}
           isActive={isActive}
           toggleButton={toggleButton}
+          className="z-10"
         />
       )}
       {openPopup === true && <SavePopup closeSaveButton={closeSaveButton} />}
       {isActive === false && <LoadingBar />}
-    </div>
+    </>
   );
 };
 

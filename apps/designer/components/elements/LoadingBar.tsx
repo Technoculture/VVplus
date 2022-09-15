@@ -2,7 +2,7 @@ import React from "react";
 
 const LoadingBar = () => {
   return (
-    <div className="flex items-center justify-center py-6">
+    <div className="flex items-center justify-center py-4 ">
       <h1>Loading...</h1>
     </div>
   );
