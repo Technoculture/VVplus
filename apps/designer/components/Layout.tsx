@@ -38,7 +38,6 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
           welcomeClick={welcomeClick}
           isActive={isActive}
           toggleButton={toggleButton}
-          className="z-10"
         />
       )}
       {openPopup === true && <SavePopup closeSaveButton={closeSaveButton} />}

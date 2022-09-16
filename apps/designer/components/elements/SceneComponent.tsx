@@ -54,7 +54,6 @@ const ReactCanvas = (props: any) => {
       engine.resize();
     });
   }, []);
-
   return <canvas style={myStyle} ref={canvasRef} {...props}></canvas>;
 };
 export default ReactCanvas;

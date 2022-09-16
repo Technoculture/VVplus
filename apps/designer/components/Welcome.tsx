@@ -2,15 +2,16 @@ import React from "react";
 
 const Welcome = ({ isActive, welcomeClick, toggleButton }: any) => {
   return window.innerWidth < 766 && isActive === true ? (
-    <div className="z-20 flex  px-2 overflow-hidden gap-5 mt-[50vh]">
-      <div className="z-20 flex h-32 overflow-hidden bg-white rounded-lg w-60"></div>
-      <div className="z-20 flex h-32 overflow-hidden bg-white rounded-lg w-60"></div>
-      <div className="z-20 flex h-32 overflow-hidden bg-white rounded-lg w-60"></div>
+    <div className="z-20 flex  overflow-x-scroll  overflow-y-hidden md:hidden whitespace-nowrap px-6  gap-8 mt-[50vh]">
+      <div className="z-20 inline-block h-32  bg-white rounded-lg md:hidden sm:min-w-[300px] min-w-[250px]"></div>
+      <div className="z-20 inline-block h-32  bg-white rounded-lg md-hidden sm:min-w-[300px] min-w-[250px]"></div>
+      <div className="z-20 inline-block h-32  bg-white rounded-lg md-hidden sm:min-w-[300px] min-w-[250px]"></div>
+      <div className="z-20 inline-block h-32  bg-white rounded-lg md-hidden sm:min-w-[300px] min-w-[250px]"></div>
     </div>
   ) : (
     <div
       className={`
-        z-20 flex items-center justify-center w-64  h-96 pb-5 mx-auto duration-500 ease-in-out bg-gray-100 lg:w-96 md:h-[70vh]  sm:w-80 rounded-xl  
+          z-30 flex items-center justify-center w-64  h-96 pb-5 mx-auto duration-500 ease-in-out bg-gray-100 lg:w-96 md:h-[70vh]  sm:w-80 rounded-xl  
         
         ${toggleButton === true ? " mr-[32vw] " : ""}
 
