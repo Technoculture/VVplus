@@ -14,26 +14,21 @@ const Navbar = ({
           VV + <span className="hidden md:inline"> | Designer</span>
         </h1>
         <div
-          className="flex gap-2 md:hidden"
-          style={{
-            display: myNavbar === true ? "none" : "",
-          }}
+          className={`flex gap-2 md:hidden
+          ${myNavbar === true ? "hidden" : ""}`}
         >
           <button
-            className="flex justify-center w-20 h-12 p-2 text-center bg-white md:hidden rounded-xl"
+            className={`flex justify-center w-20 h-12 p-2 text-center bg-white md:hidden rounded-xl
+            ${myNavbar === true ? "hidden" : ""}`}
             onClick={newButtonClick}
-            style={{
-              display: myNavbar === true ? "none" : "",
-            }}
           >
             New
           </button>
           <button
-            className="flex justify-center w-20 h-12 p-2 text-center bg-white md:hidden rounded-xl"
+            className={`flex justify-center w-20 h-12 p-2 text-center bg-white md:hidden rounded-xl
+            ${myNavbar === true ? "hidden" : ""}
+            `}
             onClick={clickSaveButton}
-            style={{
-              display: myNavbar === true ? "none" : "",
-            }}
           >
             Save
           </button>
