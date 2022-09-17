@@ -54,7 +54,8 @@ const Navbar = ({
               Save
             </button>
             <button
-              className="justify-center hidden h-12 p-2 text-xl text-center bg-gray-400 w-14 md:flex rounded-xl"
+              className={`justify-center hidden h-12 p-2 text-xl text-center bg-white w-14 md:flex rounded-xl
+              ${toggleButton === true ? "bg-gray-400" : "bg-white"}`}
               onClick={() => {
                 myToggleButton(toggleButton);
               }}

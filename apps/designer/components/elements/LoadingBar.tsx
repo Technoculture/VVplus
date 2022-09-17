@@ -2,7 +2,7 @@ import React from "react";
 
 const LoadingBar = () => {
   return (
-    <div className="flex  items-center justify-center mt-[3px] ">
+    <div className="absolute flex justify-center bottom-2 left-[50%] translate-x-[-50%] ">
       <h1>Loading...</h1>
     </div>
   );

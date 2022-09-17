@@ -11,7 +11,7 @@ const Welcome = ({ isActive, welcomeClick, toggleButton }: any) => {
   ) : (
     <div
       className={`
-          z-[100] relative flex items-center justify-center  w-64  h-[390px] pb-5 mx-auto sm:mt-0 mt-12 duration-500 ease-in-out bg-gray-100 lg:w-96 md:h-[70vh]  sm:w-80 rounded-xl  
+          z-[100] relative flex items-center justify-center  w-64  h-[390px] pb-5 mx-auto sm:mt-0 mt-12 md:w-[300px] duration-500 ease-in-out bg-gray-100 lg:w-96 md:h-[70vh]  sm:w-80 rounded-xl  
         
         ${toggleButton === true ? " mr-[32vw] " : ""}
 
