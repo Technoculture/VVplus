@@ -1,4 +1,5 @@
-{
+[{
+    "uuid": "1",
     "type": "designer",
     "baseUrl": "https://assets.vvplus.cc/draco/",
     "floors":[
@@ -78,4 +79,4 @@
             ]
         }
     ]
-}
+}]

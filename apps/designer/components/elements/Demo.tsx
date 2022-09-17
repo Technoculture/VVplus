@@ -6,6 +6,7 @@ import data from "../../public/data.json";
 // import useStore from "../../global-stores/store";
 import useModel from "../../util/useModel";
 
+//Work under progress, the demo component contains the code that will use Zod and React Custom Hooks in order to render the scene. This will be a part of the code later on when the work with Zod is complete
 const myStyle = {
   width: "70vw",
   height: "90vh",

@@ -1,5 +1,6 @@
 import create from "zustand";
 
+// Yet to be updated with isVisible concept with use of Zod and getFile. There will be several changes made later on.
 type Store = {
   floor: number;
   changeFloor: (val: number) => void;
