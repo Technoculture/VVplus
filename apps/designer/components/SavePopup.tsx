@@ -1,5 +1,5 @@
 import React from "react";
-import { ImCross } from "react-icons/Im";
+import { ImCross } from "react-icons/im";
 const SavePopup = ({
   closeSaveButton,
 }: {
