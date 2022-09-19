@@ -11,7 +11,7 @@ import * as BABYLON from "@babylonjs/core";
 
 const myStyle = {
   width: "100%",
-  height: "100%",
+  height: "100vh",
   position: "absolute",
   top: "0px",
 };

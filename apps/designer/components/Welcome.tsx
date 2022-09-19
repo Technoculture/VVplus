@@ -10,7 +10,7 @@ const Welcome = ({
   welcomeClick: CallableFunction;
 }) => {
   return window.innerWidth < 768 && isActive === true ? (
-    <div className="z-30 flex gap-2 px-6 mt-[47vh] overflow-x-scroll overflow-y-hidden scroller md:hidden whitespace-nowrap">
+    <div className="z-30 flex gap-2 px-6 mt-[44vh] overflow-x-scroll overflow-y-hidden scroller md:hidden whitespace-nowrap">
       <div className="z-20 inline-block h-[30vh]  bg-white rounded-lg md:hidden sm:min-w-[350px] min-w-[270px]"></div>
       <div className="z-20 inline-block h-[30vh]  bg-white rounded-lg md-hidden sm:min-w-[350px] min-w-[270px]"></div>
       <div className="z-20 inline-block h-[30vh]  bg-white rounded-lg md-hidden sm:min-w-[350px] min-w-[270px]"></div>
