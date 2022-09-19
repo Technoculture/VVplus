@@ -1,6 +1,14 @@
 import React from "react";
 
-const Welcome = ({ isActive, welcomeClick, toggleButton }: any) => {
+const Welcome = ({
+  isActive,
+  welcomeClick,
+  toggleButton,
+}: {
+  isActive: boolean;
+  toggleButton: boolean;
+  welcomeClick: CallableFunction;
+}) => {
   return window.innerWidth < 768 && isActive === true ? (
     <div className="z-30 flex gap-2 px-6 mt-[47vh] overflow-x-scroll overflow-y-hidden scroller md:hidden whitespace-nowrap">
       <div className="z-20 inline-block h-[30vh]  bg-white rounded-lg md:hidden sm:min-w-[350px] min-w-[270px]"></div>
