@@ -11,15 +11,15 @@ const Welcome = ({ isActive, welcomeClick, toggleButton }: any) => {
   ) : (
     <div
       className={`
-          z-[100] relative flex items-center justify-center  w-64  h-[390px] pb-5 mx-auto  md:w-[300px] duration-500 ease-in-out  lg:w-96 md:h-[70vh]  sm:w-80 rounded-xl  
+          z-[100] relative flex items-center justify-center  w-64  h-[390px] pb-5 mx-auto  sm:w-[280px] duration-500 ease-in-out  lg:w-96 md:h-[70vh]   rounded-xl  
         
         ${toggleButton === true ? " mr-[32vw] " : ""}
         ${
           toggleButton === true && isActive
             ? "bg-gray-400 mt-[20%] max-h-[113px] md:w-[10px]  sm:w-[0] lg:w-[10px] "
-            : "bg-white mt-12"
+            : "bg-white mt-2  "
         }
-        ${isActive && window.innerWidth > 766 ? "translate-x-[28vw]  " : ""}
+        ${isActive && window.innerWidth > 766 ? "translate-x-[31vw]  " : ""}
         `}
     >
       <h2
