@@ -1,0 +1,60 @@
+[{
+    "type": "designer",
+    "url": "https://assets.vvplus.cc/draco/",
+    "floors":[
+    {
+        "uuid": 0,
+        "type": "first-molding",
+        "description": "...",
+        "file": "first_moldings.glb"
+    },
+    {
+        "uuid": 1,
+        "type": "first-structure",
+        "description": "...",
+        "file": "first_structure.glb"
+    },
+    {
+        "uuid": 2,
+        "type": "ground-molding",
+        "description": "...",
+        "file": "ground_molding.glb"
+    },
+    {
+        "uuid": 3,
+        "type": "mumty-structure",
+        "description": "...",
+        "file": "mumty_structure.glb"
+    },
+    {
+        "uuid": 4,
+        "type": "roof-molding",
+        "description": "...",
+        "file": "roof_moldings.glb"
+    },
+    {
+        "uuid": 5,
+        "type": "roof-structure",
+        "description": "...",
+        "file": "roof_structure.glb"
+    },
+    {
+        "uuid": 6,
+        "type": "second-molding",
+        "description": "...",
+        "file": "second_moldings.glb"
+    },
+    {
+        "uuid": 7,
+        "type": "ground-structure",
+        "description": "...",
+        "file": "ground_structure.glb"
+    },
+    {
+        "uuid": 8,
+        "type": "second-structure",
+        "description": "...",
+        "file": "second_structure.glb"
+    }
+]
+}]

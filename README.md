@@ -6,10 +6,10 @@
 ## TODO
 
 - [x] Setup tailwind in apps/designer
-- [ ] Add a simple babylon example to apps/designer
+- [x] Add a simple babylon example to apps/designer
 - [x] Add planetscale(or maybe a Postgres provider) DB to apps/designer-server
 - [ ] Add prisma as an ORM
-- [ ] Add a simple schema for a house
+- [x] Add a simple schema for a house
 - [ ] Add some mock data
 - [x] Choose a file storage system
 - [ ] Integrate file storage into the DB
