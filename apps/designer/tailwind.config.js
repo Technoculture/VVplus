@@ -1,12 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: [
-        "./pages/**/*.{js,ts,jsx,tsx}",
-        "./components/**/*.{js,ts,jsx,tsx}"
-    ],
-    theme: {
-        extend: {},
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    fontFamily: {
+      sans: ["Roboto", "sans-serif"],
+      serif: ["Merriweather", "serif"],
     },
-    plugins: [],
+    extend: {},
+  },
+  plugins: [],
 };
 // module.exports = require('config/tailwind.config');
