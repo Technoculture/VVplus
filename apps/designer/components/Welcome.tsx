@@ -24,8 +24,8 @@ const Welcome = ({
         ${toggleButton === true ? " mr-[32vw] " : ""}
         ${
           toggleButton === true && isActive
-            ? "bg-gray-400 mt-[20%] max-h-[113px] md:w-[10px]  sm:w-[0] lg:w-[10px] "
-            : "bg-white mt-2  "
+            ? "bg-[#A6A6A6] mt-[20%] max-h-[113px] md:w-[10px]  sm:w-[0] lg:w-[10px] "
+            : "bg-[#DADADA] mt-2  "
         }
         ${isActive && window.innerWidth > 766 ? "translate-x-[31vw]  " : ""}
         `}
