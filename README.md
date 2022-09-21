@@ -16,3 +16,15 @@
 - [x] Add a simple layout to the UI
 - [x] Make the layout reponsive
 - [ ] Add a seperate package to estimate estimated cost based on chosen configuration
+
+## Getting Started
+
+```sh
+# Start from the root directory of the repo
+cd vvplus
+
+# This repo uses pnpm instead of npm or yarn
+pnpm build
+```
+
+Any further issues regarding the monrepo organization: Google turborepo
