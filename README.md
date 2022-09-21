@@ -24,7 +24,15 @@
 cd vvplus
 
 # This repo uses pnpm instead of npm or yarn
+pnpm installhooks 
+# important to run the above script to set up husky
+
 pnpm build
+# This builds the entire monorepo
 ```
+
+> ⚠️ Do not build individual apps seperately, this may cause various problems.
+
+> ⚠️ Use Chrome for testing purposes. The 3D rendering stack used here, may produce slightly different results on different browsers.
 
 Any further issues regarding the monrepo organization: Google turborepo
