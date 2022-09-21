@@ -37,6 +37,7 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
         <Welcome
           welcomeClick={welcomeClick}
           isActive={isActive}
+          myToggleButton={myToggleButton}
           toggleButton={toggleButton}
         />
       )}
