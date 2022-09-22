@@ -26,12 +26,12 @@ const Welcome = ({
       className={`
           z-[100] relative font-sans flex items-center justify-center  w-64  pb-5 mx-auto  sm:w-[280px] duration-500 ease-in-out  lg:w-96 h-[70vh]   rounded-xl  
         
+        ${toggleButton === true ? " mr-[32vw] " : ""}
         ${
-          toggleButton === true
-            ? "translate-x-[48vw] mt-[30vh] md:w-[10px]  max-h-[113px] bg-[#A6A6A6]    sm:w-[0] lg:w-[10px]"
-            : " bg-[#DADADA] mt-2  "
+          toggleButton === true && isActive
+            ? "bg-[#A6A6A6] mt-[20%] max-h-[113px] md:w-[10px]  sm:w-[0] lg:w-[10px] "
+            : "bg-[#DADADA] mt-2  "
         }
-
         ${isActive && window.innerWidth > 766 ? "translate-x-[31vw]  " : ""}
         `}
     >
