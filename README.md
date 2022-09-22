@@ -24,7 +24,7 @@
 cd vvplus
 
 # This repo uses pnpm instead of npm or yarn
-pnpm installhooks 
+pnpm installhooks
 # important to run the above script to set up husky
 
 pnpm build

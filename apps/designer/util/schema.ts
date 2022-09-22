@@ -5,11 +5,15 @@ export const viewModelSchema = z.object({
   id: z.string().uuid(),
   type: z.string(),
   baseUrl: z.string().url(),
-  floors: z.array(z.object({
-    id: z.string(),
-    file: z.string().endsWith(".glb"),
-    description: z.string()
-  }))
+  floors: z.array(
+    z.object({
+      id: z.string(),
+      file: z.string().endsWith(".glb"),
+      description: z.string(),
+    })
+  ),
 });
 
 export type viewModel = z.infer<typeof viewModelSchema>;
+
+//zod is used here for schema validation
