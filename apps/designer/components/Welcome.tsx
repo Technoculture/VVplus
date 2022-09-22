@@ -28,7 +28,7 @@ const Welcome = ({
         
         ${
           toggleButton === true
-            ? "translate-x-[47vw] mt-[30vh] md:w-[10px]  max-h-[113px] bg-[#A6A6A6]    sm:w-[0] lg:w-[10px]"
+            ? "translate-x-[48vw] mt-[30vh] md:w-[10px]  max-h-[113px] bg-[#A6A6A6]    sm:w-[0] lg:w-[10px]"
             : " bg-[#DADADA] mt-2  "
         }
 
