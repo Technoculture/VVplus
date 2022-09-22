@@ -20,8 +20,8 @@ const useStore = create<store>((set) => ({
     }));
   },
 
-  isActive: false, //for navbar open
-  myNavbar: false,
+  isActive: false, //for welcome component
+  myNavbar: false, //for navbar by default is closed
   welcomeClick: () => {
     set(() => ({
       myNavbar: true,

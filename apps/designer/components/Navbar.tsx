@@ -90,15 +90,7 @@ const Navbar = ({
           VV + <span className="hidden md:inline"> | Designer</span>
         </h1>
 
-        <div
-          className={`flex  gap-2 md:hidden pr-[10px]
-          ${myNavbar === true ? "hidden" : ""}`}
-        >
-          <NewButton newButtonClick={newButtonClick} />
-          <SaveButton clickSaveButton={clickSaveButton} />
-        </div>
-
-        {myNavbar === true ? (
+        {myNavbar === true && window.innerWidth > 768 ? (
           <div className="flex gap-2 ">
             <NewButton newButtonClick={newButtonClick} />
             <SaveButton clickSaveButton={clickSaveButton} />
@@ -107,7 +99,15 @@ const Navbar = ({
               myToggleButton={myToggleButton}
             />
           </div>
-        ) : null}
+        ) : (
+          <div
+            className={`flex  gap-2 md:hidden
+          ${myNavbar === true ? "" : "hidden"}`}
+          >
+            <NewButton newButtonClick={newButtonClick} />
+            <SaveButton clickSaveButton={clickSaveButton} />
+          </div>
+        )}
       </nav>
     </div>
   );
