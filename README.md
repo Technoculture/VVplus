@@ -1,7 +1,7 @@
 # VV+
 
 - [Figma file for UI Concept](https://www.figma.com/file/P5ysFXqNFwINuyKiecaJJo/VVplusDesigner?node-id=0%3A1)
-- [SQL Schema](https://drawsql.app/teams/technoculture/diagrams/vvplus)
+- [SQL Schema](https://github.com/TechnocultureResearch/VVplus/wiki/SQL-Schema)
 
 ## TODO
 
@@ -33,7 +33,7 @@ pnpm install
 # 4. Install Husky Hooks
 pnpm installhooks
 
-# 5. 
+# 5. Build the monorepo
 pnpm build
 ```
 
