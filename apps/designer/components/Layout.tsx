@@ -41,7 +41,9 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
           toggleButton={toggleButton}
         />
       )}
-      {openPopup === true && <SavePopup closeSaveButton={closeSaveButton} />}
+      {openPopup === true && (
+        <SavePopup closeSaveButton={closeSaveButton} openPopup={openPopup} />
+      )}
       {isActive === false && <LoadingBar />}
     </>
   );
