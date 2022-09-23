@@ -8,12 +8,18 @@ export const viewModelSchema = z.object({
   floors: z.array(
     z.object({
       id: z.string(),
-      file: z.string().endsWith(".glb"),
-      description: z.string(),
+      floorName: z.string(),
+      floorStructure : z.array(
+        z.object({
+          structId : z.number(),
+          file: z.string().endsWith(".glb"),
+          description: z.string()
+        })
+      )
     })
   ),
 });
 
 export type viewModel = z.infer<typeof viewModelSchema>;
 
-//there are changes to be made in this schema
+//used zod for schema validation
