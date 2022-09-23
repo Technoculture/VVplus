@@ -19,12 +19,24 @@
 
 ## Getting Started
 
+> **Note**: This repo uses `pnpm` instead of `npm` or `yarn`
+
 ```sh
-# Start from the root directory of the repo
+# 1. Clone this repository
+
+# 2. Start from the root directory of the repo
 cd vvplus
 
-# This repo uses pnpm instead of npm or yarn
+# 3. Install the dependencies
+pnpm install
+
+# 4. Install Husky Hooks
+pnpm installhooks
+
+# 5. 
 pnpm build
 ```
 
-Any further issues regarding the monrepo organization: Google turborepo
+📝 [MUST READ](./wiki/Guidelines-for-Contributing) before contributing to this repository.
+
+Any further issues regarding the monorepo aspect: Look up turborepo
