@@ -9,13 +9,13 @@ export const viewModelSchema = z.object({
     z.object({
       id: z.string(),
       floorName: z.string(),
-      floorStructure : z.array(
+      floorStructure: z.array(
         z.object({
-          structId : z.number(),
+          structId: z.number(),
           file: z.string().endsWith(".glb"),
-          description: z.string()
+          description: z.string(),
         })
-      )
+      ),
     })
   ),
 });

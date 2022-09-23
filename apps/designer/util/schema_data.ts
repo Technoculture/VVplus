@@ -7,12 +7,13 @@ export const dataModelSchema = z.object({
   floors: z.array(
     z.object({
       id: z.string(),
-      file: z.string().endsWith(".glb"),
+      type: z.string(),
       description: z.string(),
+      file: z.string().endsWith(".glb")
     })
   ),
 });
 
 export type viewModel = z.infer<typeof dataModelSchema>;
 
-//yet there are changes to be made in this schema
+//done validation using zod
