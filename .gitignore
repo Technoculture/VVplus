@@ -109,3 +109,5 @@ dist
 **/*-lock.yaml
 .turbo
 yarn.lock
+
+**/.env
