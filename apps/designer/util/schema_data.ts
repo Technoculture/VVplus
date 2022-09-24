@@ -9,7 +9,7 @@ export const dataModelSchema = z.object({
       id: z.string(),
       type: z.string(),
       description: z.string(),
-      file: z.string().endsWith(".glb")
+      file: z.string().endsWith(".glb"),
     })
   ),
 });

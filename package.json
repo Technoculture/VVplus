@@ -44,6 +44,11 @@
     }
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.5.0",
+    "@trpc/client": "^10.0.0-proxy-beta.5",
+    "@trpc/next": "^10.0.0-proxy-beta.5",
+    "@trpc/react": "^10.0.0-proxy-beta.5",
+    "@trpc/server": "^10.0.0-proxy-beta.5",
     "zod": "^3.19.1"
   }
 }
