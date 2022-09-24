@@ -14,7 +14,14 @@ const SavePopup = ({
       opacity: 1,
       display: "flex",
       transition: {
-        duration: 0.2,
+        duration: 0.3,
+      },
+    },
+    exit: {
+      opacity: 0,
+      display: "none",
+      transition: {
+        duration: 0.4,
       },
     },
   };
@@ -30,12 +37,14 @@ const SavePopup = ({
       variants={variants}
       initial="initial"
       animate="animate"
+      exit="exit"
     >
       <motion.div
-        className="flex duration-700 bg-[#DADADA] rounded-lg w-72 md:w-96 h-96"
+        className="flex duration-700 bg-[#DADADA] rounded-[20px] w-72 md:w-96 h-96"
         variants={variants}
         initial="initial"
         animate="animate"
+        exit="exit"
       >
         <ImCross
           className="static pt-px cursor-pointer md:ml-[360px] mt-2 ml-[260px]"

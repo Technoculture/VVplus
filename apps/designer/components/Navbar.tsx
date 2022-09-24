@@ -82,13 +82,17 @@ const Navbar = ({
   return (
     <div className="flex items-center h-32 ">
       <nav
-        className={`container z-20 flex items-center justify-center h-16 gap-[10px] shadow-[0_4px_40px_rgba(74,74,74,0.25)]  m-auto mt-6 font-sans text-lg duration-500 bg-[#C1C1C1] w-fit rounded-[20px]
+        className={`container z-20 flex items-center justify-center h-16  shadow-[0_4px_40px_rgba(74,74,74,0.25)]  m-auto mt-6 font-sans text-lg duration-500 bg-[#C1C1C1] w-fit rounded-[20px]
       ${myNavbar === true ? "pr-[10px]" : ""}
       `}
       >
-        <h1 className="text-[21px]  md:px-10 px-8">
-          VV + <span className="hidden md:inline"> | Designer</span>
-        </h1>
+        <div className="text-[21px] flex gap-3 leading-[24px]  font-[400] md:px-10 px-8">
+          VV+
+          <div className="items-center justify-center hidden gap-3 font-[400] md:flex">
+            <div className="h-6 w-[1.6px] bg-black"></div>
+            Designer
+          </div>
+        </div>
 
         {myNavbar === true && window.innerWidth > 768 ? (
           <div className="flex gap-2 ">

@@ -7,7 +7,7 @@ const SaveButton = ({
 }) => {
   return (
     <button
-      className="flex items-center justify-center w-[83px] h-12 ptext-center bg-[#D9D9D9] rounded-[15px]"
+      className="flex items-center justify-center w-[83px] text-[20px] leading-6 font-light h-12 text-center bg-[#D9D9D9] rounded-[15px]"
       onClick={() => {
         clickSaveButton();
       }}

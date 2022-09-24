@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 const Welcome = ({
   isActive,
   welcomeClick,
@@ -20,11 +19,11 @@ const Welcome = ({
     },
   };
   return window.innerWidth < 768 && isActive === true ? (
-    <div className="z-30 flex gap-2 font-sans px-6 mt-[44vh] overflow-x-scroll overflow-y-hidden scroller md:hidden whitespace-nowrap">
-      <div className="z-20 inline-block h-[30vh]  bg-white rounded-lg md:hidden sm:min-w-[350px] min-w-[270px]"></div>
-      <div className="z-20 inline-block h-[30vh]  bg-white rounded-lg md-hidden sm:min-w-[350px] min-w-[270px]"></div>
-      <div className="z-20 inline-block h-[30vh]  bg-white rounded-lg md-hidden sm:min-w-[350px] min-w-[270px]"></div>
-      <div className="z-20 inline-block h-[30vh]  bg-white rounded-lg md-hidden sm:min-w-[350px] min-w-[270px]"></div>
+    <div className="z-30 flex gap-2 font-sans snap-mandatory scroll-smooth snap-x px-6 mt-[44vh] overflow-x-scroll overflow-y-hidden scroller md:hidden whitespace-nowrap">
+      <div className="z-20 inline-block h-[30vh] snap-center bg-white rounded-lg md:hidden sm:min-w-[350px] min-w-[270px]"></div>
+      <div className="z-20 inline-block h-[30vh] snap-center bg-white rounded-lg  md-hidden sm:min-w-[350px] min-w-[270px]"></div>
+      <div className="z-20 inline-block h-[30vh] snap-center bg-white rounded-lg  md-hidden sm:min-w-[350px] min-w-[270px]"></div>
+      <div className="z-20 inline-block h-[30vh] snap-center bg-white rounded-lg  md-hidden sm:min-w-[350px] min-w-[270px]"></div>
     </div>
   ) : (
     <div
@@ -32,15 +31,17 @@ const Welcome = ({
         isActive === true ? myToggleButton(toggleButton) : "";
       }}
       className={`
-          z-[100] relative font-sans flex items-center justify-center  w-64  pb-5 mx-auto  sm:w-[280px] duration-500 ease-in-out  lg:w-96 h-[70vh]   rounded-xl  
-        
-        ${toggleButton === true ? " mr-[32vw] " : ""}
+          z-[100] relative font-sans flex items-center justify-center w-64  pb-5 mx-auto  sm:w-[280px] duration-500 ease-in-out  lg:w-[27vw] h-[70vh]   rounded-xl  
         ${
           toggleButton === true && isActive
-            ? "bg-[#A6A6A6] mt-[20%] max-h-[113px] md:w-[10px]  sm:w-[0] lg:w-[10px] "
-            : "bg-[#DADADA] mt-2  "
+            ? "bg-[#A6A6A6] scale-x-[0.025] scale-y-[0.2] translate-x-[49vw] "
+            : "bg-[#DADADA] w-[27vw]  "
         }
-        ${isActive && window.innerWidth > 766 ? "translate-x-[31vw]  " : ""}
+        ${
+          isActive && window.innerWidth > 766
+            ? "translate-x-[34vw] h-[78vh]   "
+            : ""
+        }
         `}
     >
       <h2
