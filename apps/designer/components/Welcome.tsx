@@ -34,8 +34,8 @@ const Welcome = ({
           z-[100] relative font-sans flex items-center justify-center w-64  pb-5 mx-auto  sm:w-[280px] duration-500 ease-in-out  lg:w-[27vw] h-[70vh]   rounded-xl  
         ${
           toggleButton === true && isActive
-            ? "bg-[#A6A6A6] scale-x-[0.025] scale-y-[0.2] translate-x-[49vw] "
-            : "bg-[#DADADA] w-[27vw]  "
+            ? "bg-[#A6A6A6] scale-x-[0.025] scale-y-[0.2]  translate-x-[48vw] "
+            : "bg-[#DADADA]   "
         }
         ${
           isActive && window.innerWidth > 766
