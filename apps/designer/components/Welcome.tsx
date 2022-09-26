@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "./Cards/Card";
 const Welcome = ({
   isActive,
   welcomeClick,
@@ -10,20 +11,12 @@ const Welcome = ({
   welcomeClick: CallableFunction;
   myToggleButton: CallableFunction;
 }) => {
-  const variants = {
-    animate: {
-      scale: 1.2,
-      transition: {
-        duration: 0.2,
-      },
-    },
-  };
   return window.innerWidth < 768 && isActive === true ? (
     <div className="z-30 flex gap-2 font-sans snap-mandatory scroll-smooth snap-x px-6 mt-[44vh] overflow-x-scroll overflow-y-hidden scroller md:hidden whitespace-nowrap">
-      <div className="z-20 inline-block h-[30vh] snap-center bg-white rounded-lg md:hidden sm:min-w-[350px] min-w-[270px]"></div>
-      <div className="z-20 inline-block h-[30vh] snap-center bg-white rounded-lg  md-hidden sm:min-w-[350px] min-w-[270px]"></div>
-      <div className="z-20 inline-block h-[30vh] snap-center bg-white rounded-lg  md-hidden sm:min-w-[350px] min-w-[270px]"></div>
-      <div className="z-20 inline-block h-[30vh] snap-center bg-white rounded-lg  md-hidden sm:min-w-[350px] min-w-[270px]"></div>
+      <Card />
+      <Card />
+      <Card />
+      <Card />
     </div>
   ) : (
     <div
