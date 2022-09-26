@@ -9,12 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@jest/types": "^27.1.0",
+    "@prisma/client": "^4.3.1",
+    "@tanstack/react-query": "^4.3.8",
+    "@trpc/client": "^10.0.0-proxy-beta.7",
+    "@trpc/next": "^10.0.0-proxy-beta.7",
+    "@trpc/react": "^10.0.0-proxy-beta.7",
+    "@trpc/server": "^10.0.0-proxy-beta.7",
     "babylonjs": "^5.21.0",
+    "clsx": "^1.1.1",
     "hooks": "^0.3.2",
     "next": "12.2.5",
     "react": "18.2.0",
     "react-babylonjs": "^3.1.6",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "start-server-and-test": "^1.12.0",
+    "superjson": "^1.7.4",
+    "zod": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -37,6 +48,7 @@
     "eslint-config-custom": "workspace:*",
     "next-transpile-modules": "9.0.0",
     "postcss": "^8.4.16",
+    "prisma": "^4.3.1",
     "react-icons": "^4.4.0",
     "react-range": "^1.8.14",
     "react-slider": "^2.0.3",
