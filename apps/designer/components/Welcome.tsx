@@ -31,15 +31,15 @@ const Welcome = ({
         isActive === true ? myToggleButton(toggleButton) : "";
       }}
       className={`
-          z-[100] relative font-sans flex items-center justify-center w-64  pb-5 mx-auto  sm:w-[280px] duration-500 ease-in-out  lg:w-[27vw] h-[70vh]   rounded-xl  
+          z-[100] relative font-sans flex items-center justify-center w-64  pb-5 mx-auto  sm:w-[250px] duration-500 ease-in-out  lg:w-[27vw] h-[70vh]   rounded-xl  
         ${
           toggleButton === true && isActive
-            ? "bg-[#A6A6A6] scale-x-[0.025] scale-y-[0.2]  translate-x-[48vw] "
-            : "bg-[#DADADA]   "
+            ? "bg-[#A6A6A6] translate-x-[47vw] scale-x-[0.025] scale-y-[0.2] "
+            : "bg-[#DADADA]  "
         }
         ${
-          isActive && window.innerWidth > 766
-            ? "translate-x-[34vw] h-[78vh]   "
+          isActive && window.innerWidth > 766 && toggleButton === false
+            ? "translate-x-[32vw] h-[78vh]   "
             : ""
         }
         `}
