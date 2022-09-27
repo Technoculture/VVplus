@@ -17,13 +17,13 @@ const Navbar = ({
   clickSaveButton: CallableFunction;
 }) => {
   return (
-    <div className="flex items-center h-32 ">
+    <div className="flex items-center h-24 ">
       <nav
-        className={`container z-20 flex items-center justify-center h-16  shadow-[0_4px_40px_rgba(74,74,74,0.25)]  m-auto mt-6 font-sans text-lg duration-500 bg-[#C1C1C1] w-fit rounded-[20px]
+        className={`container z-20 flex items-center justify-center h-16  shadow-[0_4px_40px_rgba(74,74,74,0.25)]  m-auto my-[15px]  text-lg duration-500 bg-[#C1C1C1] w-fit rounded-[20px]
       ${myNavbar === true ? "pr-[10px]" : ""}
       `}
       >
-        <div className="text-[21px] flex gap-3 leading-[24px]  font-[400] md:px-10 px-8">
+        <div className="text-[21px] flex gap-3 leading-[24px] font-RobotoSerif font-[400] md:px-10 px-8">
           VV+
           <div className="items-center justify-center hidden gap-3 md:flex">
             <div className="h-6 w-[1.6px] bg-black"></div>
