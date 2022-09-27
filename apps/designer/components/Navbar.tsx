@@ -19,7 +19,7 @@ const Navbar = ({
   return (
     <div className="flex items-center h-24 ">
       <nav
-        className={`container z-20 flex items-center justify-center h-16  shadow-[0_4px_40px_rgba(74,74,74,0.25)]  m-auto my-[15px]  text-lg duration-500 bg-[#C1C1C1] w-fit rounded-[20px]
+        className={`container z-20 flex select-none items-center justify-center h-16  shadow-[0_4px_40px_rgba(74,74,74,0.25)]  m-auto my-[15px]  text-lg duration-500 bg-[#C1C1C1] w-fit rounded-[20px]
       ${myNavbar === true ? "pr-[10px]" : ""}
       `}
       >
