@@ -9,7 +9,7 @@ const HandleToggle = ({
 }) => {
   return (
     <button
-      className={`justify-center items-center hidden h-12  text-xl text-center duration-300    bg-gray-400 w-12 md:flex rounded-[15px]
+      className={` hidden md:flex justify-center text-xl py-[9px] px-[20px]  duration-300  rounded-[15px]   bg-gray-400 
               ${
                 toggleButton === true
                   ? "bg-[#D9D9D9]  ease-in"

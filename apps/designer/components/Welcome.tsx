@@ -27,7 +27,8 @@ const Welcome = ({
           z-[100] relative font-Roboto flex items-center justify-center w-[80vw]  mx-auto  sm:w-[250px] duration-500 ease-in-out  lg:w-[27vw] h-[74%] rounded-[20px]  
         ${
           toggleButton === true && isActive
-            ? "bg-[#A6A6A6] translate-x-[47vw] scale-x-[0.025] scale-y-[0.2]  "
+            ? //todo: add border radius on minimise pannel
+              "bg-[#A6A6A6] translate-x-[47vw] scale-x-[0.025] scale-y-[0.2] "
             : "bg-[#DADADA]  "
         }
         ${
