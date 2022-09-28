@@ -17,3 +17,4 @@ const MyApp: NextComponentType<AppContext, AppInitialProps, AppLayoutProps> = ({
 };
 
 export default MyApp;
+export { reportWebVitals } from "next-axiom";

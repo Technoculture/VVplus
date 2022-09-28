@@ -4,9 +4,14 @@
 //reactStrictMode: true,
 //});
 
+const { withAxiom } = require('next-axiom');
+
+module.exports = withAxiom({
+  // ... your existing config
+})
 /**
  * @type {import('next').NextConfig}
  **/
-const nextConfig = {
+const NextConfig = {
     /* config options here */
 };
