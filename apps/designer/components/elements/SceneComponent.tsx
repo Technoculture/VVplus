@@ -56,18 +56,21 @@ const ReactCanvas = () => {
       const light = new HemisphericLight("light", new Vector3(1, 1, 0), scene);
       light.intensity = 0.7;
       //code to be refactored more later
-      data[0].floors.map((element)=>{
+      data[0]?.floors.map((element)=>{
         return(
           BABYLON.SceneLoader.ImportMesh(
             "",
-            data[0].url,
+            data[0]?.url||" ",
             element.file,
             scene,
             (newMeshes)=>{
               // newMeshes[0].position.x=0
-              newMeshes[0].position.y=0
+              if(newMeshes[0]){
+                newMeshes[0].position.y=0
+                newMeshes[0].scaling = new Vector3(1,1,1)
+              }
               // newMeshes[0].position.z=0
-              newMeshes[0].scaling = new Vector3(1,1,1)
+              
             }
           )
         )

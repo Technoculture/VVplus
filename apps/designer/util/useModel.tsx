@@ -13,12 +13,14 @@ export default function useModel(
     if (isVisible) {
       BABYLON.SceneLoader.ImportMesh(
         "",
-        data[0].url,
+        data[0]?.url|| " ",
         fileName,
         scene,
         (newMeshes) => {
-          newMeshes[0].position.y = 0;
-          newMeshes[0].scaling = new Vector3(1, 1, 1);
+          if(newMeshes[0]){
+            newMeshes[0].position.y = 0;
+            newMeshes[0].scaling = new Vector3(1, 1, 1);
+          }
         }
       );
     }

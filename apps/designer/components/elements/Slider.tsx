@@ -9,6 +9,10 @@ export default function Slider() {
   const store = useStore();
   const [values, setValues] = React.useState([4]);
   // console.log(store.floor);
+  let dataLen=0;
+  if(data[0]){
+    dataLen=data[0].floors.length -1;
+  }
   return (
     <div className="w-full flex justify-center">
       <div className="w-80 p-10 border-4 border-red-300">
@@ -16,11 +20,11 @@ export default function Slider() {
         <Range
           step={1}
           min={0}
-          max={data[0].floors.length - 1}
+          max={dataLen}
           values={values}
           onChange={(values) => {
             setValues(values);
-            store.changeFloor(values[0]);
+            store.changeFloor(values[0] || 0);
           }}
           renderTrack={({ props, children }) => (
             <div
@@ -39,7 +43,7 @@ export default function Slider() {
         />
         <span>Floor: {values[0]}</span>
         <br />
-        <span>Set on 0 for plot and {data[0].floors.length - 1} for roof</span>
+        <span>Set on 0 for plot and {dataLen} for roof</span>
         <br />
         <br />
       </div>

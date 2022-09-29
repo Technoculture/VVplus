@@ -5,6 +5,7 @@ import useScene from "../../util/useScene";
 import data from "../../public/data.json";
 // import useStore from "../../global-stores/store";
 import useModel from "../../util/useModel";
+//import { string } from "zod";
 
 //Work under progress, the demo component contains the code that will use Zod and React Custom Hooks in order to render the scene. This will be a part of the code later on when the work with Zod is complete
 const myStyle = {
@@ -16,9 +17,12 @@ const Canvas = () => {
   // const store = useStore();
   const canvasRef = useRef(null);
   const sceneModel = useScene(canvasRef);
-  const buildingData = data[0].floors;
+  const buildingData = data.map((floors)=>{
+    return floors;
+  });
+  const filename=buildingData[0]?.type;
   //issue here -> repeated renderings of the model; doesnt work with slider for the floors
-  useModel(buildingData[0].file, sceneModel, true);
+  useModel(filename||" ", sceneModel, true);
   // useModel(buildingData[1].file, sceneModel, store.floor>=1);
   // useModel(buildingData[2].file, sceneModel, store.floor>=2);
   // useModel(buildingData[3].file, sceneModel, store.floor>=3);

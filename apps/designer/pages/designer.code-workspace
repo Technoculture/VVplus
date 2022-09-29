@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "designer",
+			"path": ".."
+		},
+		{
+			"name": "playwright",
+			"path": "../../../../../tutorial/trpc-prisma-starter/playwright"
+		}
+	],
+	"settings": {}
+}
