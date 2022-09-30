@@ -1,0 +1,82 @@
+[{
+    "uuid": "1",
+    "type": "designer",
+    "baseUrl": "https://assets.vvplus.cc/draco/",
+    "floors":[
+        {
+            "id": "0",
+            "floorName": "ground-floor",
+            "floorStructure": [
+                {
+                    "structId": 1,
+                    "file": "ground_structure.glb",
+                    "description": "structure for the ground floor"
+                },
+                {
+                    "structId": 2,
+                    "file": "ground_molding.glb",
+                    "description": "molding for the ground floor"
+                }
+            ]
+        },
+        {
+            "id": "1",
+            "floorName": "first-floor",
+            "floorStructure": [
+                {
+                    "structId": 1,
+                    "file": "first_structure.glb",
+                    "description": "structure for first floor"
+                },
+                {
+                    "structId": 2,
+                    "file": "first_moldings.glb",
+                    "description": "molding for first floor"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "floorName": "second-floor",
+            "floorStructure": [
+                {
+                    "structId": 1,
+                    "file": "second_structure.glb",
+                    "description": "structure for the second floor"
+                },
+                {
+                    "structId": 2,
+                    "file": "second_moldings.glb",
+                    "description": "moldings for the second floor"
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "floorName": "roof",
+            "floorStructure": [
+                {
+                    "structId": 1,
+                    "file": "roof_structure.glb",
+                    "description": "structure for the roof"
+                },
+                {
+                    "structId": 2,
+                    "file": "roof_moldings.glb",
+                    "description": "moldings for the roof"
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "floorName": "mumty",
+            "floorStructure": [
+                {
+                    "structId": 1,
+                    "file": "mumty_structure.glb",
+                    "description": "structure for the mumty"
+                }
+            ]
+        }
+    ]
+}]
