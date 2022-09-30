@@ -1,7 +1,7 @@
 import Navbar from "./Navbar";
 import React from "react";
 import { ScriptProps } from "next/script";
-import LoadingBar from "./elements/LoadingBar";
+import LoadingBar from "./LoadingBar";
 import Welcome from "./Welcome";
 import NewDesign from "./NewDesign";
 import useStore from "../globalStore/navigationStore";
