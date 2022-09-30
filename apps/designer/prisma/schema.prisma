@@ -8,30 +8,30 @@ datasource db {
 }
 
 model asset {
-  asset_id     Bytes   @id @db.Binary(16)
+  asset_id     String   @id @db.VarChar(255)
   name         String  @db.VarChar(255)
   description  String? @db.VarChar(255)
-  category_id  Bytes   @unique(map: "category_idx") @db.Binary(16)
+  category_id  String   @unique(map: "category_idx") @db.VarChar(255)
   three_d_url  String? @db.VarChar(255)
   thumbnail_sm String  @db.VarChar(255)
   hero         String  @db.VarChar(255)
 }
 
 model assetcategory {
-  category_id Bytes   @id @db.Binary(16)
+  category_id String   @id @db.VarChar(255)
   name        String? @db.VarChar(255)
   description String  @db.VarChar(255)
 }
 
 model model {
-  model_id     Bytes @id @db.Binary(16)
-  user_id      Bytes @db.Binary(16)
-  main_gate    Bytes @db.Binary(16)
-  boundary     Bytes @db.Binary(16)
-  balcony      Bytes @db.Binary(16)
-  structure_gf Bytes @db.Binary(16)
-  structure_ff Bytes @db.Binary(16)
-  structure_sf Bytes @db.Binary(16)
+  model_id     String @id @db.VarChar(255)
+  user_id      String @db.VarChar(255)
+  main_gate    String @db.VarChar(255)
+  boundary     String @db.VarChar(255)
+  balcony      String @db.VarChar(255)
+  structure_gf String @db.VarChar(255)
+  structure_ff String @db.VarChar(255)
+  structure_sf String @db.VarChar(255)
 
   @@index([balcony], map: "balcony_idx")
   @@index([boundary], map: "boundary_idx")
@@ -43,13 +43,13 @@ model model {
 }
 
 model template {
-  template_id Bytes  @id @db.Binary(16)
-  model_id    Bytes  @unique(map: "Template_model_id_key") @db.Binary(16)
+  template_id String  @id @db.VarChar(255)
+  model_id    String  @unique(map: "Template_model_id_key") @db.VarChar(255)
   name        String @db.VarChar(255)
 }
 
 model user {
-  user_id      Bytes  @id @db.Binary(16)
+  user_id      String  @id @db.VarChar(255)
   name         String @db.VarChar(255)
   phone_number String @db.VarChar(255)
   email_id     String @db.VarChar(255)

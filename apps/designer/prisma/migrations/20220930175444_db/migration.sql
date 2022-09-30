@@ -1,9 +1,9 @@
 -- CreateTable
 CREATE TABLE `asset` (
-    `asset_id` BINARY(16) NOT NULL,
+    `asset_id` VARCHAR(255) NOT NULL,
     `name` VARCHAR(255) NOT NULL,
     `description` VARCHAR(255) NULL,
-    `category_id` BINARY(16) NOT NULL,
+    `category_id` VARCHAR(255) NOT NULL,
     `three_d_url` VARCHAR(255) NULL,
     `thumbnail_sm` VARCHAR(255) NOT NULL,
     `hero` VARCHAR(255) NOT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE `asset` (
 
 -- CreateTable
 CREATE TABLE `assetcategory` (
-    `category_id` BINARY(16) NOT NULL,
+    `category_id` VARCHAR(255) NOT NULL,
     `name` VARCHAR(255) NULL,
     `description` VARCHAR(255) NOT NULL,
 
@@ -23,14 +23,14 @@ CREATE TABLE `assetcategory` (
 
 -- CreateTable
 CREATE TABLE `model` (
-    `model_id` BINARY(16) NOT NULL,
-    `user_id` BINARY(16) NOT NULL,
-    `main_gate` BINARY(16) NOT NULL,
-    `boundary` BINARY(16) NOT NULL,
-    `balcony` BINARY(16) NOT NULL,
-    `structure_gf` BINARY(16) NOT NULL,
-    `structure_ff` BINARY(16) NOT NULL,
-    `structure_sf` BINARY(16) NOT NULL,
+    `model_id` VARCHAR(255) NOT NULL,
+    `user_id` VARCHAR(255) NOT NULL,
+    `main_gate` VARCHAR(255) NOT NULL,
+    `boundary` VARCHAR(255) NOT NULL,
+    `balcony` VARCHAR(255) NOT NULL,
+    `structure_gf` VARCHAR(255) NOT NULL,
+    `structure_ff` VARCHAR(255) NOT NULL,
+    `structure_sf` VARCHAR(255) NOT NULL,
 
     INDEX `balcony_idx`(`balcony`),
     INDEX `boundary_idx`(`boundary`),
@@ -44,8 +44,8 @@ CREATE TABLE `model` (
 
 -- CreateTable
 CREATE TABLE `template` (
-    `template_id` BINARY(16) NOT NULL,
-    `model_id` BINARY(16) NOT NULL,
+    `template_id` VARCHAR(255) NOT NULL,
+    `model_id` VARCHAR(255) NOT NULL,
     `name` VARCHAR(255) NOT NULL,
 
     UNIQUE INDEX `Template_model_id_key`(`model_id`),
@@ -54,7 +54,7 @@ CREATE TABLE `template` (
 
 -- CreateTable
 CREATE TABLE `user` (
-    `user_id` BINARY(16) NOT NULL,
+    `user_id` VARCHAR(255) NOT NULL,
     `name` VARCHAR(255) NOT NULL,
     `phone_number` VARCHAR(255) NOT NULL,
     `email_id` VARCHAR(255) NOT NULL,
