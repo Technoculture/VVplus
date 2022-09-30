@@ -1,19 +1,16 @@
 import "../styles/globals.css";
 import Layout from "../components/Layout";
+import { AppProps } from "next/app";
 import { AppContext, AppInitialProps, AppLayoutProps } from "next/app";
-import type { NextComponentType } from "next";
 
-const MyApp: NextComponentType<AppContext, AppInitialProps, AppLayoutProps> = ({
-  Component,
-  pageProps,
-}: AppLayoutProps) => {
+
+export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <>
       <Layout>
-        <Component {...pageProps} />
+          <Component {...pageProps} />
       </Layout>
     </>
   );
-};
+}
 
-export default MyApp;

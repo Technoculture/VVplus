@@ -1,0 +1,54 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Asset {
+  asset_id Bytes @db.Binary(16) @id
+  name     String @db.VarChar(255) 
+  description String? @db.VarChar(255) 
+  category_id Bytes @db.Binary(16) 
+  three_d_url   String? @db.VarChar(255) 
+  thumbnail_sm  String @db.VarChar(255) 
+  hero   String  @db.VarChar(255)   
+  @@unique([category_id], map: "category_idx")
+}
+
+model AssetCategory{
+  category_id Bytes @db.Binary(16) @id 
+  name        String?  @db.VarChar(255) 
+  description   String @db.VarChar(255) 
+}
+
+model Model{
+  model_id Bytes @db.Binary(16) @id 
+  user_id  Bytes @db.Binary(16) 
+  main_gate Bytes @db.Binary(16) 
+  boundary  Bytes @db.Binary(16) 
+  balcony  Bytes @db.Binary(16) 
+  structure_gf Bytes @db.Binary(16) 
+  structure_ff  Bytes @db.Binary(16) 
+  structure_sf Bytes @db.Binary(16) 
+
+}
+
+model Template{
+  template_id Bytes @db.Binary(16) @id
+  model_id  Bytes @db.Binary(16) @unique
+  name String @db.VarChar(255) 
+}
+
+
+model User {
+  user_id Bytes @db.Binary(16) @id
+  name   String @db.VarChar(255) 
+  phone_number String @db.VarChar(255) 
+  email_id String @db.VarChar(255) 
+}

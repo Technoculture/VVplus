@@ -13,11 +13,10 @@ import useStore from "../../global-stores/store";
 // import getFileName from "../../util/getFile";
 // import useModel from "../../util/useModel";
 
-
 //currently this is the scene which is being deployed on the active website
 //The zod error is not fixed so donot include and use getFileName() here in any manner.
 //After refactoring and development of the code on a furthr basis, the code will be completelty changed with the use of Custom hooks and Zustand, Zod
-//Using data.json currently instead of house.json since it is not usable yet. 
+//Using data.json currently instead of house.json since it is not usable yet.
 
 const myStyle = {
   width: "100%",
@@ -56,22 +55,21 @@ const ReactCanvas = () => {
       const light = new HemisphericLight("light", new Vector3(1, 1, 0), scene);
       light.intensity = 0.7;
       //code to be refactored more later
-      data[0].floors.map((element)=>{
-        return(
-          BABYLON.SceneLoader.ImportMesh(
-            "",
-            data[0].url,
-            element.file,
-            scene,
-            (newMeshes)=>{
-              // newMeshes[0].position.x=0
-              newMeshes[0].position.y=0
-              // newMeshes[0].position.z=0
-              newMeshes[0].scaling = new Vector3(1,1,1)
+      data[0]?.floors.map((element) => {
+        return BABYLON.SceneLoader.ImportMesh(
+          "",
+          data[0]?.url||" ",
+          element.file,
+          scene,
+          (newMeshes) => {
+            // newMeshes[0].position.x=0
+            if(newMeshes[0]){
+              newMeshes[0].position.y = 0;
+              newMeshes[0].scaling = new Vector3(1, 1, 1);
             }
-          )
-        )
-      })
+          }
+        );
+      });
       return scene;
     };
     const scene = createScene();
