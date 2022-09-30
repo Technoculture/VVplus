@@ -9,7 +9,6 @@ import useStore from "../globalStore/navigationStore";
 //Slider component is still under progress and so, has been commented out. Work Under Progres.
 //Canvas component is still under progress and so, has been commented out. Work Under Progres. It will contain the newer code with the functionable Zod fetching later
 
-
 export default function Web(): JSX.Element {
   const { isActive } = useStore();
   return (

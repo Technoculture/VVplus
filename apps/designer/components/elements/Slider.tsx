@@ -3,7 +3,6 @@ import { Range } from "react-range";
 import data from "../../public/data.json";
 import useStore from "../../global-stores/store";
 
-
 // Not in working condition yet, will be updated later with useStore and Zod which will implement feature to turn specific floors on/off depending on user's request
 export default function Slider() {
   const store = useStore();

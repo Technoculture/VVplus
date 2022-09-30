@@ -13,25 +13,21 @@ import useStore from "../../global-stores/store";
 // import getFileName from "../../util/getFile";
 // import useModel from "../../util/useModel";
 
-
 //currently this is the scene which is being deployed on the active website
 //The zod error is not fixed so donot include and use getFileName() here in any manner.
 //After refactoring and development of the code on a furthr basis, the code will be completelty changed with the use of Custom hooks and Zustand, Zod
-//Using data.json currently instead of house.json since it is not usable yet. 
-
-const myStyle = {
-  width: "100%",
-  height: "100vh",
-  position: "absolute",
-  top: "0px",
-};
+//Using data.json currently instead of house.json since it is not usable yet.
 
 const config = {
   amount: { x: 50, z: 50 },
   separation: 2,
 };
 
-const ReactCanvas = () => {
+interface ReactCanvasProps {
+  className: string;
+}
+
+const ReactCanvas = ({ className }: ReactCanvasProps) => {
   const canvasRef = useRef(null);
   const store = useStore();
   // console.log(getFileName());
@@ -59,22 +55,20 @@ const ReactCanvas = () => {
       light.intensity = 0.7;
 
       //code to be refactored more later
-      data[0].floors.map((element)=>{
-        return(
-          BABYLON.SceneLoader.ImportMesh(
-            "",
-            data[0].url,
-            element.file,
-            scene,
-            (newMeshes)=>{
-              // newMeshes[0].position.x=0
-              newMeshes[0].position.y=0
-              // newMeshes[0].position.z=0
-              newMeshes[0].scaling = new Vector3(1,1,1)
-            }
-          )
-        )
-      })
+      data[0].floors.map((element) => {
+        return BABYLON.SceneLoader.ImportMesh(
+          "",
+          data[0].url,
+          element.file,
+          scene,
+          (newMeshes) => {
+            // newMeshes[0].position.x=0
+            newMeshes[0].position.y = 0;
+            // newMeshes[0].position.z=0
+            newMeshes[0].scaling = new Vector3(1, 1, 1);
+          }
+        );
+      });
 
       return scene;
     };
@@ -87,7 +81,17 @@ const ReactCanvas = () => {
     });
   }, [minZ, store.floor]);
 
-  return <canvas style={myStyle} ref={canvasRef}></canvas>;
+  return (
+    <canvas
+      style={{
+        width: "100%",
+        height: "100vh",
+        position: "absolute",
+        top: "0px",
+      }}
+      ref={canvasRef}
+    ></canvas>
+  );
 };
 export default ReactCanvas;
 
