@@ -58,12 +58,12 @@ const ReactCanvas = () => {
       data[0]?.floors.map((element) => {
         return BABYLON.SceneLoader.ImportMesh(
           "",
-          data[0]?.url||" ",
+          data[0]?.url || " ",
           element.file,
           scene,
           (newMeshes) => {
             // newMeshes[0].position.x=0
-            if(newMeshes[0]){
+            if (newMeshes[0]) {
               newMeshes[0].position.y = 0;
               newMeshes[0].scaling = new Vector3(1, 1, 1);
             }

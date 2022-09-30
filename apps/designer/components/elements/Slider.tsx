@@ -7,9 +7,9 @@ import useStore from "../../global-stores/store";
 export default function Slider() {
   const store = useStore();
   const [values, setValues] = React.useState([4]);
-  let dataLen=0;
-  if(data[0]){
-    dataLen=data[0].floors.length -1;
+  let dataLen = 0;
+  if (data[0]) {
+    dataLen = data[0].floors.length - 1;
   }
   // console.log(store.floor);
   return (
