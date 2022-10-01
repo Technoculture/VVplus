@@ -1,4 +1,5 @@
 # Objective
+
 Design of a 3D Single page application for customization of houses.
 
 > ⚠️ Do not build individual apps, instead always build the monorepo from the root directory of the repo
@@ -8,6 +9,7 @@ Design of a 3D Single page application for customization of houses.
 - Typescript: This project uses TS on both frontend and backend
 
 ### Frontend
+
 - Nextjs
 - Tailwind for UI
 - Zustand for Global State
@@ -15,6 +17,7 @@ Design of a 3D Single page application for customization of houses.
 - Babylonjs for 3D
 
 ### Backend
+
 - Nextjs API routes for backend
 - Tailwind for MySQL hosting
 - MySQL Db
