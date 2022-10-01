@@ -14,7 +14,7 @@ export default function Web(): JSX.Element {
   return (
     <div>
       {/* <Demo/> */}
-      <ReactCanvas className={`${isActive === true ? "z-[1]" : "z-[-10]"}`} />
+      <ReactCanvas isActive={isActive} />
     </div>
   );
 }

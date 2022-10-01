@@ -5,13 +5,11 @@ const Welcome = ({
   welcomeClick,
   toggleButton,
   myToggleButton,
-  openWelcome,
 }: {
   isActive: boolean;
   toggleButton: boolean;
   welcomeClick: CallableFunction;
   myToggleButton: CallableFunction;
-  openWelcome: boolean;
 }) => {
   return window.innerWidth < 768 && isActive === true ? (
     <div className="z-30 flex gap-2 px-6 mt-[45vh] box-border overflow-x-scroll overflow-y-hidden font-sans snap-mandatory scroll-smooth snap-x md:hidden whitespace-nowrap">

@@ -10,6 +10,7 @@ import "@babylonjs/loaders/glTF";
 import * as BABYLON from "@babylonjs/core";
 import data from "../../public/data.json";
 import useStore from "../../global-stores/store";
+// import navigationUseStore from "../../globalStore/navigationStore";
 // import getFileName from "../../util/getFile";
 // import useModel from "../../util/useModel";
 
@@ -23,11 +24,11 @@ const config = {
   separation: 2,
 };
 
-interface ReactCanvasProps {
-  className: string;
-}
+// interface ReactCanvasProps {
+//   className: string;
+// }
 
-const ReactCanvas = ({ className }: ReactCanvasProps) => {
+const ReactCanvas = ({ isActive }: { isActive: boolean }) => {
   const canvasRef = useRef(null);
   const store = useStore();
   // console.log(getFileName());
@@ -83,12 +84,9 @@ const ReactCanvas = ({ className }: ReactCanvasProps) => {
 
   return (
     <canvas
-      style={{
-        width: "100%",
-        height: "100vh",
-        position: "absolute",
-        top: "0px",
-      }}
+      className={`
+      absolute top-0 w-full h-screen
+      ${isActive === true ? "z-[1]" : "z-[-100]"}`}
       ref={canvasRef}
     ></canvas>
   );

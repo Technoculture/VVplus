@@ -12,7 +12,7 @@ type store = {
   clickSaveButton: CallableFunction;
   closeSaveButton: CallableFunction;
 };
-const useStore = create<store>((set) => ({
+const navigationUseStore = create<store>((set) => ({
   openWelcome: false,
   handleClick: () => {
     set(() => ({
@@ -56,4 +56,4 @@ const useStore = create<store>((set) => ({
     }));
   },
 }));
-export default useStore;
+export default navigationUseStore;

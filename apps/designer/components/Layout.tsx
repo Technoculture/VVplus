@@ -5,7 +5,7 @@ import { ScriptProps } from "next/script";
 import LoadingBar from "./LoadingBar";
 import Welcome from "./Welcome";
 import NewDesign from "./NewDesign";
-import useStore from "../globalStore/navigationStore";
+import navigationUseStore from "../globalStore/navigationStore";
 import SavePopup from "./SavePopup";
 
 const Layout: React.FC<ScriptProps> = ({ children }) => {
@@ -22,7 +22,7 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
     clickSaveButton,
     closeSaveButton,
     openPopup,
-  } = useStore();
+  } = navigationUseStore();
 
   return (
     <>
@@ -41,7 +41,6 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
           isActive={isActive}
           myToggleButton={myToggleButton}
           toggleButton={toggleButton}
-          openWelcome={openWelcome}
         />
       )}
       {openPopup === true && (
