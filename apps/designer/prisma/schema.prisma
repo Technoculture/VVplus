@@ -7,6 +7,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// bytes and the binary type are not suppported by the prisma this feature wwill
+// be added in the future so that i havve changed all the binary types to the string
+
+
 model asset {
   asset_id     String   @id @db.VarChar(255)
   name         String  @db.VarChar(255)
