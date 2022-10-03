@@ -52,9 +52,17 @@ const ReactCanvas = ({ isActive }: { isActive: boolean }) => {
       camera.panningSensibility = 10;
       camera.lowerRadiusLimit = 500;
       camera.upperRadiusLimit = 2000;
-      const light = new HemisphericLight("light", new Vector3(1, 1, 0), scene);
+      const light = new HemisphericLight("light", new Vector3(-1, 1, -1), scene);
       light.intensity = 0.7;
-
+      const skyBox = BABYLON.MeshBuilder.CreateBox(
+        "skyBox",
+        { size: 10000.0 },
+        scene
+      );
+      const skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
+      skyboxMaterial.backFaceCulling = false;
+      skyboxMaterial.emissiveColor = new BABYLON.Color3(0.77, 0.69, 0.69);
+      skyBox.material = skyboxMaterial;
       //code to be refactored more later
       data.floors.map((element) => {
         element.floorStructure.map((e) => {
@@ -65,10 +73,10 @@ const ReactCanvas = ({ isActive }: { isActive: boolean }) => {
             scene,
             (newMeshes) => {
               if (newMeshes[0]) {
-                newMeshes[0].position.y = -0;
+                newMeshes[0].position.y = 0;
                 newMeshes[0].position.x = 0;
                 newMeshes[0].position.z = 300;
-                newMeshes[0].scaling = new Vector3(50, 50, 50);
+                newMeshes[0].scaling = new Vector3(40, 40, 40);
               }
             }
           );
