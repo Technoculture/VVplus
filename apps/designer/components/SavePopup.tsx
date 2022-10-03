@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, RefObject } from "react";
+import React, { useRef } from "react";
 import { ImCross } from "react-icons/im";
+import useOnClickOutside from ".././util/useOnClickOutside";
 
 //Todo : Animation on savepop component left
 interface SavePopupProps {
@@ -48,27 +49,3 @@ const SavePopup = ({ closeSavePopup, isSavePopupOpen }: SavePopupProps) => {
 };
 
 export default SavePopup;
-
-const useOnClickOutside = <T extends HTMLElement = HTMLElement>(
-  ref: RefObject<T>,
-  handler: (event: Event) => void
-) => {
-  useEffect(() => {
-    const listener = (event: Event) => {
-      const el = ref?.current;
-      if (!el || el.contains((event?.target as Node) || null)) {
-        return;
-      }
-
-      handler(event);
-    };
-
-    document.addEventListener("mousedown", listener);
-    document.removeEventListener("touchstart", listener);
-
-    return () => {
-      document.removeEventListener("mousedown", listener);
-      document.removeEventListener("touchstart", listener);
-    };
-  }, [ref, handler]);
-};

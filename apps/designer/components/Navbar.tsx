@@ -1,16 +1,15 @@
 import React from "react";
 import HandleToggle from "./Buttons/HandleToggle";
-import NewButton from "./Buttons/NewButton";
-import SaveButton from "./Buttons/SaveButton";
+import MenuButton from "./Buttons/MenuButton";
 interface NavbarProps {
-  isNavbarExpand: boolean;
+  isNavbarOpen: boolean;
   isToggled: boolean;
   handleClickForToggle: CallableFunction;
-  handleClickOnNewButton: CallableFunction;
-  handleClickOnSaveButton: CallableFunction;
+  handleClickOnNewButton: () => void;
+  handleClickOnSaveButton: () => void;
 }
 const Navbar = ({
-  isNavbarExpand,
+  isNavbarOpen,
   isToggled,
   handleClickForToggle,
   handleClickOnNewButton,
@@ -30,10 +29,18 @@ const Navbar = ({
           </div>
         </div>
 
-        {isNavbarExpand === true && window.innerWidth > 768 ? (
+        {isNavbarOpen === true && window.innerWidth > 768 ? (
           <div className="flex gap-2 text-[20px] leading-6 ">
-            <NewButton handleClickOnNewButton={handleClickOnNewButton} />
-            <SaveButton handleClickOnSaveButton={handleClickOnSaveButton} />
+            <MenuButton
+              text={"New"}
+              handleClickOnNewButton={handleClickOnNewButton}
+              onClick={handleClickOnNewButton}
+            />
+            <MenuButton
+              text={"Save"}
+              handleClickOnSaveButton={handleClickOnSaveButton}
+              onClick={handleClickOnSaveButton}
+            />
             <HandleToggle
               isToggled={isToggled}
               handleClickForToggle={handleClickForToggle}
@@ -41,11 +48,19 @@ const Navbar = ({
           </div>
         ) : (
           <div
-            className={`flex  gap-2 md:hidden
-          ${isNavbarExpand === true ? "" : "hidden"}`}
+            className={`flex  gap-2 md:hidden mr-[10px]
+          ${isNavbarOpen === true ? "" : "hidden"}`}
           >
-            <NewButton handleClickOnNewButton={handleClickOnNewButton} />
-            <SaveButton handleClickOnSaveButton={handleClickOnSaveButton} />
+            <MenuButton
+              text={"New"}
+              handleClickOnNewButton={handleClickOnNewButton}
+              onClick={handleClickOnNewButton}
+            />
+            <MenuButton
+              text={"Save"}
+              handleClickOnSaveButton={handleClickOnSaveButton}
+              onClick={handleClickOnSaveButton}
+            />
           </div>
         )}
       </nav>

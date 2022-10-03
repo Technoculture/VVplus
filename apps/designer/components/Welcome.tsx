@@ -2,7 +2,7 @@ import React from "react";
 import Card from "./Cards/Card";
 interface WelcomePanelProps {
   isWelcomePanelActive: boolean;
-  handleClickOnWelcome: CallableFunction;
+  handleClickOnWelcome: () => void;
   isToggled: boolean;
   handleClickForToggle: CallableFunction;
 }
@@ -38,12 +38,7 @@ const Welcome = ({
         }
         `}
     >
-      <h2
-        className="cursor-pointer"
-        onClick={() => {
-          handleClickOnWelcome();
-        }}
-      >
+      <h2 className="cursor-pointer" onClick={handleClickOnWelcome}>
         {isWelcomePanelActive === false ? "Welcome " : ""}
       </h2>
     </div>

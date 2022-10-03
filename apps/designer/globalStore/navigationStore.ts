@@ -2,14 +2,14 @@ import create from "zustand";
 type store = {
   isWelcomeComponentOpen: boolean;
   handleClickOnNewDesign: CallableFunction;
-  isNavbarExpand: boolean;
-  handleClickOnWelcome: CallableFunction;
+  isNavbarOpen: boolean;
+  handleClickOnWelcome: () => void;
   isWelcomePanelActive: boolean;
   isToggled: boolean;
   handleClickForToggle: CallableFunction;
-  handleClickOnNewButton: CallableFunction;
+  handleClickOnNewButton: () => void;
   isSavePopupOpen: boolean;
-  handleClickOnSaveButton: CallableFunction;
+  handleClickOnSaveButton: () => void;
   closeSavePopup: CallableFunction;
 };
 const navigationUseStore = create<store>((set) => ({
@@ -21,10 +21,10 @@ const navigationUseStore = create<store>((set) => ({
   },
 
   isWelcomePanelActive: false, //for welcome component
-  isNavbarExpand: false, //for navbar by default is closed
+  isNavbarOpen: false, //for navbar by default is closed
   handleClickOnWelcome: () => {
     set(() => ({
-      isNavbarExpand: true,
+      isNavbarOpen: true,
       isWelcomePanelActive: true,
     }));
   },
@@ -38,7 +38,7 @@ const navigationUseStore = create<store>((set) => ({
   handleClickOnNewButton: () => {
     set(() => ({
       isWelcomePanelActive: false,
-      isNavbarExpand: false,
+      isNavbarOpen: false,
       isToggled: false,
     }));
   },

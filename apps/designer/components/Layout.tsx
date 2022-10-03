@@ -11,7 +11,7 @@ import SavePopup from "./SavePopup";
 const Layout: React.FC<ScriptProps> = ({ children }) => {
   // TODO: improve this type later
   const {
-    isNavbarExpand,
+    isNavbarOpen,
     isWelcomePanelActive,
     handleClickOnWelcome,
     isWelcomeComponentOpen,
@@ -27,7 +27,7 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
   return (
     <>
       <Navbar
-        isNavbarExpand={isNavbarExpand}
+        isNavbarOpen={isNavbarOpen}
         isToggled={isToggled}
         handleClickForToggle={handleClickForToggle}
         handleClickOnNewButton={handleClickOnNewButton}
