@@ -2,13 +2,11 @@ import React, { useEffect, useRef, RefObject } from "react";
 import { ImCross } from "react-icons/im";
 
 //Todo : Animation on savepop component left
-const SavePopup = ({
-  closeSavePopup,
-  isSavePopupOpen,
-}: {
+interface SavePopupProps {
   closeSavePopup: CallableFunction;
   isSavePopupOpen: boolean;
-}) => {
+}
+const SavePopup = ({ closeSavePopup, isSavePopupOpen }: SavePopupProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
   const clickOutsidehandler = () => {

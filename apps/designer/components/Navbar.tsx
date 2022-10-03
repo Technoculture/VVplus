@@ -2,20 +2,20 @@ import React from "react";
 import HandleToggle from "./Buttons/HandleToggle";
 import NewButton from "./Buttons/NewButton";
 import SaveButton from "./Buttons/SaveButton";
-
+interface NavbarProps {
+  isNavbarExpand: boolean;
+  isToggled: boolean;
+  handleClickForToggle: CallableFunction;
+  handleClickOnNewButton: CallableFunction;
+  handleClickOnSaveButton: CallableFunction;
+}
 const Navbar = ({
   isNavbarExpand,
   isToggled,
   handleClickForToggle,
   handleClickOnNewButton,
   handleClickOnSaveButton,
-}: {
-  isNavbarExpand: boolean;
-  isToggled: boolean;
-  handleClickForToggle: CallableFunction;
-  handleClickOnNewButton: CallableFunction;
-  handleClickOnSaveButton: CallableFunction;
-}) => {
+}: NavbarProps) => {
   return (
     <div className="flex items-center h-24 ">
       <nav

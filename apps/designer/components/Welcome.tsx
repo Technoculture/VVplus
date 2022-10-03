@@ -1,16 +1,17 @@
 import React from "react";
 import Card from "./Cards/Card";
+interface WelcomePanelProps {
+  isWelcomePanelActive: boolean;
+  handleClickOnWelcome: CallableFunction;
+  isToggled: boolean;
+  handleClickForToggle: CallableFunction;
+}
 const Welcome = ({
   isWelcomePanelActive,
   handleClickOnWelcome,
   isToggled,
   handleClickForToggle,
-}: {
-  isWelcomePanelActive: boolean;
-  isToggled: boolean;
-  handleClickOnWelcome: CallableFunction;
-  handleClickForToggle: CallableFunction;
-}) => {
+}: WelcomePanelProps) => {
   return window.innerWidth < 768 && isWelcomePanelActive === true ? (
     <div className="z-30 flex gap-2 px-6 mt-[45vh] box-border overflow-x-scroll overflow-y-hidden font-sans snap-mandatory scroll-smooth snap-x md:hidden whitespace-nowrap">
       <Card />

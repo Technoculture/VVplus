@@ -1,12 +1,12 @@
 import React from "react";
-
+interface HandleToggleProps {
+  isToggled: boolean;
+  handleClickForToggle: CallableFunction;
+}
 const HandleToggle = ({
   isToggled,
   handleClickForToggle,
-}: {
-  isToggled: boolean;
-  handleClickForToggle: CallableFunction;
-}) => {
+}: HandleToggleProps) => {
   return (
     <button
       className={` hidden md:flex justify-center text-xl py-[9px] px-[20px] mr-[10px] duration-300  rounded-[15px]   bg-gray-400 
