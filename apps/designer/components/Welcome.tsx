@@ -1,17 +1,17 @@
 import React from "react";
 import Card from "./Cards/Card";
 const Welcome = ({
-  isActive,
-  welcomeClick,
-  toggleButton,
-  myToggleButton,
+  isWelcomePanelActive,
+  handleClickOnWelcome,
+  isToggled,
+  handleClickForToggle,
 }: {
-  isActive: boolean;
-  toggleButton: boolean;
-  welcomeClick: CallableFunction;
-  myToggleButton: CallableFunction;
+  isWelcomePanelActive: boolean;
+  isToggled: boolean;
+  handleClickOnWelcome: CallableFunction;
+  handleClickForToggle: CallableFunction;
 }) => {
-  return window.innerWidth < 768 && isActive === true ? (
+  return window.innerWidth < 768 && isWelcomePanelActive === true ? (
     <div className="z-30 flex gap-2 px-6 mt-[45vh] box-border overflow-x-scroll overflow-y-hidden font-sans snap-mandatory scroll-smooth snap-x md:hidden whitespace-nowrap">
       <Card />
       <Card />
@@ -21,17 +21,17 @@ const Welcome = ({
   ) : (
     <div
       onClick={() => {
-        isActive === true ? myToggleButton(toggleButton) : "";
+        isWelcomePanelActive === true ? handleClickForToggle(isToggled) : "";
       }}
       className={`
           z-[100] relative font-Roboto flex items-center justify-center w-[80vw]   mx-auto sm:w-[250px] ease-in-out duration-500   md:w-[27vw] h-[74%] rounded-[20px]  
         ${
-          toggleButton === true && isActive
+          isToggled === true && isWelcomePanelActive
             ? "bg-[#A6A6A6] translate-x-[47vw] h-[113px] !w-[10px] mt-[30vh]   "
             : "bg-[#DADADA]   "
         }
         ${
-          isActive && window.innerWidth > 766 && toggleButton === false
+          isWelcomePanelActive && window.innerWidth > 766 && isToggled === false
             ? "translate-x-[32vw] !h-[75%]  "
             : ""
         }
@@ -40,10 +40,10 @@ const Welcome = ({
       <h2
         className="cursor-pointer"
         onClick={() => {
-          welcomeClick();
+          handleClickOnWelcome();
         }}
       >
-        {isActive === false ? "Welcome " : ""}
+        {isWelcomePanelActive === false ? "Welcome " : ""}
       </h2>
     </div>
   );

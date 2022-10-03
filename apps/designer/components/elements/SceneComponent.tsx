@@ -28,7 +28,11 @@ const config = {
 //   className: string;
 // }
 
-const ReactCanvas = ({ isActive }: { isActive: boolean }) => {
+const ReactCanvas = ({
+  isWelcomePanelActive,
+}: {
+  isWelcomePanelActive: boolean;
+}) => {
   const canvasRef = useRef(null);
   const store = useStore();
   // console.log(getFileName());
@@ -86,7 +90,7 @@ const ReactCanvas = ({ isActive }: { isActive: boolean }) => {
     <canvas
       className={`
       absolute top-0 w-full h-screen
-      ${isActive === true ? "z-[1]" : "z-[-100]"}`}
+      ${isWelcomePanelActive === true ? "z-[1]" : "z-[-100]"}`}
       ref={canvasRef}
     ></canvas>
   );

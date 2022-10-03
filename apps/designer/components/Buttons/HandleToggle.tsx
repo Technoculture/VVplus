@@ -1,25 +1,25 @@
 import React from "react";
 
 const HandleToggle = ({
-  toggleButton,
-  myToggleButton,
+  isToggled,
+  handleClickForToggle,
 }: {
-  toggleButton: boolean;
-  myToggleButton: CallableFunction;
+  isToggled: boolean;
+  handleClickForToggle: CallableFunction;
 }) => {
   return (
     <button
       className={` hidden md:flex justify-center text-xl py-[9px] px-[20px] mr-[10px] duration-300  rounded-[15px]   bg-gray-400 
               ${
-                toggleButton === true
+                isToggled === true
                   ? "bg-[#D9D9D9]  ease-in"
                   : "bg-[#A6A6A6]    ease-out"
               }`}
       onClick={() => {
-        myToggleButton(toggleButton);
+        handleClickForToggle(isToggled);
       }}
     >
-      {toggleButton === false ? "-" : "+"}
+      {isToggled === false ? "-" : "+"}
     </button>
   );
 };

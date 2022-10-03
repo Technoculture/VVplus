@@ -10,11 +10,11 @@ import useStore from "../globalStore/navigationStore";
 //Canvas component is still under progress and so, has been commented out. Work Under Progres. It will contain the newer code with the functionable Zod fetching later
 
 export default function Web(): JSX.Element {
-  const { isActive } = useStore();
+  const { isWelcomePanelActive } = useStore();
   return (
     <div>
       {/* <Demo/> */}
-      <ReactCanvas isActive={isActive} />
+      <ReactCanvas isWelcomePanelActive={isWelcomePanelActive} />
     </div>
   );
 }

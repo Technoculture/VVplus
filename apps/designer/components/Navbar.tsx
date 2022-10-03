@@ -4,17 +4,17 @@ import NewButton from "./Buttons/NewButton";
 import SaveButton from "./Buttons/SaveButton";
 
 const Navbar = ({
-  myNavbar,
-  toggleButton,
-  myToggleButton,
-  newButtonClick,
-  clickSaveButton,
+  isNavbarExpand,
+  isToggled,
+  handleClickForToggle,
+  handleClickOnNewButton,
+  handleClickOnSaveButton,
 }: {
-  myNavbar: boolean;
-  toggleButton: boolean;
-  myToggleButton: CallableFunction;
-  newButtonClick: CallableFunction;
-  clickSaveButton: CallableFunction;
+  isNavbarExpand: boolean;
+  isToggled: boolean;
+  handleClickForToggle: CallableFunction;
+  handleClickOnNewButton: CallableFunction;
+  handleClickOnSaveButton: CallableFunction;
 }) => {
   return (
     <div className="flex items-center h-24 ">
@@ -30,22 +30,22 @@ const Navbar = ({
           </div>
         </div>
 
-        {myNavbar === true && window.innerWidth > 768 ? (
+        {isNavbarExpand === true && window.innerWidth > 768 ? (
           <div className="flex gap-2 text-[20px] leading-6 ">
-            <NewButton newButtonClick={newButtonClick} />
-            <SaveButton clickSaveButton={clickSaveButton} />
+            <NewButton handleClickOnNewButton={handleClickOnNewButton} />
+            <SaveButton handleClickOnSaveButton={handleClickOnSaveButton} />
             <HandleToggle
-              toggleButton={toggleButton}
-              myToggleButton={myToggleButton}
+              isToggled={isToggled}
+              handleClickForToggle={handleClickForToggle}
             />
           </div>
         ) : (
           <div
             className={`flex  gap-2 md:hidden
-          ${myNavbar === true ? "" : "hidden"}`}
+          ${isNavbarExpand === true ? "" : "hidden"}`}
           >
-            <NewButton newButtonClick={newButtonClick} />
-            <SaveButton clickSaveButton={clickSaveButton} />
+            <NewButton handleClickOnNewButton={handleClickOnNewButton} />
+            <SaveButton handleClickOnSaveButton={handleClickOnSaveButton} />
           </div>
         )}
       </nav>

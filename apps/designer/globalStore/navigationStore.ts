@@ -1,58 +1,58 @@
 import create from "zustand";
 type store = {
-  openWelcome: boolean;
-  handleClick: CallableFunction;
-  myNavbar: boolean;
-  welcomeClick: CallableFunction;
-  isActive: boolean;
-  toggleButton: boolean;
-  myToggleButton: CallableFunction;
-  newButtonClick: CallableFunction;
-  openPopup: boolean;
-  clickSaveButton: CallableFunction;
-  closeSaveButton: CallableFunction;
+  isWelcomeComponentOpen: boolean;
+  handleClickOnNewDesign: CallableFunction;
+  isNavbarExpand: boolean;
+  handleClickOnWelcome: CallableFunction;
+  isWelcomePanelActive: boolean;
+  isToggled: boolean;
+  handleClickForToggle: CallableFunction;
+  handleClickOnNewButton: CallableFunction;
+  isSavePopupOpen: boolean;
+  handleClickOnSaveButton: CallableFunction;
+  closeSavePopup: CallableFunction;
 };
 const navigationUseStore = create<store>((set) => ({
-  openWelcome: false,
-  handleClick: () => {
+  isWelcomeComponentOpen: false,
+  handleClickOnNewDesign: () => {
     set(() => ({
-      openWelcome: true,
+      isWelcomeComponentOpen: true,
     }));
   },
 
-  isActive: false, //for welcome component
-  myNavbar: false, //for navbar by default is closed
-  welcomeClick: () => {
+  isWelcomePanelActive: false, //for welcome component
+  isNavbarExpand: false, //for navbar by default is closed
+  handleClickOnWelcome: () => {
     set(() => ({
-      myNavbar: true,
-      isActive: true,
+      isNavbarExpand: true,
+      isWelcomePanelActive: true,
     }));
   },
 
-  toggleButton: false,
-  myToggleButton: (val: boolean) => {
+  isToggled: false,
+  handleClickForToggle: (val: boolean) => {
     set(() => ({
-      toggleButton: !val,
+      isToggled: !val,
     }));
   },
-  newButtonClick: () => {
+  handleClickOnNewButton: () => {
     set(() => ({
-      isActive: false,
-      myNavbar: false,
-      toggleButton: false,
+      isWelcomePanelActive: false,
+      isNavbarExpand: false,
+      isToggled: false,
     }));
   },
 
   // for save Button
-  openPopup: false,
-  clickSaveButton: () => {
+  isSavePopupOpen: false,
+  handleClickOnSaveButton: () => {
     set(() => ({
-      openPopup: true,
+      isSavePopupOpen: true,
     }));
   },
-  closeSaveButton: () => {
+  closeSavePopup: () => {
     set(() => ({
-      openPopup: false,
+      isSavePopupOpen: false,
     }));
   },
 }));
