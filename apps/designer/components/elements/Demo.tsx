@@ -16,9 +16,12 @@ const Canvas = () => {
   // const store = useStore();
   const canvasRef = useRef(null);
   const sceneModel = useScene(canvasRef);
-  const buildingData = data[0].floors;
+  const buildingData = data.map((floors) => {
+    return floors;
+  });
+  const filename = buildingData[0]?.type;
   //issue here -> repeated renderings of the model; doesnt work with slider for the floors
-  useModel(buildingData[0].file, sceneModel, true);
+  useModel(filename || " ", sceneModel, true);
   // useModel(buildingData[1].file, sceneModel, store.floor>=1);
   // useModel(buildingData[2].file, sceneModel, store.floor>=2);
   // useModel(buildingData[3].file, sceneModel, store.floor>=3);
