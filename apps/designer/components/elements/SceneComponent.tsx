@@ -10,6 +10,7 @@ import "@babylonjs/loaders/glTF";
 import * as BABYLON from "@babylonjs/core";
 import data from "../../public/data.json";
 import useStore from "../../global-stores/store";
+// import navigationUseStore from "../../globalStore/navigationStore";
 // import getFileName from "../../util/getFile";
 // import useModel from "../../util/useModel";
 
@@ -18,17 +19,16 @@ import useStore from "../../global-stores/store";
 //After refactoring and development of the code on a furthr basis, the code will be completelty changed with the use of Custom hooks and Zustand, Zod
 //Using data.json currently instead of house.json since it is not usable yet.
 
-const myStyle = {
-  width: "100%",
-  height: "100%",
-};
-
 const config = {
   amount: { x: 50, z: 50 },
   separation: 2,
 };
 
-const ReactCanvas = () => {
+// interface ReactCanvasProps {
+//   className: string;
+// }
+
+const ReactCanvas = ({ isActive }: { isActive: boolean }) => {
   const canvasRef = useRef(null);
   const store = useStore();
   // console.log(getFileName());
@@ -54,6 +54,7 @@ const ReactCanvas = () => {
       camera.upperRadiusLimit = 2000;
       const light = new HemisphericLight("light", new Vector3(1, 1, 0), scene);
       light.intensity = 0.7;
+
       //code to be refactored more later
       data[0]?.floors.map((element) => {
         return BABYLON.SceneLoader.ImportMesh(
@@ -80,7 +81,14 @@ const ReactCanvas = () => {
     });
   }, [minZ, store.floor]);
 
-  return <canvas style={myStyle} ref={canvasRef}></canvas>;
+  return (
+    <canvas
+      className={`
+      absolute top-0 w-full h-screen
+      ${isActive === true ? "z-[1]" : "z-[-100]"}`}
+      ref={canvasRef}
+    ></canvas>
+  );
 };
 export default ReactCanvas;
 
