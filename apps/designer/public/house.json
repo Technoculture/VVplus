@@ -59,6 +59,11 @@
                     "structId": 7,
                     "file": "window_gf.glb",
                     "description": "molding for the ground floor"
+                },
+                {
+                    "structId": 8,
+                    "file": "planter_gf.glb",
+                    "description": "molding for the ground floor"
                 }
             ]
         },
@@ -109,6 +114,16 @@
                     "structId": 9,
                     "file": "window_ff.glb",
                     "description": "..."
+                },
+                {
+                    "structId": 10,
+                    "file": "planter_ff.glb",
+                    "description": "..."
+                },
+                {
+                    "structId": 11,
+                    "file": "planter_ff_sm.glb",
+                    "description": "..."
                 }
             ]
         },
@@ -158,6 +173,16 @@
                 {
                     "structId": 9,
                     "file": "window_sf.glb",
+                    "description": "..."
+                },
+                {
+                    "structId": 10,
+                    "file": "planter_sf.glb",
+                    "description": "..."
+                },
+                {
+                    "structId": 11,
+                    "file": "planter_sf_small.glb",
                     "description": "..."
                 }
             ]

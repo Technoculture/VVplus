@@ -60,7 +60,7 @@ const ReactCanvas = ({ isActive }: { isActive: boolean }) => {
         element.floorStructure.map((e) => {
           BABYLON.SceneLoader.ImportMesh(
             "",
-            data.baseUrl || " ",
+            data?.baseUrl || " ",
             e.file,
             scene,
             (newMeshes) => {
@@ -129,17 +129,17 @@ export default ReactCanvas;
       }
       */
 
-      // data[0]?.floors.map((element) => {
-      //   return BABYLON.SceneLoader.ImportMesh(
-      //     "",
-      //     data[0]?.url || " ",
-      //     element.file,
-      //     scene,
-      //     (newMeshes) => {
-      //       if (newMeshes[0]) {
-      //         newMeshes[0].position.y = 0;
-      //         newMeshes[0].scaling = new Vector3(1, 1, 1);
-      //       }
-      //     }
-      //   );
-      // });
+// data[0]?.floors.map((element) => {
+//   return BABYLON.SceneLoader.ImportMesh(
+//     "",
+//     data[0]?.url || " ",
+//     element.file,
+//     scene,
+//     (newMeshes) => {
+//       if (newMeshes[0]) {
+//         newMeshes[0].position.y = 0;
+//         newMeshes[0].scaling = new Vector3(1, 1, 1);
+//       }
+//     }
+//   );
+// });
