@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { ImCross } from "react-icons/im";
 import useOnClickOutside from ".././util/useOnClickOutside";
 
-//Todo : Animation on savepop component left
+//Todo :Exit Animation on savepop component left
 interface SavePopupProps {
   closeSavePopup: () => void;
   isSavePopupOpen: boolean;
@@ -10,6 +10,7 @@ interface SavePopupProps {
 const SavePopup = ({ closeSavePopup, isSavePopupOpen }: SavePopupProps) => {
   const ref = useRef<HTMLDivElement>(null);
   useOnClickOutside(ref, closeSavePopup);
+
   return (
     <div>
       {isSavePopupOpen === true ? (
@@ -18,14 +19,18 @@ const SavePopup = ({ closeSavePopup, isSavePopupOpen }: SavePopupProps) => {
   
       ${
         isSavePopupOpen === true
-          ? "animate-fade-in "
-          : "animate-fade-out duration-500  "
+          ? "animate-fade-in transition-all duration-500"
+          : "animate-fade-out duration-500  transition-all "
       }  `}
         >
           <div
             ref={ref}
-            className={`flex duration-700 bg-[#DADADA] rounded-[20px] w-72 z-[100]   md:w-96 h-96
-          ${isSavePopupOpen === true ? "animate-fade-in " : "animate-fade-out"}
+            className={`flex  bg-[#DADADA] rounded-[20px] w-72 z-[100]   md:w-96 h-96
+          ${
+            isSavePopupOpen === true
+              ? "animate-fade-in transition-all duration-500 "
+              : "animate-fade-out transition-all duration-500"
+          }
           `}
           >
             <ImCross

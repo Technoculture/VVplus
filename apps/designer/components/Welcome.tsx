@@ -6,6 +6,8 @@ interface WelcomePanelProps {
   isToggled: boolean;
   handleClickForToggle: CallableFunction;
 }
+//Todo : Animation when open the welcome component
+
 const Welcome = ({
   isWelcomePanelActive,
   handleClickOnWelcome,

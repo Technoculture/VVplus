@@ -52,7 +52,7 @@ const navigationUseStore = create<store>((set) => ({
   },
   closeSavePopup: () => {
     set(() => ({
-      isSavePopupOpen: false,
+      isSavePopupOpen: false,   
     }));
   },
 }));
