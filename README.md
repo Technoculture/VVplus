@@ -1,6 +1,7 @@
 # VV+
 
 ## TODO
+
 - [ ] Add a static website for customers
 - [ ] Add lots of customizability to the design
 - [ ] Add better navigation across the design

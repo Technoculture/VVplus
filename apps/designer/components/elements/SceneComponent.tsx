@@ -67,7 +67,7 @@ const ReactCanvas = ({ isActive }: { isActive: boolean }) => {
       const skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
       skyboxMaterial.backFaceCulling = false;
       skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture(
-        "http://assets.vvplus.cc/misc/skybox",
+        "https://assets.vvplus.cc/misc/skybox",
         scene,
         ["_px.png", "_py.png", "_pz.png", "_nx.png", "_ny.png", "_nz.png"]
       );
@@ -84,7 +84,7 @@ const ReactCanvas = ({ isActive }: { isActive: boolean }) => {
       ground.position.y = -10;
       const groundMat = new BABYLON.StandardMaterial("groundMat");
       groundMat.diffuseTexture = new BABYLON.Texture(
-        "http://assets.vvplus.cc/misc/ground_texture.png"
+        "https://assets.vvplus.cc/misc/ground_texture.png"
       );
       groundMat.diffuseTexture.hasAlpha = true;
       ground.material = groundMat;
