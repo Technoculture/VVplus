@@ -4,17 +4,12 @@ import useOnClickOutside from ".././util/useOnClickOutside";
 
 //Todo : Animation on savepop component left
 interface SavePopupProps {
-  closeSavePopup: CallableFunction;
+  closeSavePopup: () => void;
   isSavePopupOpen: boolean;
 }
 const SavePopup = ({ closeSavePopup, isSavePopupOpen }: SavePopupProps) => {
   const ref = useRef<HTMLDivElement>(null);
-
-  const clickOutsidehandler = () => {
-    closeSavePopup(false);
-  };
-  useOnClickOutside(ref, clickOutsidehandler);
-
+  useOnClickOutside(ref, closeSavePopup);
   return (
     <div>
       {isSavePopupOpen === true ? (
@@ -35,9 +30,7 @@ const SavePopup = ({ closeSavePopup, isSavePopupOpen }: SavePopupProps) => {
           >
             <ImCross
               className="static pt-px cursor-pointer md:ml-[360px] mt-2 ml-[260px]"
-              onClick={() => {
-                closeSavePopup();
-              }}
+              onClick={closeSavePopup}
             />
           </div>
         </div>
