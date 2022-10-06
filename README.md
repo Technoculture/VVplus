@@ -1,21 +1,12 @@
 # VV+
 
-- [Figma file for UI Concept](https://www.figma.com/file/P5ysFXqNFwINuyKiecaJJo/VVplusDesigner?node-id=0%3A1)
-- [SQL Schema](https://github.com/TechnocultureResearch/VVplus/wiki/SQL-Schema)
-
 ## TODO
-
-- [x] Setup tailwind in apps/designer
-- [x] Add a simple babylon example to apps/designer
-- [x] Add planetscale(or maybe a Postgres provider) DB to apps/designer-server
-- [ ] Add prisma as an ORM
-- [x] Add a simple schema for a house
-- [ ] Add some mock data
-- [x] Choose a file storage system
-- [ ] Integrate file storage into the DB
-- [x] Add a simple layout to the UI
-- [x] Make the layout reponsive
+- [ ] Add a static website for customers
+- [ ] Add lots of customizability to the design
+- [ ] Add better navigation across the design
+- [ ] Add booking system to the app
 - [ ] Add a seperate package to estimate estimated cost based on chosen configuration
+- [ ] Add programatic video rendering for the designed house
 
 ## Getting Started
 
@@ -39,4 +30,4 @@ pnpm build
 
 📝 [MUST READ](./wiki/Guidelines-for-Contributing) before contributing to this repository.
 
-Any further issues regarding the monorepo aspect: Look up turborepo
+> Any further issues regarding the monorepo aspect: Look up turborepo
