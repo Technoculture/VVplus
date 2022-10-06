@@ -64,6 +64,8 @@ const ReactCanvas = ({ isActive }: { isActive: boolean }) => {
         { size: 10000.0 },
         scene
       );
+      scene.clearColor = new BABYLON.Color4(0.5, 0.8, 0.5, 0.1);
+      scene.ambientColor = new BABYLON.Color3(0.3,0.3,0.3);
       const skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
       skyboxMaterial.backFaceCulling = false;
       skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture(
@@ -77,9 +79,16 @@ const ReactCanvas = ({ isActive }: { isActive: boolean }) => {
       skyboxMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
       skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
       skyBox.material = skyboxMaterial;
+      skyBox.infiniteDistance = true;
+      skyboxMaterial.disableLighting = true;
+      scene.fogMode = BABYLON.Scene.FOGMODE_LINEAR;
+      scene.fogDensity = 0.001;
+      scene.fogStart = 5000.0;
+      scene.fogEnd = 6000.0;
+      scene.fogColor = new BABYLON.Color3(0.796, 0.769, 0.769);
       const ground = BABYLON.MeshBuilder.CreateGround("ground", {
-        width: 10000,
-        height: 10000,
+        width: 12000,
+        height: 12000,
       });
       ground.position.y = -10;
       const groundMat = new BABYLON.StandardMaterial("groundMat");
