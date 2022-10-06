@@ -52,7 +52,12 @@ const ReactCanvas = ({ isActive }: { isActive: boolean }) => {
       camera.panningSensibility = 10;
       camera.lowerRadiusLimit = 500;
       camera.upperRadiusLimit = 2000;
-      const light = new HemisphericLight("light", new Vector3(-1, 1, -1), scene);
+      camera.upperBetaLimit = Math.PI / 2;
+      const light = new HemisphericLight(
+        "light",
+        new Vector3(-1, 1, -1),
+        scene
+      );
       light.intensity = 0.7;
       const skyBox = BABYLON.MeshBuilder.CreateBox(
         "skyBox",
@@ -61,8 +66,28 @@ const ReactCanvas = ({ isActive }: { isActive: boolean }) => {
       );
       const skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
       skyboxMaterial.backFaceCulling = false;
-      skyboxMaterial.emissiveColor = new BABYLON.Color3(0.77, 0.69, 0.69);
+      skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture(
+        "http://assets.vvplus.cc/misc/skybox",
+        scene,
+        ["_px.png", "_py.png", "_pz.png", "_nx.png", "_ny.png", "_nz.png"]
+      );
+      skyboxMaterial.reflectionTexture.coordinatesMode =
+        BABYLON.Texture.SKYBOX_MODE;
+      // skyboxMaterial.emissiveColor = new BABYLON.Color3(0.77, 0.69, 0.69);
+      skyboxMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
+      skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
       skyBox.material = skyboxMaterial;
+      const ground = BABYLON.MeshBuilder.CreateGround("ground", {
+        width: 10000,
+        height: 10000,
+      });
+      ground.position.y = -10;
+      const groundMat = new BABYLON.StandardMaterial("groundMat");
+      groundMat.diffuseTexture = new BABYLON.Texture(
+        "http://assets.vvplus.cc/misc/ground_texture.png"
+      );
+      groundMat.diffuseTexture.hasAlpha = true;
+      ground.material = groundMat;
       //code to be refactored more later
       data.floors.map((element) => {
         element.floorStructure.map((e) => {
