@@ -31,20 +31,20 @@ const config = {
 const ReactCanvas = ({ isActive }: { isActive: boolean }) => {
   const canvasRef = useRef(null);
   const store = useStore();
-  // console.log(getFileName());
-  // console.log(store.floor);
   const minZ = -((config.amount.z * config.separation) / 2);
   useEffect(() => {
     const canvas = canvasRef.current;
     const engine = new Engine(canvas, true);
     const createScene = function () {
       const scene = new Scene(engine);
+
+      //bird's eye view camera 
       const camera = new ArcRotateCamera(
         "camera",
-        -Math.PI * 3,
-        Math.PI / 2,
+        0,
+        0,
         1000,
-        new Vector3(-300, 200, 230),
+        new Vector3(0, 700, 430),
         scene
       );
       camera.attachControl(canvas, true);
@@ -52,7 +52,23 @@ const ReactCanvas = ({ isActive }: { isActive: boolean }) => {
       camera.panningSensibility = 10;
       camera.lowerRadiusLimit = 500;
       camera.upperRadiusLimit = 2000;
-      camera.upperBetaLimit = Math.PI / 2;
+      camera.upperBetaLimit = 0;
+      // const camera = new ArcRotateCamera(
+      //   "camera",
+      //   -Math.PI * 3,
+      //   Math.PI / 2,
+      //   1000,
+      //   new Vector3(-300, 200, 230),
+      //   scene
+      // );
+      // camera.attachControl(canvas, true);
+      // camera.wheelPrecision = 1;
+      // camera.panningSensibility = 10;
+      // camera.lowerRadiusLimit = 500;
+      // camera.upperRadiusLimit = 2000;
+      // camera.upperBetaLimit = Math.PI / 2;
+
+
       const light = new HemisphericLight(
         "light",
         new Vector3(-1, 1, -1),
@@ -65,7 +81,7 @@ const ReactCanvas = ({ isActive }: { isActive: boolean }) => {
         scene
       );
       scene.clearColor = new BABYLON.Color4(0.5, 0.8, 0.5, 0.1);
-      scene.ambientColor = new BABYLON.Color3(0.3,0.3,0.3);
+      scene.ambientColor = new BABYLON.Color3(0.3, 0.3, 0.3);
       const skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
       skyboxMaterial.backFaceCulling = false;
       skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture(

@@ -21,6 +21,7 @@ const Canvas = () => {
   });
   const filename = buildingData[0]?.type;
   //issue here -> repeated renderings of the model; doesnt work with slider for the floors
+  //issue 2 - infinite renderings of the models
   useModel(filename || " ", sceneModel, true);
   // useModel(buildingData[1].file, sceneModel, store.floor>=1);
   // useModel(buildingData[2].file, sceneModel, store.floor>=2);
