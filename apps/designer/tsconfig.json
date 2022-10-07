@@ -5,6 +5,11 @@
     "types":[
       "babylonjs",
     ],
+    "sourceMap": true,
+    "outDir": "dist",
+    "strict": true,
+    "lib": ["esnext","DOM"],
+    "esModuleInterop": true
   },
   "exclude": ["node_modules"]
 }
