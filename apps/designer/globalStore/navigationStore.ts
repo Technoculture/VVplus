@@ -6,7 +6,7 @@ type store = {
   handleClickOnWelcome: () => void;
   isWelcomePanelActive: boolean;
   isToggled: boolean;
-  handleClickForToggle: ()=> void;
+  handleClickForToggle: () => void;
   handleClickOnNewButton: () => void;
   isSavePopupOpen: boolean;
   handleClickOnSaveButton: () => void;

@@ -1,5 +1,5 @@
 import React from "react";
-import ToggableMenuButton from "./Buttons/ToggableMenuButton";
+import ToggleableMenuButton from "./Buttons/ToggleableMenuButton";
 import MenuButton from "./Buttons/MenuButton";
 interface NavbarProps {
   isNavbarOpen: boolean;
@@ -35,7 +35,7 @@ const Navbar = ({
           <div className="flex duration-500 transition-all ease-in-out gap-2 text-[20px] leading-6 ">
             <MenuButton text={"New"} onClick={handleClickOnNewButton} />
             <MenuButton text={"Save"} onClick={handleClickOnSaveButton} />
-            <ToggableMenuButton
+            <ToggleableMenuButton
               isToggled={isToggled}
               onClick={handleClickForToggle}
             />

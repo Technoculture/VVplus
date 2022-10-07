@@ -8,7 +8,7 @@ interface HandleToggleProps
   isToggled: boolean;
   onClick: () => void;
 }
-const ToggableMenuButton = ({ isToggled, onClick }: HandleToggleProps) => {
+const ToggleableMenuButton = ({ isToggled, onClick }: HandleToggleProps) => {
   return (
     <button
       className={` hidden md:flex justify-center text-xl py-[9px] px-[20px] mr-[10px] duration-300  rounded-[15px]  
@@ -24,4 +24,4 @@ const ToggableMenuButton = ({ isToggled, onClick }: HandleToggleProps) => {
   );
 };
 
-export default ToggableMenuButton;
+export default ToggleableMenuButton;
