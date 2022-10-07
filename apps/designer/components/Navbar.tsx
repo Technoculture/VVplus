@@ -2,6 +2,7 @@ import React from "react";
 import HandleToggle from "./Buttons/HandleToggle";
 import NewButton from "./Buttons/NewButton";
 import SaveButton from "./Buttons/SaveButton";
+import FreeCamera from "./Buttons/FreeCamera";
 
 const Navbar = ({
   myNavbar,
@@ -9,12 +10,16 @@ const Navbar = ({
   myToggleButton,
   newButtonClick,
   clickSaveButton,
+  toggleFreeCamera,
+  toggleCameraButton,
 }: {
   myNavbar: boolean;
   toggleButton: boolean;
   myToggleButton: CallableFunction;
   newButtonClick: CallableFunction;
   clickSaveButton: CallableFunction;
+  toggleFreeCamera: boolean;
+  toggleCameraButton: CallableFunction;
 }) => {
   return (
     <div className="flex items-center h-24 ">
@@ -37,6 +42,10 @@ const Navbar = ({
             <HandleToggle
               toggleButton={toggleButton}
               myToggleButton={myToggleButton}
+            />
+            <FreeCamera
+              toggleFreeCamera={toggleFreeCamera}
+              toggleCameraButton={toggleCameraButton}
             />
           </div>
         ) : (

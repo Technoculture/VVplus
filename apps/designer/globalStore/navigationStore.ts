@@ -11,6 +11,8 @@ type store = {
   openPopup: boolean;
   clickSaveButton: CallableFunction;
   closeSaveButton: CallableFunction;
+  toggleFreeCamera: boolean;
+  toggleCameraButton: CallableFunction;
 };
 const navigationUseStore = create<store>((set) => ({
   openWelcome: false,
@@ -55,5 +57,13 @@ const navigationUseStore = create<store>((set) => ({
       openPopup: false,
     }));
   },
+
+  //for camera buttons
+  toggleFreeCamera: false,
+  toggleCameraButton: (val: boolean) => {
+    set(()=>({
+      toggleFreeCamera: !val,
+    }))
+  }
 }));
 export default navigationUseStore;

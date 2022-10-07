@@ -22,6 +22,8 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
     clickSaveButton,
     closeSaveButton,
     openPopup,
+    toggleFreeCamera,
+    toggleCameraButton,
   } = navigationUseStore();
 
   return (
@@ -32,6 +34,8 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
         myToggleButton={myToggleButton}
         newButtonClick={newButtonClick}
         clickSaveButton={clickSaveButton}
+        toggleFreeCamera={toggleFreeCamera}
+        toggleCameraButton={toggleCameraButton}
       />
       {children}
       {openWelcome === false && <NewDesign handleClick={handleClick} />}

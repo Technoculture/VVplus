@@ -10,7 +10,7 @@ import "@babylonjs/loaders/glTF";
 import * as BABYLON from "@babylonjs/core";
 import data from "../../public/house.json";
 import useStore from "../../global-stores/store";
-// import navigationUseStore from "../../globalStore/navigationStore";
+import navigationUseStore from "../../globalStore/navigationStore";
 // import getFileName from "../../util/getFile";
 // import useModel from "../../util/useModel";
 
@@ -18,6 +18,10 @@ import useStore from "../../global-stores/store";
 //The zod error is not fixed so donot include and use getFileName() here in any manner.
 //After refactoring and development of the code on a furthr basis, the code will be completelty changed with the use of Custom hooks and Zustand, Zod
 //Using data.json currently instead of house.json since it is not usable yet.
+
+// use zod to fetch data about all floors and elements in them in a array format related to each floor, and if the floor is turned off, turn all elements in the floor off. We can use mesh.setEnabled and mesh.isEnabled for the same.
+
+// make several camera views to switch in btwn and restrict the rotation and movement on each camera. When switching btwn cameras, make the switching smooth using react-animations
 
 const config = {
   amount: { x: 50, z: 50 },
@@ -31,6 +35,7 @@ const config = {
 const ReactCanvas = ({ isActive }: { isActive: boolean }) => {
   const canvasRef = useRef(null);
   const store = useStore();
+  const navStore = navigationUseStore();
   const minZ = -((config.amount.z * config.separation) / 2);
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -38,8 +43,8 @@ const ReactCanvas = ({ isActive }: { isActive: boolean }) => {
     const createScene = function () {
       const scene = new Scene(engine);
 
-      //bird's eye view camera 
-      const camera = new ArcRotateCamera(
+      //bird's eye view camera
+      const birdsEyeCamera = new ArcRotateCamera(
         "camera",
         0,
         0,
@@ -47,27 +52,35 @@ const ReactCanvas = ({ isActive }: { isActive: boolean }) => {
         new Vector3(0, 700, 430),
         scene
       );
-      camera.attachControl(canvas, true);
-      camera.wheelPrecision = 1;
-      camera.panningSensibility = 10;
-      camera.lowerRadiusLimit = 500;
-      camera.upperRadiusLimit = 2000;
-      camera.upperBetaLimit = 0;
-      // const camera = new ArcRotateCamera(
-      //   "camera",
-      //   -Math.PI * 3,
-      //   Math.PI / 2,
-      //   1000,
-      //   new Vector3(-300, 200, 230),
-      //   scene
-      // );
-      // camera.attachControl(canvas, true);
-      // camera.wheelPrecision = 1;
-      // camera.panningSensibility = 10;
-      // camera.lowerRadiusLimit = 500;
-      // camera.upperRadiusLimit = 2000;
-      // camera.upperBetaLimit = Math.PI / 2;
+      // birdsEyeCamera.attachControl(canvas, true);
+      birdsEyeCamera.wheelPrecision = 1;
+      birdsEyeCamera.panningSensibility = 10;
+      birdsEyeCamera.lowerRadiusLimit = 100;
+      birdsEyeCamera.upperRadiusLimit = 2000;
+      birdsEyeCamera.upperBetaLimit = 0;
 
+      //free camera to move around
+      const freeCamera = new ArcRotateCamera(
+        "camera",
+        -Math.PI * 3,
+        Math.PI / 2,
+        1000,
+        new Vector3(-300, 200, 230),
+        scene
+      );
+      // freeCamera.attachControl(canvas, true);
+      freeCamera.wheelPrecision = 1;
+      freeCamera.panningSensibility = 10;
+      freeCamera.lowerRadiusLimit = 500;
+      freeCamera.upperRadiusLimit = 2000;
+      freeCamera.upperBetaLimit = Math.PI / 2;
+
+      if (navStore.toggleFreeCamera === true) {
+        scene.activeCamera = freeCamera;
+      } else {
+        scene.activeCamera = birdsEyeCamera;
+      }
+      scene.activeCamera.attachControl(canvas, true);
 
       const light = new HemisphericLight(
         "light",
@@ -141,7 +154,7 @@ const ReactCanvas = ({ isActive }: { isActive: boolean }) => {
     window.addEventListener("resize", function () {
       engine.resize();
     });
-  }, [minZ, store.floor]);
+  }, [minZ, store.floor, navStore.toggleFreeCamera]);
 
   return (
     <canvas
@@ -153,39 +166,6 @@ const ReactCanvas = ({ isActive }: { isActive: boolean }) => {
   );
 };
 export default ReactCanvas;
-
-/* data[0].floors.map((element)=>{
-        return(
-          BABYLON.SceneLoader.ImportMesh(
-            "",
-            data[0].url,
-            element.file,
-            scene,
-            (newMeshes)=>{
-              // newMeshes[0].position.x=0
-              newMeshes[0].position.y=0
-              // newMeshes[0].position.z=0
-              newMeshes[0].scaling = new Vector3(1,1,1)
-            }
-          )
-        )
-      }) */
-
-/*
-      for (let i = 0; i <= store.floor; i++) {
-        BABYLON.SceneLoader.ImportMesh(
-          "",
-          data[0].url,
-          buildingData[i].file,
-          scene,
-          (newMeshes) => {
-            newMeshes[0].position.y = 0;
-            newMeshes[0].scaling = new Vector3(1, 1, 1);
-            // newMeshes[0].alphaIndex = 0
-          }
-        );
-      }
-      */
 
 // data[0]?.floors.map((element) => {
 //   return BABYLON.SceneLoader.ImportMesh(
