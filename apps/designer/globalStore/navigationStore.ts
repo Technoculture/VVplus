@@ -6,7 +6,7 @@ type store = {
   handleClickOnWelcome: () => void;
   isWelcomePanelActive: boolean;
   isToggled: boolean;
-  handleClickForToggle: CallableFunction;
+  handleClickForToggle: ()=> void;
   handleClickOnNewButton: () => void;
   isSavePopupOpen: boolean;
   handleClickOnSaveButton: () => void;
@@ -30,9 +30,9 @@ const navigationUseStore = create<store>((set) => ({
   },
 
   isToggled: false,
-  handleClickForToggle: (val: boolean) => {
-    set(() => ({
-      isToggled: !val,
+  handleClickForToggle: () => {
+    set((state) => ({
+      isToggled: !state.isToggled,
     }));
   },
   handleClickOnNewButton: () => {

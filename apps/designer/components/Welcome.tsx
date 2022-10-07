@@ -4,7 +4,7 @@ interface WelcomePanelProps {
   isWelcomePanelActive: boolean;
   handleClickOnWelcome: () => void;
   isToggled: boolean;
-  handleClickForToggle: CallableFunction;
+  handleClickForToggle: () => void;
 }
 //Todo : Animation when open the welcome component
 
@@ -24,7 +24,7 @@ const Welcome = ({
   ) : (
     <div
       onClick={() => {
-        isWelcomePanelActive === true ? handleClickForToggle(isToggled) : "";
+        isWelcomePanelActive === true ? handleClickForToggle : "";
       }}
       className={`
           z-[100] relative font-Roboto flex items-center justify-center w-[80vw]   mx-auto sm:w-[250px] ease-in-out duration-500   md:w-[27vw] h-[74%] rounded-[20px]  

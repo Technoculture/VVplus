@@ -4,7 +4,7 @@ import MenuButton from "./Buttons/MenuButton";
 interface NavbarProps {
   isNavbarOpen: boolean;
   isToggled: boolean;
-  handleClickForToggle: CallableFunction;
+  handleClickForToggle: () => void;
   handleClickOnNewButton: () => void;
   handleClickOnSaveButton: () => void;
 }
@@ -37,7 +37,7 @@ const Navbar = ({
             <MenuButton text={"Save"} onClick={handleClickOnSaveButton} />
             <ToggableMenuButton
               isToggled={isToggled}
-              handleClickForToggle={handleClickForToggle}
+              onClick={handleClickForToggle}
             />
           </div>
         ) : (

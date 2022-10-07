@@ -1,12 +1,14 @@
 import React from "react";
-interface HandleToggleProps {
+interface HandleToggleProps
+  extends React.DetailedHTMLProps<
+      React.ButtonHTMLAttributes<HTMLButtonElement>,
+      HTMLButtonElement
+    >,
+    React.AriaAttributes {
   isToggled: boolean;
-  handleClickForToggle: CallableFunction;
+  onClick: () => void;
 }
-const ToggableMenuButton = ({
-  isToggled,
-  handleClickForToggle,
-}: HandleToggleProps) => {
+const ToggableMenuButton = ({ isToggled, onClick }: HandleToggleProps) => {
   return (
     <button
       className={` hidden md:flex justify-center text-xl py-[9px] px-[20px] mr-[10px] duration-300  rounded-[15px]  
@@ -15,9 +17,7 @@ const ToggableMenuButton = ({
                   ? "bg-[#D9D9D9]  ease-in"
                   : "bg-[#A6A6A6]  ease-in"
               }`}
-      onClick={() => {
-        handleClickForToggle(isToggled);
-      }}
+      onClick={onClick}
     >
       {isToggled === false ? "-" : "+"}
     </button>
