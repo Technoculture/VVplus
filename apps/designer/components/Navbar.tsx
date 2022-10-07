@@ -33,16 +33,8 @@ const Navbar = ({
 
         {isNavbarOpen === true && window.innerWidth > 768 ? (
           <div className="flex duration-500 transition-all ease-in-out gap-2 text-[20px] leading-6 ">
-            <MenuButton
-              text={"New"}
-              handleClickOnNewButton={handleClickOnNewButton}
-              onClick={handleClickOnNewButton}
-            />
-            <MenuButton
-              text={"Save"}
-              handleClickOnSaveButton={handleClickOnSaveButton}
-              onClick={handleClickOnSaveButton}
-            />
+            <MenuButton text={"New"} onClick={handleClickOnNewButton} />
+            <MenuButton text={"Save"} onClick={handleClickOnSaveButton} />
             <ToggableMenuButton
               isToggled={isToggled}
               handleClickForToggle={handleClickForToggle}
@@ -53,16 +45,8 @@ const Navbar = ({
             className={`flex  gap-2 md:hidden mr-[10px]
           ${isNavbarOpen === true ? "" : "hidden"}`}
           >
-            <MenuButton
-              text={"New"}
-              handleClickOnNewButton={handleClickOnNewButton}
-              onClick={handleClickOnNewButton}
-            />
-            <MenuButton
-              text={"Save"}
-              handleClickOnSaveButton={handleClickOnSaveButton}
-              onClick={handleClickOnSaveButton}
-            />
+            <MenuButton text={"New"} onClick={handleClickOnNewButton} />
+            <MenuButton text={"Save"} onClick={handleClickOnSaveButton} />
           </div>
         )}
       </nav>

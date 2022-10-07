@@ -1,7 +1,7 @@
 import create from "zustand";
 type store = {
   isWelcomeComponentOpen: boolean;
-  handleClickOnNewDesign: ()=> void;
+  handleClickOnNewDesign: () => void;
   isNavbarOpen: boolean;
   handleClickOnWelcome: () => void;
   isWelcomePanelActive: boolean;
@@ -10,7 +10,7 @@ type store = {
   handleClickOnNewButton: () => void;
   isSavePopupOpen: boolean;
   handleClickOnSaveButton: () => void;
-  closeSavePopup: ()=>void;
+  closeSavePopup: () => void;
 };
 const navigationUseStore = create<store>((set) => ({
   isWelcomeComponentOpen: false,
@@ -52,7 +52,7 @@ const navigationUseStore = create<store>((set) => ({
   },
   closeSavePopup: () => {
     set(() => ({
-      isSavePopupOpen: false,   
+      isSavePopupOpen: false,
     }));
   },
 }));
