@@ -3,7 +3,7 @@ interface HandleToggleProps {
   isToggled: boolean;
   handleClickForToggle: CallableFunction;
 }
-const HandleToggle = ({
+const ToggableMenuButton = ({
   isToggled,
   handleClickForToggle,
 }: HandleToggleProps) => {
@@ -24,4 +24,4 @@ const HandleToggle = ({
   );
 };
 
-export default HandleToggle;
+export default ToggableMenuButton;

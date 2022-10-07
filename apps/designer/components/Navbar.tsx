@@ -1,5 +1,5 @@
 import React from "react";
-import HandleToggle from "./Buttons/HandleToggle";
+import ToggableMenuButton from "./Buttons/ToggableMenuButton";
 import MenuButton from "./Buttons/MenuButton";
 interface NavbarProps {
   isNavbarOpen: boolean;
@@ -43,7 +43,7 @@ const Navbar = ({
               handleClickOnSaveButton={handleClickOnSaveButton}
               onClick={handleClickOnSaveButton}
             />
-            <HandleToggle
+            <ToggableMenuButton
               isToggled={isToggled}
               handleClickForToggle={handleClickForToggle}
             />
