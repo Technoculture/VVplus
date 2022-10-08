@@ -1,7 +1,6 @@
 import create from "zustand";
 type store = {
-  isWelcomeComponentOpen: boolean;
-  handleClickOnNewDesign: () => void;
+  
   isNavbarOpen: boolean;
   handleClickOnWelcome: () => void;
   isWelcomePanelActive: boolean;
@@ -13,12 +12,6 @@ type store = {
   closeSavePopup: () => void;
 };
 const navigationUseStore = create<store>((set) => ({
-  isWelcomeComponentOpen: false,
-  handleClickOnNewDesign: () => {
-    set(() => ({
-      isWelcomeComponentOpen: true,
-    }));
-  },
 
   isWelcomePanelActive: false, //for welcome component
   isNavbarOpen: false, //for navbar by default is closed

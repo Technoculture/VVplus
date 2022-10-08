@@ -1,12 +1,12 @@
 import Navbar from "./Navbar";
 import React from "react";
-
 import { ScriptProps } from "next/script";
 import LoadingBar from "./LoadingBar";
 import Welcome from "./Welcome";
 import NewDesign from "./NewDesign";
-import navigationUseStore from "../globalStore/navigationStore";
+import navigationUseStore from "../globalStore/Navigation-Store/navigationStore";
 import SavePopup from "./SavePopup";
+import { openWelcomeStore } from "../globalStore/Navigation-Store/openWelcomeStore";
 
 const Layout: React.FC<ScriptProps> = ({ children }) => {
   // TODO: improve this type later
@@ -14,8 +14,6 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
     isNavbarOpen,
     isWelcomePanelActive,
     handleClickOnWelcome,
-    isWelcomeComponentOpen,
-    handleClickOnNewDesign,
     isToggled,
     handleClickForToggle,
     handleClickOnNewButton,
@@ -23,6 +21,8 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
     closeSavePopup,
     isSavePopupOpen,
   } = navigationUseStore();
+
+  const { isWelcomeComponentOpen, handleClickOnNewDesign } = openWelcomeStore();
 
   return (
     <>
