@@ -22,6 +22,7 @@ import navigationUseStore from "../../globalStore/navigationStore";
 // use zod to fetch data about all floors and elements in them in a array format related to each floor, and if the floor is turned off, turn all elements in the floor off. We can use mesh.setEnabled and mesh.isEnabled for the same.
 
 // make several camera views to switch in btwn and restrict the rotation and movement on each camera. When switching btwn cameras, make the switching smooth using react-animations
+// procedure to follow : define set of camera views and store states in the zustand store -> implement a button to toggle between them by using useEffect -> add animation to make the transition smooth and remove all values from the useEffect hook dependency array
 
 const config = {
   amount: { x: 50, z: 50 },
