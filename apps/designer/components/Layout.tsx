@@ -11,46 +11,51 @@ import SavePopup from "./SavePopup";
 const Layout: React.FC<ScriptProps> = ({ children }) => {
   // TODO: improve this type later
   const {
-    myNavbar,
-    isActive,
-    welcomeClick,
-    openWelcome,
-    handleClick,
-    toggleButton,
-    myToggleButton,
-    newButtonClick,
-    clickSaveButton,
-    closeSaveButton,
-    openPopup,
-    toggleFreeCamera,
+    isNavbarOpen,
+    isWelcomePanelActive,
+    handleClickOnWelcome,
+    isWelcomeComponentOpen,
+    handleClickOnNewDesign,
+    isToggled,
+    handleClickForToggle,
+    handleClickOnNewButton,
+    handleClickOnSaveButton,
+    closeSavePopup,
+    isSavePopupOpen,
     toggleCameraButton,
+    toggleFreeCamera,
   } = navigationUseStore();
 
   return (
     <>
       <Navbar
-        myNavbar={myNavbar}
-        toggleButton={toggleButton}
-        myToggleButton={myToggleButton}
-        newButtonClick={newButtonClick}
-        clickSaveButton={clickSaveButton}
+        isNavbarOpen={isNavbarOpen}
+        isToggled={isToggled}
+        handleClickForToggle={handleClickForToggle}
+        handleClickOnNewButton={handleClickOnNewButton}
+        handleClickOnSaveButton={handleClickOnSaveButton}
         toggleFreeCamera={toggleFreeCamera}
         toggleCameraButton={toggleCameraButton}
       />
       {children}
-      {openWelcome === false && <NewDesign handleClick={handleClick} />}
-      {openWelcome === true && (
+      {isWelcomeComponentOpen === false && (
+        <NewDesign handleClickOnNewDesign={handleClickOnNewDesign} />
+      )}
+      {isWelcomeComponentOpen === true && (
         <Welcome
-          welcomeClick={welcomeClick}
-          isActive={isActive}
-          myToggleButton={myToggleButton}
-          toggleButton={toggleButton}
+          handleClickOnWelcome={handleClickOnWelcome}
+          isWelcomePanelActive={isWelcomePanelActive}
+          handleClickForToggle={handleClickForToggle}
+          isToggled={isToggled}
         />
       )}
-      {openPopup === true && (
-        <SavePopup closeSaveButton={closeSaveButton} openPopup={openPopup} />
+      {isSavePopupOpen === true && (
+        <SavePopup
+          closeSavePopup={closeSavePopup}
+          isSavePopupOpen={isSavePopupOpen}
+        />
       )}
-      {isActive === false && <LoadingBar />}
+      {isWelcomePanelActive === false && <LoadingBar />}
     </>
   );
 };
