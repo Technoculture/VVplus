@@ -86,7 +86,6 @@ const ReactCanvas = ({
         scene.activeCamera = birdsEyeCamera;
       }
       scene.activeCamera.attachControl(canvas, true);
-
       const light = new HemisphericLight(
         "light",
         new Vector3(-1, 1, -1),

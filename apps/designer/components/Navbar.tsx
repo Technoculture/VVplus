@@ -6,7 +6,7 @@ interface NavbarProps {
   isNavbarOpen: boolean;
   isToggled: boolean;
   toggleFreeCamera: boolean;
-  toggleCameraButton: (val: boolean) => void;
+  toggleCameraButton: () => void;
   handleClickForToggle: () => void;
   handleClickOnNewButton: () => void;
   handleClickOnSaveButton: () => void;
@@ -16,7 +16,6 @@ interface NavbarProps {
 const Navbar = ({
   isNavbarOpen,
   isToggled,
-  toggleFreeCamera,
   toggleCameraButton,
   handleClickForToggle,
   handleClickOnNewButton,
@@ -45,8 +44,7 @@ const Navbar = ({
               onClick={handleClickForToggle}
             />
             <FreeCamera
-              toggleFreeCamera={toggleFreeCamera}
-              toggleCameraButton={toggleCameraButton}
+              onClick={toggleCameraButton}
             />
           </div>
         ) : (
