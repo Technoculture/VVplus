@@ -1,18 +1,13 @@
 import create from "zustand";
 type store = {
-  
   isNavbarOpen: boolean;
   handleClickOnWelcome: () => void;
   isWelcomePanelActive: boolean;
   isToggled: boolean;
-  handleClickForToggle: () => void;
   handleClickOnNewButton: () => void;
-  isSavePopupOpen: boolean;
-  handleClickOnSaveButton: () => void;
-  closeSavePopup: () => void;
+  handleClickForToggle: () => void;
 };
 const navigationUseStore = create<store>((set) => ({
-
   isWelcomePanelActive: false, //for welcome component
   isNavbarOpen: false, //for navbar by default is closed
   handleClickOnWelcome: () => {
@@ -23,11 +18,6 @@ const navigationUseStore = create<store>((set) => ({
   },
 
   isToggled: false,
-  handleClickForToggle: () => {
-    set((state) => ({
-      isToggled: !state.isToggled,
-    }));
-  },
   handleClickOnNewButton: () => {
     set(() => ({
       isWelcomePanelActive: false,
@@ -35,18 +25,11 @@ const navigationUseStore = create<store>((set) => ({
       isToggled: false,
     }));
   },
-
-  // for save Button
-  isSavePopupOpen: false,
-  handleClickOnSaveButton: () => {
-    set(() => ({
-      isSavePopupOpen: true,
+  handleClickForToggle: () => {
+    set((state) => ({
+      isToggled: !state.isToggled,
     }));
   },
-  closeSavePopup: () => {
-    set(() => ({
-      isSavePopupOpen: false,
-    }));
-  },
+  
 }));
 export default navigationUseStore;

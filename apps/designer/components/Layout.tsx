@@ -7,6 +7,7 @@ import NewDesign from "./NewDesign";
 import navigationUseStore from "../globalStore/Navigation-Store/navigationStore";
 import SavePopup from "./SavePopup";
 import { openWelcomeStore } from "../globalStore/Navigation-Store/openWelcomeStore";
+import { savePopupStore } from "../globalStore/Navigation-Store/savePopupStore";
 
 const Layout: React.FC<ScriptProps> = ({ children }) => {
   // TODO: improve this type later
@@ -14,15 +15,14 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
     isNavbarOpen,
     isWelcomePanelActive,
     handleClickOnWelcome,
-    isToggled,
-    handleClickForToggle,
     handleClickOnNewButton,
-    handleClickOnSaveButton,
-    closeSavePopup,
-    isSavePopupOpen,
+    handleClickForToggle,
+    isToggled,
   } = navigationUseStore();
 
   const { isWelcomeComponentOpen, handleClickOnNewDesign } = openWelcomeStore();
+  const { handleClickOnSaveButton, closeSavePopup, isSavePopupOpen } =
+    savePopupStore();
 
   return (
     <>
