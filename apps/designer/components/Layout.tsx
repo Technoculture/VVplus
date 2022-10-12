@@ -27,11 +27,11 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
   return (
     <>
       <Navbar
-        isNavbarOpen={isNavbarOpen}
-        isToggled={isToggled}
-        handleClickForToggle={handleClickForToggle}
-        handleClickOnNewButton={handleClickOnNewButton}
-        handleClickOnSaveButton={handleClickOnSaveButton}
+      // isNavbarOpen={isNavbarOpen}
+      // isToggled={isToggled}
+      // handleClickForToggle={handleClickForToggle}
+      // handleClickOnNewButton={handleClickOnNewButton}
+      // handleClickOnSaveButton={handleClickOnSaveButton}
       />
       {children}
       {isWelcomeComponentOpen === false && (
