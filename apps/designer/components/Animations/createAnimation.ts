@@ -3,10 +3,10 @@ import { CubicEase, EasingFunction } from "@babylonjs/core/Animations/easing";
 
 const FRAMES_PER_SECOND = 60;
 
-interface AniProps{
-    property: string;
-    from: number;
-    to: number;
+interface AniProps {
+  property: string;
+  from: number;
+  to: number;
 }
 
 function createAnimation({ property, from, to }: AniProps) {
@@ -33,4 +33,4 @@ function createAnimation({ property, from, to }: AniProps) {
   return animation;
 }
 
-export default createAnimation
+export default createAnimation;

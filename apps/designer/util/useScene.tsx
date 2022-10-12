@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
-import {
-  Engine,
-  Vector3,
-  Scene,
-  ArcRotateCamera,
-  HemisphericLight,
-} from "@babylonjs/core";
+import { Engine, Vector3, Scene, HemisphericLight } from "@babylonjs/core";
 // import useModel from "./useModel";
 // import useStore from "../global-stores/store";
 // import data from "../public/data.json";
+
+// Engine to be attatched to the canvas needs to have the following - Scene -> Camera/Camera Animations, Light, Skybox, Fog, Ground, Meshes
+// we need custom hooks for all of the above
 
 export default function useScene(canvasRef: React.MutableRefObject<null>) {
   const [sceneModel, setScene] = useState<Scene>();
@@ -16,20 +13,7 @@ export default function useScene(canvasRef: React.MutableRefObject<null>) {
     const canvas = canvasRef.current;
     const engine = new Engine(canvas, true);
     const scene = new Scene(engine);
-    const camera = new ArcRotateCamera(
-      "camera",
-      -Math.PI / 3,
-      Math.PI / 2.5,
-      1000,
-      new Vector3(0, 100, 100),
-      scene
-    );
-    camera.attachControl(canvas, true);
-    camera.wheelPrecision = 1;
-    camera.panningSensibility = 10;
-    camera.lowerRadiusLimit = 500;
-    camera.upperRadiusLimit = 2000;
-    const light = new HemisphericLight("light", new Vector3(1, 1, 0), scene);
+    const light = new HemisphericLight("light", new Vector3(-1, 1, -1), scene);
     light.intensity = 0.7;
     engine.runRenderLoop(function () {
       scene.render();
@@ -39,7 +23,6 @@ export default function useScene(canvasRef: React.MutableRefObject<null>) {
     });
     setScene(scene);
   }, [canvasRef]);
-
   return sceneModel as Scene;
 }
 

@@ -43,9 +43,7 @@ const Navbar = ({
               isToggled={isToggled}
               onClick={handleClickForToggle}
             />
-            <FreeCamera
-              onClick={toggleCameraButton}
-            />
+            <FreeCamera onClick={toggleCameraButton} />
           </div>
         ) : (
           <div

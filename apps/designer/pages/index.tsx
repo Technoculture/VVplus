@@ -1,7 +1,7 @@
-import ReactCanvas from "../components/elements/SceneComponent";
+// import ReactCanvas from "../components/elements/SceneComponent";
 import useStore from "../globalStore/navigationStore";
 
-// import Canvas from "../components/elements/Demo";
+import Demo from "../components/elements/Demo";
 // import Slider from "../components/elements/Slider";
 // import "@babylonjs/core/Debug/debugLayer";
 // import "@babylonjs/inspector";
@@ -13,8 +13,8 @@ export default function Web(): JSX.Element {
   const { isWelcomePanelActive } = useStore();
   return (
     <div>
-      {/* <Demo/> */}
-      <ReactCanvas isWelcomePanelActive={isWelcomePanelActive} />
+      <Demo isWelcomePanelActive={isWelcomePanelActive} />
+      {/* <ReactCanvas isWelcomePanelActive={isWelcomePanelActive} /> */}
     </div>
   );
 }

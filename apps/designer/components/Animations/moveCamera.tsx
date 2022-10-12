@@ -1,0 +1,65 @@
+import createAnimation from "./createAnimation";
+import { Scene } from "@babylonjs/core/scene";
+import { ArcRotateCamera } from "@babylonjs/core";
+
+const SPEED_RATIO = 4;
+const LOOP_MODE = false;
+const FROM_FRAME = 0;
+const TO_FRAME = 100;
+
+interface Props {
+  radius: number;
+  alpha: number;
+  beta: number;
+  target: {
+    x: number;
+    y: number;
+    z: number;
+  };
+}
+
+function moveActiveCamera(
+  scene: Scene,
+  { radius, alpha, beta, target }: Props
+) {
+  // const camera: ArcRotateCamera;
+  const camera = scene.activeCamera;
+  // console.log("animate");
+
+  // camera.animations = [
+  //   createAnimation({
+  //     property: "radius",
+  //     from: camera.radius,
+  //     to: radius,
+  //   }),
+  //   createAnimation({
+  //     property: "beta",
+  //     from: camera.beta,
+  //     to: beta,
+  //   }),
+  //   createAnimation({
+  //     property: "alpha",
+  //     from: camera.alpha,
+  //     to: alpha,
+  //   }),
+  //   createAnimation({
+  //     property: "target.x",
+  //     from: camera.target.x,
+  //     to: target.x,
+  //   }),
+  //   createAnimation({
+  //     property: "target.y",
+  //     from: camera.target.y,
+  //     to: target.y,
+  //   }),
+  //   createAnimation({
+  //     property: "target.z",
+  //     from: camera.target.z,
+  //     to: target.z,
+  //   }),
+  // ];
+
+  scene.beginAnimation(camera, FROM_FRAME, TO_FRAME, LOOP_MODE, SPEED_RATIO);
+}
+
+export default moveActiveCamera;

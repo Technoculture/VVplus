@@ -11,6 +11,7 @@ import * as BABYLON from "@babylonjs/core";
 import data from "../../public/house.json";
 import useStore from "../../global-stores/store";
 import navigationUseStore from "../../globalStore/navigationStore";
+import moveActiveCamera from "../Animations/moveCamera";
 // import getFileName from "../../util/getFile";
 // import useModel from "../../util/useModel";
 
@@ -49,20 +50,20 @@ const ReactCanvas = ({
       const scene = new Scene(engine);
 
       //bird's eye view camera
-      const birdsEyeCamera = new ArcRotateCamera(
-        "camera",
-        0,
-        0,
-        1000,
-        new Vector3(0, 700, 430),
-        scene
-      );
-      // birdsEyeCamera.attachControl(canvas, true);
-      birdsEyeCamera.wheelPrecision = 1;
-      birdsEyeCamera.panningSensibility = 10;
-      birdsEyeCamera.lowerRadiusLimit = 100;
-      birdsEyeCamera.upperRadiusLimit = 2000;
-      birdsEyeCamera.upperBetaLimit = 0;
+      // const birdsEyeCamera = new ArcRotateCamera(
+      //   "camera",
+      //   0,
+      //   0,
+      //   1000,
+      //   new Vector3(0, 700, 430),
+      //   scene
+      // );
+      // // birdsEyeCamera.attachControl(canvas, true);
+      // birdsEyeCamera.wheelPrecision = 1;
+      // birdsEyeCamera.panningSensibility = 10;
+      // birdsEyeCamera.lowerRadiusLimit = 100;
+      // birdsEyeCamera.upperRadiusLimit = 2000;
+      // birdsEyeCamera.upperBetaLimit = 0;
 
       //free camera to move around
       const freeCamera = new ArcRotateCamera(
@@ -73,25 +74,50 @@ const ReactCanvas = ({
         new Vector3(-300, 200, 230),
         scene
       );
-      // freeCamera.attachControl(canvas, true);
+
       freeCamera.wheelPrecision = 1;
       freeCamera.panningSensibility = 10;
       freeCamera.lowerRadiusLimit = 500;
       freeCamera.upperRadiusLimit = 2000;
       freeCamera.upperBetaLimit = Math.PI / 2;
-
+      scene.activeCamera = freeCamera;
       if (navStore.toggleFreeCamera === true) {
-        scene.activeCamera = freeCamera;
+        // scene.activeCamera = freeCamera;
+        moveActiveCamera(scene, {
+          alpha: -Math.PI * 3,
+          beta: Math.PI / 2,
+          radius: 1000,
+          target: {
+            x: -300,
+            y: 200,
+            z: 230,
+          },
+        });
       } else {
-        scene.activeCamera = birdsEyeCamera;
+        // scene.activeCamera = birdsEyeCamera;
+        //animation
+        moveActiveCamera(scene, {
+          alpha: 0,
+          beta: 0,
+          radius: 1000,
+          target: {
+            x: 0,
+            y: 700,
+            z: 430,
+          },
+        });
       }
       scene.activeCamera.attachControl(canvas, true);
+
+      //Light
       const light = new HemisphericLight(
         "light",
         new Vector3(-1, 1, -1),
         scene
       );
       light.intensity = 0.7;
+
+      //Skybox
       const skyBox = BABYLON.MeshBuilder.CreateBox(
         "skyBox",
         { size: 10000.0 },
@@ -108,17 +134,20 @@ const ReactCanvas = ({
       );
       skyboxMaterial.reflectionTexture.coordinatesMode =
         BABYLON.Texture.SKYBOX_MODE;
-      // skyboxMaterial.emissiveColor = new BABYLON.Color3(0.77, 0.69, 0.69);
       skyboxMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
       skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
       skyBox.material = skyboxMaterial;
       skyBox.infiniteDistance = true;
       skyboxMaterial.disableLighting = true;
+
+      //Fog
       scene.fogMode = BABYLON.Scene.FOGMODE_LINEAR;
       scene.fogDensity = 0.001;
       scene.fogStart = 5000.0;
       scene.fogEnd = 6000.0;
       scene.fogColor = new BABYLON.Color3(0.796, 0.769, 0.769);
+
+      //Ground
       const ground = BABYLON.MeshBuilder.CreateGround("ground", {
         width: 12000,
         height: 12000,
@@ -130,6 +159,8 @@ const ReactCanvas = ({
       );
       groundMat.diffuseTexture.hasAlpha = true;
       ground.material = groundMat;
+
+      //Building meshes
       //code to be refactored more later
       data.floors.map((element) => {
         element.floorStructure.map((e) => {
@@ -158,7 +189,7 @@ const ReactCanvas = ({
     window.addEventListener("resize", function () {
       engine.resize();
     });
-  }, [minZ, store.floor, navStore.toggleFreeCamera]);
+  }, [minZ, store.floor]);
 
   return (
     <canvas

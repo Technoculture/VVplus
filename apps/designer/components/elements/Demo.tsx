@@ -1,34 +1,38 @@
-import React, { useRef } from "react";
-import "@babylonjs/loaders/glTF";
-// import * as BABYLON from "@babylonjs/core";
-import useScene from "../../util/useScene";
-import data from "../../public/data.json";
-// import useStore from "../../global-stores/store";
-import useModel from "../../util/useModel";
+import DemoScene from "./DemoScene";
+import { createCamera } from "./camera";
+import { createGround } from "./ground";
+import { createSkyBox } from "./skybox";
+import { createFog } from "./fog";
+import * as BABYLON from "@babylonjs/core";
+import { HemisphericLight, Vector3 } from "@babylonjs/core";
 
 //Work under progress, the demo component contains the code that will use Zod and React Custom Hooks in order to render the scene. This will be a part of the code later on when the work with Zod is complete
-const myStyle = {
-  width: "70vw",
-  height: "90vh",
-};
 
-const Canvas = () => {
-  // const store = useStore();
-  const canvasRef = useRef(null);
-  const sceneModel = useScene(canvasRef);
-  const buildingData = data.map((floors) => {
-    return floors;
-  });
-  const filename = buildingData[0]?.type;
-  //issue here -> repeated renderings of the model; doesnt work with slider for the floors
-  //issue 2 - infinite renderings of the models
-  useModel(filename || " ", sceneModel, true);
-  // useModel(buildingData[1].file, sceneModel, store.floor>=1);
-  // useModel(buildingData[2].file, sceneModel, store.floor>=2);
-  // useModel(buildingData[3].file, sceneModel, store.floor>=3);
-  // useModel(buildingData[4].file, sceneModel, store.floor>=4);
-  return <canvas style={myStyle} ref={canvasRef}></canvas>;
-};
-export default Canvas;
+const Demo = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
+  const onSceneReady = async (scene: BABYLON.Scene) => {
+    createCamera(scene);
+    const light = new HemisphericLight("light", new Vector3(-1, 1, -1), scene);
+    light.intensity = 0.7;
+    await createSkyBox(scene);
+    await createGround();
+    await createFog(scene);
+  };
+  const onRender = (scene: BABYLON.Scene) => {
+    return;
+  };
 
-// make a function to cover up the canvas using z-index/ use a useState
+  return (
+    <div>
+      <DemoScene
+        antialias={true}
+        adaptToDeviceRatio={true}
+        onSceneReady={onSceneReady}
+        onRender={onRender}
+        className={`
+  absolute top-0 w-full h-screen
+  ${isWelcomePanelActive === true ? "z-[1]" : "z-[-100]"}`}
+      />
+    </div>
+  );
+};
+export default Demo;

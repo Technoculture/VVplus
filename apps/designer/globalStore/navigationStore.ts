@@ -59,7 +59,7 @@ const navigationUseStore = create<store>((set) => ({
   },
 
   //for camera buttons
-  toggleFreeCamera: false,
+  toggleFreeCamera: true,
   toggleCameraButton: () => {
     set((state) => ({
       toggleFreeCamera: !state.toggleFreeCamera,

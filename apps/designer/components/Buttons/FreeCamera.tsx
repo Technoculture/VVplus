@@ -10,9 +10,9 @@ interface HandleCameraToggle
   onClick: () => void;
 }
 
-const FreeCamera = ({
-  onClick,
-}: HandleCameraToggle) => {
+const FreeCamera = ({ onClick }: HandleCameraToggle) => {
+  // console.log("click");
+
   return (
     <button
       className={` hidden md:flex justify-center items-center text-xl py-[9px] px-[20px] mr-[10px] duration-300  rounded-[15px] bg-gray-400`}
