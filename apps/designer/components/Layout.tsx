@@ -4,9 +4,10 @@ import React from "react";
 import { ScriptProps } from "next/script";
 import LoadingBar from "./LoadingBar";
 import Welcome from "./Welcome";
-import NewDesign from "./NewDesign";
+// import NewDesign from "./NewDesign";
 import navigationUseStore from "../globalStore/navigationStore";
 import SavePopup from "./SavePopup";
+import SelectionCard from "./SelectionCard";
 
 const Layout: React.FC<ScriptProps> = ({ children }) => {
   // TODO: improve this type later
@@ -27,15 +28,15 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
   return (
     <>
       <Navbar
-      // isNavbarOpen={isNavbarOpen}
-      // isToggled={isToggled}
-      // handleClickForToggle={handleClickForToggle}
-      // handleClickOnNewButton={handleClickOnNewButton}
-      // handleClickOnSaveButton={handleClickOnSaveButton}
+        isNavbarOpen={isNavbarOpen}
+        isToggled={isToggled}
+        handleClickForToggle={handleClickForToggle}
+        handleClickOnNewButton={handleClickOnNewButton}
+        handleClickOnSaveButton={handleClickOnSaveButton}
       />
       {children}
       {isWelcomeComponentOpen === false && (
-        <NewDesign handleClickOnNewDesign={handleClickOnNewDesign} />
+        <SelectionCard handleClickOnNewDesign={handleClickOnNewDesign} />
       )}
       {isWelcomeComponentOpen === true && (
         <Welcome

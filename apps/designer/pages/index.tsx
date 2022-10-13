@@ -12,9 +12,9 @@ import useStore from "../globalStore/navigationStore";
 export default function Web(): JSX.Element {
   const { isWelcomePanelActive } = useStore();
   return (
-    <div>
+    <>
       {/* <Demo/> */}
       <ReactCanvas isWelcomePanelActive={isWelcomePanelActive} />
-    </div>
+    </>
   );
 }
