@@ -7,7 +7,7 @@ const LOOP_MODE = false;
 const FROM_FRAME = 0;
 const TO_FRAME = 100;
 
-interface Props {
+interface moveCamera {
   radius: number;
   alpha: number;
   beta: number;
@@ -20,11 +20,14 @@ interface Props {
 
 function moveActiveCamera(
   scene: Scene,
-  { radius, alpha, beta, target }: Props
+  { radius, alpha, beta, target }: moveCamera
 ) {
-  const camera = scene.activeCamera;
+  // let camera : ArcRotateCamera;
+  const camera = scene.activeCamera as ArcRotateCamera;
   console.log("animate");
-
+  if (camera === null) {
+    return;
+  }
   camera.animations = [
     createAnimation({
       property: "radius",
