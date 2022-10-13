@@ -22,42 +22,41 @@ function moveActiveCamera(
   scene: Scene,
   { radius, alpha, beta, target }: Props
 ) {
-  // const camera: ArcRotateCamera;
   const camera = scene.activeCamera;
-  // console.log("animate");
+  console.log("animate");
 
-  // camera.animations = [
-  //   createAnimation({
-  //     property: "radius",
-  //     from: camera.radius,
-  //     to: radius,
-  //   }),
-  //   createAnimation({
-  //     property: "beta",
-  //     from: camera.beta,
-  //     to: beta,
-  //   }),
-  //   createAnimation({
-  //     property: "alpha",
-  //     from: camera.alpha,
-  //     to: alpha,
-  //   }),
-  //   createAnimation({
-  //     property: "target.x",
-  //     from: camera.target.x,
-  //     to: target.x,
-  //   }),
-  //   createAnimation({
-  //     property: "target.y",
-  //     from: camera.target.y,
-  //     to: target.y,
-  //   }),
-  //   createAnimation({
-  //     property: "target.z",
-  //     from: camera.target.z,
-  //     to: target.z,
-  //   }),
-  // ];
+  camera.animations = [
+    createAnimation({
+      property: "radius",
+      from: camera.radius,
+      to: radius,
+    }),
+    createAnimation({
+      property: "beta",
+      from: camera.beta,
+      to: beta,
+    }),
+    createAnimation({
+      property: "alpha",
+      from: camera.alpha,
+      to: alpha,
+    }),
+    createAnimation({
+      property: "target.x",
+      from: camera.target.x,
+      to: target.x,
+    }),
+    createAnimation({
+      property: "target.y",
+      from: camera.target.y,
+      to: target.y,
+    }),
+    createAnimation({
+      property: "target.z",
+      from: camera.target.z,
+      to: target.z,
+    }),
+  ];
 
   scene.beginAnimation(camera, FROM_FRAME, TO_FRAME, LOOP_MODE, SPEED_RATIO);
 }

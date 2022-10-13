@@ -9,7 +9,7 @@ interface SceneProps {
   className: string;
 }
 
-export default function DemoScene(props: SceneProps) {
+export default function SceneComp(props: SceneProps) {
   const reactCanvas = useRef(null);
   const {
     antialias,
@@ -49,5 +49,5 @@ export default function DemoScene(props: SceneProps) {
       };
     }
   }, [reactCanvas]);
-  return <canvas ref={reactCanvas} className={props.className} {...rest} />;
+  return <canvas ref={reactCanvas} className={className} {...rest} />;
 }

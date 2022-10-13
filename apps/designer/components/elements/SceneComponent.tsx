@@ -58,7 +58,7 @@ const ReactCanvas = ({
       //   new Vector3(0, 700, 430),
       //   scene
       // );
-      // // birdsEyeCamera.attachControl(canvas, true);
+      // birdsEyeCamera.attachControl(canvas, true);
       // birdsEyeCamera.wheelPrecision = 1;
       // birdsEyeCamera.panningSensibility = 10;
       // birdsEyeCamera.lowerRadiusLimit = 100;
@@ -71,7 +71,7 @@ const ReactCanvas = ({
         -Math.PI * 3,
         Math.PI / 2,
         1000,
-        new Vector3(-300, 200, 230),
+        new Vector3(250, 70, 30),
         scene
       );
 
@@ -80,6 +80,21 @@ const ReactCanvas = ({
       freeCamera.lowerRadiusLimit = 500;
       freeCamera.upperRadiusLimit = 2000;
       freeCamera.upperBetaLimit = Math.PI / 2;
+
+      // const freeCamera = new ArcRotateCamera(
+      //   "camera",
+      //   -Math.PI * 3,
+      //   Math.PI / 2,
+      //   1000,
+      //   new Vector3(-300, 200, 230),
+      //   scene
+      // );
+
+      // freeCamera.wheelPrecision = 1;
+      // freeCamera.panningSensibility = 10;
+      // freeCamera.lowerRadiusLimit = 500;
+      // freeCamera.upperRadiusLimit = 2000;
+      // freeCamera.upperBetaLimit = Math.PI / 2;
       scene.activeCamera = freeCamera;
       if (navStore.toggleFreeCamera === true) {
         // scene.activeCamera = freeCamera;
