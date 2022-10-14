@@ -6,10 +6,10 @@ interface NewDesignProps {
   handleClickOnNewDesign: () => void;
 }
 
-const SelectionCard = ({ handleClickOnNewDesign }: NewDesignProps) => {
+const TemplateCard = ({ handleClickOnNewDesign }: NewDesignProps) => {
   return (
     <main
-      className="flex flex-col relative  left-[50%] translate-x-[-50%] my-12 gap-[20px]  justify-center items-center "
+      className="flex flex-col relative  left-[50%] translate-x-[-50%] my-10 gap-4  justify-center items-center "
       onClick={handleClickOnNewDesign}
     >
       <h1 className="text-[25px] select-none font-medium font-Roboto text-[#000000] leading-[29px] ">
@@ -32,4 +32,4 @@ const SelectionCard = ({ handleClickOnNewDesign }: NewDesignProps) => {
   );
 };
 
-export default SelectionCard;
+export default TemplateCard;

@@ -8,6 +8,7 @@ module.exports = {
     fontFamily: {
       Roboto: ["Roboto", "sans-serif"],
       RobotoSerif: ["Roboto Serif", "serif"],
+      Bodoni: ["Libre Bodoni", "serif"],
     },
     extend: {
       keyframes: {

@@ -7,7 +7,8 @@ import Welcome from "./Welcome";
 // import NewDesign from "./NewDesign";
 import navigationUseStore from "../globalStore/navigationStore";
 import SavePopup from "./SavePopup";
-import SelectionCard from "./SelectionCard";
+import TemplateCard from "./TemplateCard";
+import SelectionBar from "./SelectionBar";
 
 const Layout: React.FC<ScriptProps> = ({ children }) => {
   // TODO: improve this type later
@@ -36,7 +37,7 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
       />
       {children}
       {isWelcomeComponentOpen === false && (
-        <SelectionCard handleClickOnNewDesign={handleClickOnNewDesign} />
+        <TemplateCard handleClickOnNewDesign={handleClickOnNewDesign} />
       )}
       {isWelcomeComponentOpen === true && (
         <Welcome
@@ -52,7 +53,7 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
           isSavePopupOpen={isSavePopupOpen}
         />
       )}
-      {isWelcomePanelActive === false && <LoadingBar />}
+      {isWelcomePanelActive === false && <SelectionBar />}
     </>
   );
 };
