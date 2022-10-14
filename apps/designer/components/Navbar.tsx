@@ -86,8 +86,16 @@ const Navbar = ({
 
       {isNavbarOpen === true && window.innerWidth > 768 ? (
         <div className="flex duration-500 transition-all ease-in-out gap-2 text-[20px] leading-6 ">
-          <MenuButton text={"New"} onClick={handleClickOnNewButton} />
-          <MenuButton text={"Save"} onClick={handleClickOnSaveButton} />
+          <MenuButton
+            text={"New"}
+            onClick={handleClickOnNewButton}
+            buttonColor={"#D9D9D9"}
+          />
+          <MenuButton
+            text={"Save"}
+            onClick={handleClickOnSaveButton}
+            buttonColor={"#D9D9D9"}
+          />
           <ToggleableMenuButton
             isToggled={isToggled}
             onClick={handleClickForToggle}
@@ -98,8 +106,16 @@ const Navbar = ({
           className={`flex  gap-2 md:hidden mr-[10px]
                   ${isNavbarOpen === true ? "" : "hidden"}`}
         >
-          <MenuButton text={"New"} onClick={handleClickOnNewButton} />
-          <MenuButton text={"Save"} onClick={handleClickOnSaveButton} />
+          <MenuButton
+            text={"New"}
+            buttonColor={"#D9D9D9"}
+            onClick={handleClickOnNewButton}
+          />
+          <MenuButton
+            text={"Save"}
+            buttonColor={"#D9D9D9"}
+            onClick={handleClickOnSaveButton}
+          />
         </div>
       )}
     </nav>

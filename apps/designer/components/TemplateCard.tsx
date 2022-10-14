@@ -9,7 +9,7 @@ interface NewDesignProps {
 const TemplateCard = ({ handleClickOnNewDesign }: NewDesignProps) => {
   return (
     <main
-      className="flex flex-col relative  left-[50%] translate-x-[-50%] my-10 gap-4  justify-center items-center "
+      className="flex flex-col relative  left-[50%] translate-x-[-50%] md:my-14 my-16 gap-4  justify-center items-center "
       onClick={handleClickOnNewDesign}
     >
       <h1 className="text-[25px] select-none font-medium font-Roboto text-[#000000] leading-[29px] ">
