@@ -1,10 +1,14 @@
 {
   "extends": "tsconfig/nextjs.json",
   "include": ["next.d.ts", "**/*.ts", "**/*.tsx"],
+  "baseUrl": ".",
   "compilerOptions": {
     "types":[
       "babylonjs",
     ],
+    "composite": false,
+    "preserveSymlinks": true,
+    //"declaration": false,
     "sourceMap": true,
     "outDir": "dist",
     "strict": true,
