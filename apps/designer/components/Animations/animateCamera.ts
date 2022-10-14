@@ -7,7 +7,7 @@ const LOOP_MODE = false;
 const FROM_FRAME = 0;
 const TO_FRAME = 100;
 
-interface moveCamera {
+interface animateCamera {
   radius: number;
   alpha: number;
   beta: number;
@@ -18,11 +18,10 @@ interface moveCamera {
   };
 }
 
-function moveActiveCamera(
+function animateActiveCamera(
   scene: Scene,
-  { radius, alpha, beta, target }: moveCamera
+  { radius, alpha, beta, target }: animateCamera
 ) {
-  // let camera : ArcRotateCamera;
   const camera = scene.activeCamera as ArcRotateCamera;
   console.log("animate");
   if (camera === null) {
@@ -60,8 +59,7 @@ function moveActiveCamera(
       to: target.z,
     }),
   ];
-
   scene.beginAnimation(camera, FROM_FRAME, TO_FRAME, LOOP_MODE, SPEED_RATIO);
 }
 
-export default moveActiveCamera;
+export default animateActiveCamera;

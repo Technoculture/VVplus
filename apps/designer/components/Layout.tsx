@@ -1,6 +1,5 @@
 import Navbar from "./Navbar";
 import React from "react";
-
 import { ScriptProps } from "next/script";
 import LoadingBar from "./LoadingBar";
 import Welcome from "./Welcome";
@@ -22,8 +21,6 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
     handleClickOnSaveButton,
     closeSavePopup,
     isSavePopupOpen,
-    toggleCameraButton,
-    toggleFreeCamera,
   } = navigationUseStore();
 
   return (
@@ -34,8 +31,6 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
         handleClickForToggle={handleClickForToggle}
         handleClickOnNewButton={handleClickOnNewButton}
         handleClickOnSaveButton={handleClickOnSaveButton}
-        toggleFreeCamera={toggleFreeCamera}
-        toggleCameraButton={toggleCameraButton}
       />
       {children}
       {isWelcomeComponentOpen === false && (

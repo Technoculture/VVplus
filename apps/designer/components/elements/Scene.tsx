@@ -1,7 +1,5 @@
 import SceneComp from "./SceneComp";
 import { createCamera } from "./freeCamera";
-import { createBECamera } from "./beCamera";
-import { createGateCamera } from "./gateCamera";
 import { createGround } from "./ground";
 import { createSkyBox } from "./skybox";
 import { createFog } from "./fog";
@@ -12,17 +10,17 @@ import "@babylonjs/loaders/glTF";
 
 //Work under progress, the demo component contains the code that will use Zod and React Custom Hooks in order to render the scene. This will be a part of the code later on when the work with Zod is complete
 
+let scene1: BABYLON.Scene;
 const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
   const onSceneReady = async (scene: BABYLON.Scene) => {
     createCamera(scene);
-    // createBECamera(scene);
-    // createGateCamera(scene);
     const light = new HemisphericLight("light", new Vector3(-1, 1, -1), scene);
     light.intensity = 0.7;
     await createSkyBox(scene);
     await createGround();
     await createFog(scene);
     await createModel(scene);
+    scene1 = scene;
   };
   const onRender = (scene: BABYLON.Scene) => {
     return;
@@ -43,3 +41,4 @@ const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
   );
 };
 export default Scene;
+export { scene1 };

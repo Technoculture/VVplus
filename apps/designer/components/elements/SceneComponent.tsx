@@ -11,7 +11,6 @@ import * as BABYLON from "@babylonjs/core";
 import data from "../../public/house.json";
 import useStore from "../../global-stores/store";
 import navigationUseStore from "../../globalStore/navigationStore";
-import moveActiveCamera from "../Animations/moveCamera";
 // import getFileName from "../../util/getFile";
 // import useModel from "../../util/useModel";
 
@@ -96,32 +95,32 @@ const ReactCanvas = ({
       // freeCamera.upperRadiusLimit = 2000;
       // freeCamera.upperBetaLimit = Math.PI / 2;
       scene.activeCamera = freeCamera;
-      if (navStore.toggleFreeCamera === true) {
-        // scene.activeCamera = freeCamera;
-        moveActiveCamera(scene, {
-          alpha: -Math.PI * 3,
-          beta: Math.PI / 2,
-          radius: 1000,
-          target: {
-            x: -300,
-            y: 200,
-            z: 230,
-          },
-        });
-      } else {
-        // scene.activeCamera = birdsEyeCamera;
-        //animation
-        moveActiveCamera(scene, {
-          alpha: 0,
-          beta: 0,
-          radius: 1000,
-          target: {
-            x: 0,
-            y: 700,
-            z: 430,
-          },
-        });
-      }
+      // if (navStore.toggleFreeCamera === true) {
+      //   // scene.activeCamera = freeCamera;
+      //   moveActiveCamera(scene, {
+      //     alpha: -Math.PI * 3,
+      //     beta: Math.PI / 2,
+      //     radius: 1000,
+      //     target: {
+      //       x: -300,
+      //       y: 200,
+      //       z: 230,
+      //     },
+      //   });
+      // } else {
+      //   // scene.activeCamera = birdsEyeCamera;
+      //   //animation
+      //   moveActiveCamera(scene, {
+      //     alpha: 0,
+      //     beta: 0,
+      //     radius: 1000,
+      //     target: {
+      //       x: 0,
+      //       y: 700,
+      //       z: 430,
+      //     },
+      //   });
+      // }
       scene.activeCamera.attachControl(canvas, true);
 
       //Light

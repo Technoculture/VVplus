@@ -11,8 +11,6 @@ type store = {
   isSavePopupOpen: boolean;
   handleClickOnSaveButton: () => void;
   closeSavePopup: () => void;
-  toggleFreeCamera: boolean;
-  toggleCameraButton: () => void;
 };
 const navigationUseStore = create<store>((set) => ({
   isWelcomeComponentOpen: false,
@@ -58,12 +56,6 @@ const navigationUseStore = create<store>((set) => ({
     }));
   },
 
-  //for camera buttons
-  toggleFreeCamera: true,
-  toggleCameraButton: () => {
-    set((state) => ({
-      toggleFreeCamera: !state.toggleFreeCamera,
-    }));
-  },
+  
 }));
 export default navigationUseStore;

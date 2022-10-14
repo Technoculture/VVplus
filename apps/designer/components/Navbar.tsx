@@ -1,12 +1,13 @@
 import React from "react";
 import ToggleableMenuButton from "./Buttons/ToggleableMenuButton";
 import MenuButton from "./Buttons/MenuButton";
-import FreeCamera from "./Buttons/FreeCamera";
+import FreeCamButton from "./Buttons/FreeCamButton";
+import BECamButton from "./Buttons/BECamButton";
+import GateCamButton from "./Buttons/GateCamButton"
+
 interface NavbarProps {
   isNavbarOpen: boolean;
   isToggled: boolean;
-  toggleFreeCamera: boolean;
-  toggleCameraButton: () => void;
   handleClickForToggle: () => void;
   handleClickOnNewButton: () => void;
   handleClickOnSaveButton: () => void;
@@ -16,7 +17,6 @@ interface NavbarProps {
 const Navbar = ({
   isNavbarOpen,
   isToggled,
-  toggleCameraButton,
   handleClickForToggle,
   handleClickOnNewButton,
   handleClickOnSaveButton,
@@ -43,7 +43,9 @@ const Navbar = ({
               isToggled={isToggled}
               onClick={handleClickForToggle}
             />
-            <FreeCamera onClick={toggleCameraButton} />
+            <FreeCamButton/>
+            <BECamButton/>
+            <GateCamButton/>
           </div>
         ) : (
           <div
