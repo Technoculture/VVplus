@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import { ImCross } from "react-icons/im";
 import useOnClickOutside from ".././util/useOnClickOutside";
 import MenuButton from "./Buttons/MenuButton";
 
@@ -11,8 +10,6 @@ interface SavePopupProps {
 const SavePopup = ({ closeSavePopup, isSavePopupOpen }: SavePopupProps) => {
   const ref = useRef<HTMLDivElement>(null);
   useOnClickOutside(ref, closeSavePopup);
-  const handleClickForNext = () => {};
-
   return (
     <div>
       {isSavePopupOpen === true && (
