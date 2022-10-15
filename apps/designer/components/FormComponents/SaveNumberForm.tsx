@@ -1,6 +1,5 @@
 import React from "react";
-import MenuButton from "../Buttons/MenuButton";
-const SaveNumberForm = ({ formData, setFormData, closeSavePopup }: any) => {
+const SaveNumberForm = () => {
   return (
     <div className="flex flex-col justify-start w-full gap-1">
       <p className="text-lg font-light font-Roboto">Number</p>

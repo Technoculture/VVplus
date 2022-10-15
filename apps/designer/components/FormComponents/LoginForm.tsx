@@ -10,12 +10,12 @@ interface LoginFormProps {
 }
 const LoginForm = ({ closeSavePopup }: LoginFormProps) => {
   const [page, setPage] = useState<number>(0);
-  const [formData, setFormData] = useState<Object>({
-    phoneNumber: "",
-    name: "",
-    otp: "",
-    other: "",
-  });
+  // const [formData, setFormData] = useState<any>({
+  //   phoneNumber: "",
+  //   name: "",
+  //   otp: "",
+  //   other: "",
+  // });
   const FormTitles = ["Save", "Hello", "OTP", "Saved"];
   const FormTexts = [
     `Design unique homes,  Save the homes of your dreams`,
@@ -26,27 +26,13 @@ const LoginForm = ({ closeSavePopup }: LoginFormProps) => {
 
   const DisplayPage = () => {
     if (page === 0) {
-      return (
-        <SaveNumberForm
-          formData={formData}
-          page={page}
-          setPage={setPage}
-          setFormData={setFormData}
-        />
-      );
+      return <SaveNumberForm />;
     } else if (page === 1) {
-      return (
-        <SaveNameForm
-          formData={formData}
-          page={page}
-          setPage={setPage}
-          setFormData={setFormData}
-        />
-      );
+      return <SaveNameForm />;
     } else if (page === 2) {
-      return <EnterOtpForm formData={formData} setFormData={setFormData} />;
+      return <EnterOtpForm />;
     } else {
-      return <SavedHouseForm formData={formData} setFormData={setFormData} />;
+      return <SavedHouseForm />;
     }
   };
   return (
@@ -75,7 +61,6 @@ const LoginForm = ({ closeSavePopup }: LoginFormProps) => {
             if (page === FormTitles.length - 1) {
               alert("you logged in");
               closeSavePopup();
-              console.log(formData);
             } else {
               setPage((p) => p + 1);
             }

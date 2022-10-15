@@ -1,7 +1,5 @@
 import React from "react";
-import MenuButton from "../Buttons/MenuButton";
-
-const SavedHouseForm = ({ formData, setFormData, closeSavePopup }: any) => {
+const SavedHouseForm = () => {
   return (
     <div className="flex justify-center w-full gap-2.5">
       <input

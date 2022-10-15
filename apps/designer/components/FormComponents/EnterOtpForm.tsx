@@ -1,7 +1,6 @@
 import React from "react";
-import MenuButton from "../Buttons/MenuButton";
 
-const EnterOtpForm = ({ formData, setFormData, closeSavePopup }: any) => {
+const EnterOtpForm = () => {
   return (
     <div className="flex justify-center w-full gap-2.5">
       <input
