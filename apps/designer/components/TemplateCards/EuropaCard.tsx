@@ -1,7 +1,7 @@
 import React from "react";
 import house from "../../assets/house.jpg";
 import Image from "next/image";
-
+//Todo - fix the height of image
 const EuropaCard = () => {
   return (
     <div className="h-[364px] w-[220px] border-[1px] items-center py-[10px]  flex flex-col border-[#FFCC49] shadow-[ 0px_4px_40px_rgba(0_0_0_0.15)] rounded-[15px]">

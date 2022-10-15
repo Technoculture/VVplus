@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import useOnClickOutside from ".././util/useOnClickOutside";
-import MenuButton from "./Buttons/MenuButton";
+// import MenuButton from "./Buttons/MenuButton";
+import LoginForm from "../components/FormComponents/LoginForm";
 
 //Todo :Exit Animation on savepop component left
 interface SavePopupProps {
@@ -24,7 +25,7 @@ const SavePopup = ({ closeSavePopup, isSavePopupOpen }: SavePopupProps) => {
         >
           <div
             ref={ref}
-            className={`flex  bg-[#fff] rounded-[20px] w-72 z-[100] justify-center items-center  md:w-96 h-96
+            className={`flex  bg-[#fff] rounded-[20px] w-[300px] z-[100] justify-center items-center  md:w-96 h-96
           ${
             isSavePopupOpen === true
               ? "animate-fade-in transition-all duration-500 "
@@ -32,35 +33,7 @@ const SavePopup = ({ closeSavePopup, isSavePopupOpen }: SavePopupProps) => {
           }
           `}
           >
-            {/* <ImCross
-              className="static pt-px cursor-pointer md:ml-[360px] mt-2 ml-[260px]"
-              onClick={closeSavePopup} */}
-
-            {/* /> */}
-            <div className="flex w-[300px] h-[300px] justify-between  flex-col items-center">
-              <h1 className="text-2xl font-normal font-Roboto">Save</h1>
-              <p className="text-lg font-normal text-center font-Bodoni">
-                Design unique homes,
-                <br />
-                Save the homes of your dreams,
-              </p>
-              <div className="flex flex-col justify-start w-full gap-1">
-                <p className="text-lg font-light font-Roboto">Phone Number</p>
-                <input
-                  type="text"
-                  className="w-full p-[9px_14px] rounded-[10px] border-[1px] border-[#DADADA] bg-gray-100 h-9"
-                  placeholder="09894323233"
-                />
-              </div>
-              <div className="flex gap-5">
-                <MenuButton
-                  text={"Cancel"}
-                  buttonColor={"#D9D9D9"}
-                  onClick={closeSavePopup}
-                />
-                <MenuButton text={"Next"} buttonColor={"#D9D9D9"} />
-              </div>
-            </div>
+            <LoginForm closeSavePopup={closeSavePopup} />
           </div>
         </div>
       )}

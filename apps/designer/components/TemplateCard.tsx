@@ -19,7 +19,12 @@ const TemplateCard = ({ handleClickOnNewDesign }: NewDesignProps) => {
         Your dream home is a special place.
         <br /> Dream your dream house with just a few clicks!
       </p>
-      <div className="h-[384px] w-[700px] border-[1px] gap-[10px] flex justify-center text-center items-center  border-[#DADADA] from-[180deg_rgba(255_255_255_0.7)_0%] to-[rgba(255_245_245_0.35)_100%] rounded-[20px] shadow-[0px_4px_40px_rgba(0_0_0_0.05)]">
+      <div
+        className={`h-[384px] w-[700px] border-[1px] gap-[10px] flex justify-center text-center items-center  border-[#DADADA] from-[180deg_rgba(255_255_255_0.7)_0%] to-[rgba(255_245_245_0.35)_100%] rounded-[20px] shadow-[0px_4px_40px_rgba(0_0_0_0.05)]
+      
+      `}
+        onClick={handleClickOnNewDesign}
+      >
         <EuropaCard />
         <YamunaCard />
         <JayantiCard />

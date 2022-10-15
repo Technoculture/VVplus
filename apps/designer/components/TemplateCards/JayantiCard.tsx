@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 
 const JayantiCard = () => {
   return (
@@ -7,9 +6,7 @@ const JayantiCard = () => {
       className="h-[364px] w-[220px] border-[1px] items-center py-[10px] box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.15);
   flex flex-col border-[#D9D9D9] shadow-[0px_4px_40px_rgba(0_0_0_0.15)] rounded-[15px]"
     >
-      <div className="w-[200px] h-[300px] border-[1px] bg-[#DADADA] border-[#D9D9D9] rounded-[12px]">
-        {/* <Image src="" alt="" /> */}
-      </div>
+      <div className="w-[200px] h-[300px] border-[1px] bg-[#DADADA] border-[#D9D9D9] rounded-[12px]"></div>
       <div className="flex justify-between mt-4 w-44">
         <h2 className="font-Bodoni text-xl font-light leading-[18px] ">
           Jyanti
