@@ -1,6 +1,6 @@
 import animateActiveCamera from "../Animations/animateCamera";
 import { AiOutlineCamera } from "react-icons/ai";
-import { scene1 } from "../elements/Scene";
+import { scene_variable } from "../elements/Scene";
 
 export interface ButtonProps
   extends React.DetailedHTMLProps<
@@ -11,7 +11,7 @@ export interface ButtonProps
 
 const FreeCamButton = () => {
   function animation() {
-    animateActiveCamera(scene1, {
+    animateActiveCamera(scene_variable, {
       radius: 1000,
       alpha: -Math.PI * 3,
       beta: Math.PI / 2,

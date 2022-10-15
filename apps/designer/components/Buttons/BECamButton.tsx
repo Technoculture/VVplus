@@ -1,6 +1,6 @@
 import animateActiveCamera from "../Animations/animateCamera";
 import { AiOutlineEye } from "react-icons/ai";
-import { scene1 } from "../elements/Scene";
+import { scene_variable } from "../elements/Scene";
 
 export interface ButtonProps
   extends React.DetailedHTMLProps<
@@ -11,7 +11,7 @@ export interface ButtonProps
 
 const BECamButton = () => {
   function animation() {
-    animateActiveCamera(scene1, {
+    animateActiveCamera(scene_variable, {
       radius: 1000,
       alpha: 0,
       beta: 0,

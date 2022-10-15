@@ -10,7 +10,7 @@ import "@babylonjs/loaders/glTF";
 
 //Work under progress, the demo component contains the code that will use Zod and React Custom Hooks in order to render the scene. This will be a part of the code later on when the work with Zod is complete
 
-let scene1: BABYLON.Scene;
+let scene_variable: BABYLON.Scene;
 const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
   const onSceneReady = async (scene: BABYLON.Scene) => {
     createCamera(scene);
@@ -20,7 +20,7 @@ const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
     await createGround();
     await createFog(scene);
     await createModel(scene);
-    scene1 = scene;
+    scene_variable = scene;
   };
   const onRender = (scene: BABYLON.Scene) => {
     return;
@@ -41,4 +41,4 @@ const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
   );
 };
 export default Scene;
-export { scene1 };
+export { scene_variable };

@@ -55,7 +55,5 @@ const navigationUseStore = create<store>((set) => ({
       isSavePopupOpen: false,
     }));
   },
-
-  
 }));
 export default navigationUseStore;

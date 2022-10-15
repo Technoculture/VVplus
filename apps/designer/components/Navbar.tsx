@@ -3,7 +3,7 @@ import ToggleableMenuButton from "./Buttons/ToggleableMenuButton";
 import MenuButton from "./Buttons/MenuButton";
 import FreeCamButton from "./Buttons/FreeCamButton";
 import BECamButton from "./Buttons/BECamButton";
-import GateCamButton from "./Buttons/GateCamButton"
+import GateCamButton from "./Buttons/GateCamButton";
 
 interface NavbarProps {
   isNavbarOpen: boolean;
@@ -43,9 +43,9 @@ const Navbar = ({
               isToggled={isToggled}
               onClick={handleClickForToggle}
             />
-            <FreeCamButton/>
-            <BECamButton/>
-            <GateCamButton/>
+            <FreeCamButton />
+            <BECamButton />
+            <GateCamButton />
           </div>
         ) : (
           <div

@@ -1,6 +1,6 @@
 import animateActiveCamera from "../Animations/animateCamera";
-import { GiGate } from "react-icons/gi"
-import { scene1 } from "../elements/Scene";
+import { GiGate } from "react-icons/gi";
+import { scene_variable } from "../elements/Scene";
 
 export interface ButtonProps
   extends React.DetailedHTMLProps<
@@ -11,7 +11,7 @@ export interface ButtonProps
 
 const GateCamButton = () => {
   function animation() {
-    animateActiveCamera(scene1, {
+    animateActiveCamera(scene_variable, {
       radius: 1000,
       alpha: -Math.PI * 3,
       beta: Math.PI / 2,
