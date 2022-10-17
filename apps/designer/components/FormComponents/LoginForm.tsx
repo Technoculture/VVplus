@@ -34,7 +34,7 @@ const LoginForm = ({ closeSavePopup }: LoginFormProps) => {
         <MenuButton
           remove={page === FormTitles.length - 1 ? true : false}
           text={page === 0 ? "Cancel" : "Back"}
-          buttonColor={"red-200"}
+          buttonColor={"gray-200"}
           onClick={() => {
             page === 0 ? closeSavePopup() : setPage((p) => p - 1);
           }}

@@ -1,5 +1,7 @@
 import React from "react";
 const SavedHouseForm = () => {
+  const Value = ["F", "I", "Y"];
+
   return (
     <div className="flex flex-col items-center justify-between gap-10">
       <h1 className="text-2xl font-normal font-Roboto">Saved</h1>
@@ -14,15 +16,18 @@ const SavedHouseForm = () => {
       <div className="flex justify-center w-full gap-2.5">
         <input
           type="text"
-          className="w-10 outline-0 p-[9px_14px] rounded-[10px] border-[1px] border-[#DADADA] bg-gray-100 h-9"
+          className="w-10 outline-0 p-[9px_14px] flex justify-center items-center rounded-[10px] border-[1px] border-[#DADADA] bg-gray-100 h-9"
+          value={Value[0]}
         />
         <input
           type="text"
-          className="w-10 outline-0 p-[9px_14px] rounded-[10px] border-[1px] border-[#DADADA] bg-gray-100 h-9"
+          className="w-10 outline-0 p-[9px_14px] flex justify-center text-center items-center rounded-[10px] border-[1px] border-[#DADADA] bg-gray-100 h-9"
+          value={Value[1]}
         />
         <input
           type="text"
-          className="w-10 outline-0 p-[9px_14px] rounded-[10px] border-[1px] border-[#DADADA] bg-gray-100 h-9"
+          className="w-10 outline-0 p-[9px_14px] flex justify-center items-center rounded-[10px] border-[1px] border-[#DADADA] bg-gray-100 h-9"
+          value={[Value[2]]}
         />
       </div>
     </div>
