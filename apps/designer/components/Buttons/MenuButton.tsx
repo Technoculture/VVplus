@@ -13,7 +13,7 @@ export interface ButtonProps
 const MenuButton = ({ text, onClick }: ButtonProps) => {
   return (
     <button
-      className="flex items-center justify-center w-20 h-12 font-light font-Roboto  text-[20px] leading-6 text-center bg-[#D9D9D9] rounded-[15px]"
+      className="flex justify-center items-center text-xl py-[9px] px-[20px] mr-[10px] duration-300  rounded-[15px] bg-gray-400"
       onClick={onClick}
     >
       {text}

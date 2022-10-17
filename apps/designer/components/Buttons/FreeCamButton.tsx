@@ -24,7 +24,7 @@ const FreeCamButton = () => {
   }
   return (
     <button
-      className="hidden md:flex justify-center items-center text-xl py-[9px] px-[20px] mr-[10px] duration-300  rounded-[15px] bg-gray-400"
+      className="flex justify-center items-center text-xl py-[9px] px-[20px] mr-[10px] duration-300  rounded-[15px] bg-gray-400"
       onClick={animation}
     >
       <AiOutlineCamera />

@@ -17,13 +17,13 @@
         },
         "front": {
             "target_value": {
-                "alpha": 1000,
-                "beta": 1000,
+                "alpha": "-Math.PI*3",
+                "beta": "Math.PI/2",
                 "radius": 1000,
                 "target": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
+                    "x": 250,
+                    "y": 70,
+                    "z": 30
                 }
             },
             "properties": {
@@ -46,5 +46,19 @@
 
             }
         }]
+    },
+    "roof-top": {
+        "top": {
+            "target_value":{
+                "alpha": 0,
+                "beta": 0,
+                "radius": 1000,
+                "target": {
+                    "x": 0,
+                    "y": 700,
+                    "z": 430
+                }
+            }
+        }
     }
 }
