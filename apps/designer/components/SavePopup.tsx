@@ -24,7 +24,7 @@ const SavePopup = ({ closeSavePopup, isSavePopupOpen }: SavePopupProps) => {
         >
           <div
             ref={ref}
-            className={`flex  bg-[#fff] rounded-[20px] w-[300px] z-[100] justify-center items-center  md:w-96 h-96
+            className={`flex  bg-[#fff] rounded-[20px] w-[300px] z-[100] justify-center items-center  md:w-[430px] 
           ${
             isSavePopupOpen === true
               ? "animate-fade-in transition-all duration-500 "
