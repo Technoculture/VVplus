@@ -8,7 +8,7 @@ const EuropaCard = () => {
       <div className="w-[190px] relative object-fill overflow-hidden h-[300px] border-[1px] border-amber-300 rounded-[12px]">
         <Image
           src={house}
-          className="  w object-cover object-[top_0px_left_-100px]  w-full"
+          className="object-cover object-[top_0px_left_-100px]  w-full"
           alt=""
           layout="fill"
         />

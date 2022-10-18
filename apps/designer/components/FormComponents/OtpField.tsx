@@ -36,7 +36,7 @@ const OTPField = () => {
             <input
               ref={index == activeOtpIndex ? inputRef : null}
               type="number"
-              className="w-10 text-xl font-semibold text-center appearance-none  transition bg-transparent border-[1px] border-zinc-300 rounded-[10px] outline-0 h-9 spin-button-none bg-neutral-100"
+              className="w-10 text-base md:text-lg font-semibold text-center appearance-none  transition bg-transparent border-[1px] border-zinc-300 rounded-[10px] outline-0 h-9 spin-button-none bg-neutral-100"
               onChange={handleOnChange}
               onKeyDown={(e) => handleOnKeyDown(e, index)}
               value={otp[index]}
