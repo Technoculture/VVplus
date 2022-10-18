@@ -9,7 +9,7 @@ import BECamButton from "./Buttons/BECamButton";
 import GateCamButton from "./Buttons/GateCamButton";
 import { scene_variable } from "./elements/Scene";
 import animateActiveCamera from "./Animations/animateCamera";
-import data from "../public/cameraAngles.json"
+import data from "../public/cameraAngles.json";
 
 interface NavbarProps {
   isNavbarOpen: boolean;
@@ -65,9 +65,9 @@ const Navbar = ({
             {/* <MenuButton text={<AiOutlineCamera/>} onClick={animation} />
             <MenuButton text={<AiOutlineEye/>} onClick={animation} />
             <MenuButton text={<GiGate/>} onClick={animation} /> */}
-            <FreeCamButton />
+            {/* <FreeCamButton />
             <BECamButton />
-            <GateCamButton />
+            <GateCamButton /> */}
           </div>
         ) : (
           <div
