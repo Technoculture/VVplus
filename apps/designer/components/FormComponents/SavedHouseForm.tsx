@@ -11,7 +11,8 @@ const SavedHouseForm = () => {
       </p>
       <p className="text-lg font-normal text-center font-Bodoni">
         Share this house on social media to avail 5% flat discount on the
-        booking fees. Tag #vvclub to avail benefits.
+        booking fees. Tag <span className="text-sky-500"> #vvclub</span> to
+        avail benefits.
       </p>
       <div className="flex justify-center w-full gap-2.5">
         <input

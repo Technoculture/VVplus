@@ -91,12 +91,12 @@ const Navbar = ({
           <MenuButton
             text={"New"}
             onClick={handleClickOnNewButton}
-            buttonColor={"gray-200"}
+            bgColor="gray-200"
           />
           <MenuButton
             text={"Save"}
             onClick={handleClickOnSaveButton}
-            buttonColor={"gray-200"}
+            bgColor="gray-200"
           />
           <ToggleableMenuButton
             isToggled={isToggled}
@@ -110,12 +110,12 @@ const Navbar = ({
         >
           <MenuButton
             text={"New"}
-            buttonColor={"gray-200"}
+            bgColor="gray-200"
             onClick={handleClickOnNewButton}
           />
           <MenuButton
             text={"Save"}
-            buttonColor={"gray-200"}
+            bgColor="gray-200"
             onClick={handleClickOnSaveButton}
           />
         </div>

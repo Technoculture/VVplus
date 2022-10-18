@@ -1,7 +1,7 @@
 import React from "react";
 const SaveNumberForm = () => {
   return (
-    <div className="flex flex-col items-center justify-between gap-10">
+    <div className="flex flex-col items-center justify-between md:gap-10 gap-6">
       <h1 className="text-2xl font-normal font-Roboto">Save</h1>
       <p className="text-lg font-normal text-center w-80 font-Bodoni">
         Design unique homes,
