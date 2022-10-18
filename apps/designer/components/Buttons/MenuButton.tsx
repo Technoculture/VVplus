@@ -1,5 +1,3 @@
-// import { HexColor } from "@babylonjs/gui-editor/colorPicker/hexColor";
-import { colorCorrectionPixelShader } from "babylonjs/Shaders/colorCorrection.fragment";
 import React from "react";
 
 export interface ButtonProps

@@ -4,6 +4,7 @@ import SaveNumberForm from "./SaveNumberForm";
 import SaveNameForm from "./SaveNameForm";
 import EnterOtpForm from "./EnterOtpForm";
 import SavedHouseForm from "./SavedHouseForm";
+import CancelButton from "../Buttons/CancelButton";
 
 interface LoginFormProps {
   closeSavePopup: () => void;
@@ -31,10 +32,9 @@ const LoginForm = ({ closeSavePopup }: LoginFormProps) => {
     >
       <div>{DisplayPage()}</div>
       <div className="flex gap-5">
-        <MenuButton
+        <CancelButton
           remove={page === FormTitles.length - 1 ? true : false}
           text={page === 0 ? "Cancel" : "Back"}
-          bgColor="red-200"
           onClick={() => {
             page === 0 ? closeSavePopup() : setPage((p) => p - 1);
           }}
