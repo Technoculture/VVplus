@@ -19,6 +19,17 @@ interface NavbarProps {
   handleClickOnSaveButton: () => void;
 }
 
+interface Animation {
+  r: number;
+  a: number;
+  b: number;
+  t: {
+    x: number;
+    y: number;
+    z: number;
+  };
+}
+
 //Todo : Animation of navbar  when isNavbarOpen === true & false.
 const Navbar = ({
   isNavbarOpen,
@@ -27,15 +38,15 @@ const Navbar = ({
   handleClickOnNewButton,
   handleClickOnSaveButton,
 }: NavbarProps) => {
-  function animation() {
+  function animation({ r, a, b, t }: Animation) {
     animateActiveCamera(scene_variable, {
-      radius: 1000,
-      alpha: -Math.PI * 3,
-      beta: Math.PI / 2,
+      radius: r,
+      alpha: a,
+      beta: b,
       target: {
-        x: -300,
-        y: 200,
-        z: 230,
+        x: t.x,
+        y: t.y,
+        z: t.z,
       },
     });
   }
@@ -65,9 +76,21 @@ const Navbar = ({
             {/* <MenuButton text={<AiOutlineCamera/>} onClick={animation} />
             <MenuButton text={<AiOutlineEye/>} onClick={animation} />
             <MenuButton text={<GiGate/>} onClick={animation} /> */}
-            {/* <FreeCamButton />
+            <FreeCamButton />
             <BECamButton />
-            <GateCamButton /> */}
+            <GateCamButton />
+            {/* {data.map((item) => {
+              const r = item.front.target_value.radius
+              const a = item.front.target_value.radius
+              const b = item.front.target_value.radius
+              const t = item.front.target_value.target
+              return (
+                <MenuButton
+                  text={item.name}
+                  onClick={animation({r,a,b,t})}
+                />
+              );
+            })} */}
           </div>
         ) : (
           <div
