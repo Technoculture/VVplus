@@ -18,6 +18,8 @@ interface animateCamera {
   };
 }
 
+//try to implement intercollisions and better animations and ease in and ease out
+
 function animateActiveCamera(
   scene: Scene,
   { radius, alpha, beta, target }: animateCamera

@@ -31,6 +31,7 @@ interface Animation {
 }
 
 //Todo : Animation of navbar  when isNavbarOpen === true & false.
+//asset manager to implement the percentage loader and other easy to manage assets 
 const Navbar = ({
   isNavbarOpen,
   isToggled,
