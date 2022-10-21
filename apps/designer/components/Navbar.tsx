@@ -10,6 +10,7 @@ import GateCamButton from "./Buttons/GateCamButton";
 import { scene_variable } from "./elements/Scene";
 import animateActiveCamera from "./Animations/animateCamera";
 import data from "../public/cameraAngles.json";
+import CamButton from "./Buttons/CamButton";
 
 interface NavbarProps {
   isNavbarOpen: boolean;
@@ -31,7 +32,7 @@ interface Animation {
 }
 
 //Todo : Animation of navbar  when isNavbarOpen === true & false.
-//asset manager to implement the percentage loader and other easy to manage assets 
+//asset manager to implement the percentage loader and other easy to manage assets
 const Navbar = ({
   isNavbarOpen,
   isToggled,
@@ -74,24 +75,24 @@ const Navbar = ({
               isToggled={isToggled}
               onClick={handleClickForToggle}
             />
-            {/* <MenuButton text={<AiOutlineCamera/>} onClick={animation} />
-            <MenuButton text={<AiOutlineEye/>} onClick={animation} />
-            <MenuButton text={<GiGate/>} onClick={animation} /> */}
-            <FreeCamButton />
+            {/* <FreeCamButton />
             <BECamButton />
-            <GateCamButton />
-            {/* {data.map((item) => {
+            <GateCamButton /> */}
+            {data.map((item) => {
               const r = item.front.target_value.radius
-              const a = item.front.target_value.radius
-              const b = item.front.target_value.radius
+              const a = item.front.target_value.alpha
+              const b = item.front.target_value.beta
               const t = item.front.target_value.target
               return (
-                <MenuButton
+                <CamButton
                   text={item.name}
-                  onClick={animation({r,a,b,t})}
+                  r={r}
+                  a={a}
+                  b={b}
+                  t={t}
                 />
               );
-            })} */}
+            })}
           </div>
         ) : (
           <div

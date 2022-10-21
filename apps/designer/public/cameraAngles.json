@@ -18,8 +18,8 @@
         },
         "front": {
             "target_value": {
-                "alpha": "-Math.PI*3",
-                "beta": "Math.PI/2",
+                "alpha": -9.424777961,
+                "beta": 1.570796327,
                 "radius": 1000,
                 "target": {
                     "x": 250,

@@ -1,4 +1,6 @@
 import React from "react";
+import animateActiveCamera from "../Animations/animateCamera";
+import { scene_variable } from "../elements/Scene";
 
 export interface ButtonProps
   extends React.DetailedHTMLProps<
@@ -15,14 +17,25 @@ export interface ButtonProps
     y: number;
     z: number;
   };
-  onClick: () => void;
 }
 
-const CamButton = ({ text, onClick }: ButtonProps) => {
+const CamButton = ({ text, r, a, b, t }: ButtonProps) => {
+  function animation() {
+    animateActiveCamera(scene_variable, {
+      radius: r,
+      alpha: a,
+      beta: b,
+      target: {
+        x: t.x,
+        y: t.y,
+        z: t.z,
+      },
+    });
+  }
   return (
     <button
       className="flex justify-center items-center text-xl py-[9px] px-[20px] mr-[10px] duration-300  rounded-[15px] bg-gray-400"
-      onClick={onClick}
+      onClick={animation}
     >
       {text}
     </button>
