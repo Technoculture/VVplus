@@ -4,9 +4,9 @@ import MenuButton from "./Buttons/MenuButton";
 import { AiOutlineCamera } from "react-icons/ai";
 import { GiGate } from "react-icons/gi";
 import { AiOutlineEye } from "react-icons/ai";
-import FreeCamButton from "./Buttons/FreeCamButton";
-import BECamButton from "./Buttons/BECamButton";
-import GateCamButton from "./Buttons/GateCamButton";
+// import FreeCamButton from "./Buttons/FreeCamButton";
+// import BECamButton from "./Buttons/BECamButton";
+// import GateCamButton from "./Buttons/GateCamButton";
 import { scene_variable } from "./elements/Scene";
 import animateActiveCamera from "./Animations/animateCamera";
 import data from "../public/cameraAngles.json";
@@ -79,18 +79,31 @@ const Navbar = ({
             <BECamButton />
             <GateCamButton /> */}
             {data.map((item) => {
-              const r = item.front.target_value.radius
-              const a = item.front.target_value.alpha
-              const b = item.front.target_value.beta
-              const t = item.front.target_value.target
+              const rf = item.front.target_value.radius
+              const af = item.front.target_value.alpha
+              const bf = item.front.target_value.beta
+              const tf = item.front.target_value.target
+              const rt = item.top.target_value.radius
+              const at = item.top.target_value.alpha
+              const bt = item.top.target_value.beta
+              const tt = item.top.target_value.target
               return (
+                <>
                 <CamButton
                   text={item.name}
-                  r={r}
-                  a={a}
-                  b={b}
-                  t={t}
+                  r={rf}
+                  a={af}
+                  b={bf}
+                  t={tf}
                 />
+                <CamButton
+                  text={item.name}
+                  r={rt}
+                  a={at}
+                  b={bt}
+                  t={tt}
+                />
+                </>
               );
             })}
           </div>
