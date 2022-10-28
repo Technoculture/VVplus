@@ -2,7 +2,7 @@ import { z } from "zod";
 
 // Schema work still under progress, this part needs to fetch the object from the JSON file. Still has issues and errors.
 export const viewModelSchema = z.object({
-  id: z.string().uuid(),
+  uuid: z.string().uuid(),
   type: z.string(),
   baseUrl: z.string().url(),
   floors: z.array(

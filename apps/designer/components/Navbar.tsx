@@ -89,7 +89,13 @@ const Navbar = ({
               const tt = item.top.target_value.target;
               return (
                 <>
-                  <CamButton text={item.front.key} r={rf} a={af} b={bf} t={tf} />
+                  <CamButton
+                    text={item.front.key}
+                    r={rf}
+                    a={af}
+                    b={bf}
+                    t={tf}
+                  />
                   <CamButton text={item.top.key} r={rt} a={at} b={bt} t={tt} />
                 </>
               );
