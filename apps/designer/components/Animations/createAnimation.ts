@@ -1,7 +1,7 @@
 import { Animation } from "@babylonjs/core/Animations/animation";
 import { CubicEase, EasingFunction } from "@babylonjs/core/Animations/easing";
 
-const FRAMES_PER_SECOND = 60;
+const FRAMES_PER_SECOND = 30;
 
 interface AniProps {
   property: string;

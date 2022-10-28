@@ -68,7 +68,7 @@ const ReactCanvas = ({
       const freeCamera = new ArcRotateCamera(
         "camera",
         -Math.PI * 3,
-        Math.PI/2,
+        Math.PI / 2,
         1000,
         new Vector3(0, 600, 280),
         scene

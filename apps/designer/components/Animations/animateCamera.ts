@@ -2,10 +2,10 @@ import createAnimation from "./createAnimation";
 import { Scene } from "@babylonjs/core/scene";
 import { ArcRotateCamera } from "@babylonjs/core";
 
-const SPEED_RATIO = 4;
+const SPEED_RATIO = 3;
 const LOOP_MODE = false;
 const FROM_FRAME = 0;
-const TO_FRAME = 100;
+const TO_FRAME = 80;
 
 interface animateCamera {
   radius: number;

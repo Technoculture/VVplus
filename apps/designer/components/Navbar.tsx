@@ -79,30 +79,18 @@ const Navbar = ({
             <BECamButton />
             <GateCamButton /> */}
             {data.map((item) => {
-              const rf = item.front.target_value.radius
-              const af = item.front.target_value.alpha
-              const bf = item.front.target_value.beta
-              const tf = item.front.target_value.target
-              const rt = item.top.target_value.radius
-              const at = item.top.target_value.alpha
-              const bt = item.top.target_value.beta
-              const tt = item.top.target_value.target
+              const rf = item.front.target_value.radius;
+              const af = item.front.target_value.alpha;
+              const bf = item.front.target_value.beta;
+              const tf = item.front.target_value.target;
+              const rt = item.top.target_value.radius;
+              const at = item.top.target_value.alpha;
+              const bt = item.top.target_value.beta;
+              const tt = item.top.target_value.target;
               return (
                 <>
-                <CamButton
-                  text={item.name}
-                  r={rf}
-                  a={af}
-                  b={bf}
-                  t={tf}
-                />
-                <CamButton
-                  text={item.name}
-                  r={rt}
-                  a={at}
-                  b={bt}
-                  t={tt}
-                />
+                  <CamButton text={item.front.key} r={rf} a={af} b={bf} t={tf} />
+                  <CamButton text={item.top.key} r={rt} a={at} b={bt} t={tt} />
                 </>
               );
             })}
