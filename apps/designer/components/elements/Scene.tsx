@@ -28,7 +28,7 @@ const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
   };
   const files = getFileName();
   console.log(files);
-  
+
   return (
     <div>
       <SceneComp
