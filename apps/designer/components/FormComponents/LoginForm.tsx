@@ -13,6 +13,8 @@ const LoginForm = ({ closeSavePopup }: LoginFormProps) => {
   const [page, setPage] = useState<number>(0);
   const FormTitles = ["Save", "Hello", "OTP", "Saved"];
 
+  //TODO : Refactor the login form
+
   const DisplayPage = () => {
     if (page === 0) {
       return <SaveNumberForm />;
