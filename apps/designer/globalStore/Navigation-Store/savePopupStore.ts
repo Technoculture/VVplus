@@ -1,11 +1,11 @@
 import create from "zustand";
-import {persist} from 'zustand/middleware'
-interface PopupStore {
+
+type popupStore = {
   isSavePopupOpen: boolean;
   handleClickOnSaveButton: () => void;
   closeSavePopup: () => void;
 };
-export const savePopupStore = create(persist<PopupStore>((set) => ({
+export const savePopupStore = create<popupStore>((set) => ({
   isSavePopupOpen: false,
   handleClickOnSaveButton: () => {
     set(() => ({
@@ -17,10 +17,6 @@ export const savePopupStore = create(persist<PopupStore>((set) => ({
       isSavePopupOpen: false,
     }));
   },
-}), {
-  name: 'savaPopup-state',
-  getStorage:()=>localStorage,
-
 }));
 
 

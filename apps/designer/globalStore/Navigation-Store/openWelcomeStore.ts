@@ -1,17 +1,13 @@
 import create from "zustand";
-import { persist } from "zustand/middleware";
-type store = {
+type openWelcomeStore = {
   isWelcomeComponentOpen: boolean;
   handleClickOnNewDesign: () => void;
 };
-export const openWelcomeStore = create(persist<store>((set) => ({
+export const openWelcomeStore = create<openWelcomeStore>((set) => ({
   isWelcomeComponentOpen: false,
   handleClickOnNewDesign: () => {
     set(() => ({
       isWelcomeComponentOpen: true,
     }));
   },
-}),{
-  name: 'openWelcome- state',
-  getStorage: ()=>localStorage,
 }));

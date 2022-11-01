@@ -1,6 +1,5 @@
-import create , { StateCreator}from "zustand";
-import { persist, devtools } from 'zustand/middleware';
-interface NavigationStore {
+import create from "zustand";
+type navigationStore  = {
   isNavbarOpen: boolean;
   handleClickOnWelcome: () => void;
   isWelcomePanelActive: boolean;
@@ -8,7 +7,7 @@ interface NavigationStore {
   handleClickOnNewButton: () => void;
   handleClickForToggle: () => void;
 };
-  const navigationUseStore = create(persist<NavigationStore>((set) => ({
+  const navigationUseStore = create<navigationStore>((set) => ({
   isWelcomePanelActive: false, //for welcome component
   isNavbarOpen: false, //for navbar by default is closed
   handleClickOnWelcome: () => {
@@ -31,10 +30,5 @@ interface NavigationStore {
       isToggled: !state.isToggled,
     }));
   },
-}),{
-  name: 'navigation-state',
-  getStorage: ()=> localStorage,
-
-}
-))
+}))
 export default navigationUseStore;
