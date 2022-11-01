@@ -1,16 +1,16 @@
 import React from "react";
 import { Range } from "react-range";
-import data from "../../public/data.json";
+import data from "../../public/house.json";
 import useStore from "../../global-stores/store";
 
 // Not in working condition yet, will be updated later with useStore and Zod which will implement feature to turn specific floors on/off depending on user's request
 export default function Slider() {
   const store = useStore();
   const [values, setValues] = React.useState([4]);
-  let dataLen = 0;
-  if (data[0]) {
-    dataLen = data[0].floors.length - 1;
-  }
+  // let dataLen = 0;
+  // if (data[0]) {
+  //   dataLen = data[0].floors.length - 1;
+  // }
   // console.log(store.floor);
   return (
     <div className="w-full flex justify-center">
@@ -19,7 +19,8 @@ export default function Slider() {
         <Range
           step={1}
           min={0}
-          max={dataLen}
+          // max={dataLen}
+          max={1}
           values={values}
           onChange={(values) => {
             setValues(values);
@@ -42,7 +43,8 @@ export default function Slider() {
         />
         <span>Floor: {values[0]}</span>
         <br />
-        <span>Set on 0 for plot and {dataLen} for roof</span>
+        {/* <span>Set on 0 for plot and {dataLen} for roof</span> */}
+        <span>Set on 0 for plot and 1 for roof</span>
         <br />
         <br />
       </div>

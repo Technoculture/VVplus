@@ -1,6 +1,7 @@
 import * as BABYLON from "@babylonjs/core";
 
 export async function createSkyBox(scene: BABYLON.Scene) {
+  const skyBoxUrl = "https://assets.vvplus.cc/misc/skybox"
   const skyBox = BABYLON.MeshBuilder.CreateBox(
     "skyBox",
     { size: 10000.0 },
@@ -11,7 +12,7 @@ export async function createSkyBox(scene: BABYLON.Scene) {
   const skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
   skyboxMaterial.backFaceCulling = false;
   skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture(
-    "https://assets.vvplus.cc/misc/skybox",
+    skyBoxUrl,
     scene,
     ["_px.png", "_py.png", "_pz.png", "_nx.png", "_ny.png", "_nz.png"]
   );
