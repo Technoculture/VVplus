@@ -1,5 +1,5 @@
 import ReactCanvas from "../components/elements/SceneComponent";
-import useStore from "../globalStore/navigationStore";
+import useStore from "../globalStore/Navigation-Store/navigationStore";
 
 // import Canvas from "../components/elements/Demo";
 // import Slider from "../components/elements/Slider";
