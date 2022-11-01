@@ -1,12 +1,6 @@
 import React from "react";
 import ToggleableMenuButton from "./Buttons/ToggleableMenuButton";
 import MenuButton from "./Buttons/MenuButton";
-import { AiOutlineCamera } from "react-icons/ai";
-import { GiGate } from "react-icons/gi";
-import { AiOutlineEye } from "react-icons/ai";
-// import FreeCamButton from "./Buttons/FreeCamButton";
-// import BECamButton from "./Buttons/BECamButton";
-// import GateCamButton from "./Buttons/GateCamButton";
 import { scene_variable } from "./elements/Scene";
 import animateActiveCamera from "./Animations/animateCamera";
 import data from "../public/cameraAngles.json";
@@ -40,18 +34,6 @@ const Navbar = ({
   handleClickOnNewButton,
   handleClickOnSaveButton,
 }: NavbarProps) => {
-  function animation({ r, a, b, t }: Animation) {
-    animateActiveCamera(scene_variable, {
-      radius: r,
-      alpha: a,
-      beta: b,
-      target: {
-        x: t.x,
-        y: t.y,
-        z: t.z,
-      },
-    });
-  }
   //use eval("Math.PI") to find the value of pi in the js function after fetching from JSON
   return (
     <div className="flex items-center h-24 ">
@@ -75,9 +57,6 @@ const Navbar = ({
               isToggled={isToggled}
               onClick={handleClickForToggle}
             />
-            {/* <FreeCamButton />
-            <BECamButton />
-            <GateCamButton /> */}
             {data.map((item) => {
               const rf = item.front.target_value.radius;
               const af = item.front.target_value.alpha;

@@ -4,15 +4,15 @@ import { z } from "zod";
 
 const FloorStructure = z.object({
   structId: z.number(),
-  file: z.string().endsWith('.glb'),
-  description: z.string()
-})
+  file: z.string().endsWith(".glb"),
+  description: z.string(),
+});
 
 const Floors = z.object({
   id: z.string(),
   floorName: z.string(),
-  floorStructure: z.array(FloorStructure)
-})
+  floorStructure: z.array(FloorStructure),
+});
 
 export const viewModelSchema = z.object({
   uuid: z.string().uuid(),
