@@ -28,11 +28,11 @@ const LoginForm = ({ closeSavePopup }: LoginFormProps) => {
   };
   return (
     <div
-      className={`flex gap-10 m-10 justify-between  flex-col items-center
+      className={`flex gap-10 w-[300px] justify-between  flex-col items-center
     
     `}
     >
-      <div>{DisplayPage()}</div>
+      {DisplayPage()}
       <div className="flex gap-5">
         <CancelButton
           remove={page === FormTitles.length - 1 ? true : false}
