@@ -3,7 +3,9 @@ import React from "react";
 import { ScriptProps } from "next/script";
 import LoadingBar from "./LoadingBar";
 import Welcome from "./Welcome";
-import NewDesign from "./NewDesign";
+// import NewDesign from "./NewDesign";
+import TemplateCard from "./TemplateCard";
+
 import navigationUseStore from "../globalStore/Navigation-Store/navigationStore";
 import SavePopup from "./SavePopup";
 import { openWelcomeStore } from "../globalStore/Navigation-Store/openWelcomeStore";
@@ -35,7 +37,7 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
       />
       {children}
       {isWelcomeComponentOpen === false && (
-        <NewDesign handleClickOnNewDesign={handleClickOnNewDesign} />
+        <TemplateCard handleClickOnNewDesign={handleClickOnNewDesign} />
       )}
       {isWelcomeComponentOpen === true && (
         <Welcome
