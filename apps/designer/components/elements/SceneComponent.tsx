@@ -10,10 +10,9 @@ import "@babylonjs/loaders/glTF";
 import * as BABYLON from "@babylonjs/core";
 import data from "../../public/house.json";
 import useStore from "../../global-stores/store";
-import navigationUseStore from "../../globalStore/navigationStore";
+import navigationUseStore from "../../globalStore/Navigation-Store/navigationStore";
 
-
-// UNREQUIRED FILE, TO BE DELETED - USED FOR REFERENCES 
+// UNREQUIRED FILE, TO BE DELETED - USED FOR REFERENCES
 
 //The zod error is not fixed so donot include and use getFileName() here in any manner.
 
@@ -96,16 +95,14 @@ const ReactCanvas = ({
       scene.fogColor = new BABYLON.Color3(0.796, 0.769, 0.769);
 
       //Ground
-      const groundUrl = "https://assets.vvplus.cc/misc/ground_texture.png"
+      const groundUrl = "https://assets.vvplus.cc/misc/ground_texture.png";
       const ground = BABYLON.MeshBuilder.CreateGround("ground", {
         width: 12000,
         height: 12000,
       });
       ground.position.y = -10;
       const groundMat = new BABYLON.StandardMaterial("groundMat");
-      groundMat.diffuseTexture = new BABYLON.Texture(
-        groundUrl
-      );
+      groundMat.diffuseTexture = new BABYLON.Texture(groundUrl);
       groundMat.diffuseTexture.hasAlpha = true;
       ground.material = groundMat;
 
