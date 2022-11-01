@@ -3,11 +3,11 @@ const SaveNumberForm = () => {
   return (
     <div className="flex flex-col items-center justify-between gap-6 md:gap-10">
       <h1 className="text-2xl font-normal font-Roboto">Save</h1>
-      <p className="text-base font-normal text-center md:text-lg w-80 font-Bodoni">
+      <p className="text-base font-normal text-center md:text-lg font-Bodoni">
         Design unique homes,
         <br /> Save the homes of your dreams,
       </p>
-      <div className="flex flex-col justify-start gap-1 w-[80%] md:w-full">
+      <div className="flex flex-col justify-start w-[300px] gap-1">
         <p className="text-base font-light md:text-lg font-Roboto">
           Phone Number
         </p>
