@@ -10,7 +10,9 @@ export const savePopupStore = create<popupStore>((set) => ({
   handleClickOnSaveButton: () => {
     set(() => ({
       isSavePopupOpen: true,
-    }));
+
+    }))
+
   },
   closeSavePopup: () => {
     set(() => ({
