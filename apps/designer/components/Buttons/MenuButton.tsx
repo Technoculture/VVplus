@@ -6,17 +6,14 @@ export interface ButtonProps
       HTMLButtonElement
     >,
     React.AriaAttributes {
-  onClick?: () => void;
-  text?: React.ReactNode;
-  remove?: boolean;
+  onClick: () => void;
+  text: React.ReactNode;
 }
 
-const MenuButton = ({ text, onClick, remove }: ButtonProps) => {
+const MenuButton = ({ text, onClick }: ButtonProps) => {
   return (
     <button
-      className={`flex items-center justify-center p-[10px_20px] h-12 font-light font-Roboto bg-zinc-300 text-[20px] leading-6 text-center  rounded-[15px]
-      ${remove === true ? "hidden" : "flex"}
-      `}
+      className="flex items-center justify-center w-20 h-12 font-light font-Roboto  text-[20px] leading-6 text-center bg-[#D9D9D9] rounded-[15px]"
       onClick={onClick}
     >
       {text}
