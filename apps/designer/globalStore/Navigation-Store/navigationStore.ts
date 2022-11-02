@@ -1,5 +1,5 @@
 import create from "zustand";
-type navigationStore = {
+type navigationStore  = {
   isNavbarOpen: boolean;
   handleClickOnWelcome: () => void;
   isWelcomePanelActive: boolean;
@@ -7,14 +7,15 @@ type navigationStore = {
   handleClickOnNewButton: () => void;
   handleClickForToggle: () => void;
 };
-const navigationUseStore = create<navigationStore>((set) => ({
+  const navigationUseStore = create<navigationStore>((set) => ({
   isWelcomePanelActive: false, //for welcome component
   isNavbarOpen: false, //for navbar by default is closed
   handleClickOnWelcome: () => {
     set(() => ({
       isNavbarOpen: true,
       isWelcomePanelActive: true,
-    }));
+    })
+  )
   },
   isToggled: false,
   handleClickOnNewButton: () => {
@@ -29,5 +30,5 @@ const navigationUseStore = create<navigationStore>((set) => ({
       isToggled: !state.isToggled,
     }));
   },
-}));
+}))
 export default navigationUseStore;
