@@ -28,7 +28,7 @@ const LoginForm = ({ closeSavePopup }: LoginFormProps) => {
   };
   return (
     <div
-      className={`flex  gap-10 w-[300px] justify-between  flex-col items-center
+      className={`flex  gap-10 w-[300px]   flex-col items-center
     
     `}
     >
