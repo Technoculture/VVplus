@@ -15,7 +15,7 @@ const ToggleableMenuButton = ({ isToggled, onClick }: HandleToggleProps) => {
               ${
                 isToggled === true
                   ? "bg-zinc-300  ease-in"
-                  : "bg-[#A6A6A6]  ease-in"
+                  : "bg-neutral-400  ease-in"
               }`}
       onClick={onClick}
     >

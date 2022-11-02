@@ -8,14 +8,13 @@ export interface ButtonProps
     React.AriaAttributes {
   onClick?: () => void;
   text?: React.ReactNode;
-  bgColor: string;
   remove?: boolean;
 }
 
-const MenuButton = ({ text, onClick, bgColor, remove }: ButtonProps) => {
+const MenuButton = ({ text, onClick, remove }: ButtonProps) => {
   return (
     <button
-      className={`flex items-center justify-center p-[10px_20px] h-12 font-light font-Roboto bg-${bgColor} text-[20px] leading-6 text-center  rounded-[15px]
+      className={`flex items-center justify-center p-[10px_20px] h-12 font-light font-Roboto bg-zinc-300 text-[20px] leading-6 text-center  rounded-[15px]
       ${remove === true ? "hidden" : "flex"}
       `}
       onClick={onClick}

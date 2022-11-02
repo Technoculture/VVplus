@@ -36,14 +36,13 @@ const LoginForm = ({ closeSavePopup }: LoginFormProps) => {
       <div className="flex gap-5">
         <CancelButton
           remove={page === FormTitles.length - 1 ? true : false}
-          text={page === 0 ? "Cancel" : "Back"}
+          text={"Cancel"}
           onClick={() => {
-            page === 0 ? closeSavePopup() : setPage((p) => p - 1);
+            closeSavePopup();
           }}
         />
         <MenuButton
           text={page === FormTitles.length - 1 ? "Done" : "Next"}
-          bgColor="gray-200"
           onClick={() => {
             if (page === FormTitles.length - 1) {
               closeSavePopup();
