@@ -1,20 +1,36 @@
 {
-  "extends": "tsconfig/nextjs.json",
-  "include": ["next.d.ts", "**/*.ts", "**/*.tsx"],
-  "baseUrl": ".",
+  "extends": "../../tsconfig.json",
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.cjs",
+    "**/*.mjs"
+  ],
   "compilerOptions": {
-    "types":[
-      "babylonjs",
+  //  "preserveSymlinks": true,
+    "types": ["babylonjs"],
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
     ],
-    "composite": false,
-    "preserveSymlinks": true,
-    //"declaration": false,
-    "sourceMap": true,
-    "outDir": "dist",
-    "strict": true,
-    "lib": ["esnext","DOM"],
-    "esModuleInterop": true
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    //"esModuleInterop": true,
+    "module": "esnext",
+    // "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "resolveJsonModule": true
   },
-  "strict": true,
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
