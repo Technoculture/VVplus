@@ -29,7 +29,7 @@ const TemplateCard = ({ handleClickOnNewDesign }: NewDesignProps) => {
         <YamunaCard />
         <JayantiCard />
       </div>
-      <div className="text-[15px]  md:mt-0 mt-[17%] font-light leading-[18px]">
+      <div className="text-[15px]  md:mt-0 mt-[20%] font-light leading-[18px]">
         <span className="italic font-Roboto text-sky-500">Learn more</span>{" "}
         <span className="font-Roboto">about this model</span>
       </div>
