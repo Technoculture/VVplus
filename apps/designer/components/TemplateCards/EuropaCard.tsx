@@ -4,7 +4,7 @@ import Image from "next/image";
 //Todo - fix the height of image
 const EuropaCard = () => {
   return (
-    <div className="h-[364px] w-[220px] border-[1px] items-center py-[10px]  flex flex-col border-amber-300 shadow-[ 0px_4px_40px_rgba(0_0_0_0.15)] rounded-[15px]">
+    <div className="h-[364px]  z-10 w-[220px] md:static fixed border-[1px] items-center py-[10px]  flex flex-col bg-white border-amber-300 shadow-[ 0px_4px_40px_rgba(0_0_0_0.15)] rounded-[15px]">
       <div className="w-[190px] relative object-fill overflow-hidden h-[300px] border-[1px] border-amber-300 rounded-[12px]">
         <Image
           src={house}
@@ -13,7 +13,7 @@ const EuropaCard = () => {
           layout="fill"
         />
       </div>
-      <div className="flex justify-between mt-4 w-44">
+      <div className="flex items-center justify-between mt-4 w-44">
         <h2 className="font-Bodoni text-xl font-light leading-[18px] ">
           Europa
         </h2>
