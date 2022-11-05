@@ -17,8 +17,8 @@ const EuropaCard = ({ handleClickOnNewDesign }: NewDesignProps) => {
   return (
     <div
       className={`h-[364px]   w-[220px] md:static fixed border-[1px] items-center py-[10px] md:shadow-md shadow-xl md:mt-0 flex flex-col bg-white border-amber-300  rounded-[15px]
-    ${isEuropaCardOpen === true ? "z-20 " : ""}
-    ${isYamunaCardOpen === true ? "z-10 mt-[95px] " : ""}
+    ${isEuropaCardOpen === true ? "z-20 animate-vFlip  " : ""}
+    ${isYamunaCardOpen === true ? "z-10 mt-[95px]   " : ""}
     ${isJayantiCardOpen === true ? "mt-[95px] z-10" : ""}
    
     `}
@@ -41,13 +41,13 @@ const EuropaCard = ({ handleClickOnNewDesign }: NewDesignProps) => {
 
         `}
       >
-        <h2 className="font-Bodoni text-xl font-light leading-[18px] ">
+        <h2 className="font-Bodoni select-none text-xl font-light leading-[18px] ">
           Europa
         </h2>
-        <p className="font-Roboto text-[15px] font-light leading-[18px]">
+        <p className="font-Roboto select-none text-[15px] font-light leading-[18px]">
           5 bhk
         </p>
-        <p className="font-Roboto text-[15px] font-thin leading-[18px]">
+        <p className="font-Roboto select-none text-[15px] font-thin leading-[18px]">
           1.2 Cr
         </p>
       </div>

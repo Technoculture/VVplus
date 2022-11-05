@@ -27,10 +27,14 @@ module.exports = {
             opacity: "0",
           },
         },
+        flipVertical: {
+          "50%": { transform: "rotateX(180deg)" },
+        },
       },
       animation: {
         "fade-in": "fade-in 0.5s ease-out",
         "fade-out": "fade-out 0.5s ease-out",
+        vFlip: "flipVertical 1s",
       },
     },
   },
