@@ -17,7 +17,7 @@ const TemplateCard = ({ handleClickOnNewDesign }: NewDesignProps) => {
         <br /> Dream your dream house with just a few clicks!
       </p>
       <div
-        className={`h-96  md:w-[700px] border-[1px] gap-[10px] relative flex md:flex-row flex-col  overflow-hidden justify-center text-center items-center  md:border-zinc-300 from-[180deg_rgba(255_255_255_0.7)_0%] to-[rgba(255_245_245_0.35)_100%] rounded-[20px] shadow-[0px_4px_40px_rgba(0_0_0_0.05)]
+        className={`h-96  md:w-[700px]  md:border-[1px] gap-[10px] relative flex md:flex-row flex-col  overflow-hidden justify-center text-center items-center  md:border-zinc-300 from-[180deg_rgba(255_255_255_0.7)_0%] to-[rgba(255_245_245_0.35)_100%] rounded-[20px] shadow-[0px_4px_40px_rgba(0_0_0_0.05)]
       
       `}
       >

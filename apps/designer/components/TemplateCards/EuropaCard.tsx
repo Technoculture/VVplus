@@ -9,16 +9,18 @@ const EuropaCard = ({ handleClickOnNewDesign }: NewDesignProps) => {
   const {
     openEuropaCard,
     isEuropaCardOpen,
-    openJayantiCard,
+
     isJayantiCardOpen,
-    openYamunaCard,
+
     isYamunaCardOpen,
   } = onBoardUiStore();
   return (
     <div
-      className={`h-[364px]  md:z-10 w-[220px] md:static fixed border-[1px] items-center py-[10px] md:mt-0 flex flex-col bg-white border-amber-300 shadow-[ 0px_4px_40px_rgba(0_0_0_0.15)] rounded-[15px]
-    ${isEuropaCardOpen === true ? "z-10 " : " "}
-    ${isYamunaCardOpen === true ? "mt-[95px] z-0" : ""}
+      className={`h-[364px]   w-[220px] md:static fixed border-[1px] items-center py-[10px] md:mt-0 flex flex-col bg-white border-amber-300 shadow-[ 0px_4px_40px_rgba(0_0_0_0.15)] rounded-[15px]
+    ${isEuropaCardOpen === true ? "z-20 " : " "}
+    ${isYamunaCardOpen === true ? "z-10 mt-[95px]" : ""}
+    ${isJayantiCardOpen === true ? "mt-[95px] z-10" : ""}
+   
     `}
     >
       <div

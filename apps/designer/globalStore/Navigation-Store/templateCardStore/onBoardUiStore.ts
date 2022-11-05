@@ -8,7 +8,7 @@ type onBoardStore = {
   isYamunaCardOpen: boolean;
 };
 export const onBoardUiStore = create<onBoardStore>((set) => ({
-  isEuropaCardOpen: false,
+  isEuropaCardOpen: true,
   openEuropaCard: () => {
     set(() => ({
       isEuropaCardOpen: true,
