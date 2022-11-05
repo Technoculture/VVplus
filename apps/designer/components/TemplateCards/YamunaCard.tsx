@@ -9,7 +9,7 @@ const YamunaCard = () => {
   } = onBoardUiStore();
   return (
     <div
-      className={` h-[364px]  md:static fixed  bg-white  w-[220px] md:mt-0 border-[1px]  items-center py-[10px]  flex flex-col border-zinc-300 shadow-[0px_4px_40px_rgba(0_0_0_0.15)] rounded-[15px]
+      className={` h-[364px]  md:static fixed md:shadow-md bg-white  w-[220px] md:mt-0 border-[1px]  items-center py-[10px]  flex flex-col border-zinc-300 shadow-xl rounded-[15px]
       ${isEuropaCardOpen === true ? "z-10 mt-[95px]" : ""}
       ${isYamunaCardOpen === true ? "z-20 mt-0" : ""}
       ${isJayantiCardOpen === true ? "mt-[190px]" : ""}
@@ -21,7 +21,7 @@ const YamunaCard = () => {
       `}
       ></div>
       <div
-        className="flex justify-between mt-4 cursor-pointer w-44"
+        className="flex justify-between mt-4 cursor-pointer select-none w-44"
         onClick={openYamunaCard}
       >
         <h2 className="font-Bodoni text-xl font-light leading-[18px] ">

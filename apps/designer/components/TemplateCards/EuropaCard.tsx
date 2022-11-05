@@ -16,9 +16,9 @@ const EuropaCard = ({ handleClickOnNewDesign }: NewDesignProps) => {
   } = onBoardUiStore();
   return (
     <div
-      className={`h-[364px]   w-[220px] md:static fixed border-[1px] items-center py-[10px] md:mt-0 flex flex-col bg-white border-amber-300 shadow-[ 0px_4px_40px_rgba(0_0_0_0.15)] rounded-[15px]
-    ${isEuropaCardOpen === true ? "z-20 " : " "}
-    ${isYamunaCardOpen === true ? "z-10 mt-[95px]" : ""}
+      className={`h-[364px]   w-[220px] md:static fixed border-[1px] items-center py-[10px] md:shadow-md shadow-xl md:mt-0 flex flex-col bg-white border-amber-300  rounded-[15px]
+    ${isEuropaCardOpen === true ? "z-20 " : ""}
+    ${isYamunaCardOpen === true ? "z-10 mt-[95px] " : ""}
     ${isJayantiCardOpen === true ? "mt-[95px] z-10" : ""}
    
     `}
@@ -36,7 +36,7 @@ const EuropaCard = ({ handleClickOnNewDesign }: NewDesignProps) => {
       </div>
       <div
         onClick={openEuropaCard}
-        className={`flex items-center justify-between mt-4 cursor-pointer w-44
+        className={`flex select-none items-center justify-between mt-4 cursor-pointer w-44
        
 
         `}

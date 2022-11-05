@@ -4,9 +4,10 @@ const JayantiCard = () => {
   const { openJayantiCard, isJayantiCardOpen } = onBoardUiStore();
   return (
     <div
-      className={`h-[364px] md:static  fixed  md:mt-0 mt-[190px]  w-[220px] border-[1px] items-center py-[10px] bg-white box-shadow:0px 4px 40px rgba(0, 0, 0, 0.15)
-  flex flex-col border-zinc-300 shadow-[0px_4px_40px_rgba(0_0_0_0.15)] rounded-[15px]
-  ${isJayantiCardOpen === true ? "mt-0 z-20" : ""}
+      className={`h-[364px] md:static md:shadow-md  fixed  md:mt-0 mt-[190px]  w-[220px] border-[1px] items-center py-[10px] bg-white shadow-xl
+  flex flex-col border-zinc-300 rounded-[15px]
+  ${isJayantiCardOpen === true ? "mt-0 z-20" : "  "}
+  
   `}
     >
       <div
@@ -15,7 +16,9 @@ const JayantiCard = () => {
       `}
       ></div>
       <div
-        className="flex justify-between mt-4 cursor-pointer w-44"
+        className={`flex justify-between mt-4 cursor-pointer select-none w-44
+        ${isJayantiCardOpen === false ? "mt-2" : ""}
+        `}
         onClick={openJayantiCard}
       >
         <h2 className="font-Bodoni text-xl font-light leading-[18px] ">
