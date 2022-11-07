@@ -1,13 +1,23 @@
 import React from "react";
 import { onBoardUiStore } from "../../globalStore/Navigation-Store/templateCardStore/onBoardUiStore";
 const JayantiCard = () => {
-  const { openJayantiCard, isJayantiCardOpen } = onBoardUiStore();
+  const {
+    openJayantiCard,
+    isJayantiCardOpen,
+    isEuropaCardOpen,
+    isYamunaCardOpen,
+  } = onBoardUiStore();
   return (
     <div
-      className={`h-[364px] md:static md:shadow-md  fixed  md:mt-0 mt-[190px]  w-[220px] border-[1px] items-center py-[10px] bg-white shadow-xl
+      className={`h-[364px] md:static md:shadow-md   fixed  md:mt-0 mt-[190px]  w-[220px] border-[1px] items-center py-[10px] bg-white shadow-xl
   flex flex-col border-zinc-300 rounded-[15px]
-  ${isJayantiCardOpen === true ? "mt-0 z-20 animate-vFlip " : "  "}
-  
+  ${
+    isJayantiCardOpen === true
+      ? "mt-0 z-20 md:animate-none animate-vFlip "
+      : "  "
+  }
+  ${isEuropaCardOpen === true ? "md:h-[364px] h-[320px] mt-[160px]" : ""}
+  ${isYamunaCardOpen === true ? "md:h-[364px] h-[340px]  mt-[94px]" : ""}
   `}
     >
       <div

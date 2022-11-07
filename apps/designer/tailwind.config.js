@@ -28,13 +28,13 @@ module.exports = {
           },
         },
         flipVertical: {
-          "50%": { transform: "rotateX(180deg)" },
+          "50%": { transform: "rotateX(90deg)" },
         },
       },
       animation: {
         "fade-in": "fade-in 0.5s ease-out",
         "fade-out": "fade-out 0.5s ease-out",
-        vFlip: "flipVertical 1s",
+        vFlip: "flipVertical 0.5s linear",
       },
     },
   },

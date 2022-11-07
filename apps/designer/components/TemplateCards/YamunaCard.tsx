@@ -10,9 +10,17 @@ const YamunaCard = () => {
   return (
     <div
       className={` h-[364px]  md:static fixed md:shadow-md bg-white  w-[220px] md:mt-0 border-[1px]  items-center py-[10px]  flex flex-col border-zinc-300 shadow-xl rounded-[15px]
-      ${isEuropaCardOpen === true ? "z-10 mt-[95px]" : ""}
-      ${isYamunaCardOpen === true ? "z-20 mt-0 animate-vFlip " : ""}
-      ${isJayantiCardOpen === true ? "mt-[190px]" : ""}
+      ${
+        isEuropaCardOpen === true
+          ? " md:h-[364px] z-10 mt-[95px] h-[340px] "
+          : ""
+      }
+      ${
+        isYamunaCardOpen === true
+          ? " md:h-[364px] z-20 mt-0 md:animate-none animate-vFlip "
+          : ""
+      }
+      ${isJayantiCardOpen === true ? "md:h-[364px] mt-[160px] h-[340px] " : ""}
       `}
     >
       <div
