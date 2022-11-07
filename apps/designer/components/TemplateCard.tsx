@@ -12,7 +12,7 @@ const TemplateCard = ({ handleClickOnNewDesign }: NewDesignProps) => {
   const { isEuropaCardOpen, isJayantiCardOpen, isYamunaCardOpen } =
     onBoardUiStore();
   return (
-    <main className="flex flex-col relative  left-[50%] translate-x-[-50%]   my-8 gap-4  justify-center items-center ">
+    <main className="flex flex-col relative  left-[50%] translate-x-[-50%]   md:my-8 md:gap-4 my-0 gap-2  justify-center items-center ">
       <h1 className="text-[25px] select-none font-medium font-Roboto text-[#000000] leading-[29px] ">
         Choose your Base model
       </h1>
@@ -34,7 +34,7 @@ const TemplateCard = ({ handleClickOnNewDesign }: NewDesignProps) => {
       {isEuropaCardOpen === false && <CardNavigationButton />}
       <div
         className={`text-[15px]  md:mt-0  font-light leading-[18px]
-      ${isEuropaCardOpen === true ? "mt-[12vh]" : ""}
+      ${isEuropaCardOpen === true ? "mt-[9vh]" : ""}
       `}
       >
         <span className="italic font-Roboto text-sky-500">Learn more</span>{" "}
