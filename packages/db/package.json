@@ -4,7 +4,8 @@
   "main": "./index.ts",
   "types": "./index.ts",
   "scripts": {
-    "postinstall": "prisma generate && prisma migrate deploy",
+    "build":"prisma migrate deploy",
+    "postinstall": "prisma generate ",
     "dev": "prisma studio --port 5556",
     "clean": "rm -rf .turbo node_modules",
     "db-push": "prisma db push",

@@ -6,7 +6,7 @@
     "**/*.tsx",
     "**/*.cjs",
     "**/*.mjs"
-  ],
+, "postcss.config.cjs"  ],
   "compilerOptions": {
   //  "preserveSymlinks": true,
     "types": ["babylonjs"],
