@@ -6,7 +6,7 @@
     "**/*.tsx",
     "**/*.cjs",
     "**/*.mjs"
-  ],
+, "postcss.config.cjs"  ],
   "compilerOptions": {
   //  "preserveSymlinks": true,
     "types": ["babylonjs"],
@@ -14,7 +14,9 @@
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext"
+      "esnext",
+      "esnext.asynciterable",
+      "DOM",
     ],
     "allowJs": true,
     "skipLibCheck": true,
