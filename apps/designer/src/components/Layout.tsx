@@ -1,4 +1,3 @@
-
 import Navbar from "./Navbar";
 import React from "react";
 import { ScriptProps } from "next/script";
