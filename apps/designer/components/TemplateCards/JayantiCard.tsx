@@ -13,7 +13,7 @@ const JayantiCard = () => {
   flex flex-col border-zinc-300 rounded-[15px]
   ${
     isJayantiCardOpen === true
-      ? "mt-0 z-20 md:animate-none animate-vFlip "
+      ? "mt-0 z-20 md:animate-none animate-fade-card "
       : "  "
   }
   ${isEuropaCardOpen === true ? "md:h-[364px] h-[320px] mt-[160px]" : ""}

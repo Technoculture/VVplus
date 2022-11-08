@@ -17,7 +17,7 @@ const YamunaCard = () => {
       }
       ${
         isYamunaCardOpen === true
-          ? " md:h-[364px] z-20 mt-0 md:animate-none animate-vFlip "
+          ? " md:h-[364px] z-20 mt-0 md:animate-none animate-fade-card "
           : ""
       }
       ${isJayantiCardOpen === true ? "md:h-[364px] mt-[160px] h-[340px] " : ""}

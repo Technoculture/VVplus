@@ -14,9 +14,11 @@ module.exports = {
         "fade-in": {
           "0%": {
             opacity: "0",
+            scale: "1.1",
           },
           "100%": {
             opacity: "1",
+            scale: "1",
           },
         },
         "fade-out": {
@@ -27,14 +29,21 @@ module.exports = {
             opacity: "0",
           },
         },
-        flipVertical: {
-          "50%": { transform: "rotateX(90deg)" },
+        "fade-card": {
+          "0%": {
+            opacity: "0",
+            scale: "0.9",
+          },
+          "100%": {
+            opacity: "1",
+            scale: "1",
+          },
         },
       },
       animation: {
         "fade-in": "fade-in 0.5s ease-out",
         "fade-out": "fade-out 0.5s ease-out",
-        vFlip: "flipVertical 0.5s linear",
+        "fade-card": "fade-card 0.5s ease-out",
       },
     },
   },
