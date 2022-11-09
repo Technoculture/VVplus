@@ -5,25 +5,24 @@
 // NOTE: This file should not be edited
 // see https://nextjs.org/docs/basic-features/typescript for more information.
 import type {
-    NextComponentType,
+  NextComponentType,
+  NextPageContext,
+  NextLayoutComponentType,
+} from "next";
+import type { AppProps } from "next/app";
+
+declare module "next" {
+  type NextLayoutComponentType<P = {}> = NextComponentType<
     NextPageContext,
-    NextLayoutComponentType,
-  } from "next";
-  import type { AppProps } from "next/app";
-  
-  declare module "next" {
-    type NextLayoutComponentType<P = {}> = NextComponentType<
-      NextPageContext,
-      any,
-      P
-    > & {
-      getLayout?: (page: ReactNode) => ReactNode;
-    };
-  }
-  
-  declare module "next/app" {
-    type AppLayoutProps<P = {}> = AppProps & {
-      Component: NextLayoutComponentType;
-    };
-  }
-  
+    any,
+    P
+  > & {
+    getLayout?: (page: ReactNode) => ReactNode;
+  };
+}
+
+declare module "next/app" {
+  type AppLayoutProps<P = {}> = AppProps & {
+    Component: NextLayoutComponentType;
+  };
+}
