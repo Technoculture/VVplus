@@ -1,6 +1,7 @@
 // @ts-check
-/* eslint-disable @typescript-eslint/no-var-requires */
-const { env } = require('./server/env');
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { env } from "./src/env/server.mjs";
+import withTM from "next-transpile-modules";
 
 /**
  * Don't be scared of the generics here.
@@ -10,20 +11,13 @@ const { env } = require('./server/env');
  * @param {T} config - A generic parameter that flows through to the return type
  * @constraint {{import('next').NextConfig}}
  */
-function getConfig(config) {
+function defineNextConfig(config) {
   return config;
 }
 
-/**
- * @link https://nextjs.org/docs/api-reference/next.config.js/introduction
- */
-module.exports = getConfig({
-  /**
-   * Dynamic configuration available for the browser and server.
-   * Note: requires `ssr: true` or a `getInitialProps` in `_app.tsx`
-   * @link https://nextjs.org/docs/api-reference/next.config.js/runtime-configuration
-   */
-  publicRuntimeConfig: {
-    NODE_ENV: env.NODE_ENV,
-  },
-});
+export default withTM(["@vvplus/api", "@vvplus/db"])(
+  defineNextConfig({
+    reactStrictMode: true,
+    swcMinify: true,
+  })
+);
