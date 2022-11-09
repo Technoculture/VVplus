@@ -26,7 +26,7 @@ const JayantiCard = () => {
       `}
       ></div>
       <div
-        className={`flex justify-between mt-4 cursor-pointer select-none w-44
+        className={`flex justify-between mt-4 cursor-pointer  select-none w-44
         ${isJayantiCardOpen === false ? "mt-2" : ""}
         `}
         onClick={openJayantiCard}
