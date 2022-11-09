@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url      = "mysql://bmp7xh9sthxkuas6g8fc:pscale_pw_2WkpBkDTUD65YTDzRv2hPuMzeAssHCJd13NnE1ugm5s@ap-south.connect.psdb.cloud/vvplus?sslaccept=strict"
+  url      = "mysql://root:123456@localhost:3306/vvplus"
 }
 
 model asset {
