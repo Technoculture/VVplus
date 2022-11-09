@@ -1,4 +1,4 @@
-import { PrismaClient } from "../../node_modules/.pnpm/@prisma+client@4.5.0_prisma@4.5.0/node_modules/@prisma/client";
+import { PrismaClient } from "@prisma/client";
 
 declare global {
   // allow global `var` declarations
