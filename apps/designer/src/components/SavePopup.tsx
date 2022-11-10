@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
-import { ImCross } from "react-icons/im";
 import useOnClickOutside from ".././util/useOnClickOutside";
+import LoginForm from "../components/FormComponents/LoginForm";
 
 //Todo :Exit Animation on savepop component left
 interface SavePopupProps {
@@ -10,12 +10,11 @@ interface SavePopupProps {
 const SavePopup = ({ closeSavePopup, isSavePopupOpen }: SavePopupProps) => {
   const ref = useRef<HTMLDivElement>(null);
   useOnClickOutside(ref, closeSavePopup);
-
   return (
     <div>
-      {isSavePopupOpen === true ? (
+      {isSavePopupOpen === true && (
         <div
-          className={` font-Roboto fixed top-0 left-0 flex items-center justify-center w-full  h-screen backdrop-blur-[10px] backdrop-brightness-[0.5] z-[100] bg-gray
+          className={` font-Roboto  fixed top-0 left-0 flex items-center justify-center backdrop-blur-[25px] w-full   h-screen md:backdrop-blur-[10px] backdrop-brightness-[0.5] z-[100] md:bg-transparent bg-white
   
       ${
         isSavePopupOpen === true
@@ -25,7 +24,7 @@ const SavePopup = ({ closeSavePopup, isSavePopupOpen }: SavePopupProps) => {
         >
           <div
             ref={ref}
-            className={`flex  bg-[#DADADA] rounded-[20px] w-72 z-[100]   md:w-96 h-96
+            className={`flex  md:bg-white rounded-[20px]  z-[100] justify-center items-center p-10
           ${
             isSavePopupOpen === true
               ? "animate-fade-in transition-all duration-500 "
@@ -33,14 +32,9 @@ const SavePopup = ({ closeSavePopup, isSavePopupOpen }: SavePopupProps) => {
           }
           `}
           >
-            <ImCross
-              className="static pt-px cursor-pointer md:ml-[360px] mt-2 ml-[260px]"
-              onClick={closeSavePopup}
-            />
+            <LoginForm closeSavePopup={closeSavePopup} />
           </div>
         </div>
-      ) : (
-        ""
       )}
     </div>
   );
