@@ -3,14 +3,8 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import { onBoardUiStore } from "../../globalStore/Navigation-Store/templateCardStore/onBoardUiStore";
 
 const CardNavigationButton = () => {
-  const {
-    isEuropaCardOpen,
-    isJayantiCardOpen,
-    isYamunaCardOpen,
-    openJayantiCard,
-    openEuropaCard,
-    openYamunaCard,
-  } = onBoardUiStore();
+  const { isJayantiCardOpen, openJayantiCard, openYamunaCard } =
+    onBoardUiStore();
   const cardNavigator = () => {
     if (isJayantiCardOpen === false) {
       openJayantiCard;

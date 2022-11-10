@@ -4,8 +4,12 @@ import Image from "next/image";
 import { onBoardUiStore } from "../../globalStore/Navigation-Store/templateCardStore/onBoardUiStore";
 interface NewDesignProps {
   handleClickOnNewDesign: () => void;
+  handleDragStart: (event: React.DragEvent<HTMLDivElement>) => void;
 }
-const EuropaCard = ({ handleClickOnNewDesign }: NewDesignProps) => {
+const EuropaCard = ({
+  handleClickOnNewDesign,
+  handleDragStart,
+}: NewDesignProps) => {
   const {
     openEuropaCard,
     isEuropaCardOpen,
@@ -16,6 +20,8 @@ const EuropaCard = ({ handleClickOnNewDesign }: NewDesignProps) => {
   } = onBoardUiStore();
   return (
     <div
+      draggable
+      onDragStart={handleDragStart}
       className={`h-[364px] touch-pan-y   w-[220px] md:static fixed border-[1px] items-center py-[10px] md:shadow-md shadow-xl md:mt-0 flex flex-col bg-white border-amber-300  rounded-[15px]
     ${
       isEuropaCardOpen === true

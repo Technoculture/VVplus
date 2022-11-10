@@ -9,8 +9,17 @@ interface NewDesignProps {
 }
 
 const TemplateCard = ({ handleClickOnNewDesign }: NewDesignProps) => {
-  const { isEuropaCardOpen, isJayantiCardOpen, isYamunaCardOpen } =
-    onBoardUiStore();
+  const { isEuropaCardOpen } = onBoardUiStore();
+  const handleDragStart = (event: React.DragEvent<HTMLDivElement>) => {
+    event.dataTransfer.setData("card", event.currentTarget.id);
+  };
+  const enableDropping = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+  };
+  const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
+    const id = event.dataTransfer.getData("card");
+    console.log(`card dropped an box with id: ${id}`);
+  };
   return (
     <main className="flex flex-col relative  left-[50%] translate-x-[-50%]   md:my-8 md:gap-4 my-0 gap-2  justify-center items-center ">
       <h1 className="text-[25px] select-none font-medium font-Roboto text-[#000000] leading-[29px] ">
@@ -22,13 +31,18 @@ const TemplateCard = ({ handleClickOnNewDesign }: NewDesignProps) => {
       </p>
       <div>
         <div
+          onDragOver={enableDropping}
+          onDrop={handleDrop}
           className={`h-96  md:w-[700px]  md:border-[1px] gap-[10px] select-none relative flex md:flex-row flex-col  overflow-hidden justify-center text-center items-center  md:border-zinc-300 from-[180deg_rgba(255_255_255_0.7)_0%] to-[rgba(255_245_245_0.35)_100%] rounded-[20px] shadow-xl
       
       `}
         >
-          <EuropaCard handleClickOnNewDesign={handleClickOnNewDesign} />
-          <YamunaCard />
-          <JayantiCard />
+          <EuropaCard
+            handleClickOnNewDesign={handleClickOnNewDesign}
+            handleDragStart={handleDragStart}
+          />
+          <YamunaCard handleDragStart={handleDragStart} />
+          <JayantiCard handleDragStart={handleDragStart} />
         </div>
       </div>
       {isEuropaCardOpen === false && <CardNavigationButton />}

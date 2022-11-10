@@ -1,6 +1,9 @@
 import React from "react";
 import { onBoardUiStore } from "../../globalStore/Navigation-Store/templateCardStore/onBoardUiStore";
-const YamunaCard = () => {
+interface yamunaCard {
+  handleDragStart: (event: React.DragEvent<HTMLDivElement>) => void;
+}
+const YamunaCard = ({ handleDragStart }: yamunaCard) => {
   const {
     openYamunaCard,
     isYamunaCardOpen,
@@ -9,6 +12,8 @@ const YamunaCard = () => {
   } = onBoardUiStore();
   return (
     <div
+      draggable
+      onDragStart={handleDragStart}
       className={` h-[364px]  md:static fixed md:shadow-md bg-white  w-[220px] md:mt-0 border-[1px]  items-center py-[10px]  flex flex-col border-zinc-300 shadow-xl rounded-[15px]
       ${
         isEuropaCardOpen === true

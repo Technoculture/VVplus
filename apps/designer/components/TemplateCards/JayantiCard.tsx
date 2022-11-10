@@ -1,6 +1,9 @@
 import React from "react";
 import { onBoardUiStore } from "../../globalStore/Navigation-Store/templateCardStore/onBoardUiStore";
-const JayantiCard = () => {
+interface jayantiCard {
+  handleDragStart: (event: React.DragEvent<HTMLDivElement>) => void;
+}
+const JayantiCard = ({ handleDragStart }: jayantiCard) => {
   const {
     openJayantiCard,
     isJayantiCardOpen,
@@ -9,6 +12,8 @@ const JayantiCard = () => {
   } = onBoardUiStore();
   return (
     <div
+      draggable
+      onDragStart={handleDragStart}
       className={`h-[364px] md:static md:shadow-md   fixed  md:mt-0 mt-[190px]  w-[220px] border-[1px] items-center py-[10px] bg-white shadow-xl
   flex flex-col border-zinc-300 rounded-[15px]
   ${
