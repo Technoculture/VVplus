@@ -10,13 +10,7 @@ export const savePopupStore = create<popupStore>((set) => ({
   handleClickOnSaveButton: () => {
     set(() => ({
       isSavePopupOpen: true,
-<<<<<<< HEAD:apps/designer/src/globalStore/Navigation-Store/savePopupStore.ts
     }));
-=======
-
-    }))
-
->>>>>>> savePopup:apps/designer/globalStore/Navigation-Store/savePopupStore.ts
   },
   closeSavePopup: () => {
     set(() => ({
