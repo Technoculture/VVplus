@@ -1,4 +1,5 @@
 import create from "zustand";
+
 type navigationStore = {
   isNavbarOpen: boolean;
   handleClickOnWelcome: () => void;
@@ -7,6 +8,7 @@ type navigationStore = {
   handleClickOnNewButton: () => void;
   handleClickForToggle: () => void;
 };
+
 const navigationUseStore = create<navigationStore>((set) => ({
   isWelcomePanelActive: false, //for welcome component
   isNavbarOpen: false, //for navbar by default is closed
