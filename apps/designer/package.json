@@ -1,13 +1,13 @@
 {
-    "name": "web",
+    "name": "@vvplus/web",
     "version": "0.0.0",
     "private": true,
+    "type": "module",
     "scripts": {
         "dev": "next dev",
-        "build": "prisma migrate deploy && prisma generate && next build",
+        "build": "next build",
         "start": "next start",
-        "lint": "next lint",
-        "postinstall": "prisma generate"
+        "lint": "next lint"
     },
     "dependencies": {
         "@babylonjs/core": "^5.21.0",
@@ -17,6 +17,8 @@
         "@babylonjs/loaders": "^5.20.0",
         "@babylonjs/materials": "^5.20.0",
         "@babylonjs/serializers": "^5.0.0",
+        "@vvplus/api": "*",
+        "@vvplus/db": "*",
         "babylonjs": "^5.21.0",
         "babylonjs-gltf2interface": "^5.20.0",
         "babylonjs-hook": "^0.1.1",
