@@ -1,41 +1,42 @@
 import React from "react";
-import { useCallback,useEffect, } from "react";
+import { useCallback, useEffect } from "react";
 import { trpc } from "../../util/trpc";
 import Head from "next/head";
 
-
 const SaveNumberForm = () => {
-
   const [inputValue, setInputValue] = React.useState("");
   const onChangeHandler = (event) => {
     setInputValue(event.target.value);
   };
-  const data:{
+  const data: {
     user_id: string;
     name: string;
     phone_number: string;
     email: string;
-  }={
+  } = {
     user_id: " test",
     name: "test",
     phone_number: inputValue,
-    email: "test", 
-  }
+    email: "test",
+  };
 
- const addPhoneNumber = trpc.user.addPhoneNumber.useMutation({});
+  const addPhoneNumber = trpc.user.addPhoneNumber.useMutation({});
 
-  async function savePhone(){
-    const input={
-      phone:inputValue
+  async function savePhone() {
+    const input = {
+      phone: inputValue,
     };
-    try{
+    try {
       await addPhoneNumber.mutateAsync(data);
       setInputValue("");
-    }catch{
+    } catch {
       throw new Error("Error:The phone number is not valid");
     }
   }
-  const chk =/^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/.test(inputValue);
+  const chk =
+    /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/.test(
+      inputValue
+    );
   return (
     <div className="flex flex-col items-center justify-between gap-10">
       <h1 className="text-2xl font-normal font-Roboto">Save</h1>

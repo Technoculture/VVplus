@@ -1,15 +1,15 @@
 import "../styles/globals.css";
 import Layout from "../components/Layout";
 
-import type { NextPage } from 'next';
-import type {  AppProps } from 'next/app';
-import type { ReactElement, ReactNode } from 'react';
-import { trpc } from '../util/trpc';
+import type { NextPage } from "next";
+import type { AppProps } from "next/app";
+import type { ReactElement, ReactNode } from "react";
+import { trpc } from "../util/trpc";
 import { AppType } from "next/dist/shared/lib/utils";
 
 export type NextPageWithLayout<
   TProps = Record<string, unknown>,
-  TInitialProps = TProps,
+  TInitialProps = TProps
 > = NextPage<TProps, TInitialProps> & {
   getLayout?: (page: ReactElement) => ReactNode;
 };
