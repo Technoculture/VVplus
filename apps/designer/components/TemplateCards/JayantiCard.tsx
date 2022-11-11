@@ -14,15 +14,21 @@ const JayantiCard = ({ handleDragStart }: jayantiCard) => {
     <div
       draggable
       onDragStart={handleDragStart}
-      className={`h-[364px] md:static md:shadow-md   fixed  md:mt-0 mt-[190px]  w-[220px] border-[1px] items-center py-[10px] bg-white shadow-xl
+      className={`h-[364px] md:static md:shadow-md md:translate-y-0  duration-500 transition-all  fixed    w-[220px] border-[1px] items-center py-[10px] bg-white shadow-xl
   flex flex-col border-zinc-300 rounded-[15px]
   ${
     isJayantiCardOpen === true
       ? "mt-0 z-20 md:animate-none animate-fade-card "
       : "  "
   }
-  ${isEuropaCardOpen === true ? "md:h-[364px] h-[320px] mt-[160px]" : ""}
-  ${isYamunaCardOpen === true ? "md:h-[364px] h-[340px]  mt-[94px]" : ""}
+  ${
+    isEuropaCardOpen === true ? "md:h-[364px] h-[320px] translate-y-[95px]" : ""
+  }
+  ${
+    isYamunaCardOpen === true
+      ? "md:h-[364px] h-[340px]  translate-y-[50px]"
+      : ""
+  }
   `}
     >
       <div

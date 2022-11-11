@@ -22,15 +22,21 @@ const EuropaCard = ({
     <div
       draggable
       onDragStart={handleDragStart}
-      className={`h-[364px] touch-pan-y   w-[220px] md:static fixed border-[1px] items-center py-[10px] md:shadow-md shadow-xl md:mt-0 flex flex-col bg-white border-amber-300  rounded-[15px]
+      className={`h-[364px] touch-pan-y   w-[220px] md:translate-y-0  md:static  duration-500 transition-all fixed border-[1px] items-center py-[10px] md:shadow-md shadow-xl md:mt-0 flex flex-col bg-white border-amber-300  rounded-[15px]
     ${
       isEuropaCardOpen === true
         ? "z-20 md:animate-none animate-fade-card  "
         : ""
     }
-    ${isYamunaCardOpen === true ? "md:h-[364px] mt-[160px] h-[340px] " : ""}
     ${
-      isJayantiCardOpen === true ? " md:h-[364px] mt-[95px] z-10 h-[340px]" : ""
+      isYamunaCardOpen === true
+        ? "md:h-[364px] translate-y-[85px] h-[340px] "
+        : ""
+    }
+    ${
+      isJayantiCardOpen === true
+        ? " md:h-[364px] translate-y-[50px] z-10 h-[340px]"
+        : ""
     }
    
     `}

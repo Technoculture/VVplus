@@ -14,18 +14,22 @@ const YamunaCard = ({ handleDragStart }: yamunaCard) => {
     <div
       draggable
       onDragStart={handleDragStart}
-      className={` h-[364px]  md:static fixed md:shadow-md bg-white  w-[220px] md:mt-0 border-[1px]  items-center py-[10px]  flex flex-col border-zinc-300 shadow-xl rounded-[15px]
+      className={` h-[364px]  md:static fixed md:translate-y-0 duration-500 transition-all md:shadow-md bg-white  w-[220px]  border-[1px]  items-center py-[10px]  flex flex-col border-zinc-300 shadow-xl rounded-[15px]
       ${
         isEuropaCardOpen === true
-          ? " md:h-[364px] z-10 mt-[95px] h-[340px] "
+          ? " md:h-[364px] z-10  translate-y-[50px]  h-[340px] "
           : ""
       }
       ${
         isYamunaCardOpen === true
-          ? " md:h-[364px] z-20 mt-0 md:animate-none animate-fade-card "
+          ? " md:h-[364px] z-20 translate-y-[0px] md:animate-none animate-fade-card "
           : ""
       }
-      ${isJayantiCardOpen === true ? "md:h-[364px] mt-[160px] h-[340px] " : ""}
+      ${
+        isJayantiCardOpen === true
+          ? "md:h-[364px] translate-y-[84px] h-[340px] "
+          : ""
+      }
       `}
     >
       <div
