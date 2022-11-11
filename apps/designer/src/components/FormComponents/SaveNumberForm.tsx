@@ -1,7 +1,5 @@
 import React from "react";
-import { useCallback, useEffect } from "react";
 import { trpc } from "../../util/trpc";
-import Head from "next/head";
 
 const SaveNumberForm = () => {
   const [inputValue, setInputValue] = React.useState("");
@@ -9,10 +7,10 @@ const SaveNumberForm = () => {
     setInputValue(event.target.value);
   };
   const data: {
-    user_id: string;
-    name: string;
-    phone_number: string;
-    email: string;
+    user_id: string,
+    name: string,
+    phone_number: string,
+    email: string,
   } = {
     user_id: " test",
     name: "test",

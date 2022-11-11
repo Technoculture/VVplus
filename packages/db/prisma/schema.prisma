@@ -7,7 +7,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model asset {
+model Asset {
   asset_id     String  @id @db.VarChar(255)
   name         String  @db.VarChar(255)
   description  String? @db.VarChar(255)
@@ -17,13 +17,13 @@ model asset {
   hero         String  @db.VarChar(255)
 }
 
-model assetcategory {
+model AssetCategory {
   category_id String  @id @db.VarChar(255)
   name        String? @db.VarChar(255)
   description String  @db.VarChar(255)
 }
 
-model model {
+model Model {
   model_id     String @id @db.VarChar(255)
   user_id      String @db.VarChar(255)
   main_gate    String @db.VarChar(255)
@@ -42,13 +42,13 @@ model model {
   @@index([user_id], map: "user_idx")
 }
 
-model template {
+model Template {
   template_id String @id @db.VarChar(255)
-  model_id    String @unique(map: "Template_model_id_key") @db.VarChar(255)
+  model_id    String @unique @db.VarChar(255)
   name        String @db.VarChar(255)
 }
 
-model user {
+model User {
   user_id      String @id @db.VarChar(255)
   name         String @db.VarChar(255)
   phone_number String @db.VarChar(255)

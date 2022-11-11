@@ -4,8 +4,8 @@ import { houseRouter } from "./house";
 import { userRouter } from "./user";
 
 export const appRouter = t.router({
-  house: houseRouter,
   user: userRouter,
+  house: houseRouter,
 });
 
 // export type definition of API
