@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./Cards/Card";
+import SelectionPanel from "./SelectionPanel";
 interface WelcomePanelProps {
   isWelcomePanelActive: boolean;
   handleClickOnWelcome: () => void;
@@ -23,11 +24,11 @@ const Welcome = ({
     </div>
   ) : (
     <div
-      onClick={() => {
-        isWelcomePanelActive === true ? handleClickForToggle() : "";
-      }}
+      // onClick={() => {
+      //   isWelcomePanelActive === true ? handleClickForToggle() : "";
+      // }}
       className={`
-          z-[100] relative font-Roboto flex items-center justify-center w-[80vw]   mx-auto sm:w-[250px] ease-in-out duration-500   md:w-[27vw] h-[74%] rounded-[20px]  
+          z-[100] relative font-Roboto flex items-center justify-center w-[80vw] mx-auto sm:w-[250px] ease-in-out duration-500 md:w-[27vw] h-[74%] rounded-[20px]  
         ${
           isToggled === true && isWelcomePanelActive
             ? "bg-[#A6A6A6] translate-x-[47vw] h-[113px] !w-[10px] mt-[30vh]   "
@@ -41,7 +42,7 @@ const Welcome = ({
         `}
     >
       <h2 className="cursor-pointer" onClick={handleClickOnWelcome}>
-        {isWelcomePanelActive === false ? "Welcome " : ""}
+        {isWelcomePanelActive === false ? "Welcome" : <SelectionPanel/>}
       </h2>
     </div>
   );
