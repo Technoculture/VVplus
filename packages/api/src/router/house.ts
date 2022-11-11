@@ -7,14 +7,14 @@ import { publicProcedure, router } from "../trpc";
 import { Prisma } from "@prisma/client";
 
 const defaultModelSelect = Prisma.validator<Prisma.ModelSelect>()({
-  model_id:true,
-  user_id:true,
+  model_id: true,
+  user_id: true,
   main_gate: true,
   boundary: true,
-  balcony:true,
-  structure_gf:true,
-  structure_ff:true,
-  structure_sf:true,
+  balcony: true,
+  structure_gf: true,
+  structure_ff: true,
+  structure_sf: true,
 });
 
 export const houseRouter = router({
@@ -41,7 +41,7 @@ export const houseRouter = router({
           balcony: input.balcony,
           structure_gf: input.structure_gf,
           structure_ff: input.structure_ff,
-          structure_sf: input.structure_sf, 
+          structure_sf: input.structure_sf,
         },
         select: defaultModelSelect,
       });

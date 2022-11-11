@@ -7,10 +7,10 @@ const SaveNumberForm = () => {
     setInputValue(event.target.value);
   };
   const data: {
-    user_id: string,
-    name: string,
-    phone_number: string,
-    email: string,
+    user_id: string;
+    name: string;
+    phone_number: string;
+    email: string;
   } = {
     user_id: " test",
     name: "test",
