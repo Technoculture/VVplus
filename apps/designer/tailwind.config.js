@@ -32,8 +32,9 @@ module.exports = {
         "fade-card": {
           "0%": {
             opacity: "0",
-            scale: "0.9",
+            scale: "0.95",
           },
+
           "100%": {
             opacity: "1",
             scale: "1",
@@ -43,7 +44,7 @@ module.exports = {
       animation: {
         "fade-in": "fade-in 0.5s ease-out",
         "fade-out": "fade-out 0.5s ease-out",
-        "fade-card": "fade-card 0.5s ease-out",
+        "fade-card": "fade-card 0.5s ease-linear",
       },
     },
   },
