@@ -1,6 +1,6 @@
 import Router from "next/router";
 import Head from "next/head";
-import Link from "next/link"
+import Link from "next/link";
 import React from "react";
 import Card from "./Cards/Card";
 interface WelcomePanelProps {
@@ -43,10 +43,13 @@ const Welcome = ({
         }
         `}
     >
-      <h2 className="cursor-pointer" onClick={
-        handleClickOnWelcome
+      <h2
+        className="cursor-pointer"
+        onClick={
+          handleClickOnWelcome
           // () => Router.push('/new', undefined, {shallow: true})
-      }>
+        }
+      >
         {isWelcomePanelActive === false ? "Welcome " : ""}
       </h2>
     </div>
