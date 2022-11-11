@@ -47,7 +47,7 @@ const Welcome = ({
         handleClickOnWelcome
           // () => Router.push('/new', undefined, {shallow: true})
       }>
-        <Link href="/new" shallow>{isWelcomePanelActive === false ? "Welcome " : ""}</Link>
+        {isWelcomePanelActive === false ? "Welcome " : ""}
       </h2>
     </div>
   );
