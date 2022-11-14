@@ -41,9 +41,9 @@ const Welcome = ({
         }
         `}
     >
-      <h2 className="cursor-pointer" onClick={handleClickOnWelcome}>
-        {isWelcomePanelActive === false ? "Welcome" : <SelectionPanel/>}
-      </h2>
+      <div className="cursor-pointer" onClick={handleClickOnWelcome}>
+        {isWelcomePanelActive === false ? "Welcome" : <SelectionPanel />}
+      </div>
     </div>
   );
 };

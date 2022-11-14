@@ -19,5 +19,14 @@ export default withTM(["@vvplus/api", "@vvplus/db"])(
   defineNextConfig({
     reactStrictMode: true,
     swcMinify: true,
+    images: {
+      remotePatterns: [
+        {
+          protocol: "https",
+          hostname: "assets.vvplus.cc",
+        },
+      ],
+      minimumCacheTTL: 1500000,
+    }
   })
 );
