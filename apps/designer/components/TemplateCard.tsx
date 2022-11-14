@@ -37,9 +37,9 @@ const TemplateCard = ({ handleClickOnNewDesign }: NewDesignProps) => {
       price: "4 L",
       myfunc: openEuropaCard,
       styleWhenEuropaCardOpen: "z-20 md:animate-none  animate-fade-card ",
-      styleWhenYamunaCardOpen: "md:h-[364px] translate-y-[85px] h-[340px]",
+      styleWhenYamunaCardOpen: "md:h-[364px] translate-y-[90px] h-[310px]",
       styleWhenJayantiCardOpen:
-        "md:h-[364px] translate-y-[50px] z-10 h-[340px] ",
+        "md:h-[364px] z-10 translate-y-[60px]   h-[310px] ",
       src: "",
     },
     {
@@ -49,10 +49,10 @@ const TemplateCard = ({ handleClickOnNewDesign }: NewDesignProps) => {
       price: "25 L",
       myfunc: openYamunaCard,
       styleWhenEuropaCardOpen:
-        " md:h-[364px] z-10  translate-y-[50px]  h-[340px] ",
+        " md:h-[364px] z-10  translate-y-[60px]  h-[310px] ",
       styleWhenYamunaCardOpen:
         "md:h-[364px] z-20  md:animate-none animate-fade-card",
-      styleWhenJayantiCardOpen: "md:h-[364px] translate-y-[84px] h-[340px]",
+      styleWhenJayantiCardOpen: "md:h-[364px] translate-y-[90px] h-[310px]",
       src: "",
     },
     {
@@ -61,14 +61,18 @@ const TemplateCard = ({ handleClickOnNewDesign }: NewDesignProps) => {
       size: "4 bhk",
       price: "4 L",
       myfunc: openJayantiCard,
-      styleWhenEuropaCardOpen: "md:h-[364px] h-[320px] translate-y-[95px]",
-      styleWhenYamunaCardOpen: "md:h-[364px] h-[340px]  translate-y-[50px]",
+      styleWhenEuropaCardOpen: "md:h-[364px] h-[310px] translate-y-[90px]",
+      styleWhenYamunaCardOpen: "md:h-[364px] h-[310px]  translate-y-[60px]",
       styleWhenJayantiCardOpen: "mt-0 z-20 md:animate-none animate-fade-card ",
       src: "",
     },
   ];
   const [state, setState] = useState(cards);
-  const reOrderCards = (cards: any, startIndex: any, endIndex: any) => {
+  const reOrderCards = (
+    cards: Array<object>,
+    startIndex: number,
+    endIndex: number
+  ) => {
     const newCardsList = Array.from(cards);
     const [removed] = newCardsList.splice(startIndex, 1);
     newCardsList.splice(endIndex, 0, removed);
@@ -119,7 +123,7 @@ const TemplateCard = ({ handleClickOnNewDesign }: NewDesignProps) => {
               <div
                 {...droppableProvided.droppableProps}
                 ref={droppableProvided.innerRef}
-                className={`h-96  md:w-[700px]  md:border-[1px] gap-[10px] select-none relative flex md:flex-row flex-col  overflow-hidden justify-center text-center items-center  md:border-zinc-300 from-[180deg_rgba(255_255_255_0.7)_0%] to-[rgba(255_245_245_0.35)_100%] rounded-[20px] shadow-xl
+                className={`h-96  md:w-[700px]   md:border-[1px] gap-[10px] select-none relative flex md:flex-row flex-col  overflow-hidden justify-center text-center items-center  md:border-zinc-300 from-[180deg_rgba(255_255_255_0.7)_0%] to-[rgba(255_245_245_0.35)_100%] rounded-[20px] shadow-xl
           
           `}
               >
