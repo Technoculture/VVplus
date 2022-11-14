@@ -8,7 +8,6 @@ import navigationUseStore from "../globalStore/Navigation-Store/navigationStore"
 import SavePopup from "./SavePopup";
 import { openWelcomeStore } from "../globalStore/Navigation-Store/openWelcomeStore";
 import { savePopupStore } from "../globalStore/Navigation-Store/savePopupStore";
-
 const Layout: React.FC<ScriptProps> = ({ children }) => {
   // TODO: improve this type later
   const {

@@ -1,6 +1,6 @@
 import React from "react";
 import { trpc } from "../../util/trpc";
-
+import { PropFunc } from "./LoginForm";
 const SaveNumberForm = () => {
   const [inputValue, setInputValue] = React.useState("");
   const onChangeHandler = (event) => {
@@ -35,6 +35,7 @@ const SaveNumberForm = () => {
     /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/.test(
       inputValue
     );
+  <PropFunc prop={true} />
   return (
     <div className="flex flex-col items-center justify-between gap-10">
       <h1 className="text-2xl font-normal font-Roboto">Save</h1>
@@ -46,7 +47,6 @@ const SaveNumberForm = () => {
         <p className="text-base font-light md:text-lg font-Roboto">
           Phone Number
         </p>
-
         <input
           type="number"
           className="w-full outline-0 p-[9px_14px] text-base md:text-lg rounded-[10px] border-[1px] border-zinc-300 bg-gray-100 h-9"
