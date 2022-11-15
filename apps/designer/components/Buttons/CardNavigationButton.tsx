@@ -14,7 +14,7 @@ const CardNavigationButton = () => {
   };
   return (
     <div
-      className={`w-8 h-8 mt-[9vh]  rounded-full flex items-center md:hidden justify-center text-xl cursor-pointer text-white bg-sky-600 `}
+      className={`w-8 h-8 mt-[5vh]  rounded-full flex items-center md:hidden justify-center text-xl cursor-pointer text-white bg-sky-600 `}
       onClick={cardNavigator}
     >
       <AiOutlineArrowRight />
