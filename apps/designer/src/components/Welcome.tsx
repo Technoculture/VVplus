@@ -42,7 +42,13 @@ const Welcome = ({
         `}
     >
       <div className="cursor-pointer" onClick={handleClickOnWelcome}>
-        {isWelcomePanelActive === false ? "Welcome" : <SelectionPanel />}
+        {isWelcomePanelActive === false ? (
+          "Welcome"
+        ) : isToggled ? (
+          ""
+        ) : (
+          <SelectionPanel />
+        )}
       </div>
     </div>
   );

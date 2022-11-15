@@ -1,8 +1,9 @@
-import SelectAccordion from "./SelectAccordion";
+import SelectCarousel from "./SelectCarousel";
+import Accordion from "./Accordion";
 
 const SelectionPanel = () => {
   return (
-    <SelectAccordion/>
+    <Accordion/>
   );
 };
 

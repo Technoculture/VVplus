@@ -6,17 +6,17 @@ const SelectCarousel = () => {
   const root_url = data.root_url;
   const [active, setActive] = useState(false);
   return (
-    <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
+    <div className="h-32">
       <div className="flex gap-2 box-border overflow-x-scroll overflow-y-hidden font-sans snap-mandatory scroll-smooth snap-x whitespace-nowrap h-40 w-80">
         {data.options.map((e) => (
             <img
-              key={e.id}
-              src={root_url + e.thumbnail_url}
-              alt="..."
-              height="100px"
-              width="200px"
-              className="rounded-xl"
-            />
+            key={e.id}
+            src={root_url + e.thumbnail_url}
+            alt="..."
+            height="1000px"
+            width="200px"
+            className="rounded-xl"
+          />
         ))}
       </div>
     </div>
@@ -24,3 +24,9 @@ const SelectCarousel = () => {
 };
 
 export default SelectCarousel;
+
+// TODO:
+// Use decisive rendering to turn off components when we click - button
+// When open the accordion for balcony, take camera angle to balcony, when minimize bring the camera back to home view. 
+// Click image -> change 3D component
+// remove buttons to rooftop and etc from navbar

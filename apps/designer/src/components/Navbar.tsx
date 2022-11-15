@@ -1,10 +1,6 @@
 import React from "react";
 import ToggleableMenuButton from "./Buttons/ToggleableMenuButton";
 import MenuButton from "./Buttons/MenuButton";
-import { scene_variable } from "./elements/Scene";
-import animateActiveCamera from "./Animations/animateCamera";
-import data from "../../public/cameraAngles.json";
-import CamButton from "./Buttons/CamButton";
 
 interface NavbarProps {
   isNavbarOpen: boolean;
@@ -14,16 +10,6 @@ interface NavbarProps {
   handleClickOnSaveButton: () => void;
 }
 
-interface Animation {
-  r: number;
-  a: number;
-  b: number;
-  t: {
-    x: number;
-    y: number;
-    z: number;
-  };
-}
 
 //Todo : Animation of navbar  when isNavbarOpen === true & false.
 //asset manager to implement the percentage loader and other easy to manage assets
@@ -57,28 +43,6 @@ const Navbar = ({
               isToggled={isToggled}
               onClick={handleClickForToggle}
             />
-            {data.map((item) => {
-              const rf = item.front.target_value.radius;
-              const af = item.front.target_value.alpha;
-              const bf = item.front.target_value.beta;
-              const tf = item.front.target_value.target;
-              const rt = item.top.target_value.radius;
-              const at = item.top.target_value.alpha;
-              const bt = item.top.target_value.beta;
-              const tt = item.top.target_value.target;
-              return (
-                <>
-                  <CamButton
-                    text={item.front.key}
-                    r={rf}
-                    a={af}
-                    b={bf}
-                    t={tf}
-                  />
-                  <CamButton text={item.top.key} r={rt} a={at} b={bt} t={tt} />
-                </>
-              );
-            })}
           </div>
         ) : (
           <div
