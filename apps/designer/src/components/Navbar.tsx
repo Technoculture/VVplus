@@ -10,7 +10,6 @@ interface NavbarProps {
   handleClickOnSaveButton: () => void;
 }
 
-
 //Todo : Animation of navbar  when isNavbarOpen === true & false.
 //asset manager to implement the percentage loader and other easy to manage assets
 const Navbar = ({
