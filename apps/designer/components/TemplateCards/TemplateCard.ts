@@ -1,9 +1,5 @@
-import { onBoardUiStore as boardStore}  from "../../globalStore/Navigation-Store/templateCardStore/onBoardUiStore";
-const {
-  openEuropaCard,
-  openJayantiCard,
-  openYamunaCard,
-} = boardStore();
+import { onBoardUiStore as boardStore } from "../../globalStore/Navigation-Store/templateCardStore/onBoardUiStore";
+const { openEuropaCard, openJayantiCard, openYamunaCard } = boardStore();
 const cards: Array<{
   name: string;
   id: number;
