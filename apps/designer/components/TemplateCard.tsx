@@ -2,9 +2,7 @@ import React from "react";
 import CardNavigationButton from "./Buttons/CardNavigationButton";
 import Image from "next/image";
 import house from "./../assets/house.jpg";
-// import EuropaCard from "./TemplateCards/EuropaCard";
-// import JayantiCard from "./TemplateCards/JayantiCard";
-// import YamunaCard from "./TemplateCards/YamunaCard";
+
 import { onBoardUiStore } from "../globalStore/Navigation-Store/templateCardStore/onBoardUiStore";
 
 interface NewDesignProps {
@@ -37,10 +35,11 @@ const TemplateCard = ({ handleClickOnNewDesign }: NewDesignProps) => {
       size: "4 bhk",
       price: "4 L",
       myfunc: openEuropaCard,
-      styleWhenEuropaCardOpen: "z-20 md:animate-none animate-fade-card ",
-      styleWhenYamunaCardOpen: "md:h-[364px] translate-y-[85px] h-[340px]",
+      styleWhenEuropaCardOpen:
+        "z-20 h-[364px] md:animate-none animate-fade-card ",
+      styleWhenYamunaCardOpen: "md:h-[364px] translate-y-[80px] h-[330px]",
       styleWhenJayantiCardOpen:
-        "md:h-[364px] translate-y-[50px] z-10 h-[340px]",
+        "md:h-[364px] translate-y-[50px] z-10 h-[330px]",
       src: "",
     },
     {
@@ -50,10 +49,10 @@ const TemplateCard = ({ handleClickOnNewDesign }: NewDesignProps) => {
       price: "25 L",
       myfunc: openYamunaCard,
       styleWhenEuropaCardOpen:
-        " md:h-[364px] z-10  translate-y-[50px]  h-[340px] ",
+        " md:h-[364px] z-10   translate-y-[50px]  h-[330px] ",
       styleWhenYamunaCardOpen:
         "md:h-[364px] z-20 translate-y-[0px] md:animate-none animate-fade-card",
-      styleWhenJayantiCardOpen: "md:h-[364px] translate-y-[84px] h-[340px]",
+      styleWhenJayantiCardOpen: "md:h-[364px] translate-y-[80px] h-[330px]",
       src: "",
     },
     {
@@ -62,8 +61,8 @@ const TemplateCard = ({ handleClickOnNewDesign }: NewDesignProps) => {
       size: "4 bhk",
       price: "4 L",
       myfunc: openJayantiCard,
-      styleWhenEuropaCardOpen: "md:h-[364px] h-[320px] translate-y-[95px]",
-      styleWhenYamunaCardOpen: "md:h-[364px] h-[340px]  translate-y-[50px]",
+      styleWhenEuropaCardOpen: "md:h-[364px] h-[330px]  translate-y-[80px] ",
+      styleWhenYamunaCardOpen: "md:h-[364px] h-[330px]  translate-y-[50px]",
       styleWhenJayantiCardOpen: "mt-0 z-20 md:animate-none animate-fade-card ",
       src: "",
     },
@@ -84,13 +83,6 @@ const TemplateCard = ({ handleClickOnNewDesign }: NewDesignProps) => {
       
       `}
         >
-          {/* <EuropaCard
-            cards={cards}
-            handleClickOnNewDesign={handleClickOnNewDesign}
-            handleDragStart={handleDragStart}
-          />
-          <YamunaCard handleDragStart={handleDragStart} />
-          <JayantiCard handleDragStart={handleDragStart} /> */}
           {cards.map((e) => {
             return (
               <div
