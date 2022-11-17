@@ -1,10 +1,9 @@
-import { Carousel } from "flowbite-react";
 import { useState } from "react";
 import data from "../../public/railings_sf.json";
 
 const SelectCarousel = () => {
   const root_url = data.root_url;
-  const [active, setActive] = useState(false);
+  // const [active, setActive] = useState(false);
   return (
     <div className="h-32">
       <div className="box-border flex h-40 gap-2 overflow-x-hidden overflow-x-scroll overflow-y-hidden font-sans snap-mandatory scroll-smooth snap-x whitespace-nowrap w-80">

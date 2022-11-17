@@ -36,15 +36,16 @@ const Welcome = ({
         }
         ${
           isWelcomePanelActive && window.innerWidth > 766 && isToggled === false
-            ? "translate-x-[32vw] !h-[78%] !backdrop-blur-[25px]  "
+            ? "translate-x-[32vw] !h-[78%]  "
             : ""
         }
         `}
     >
       <div
-        className={`cursor-pointer " onClick={handleClickOnWelcome
-      ${isWelcomePanelActive === false ? "items-center justify-center" : ""}
+        className={`cursor-pointer
+      
       `}
+        onClick={handleClickOnWelcome}
       >
         {isWelcomePanelActive === false ? (
           "Welcome"
