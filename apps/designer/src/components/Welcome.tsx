@@ -28,7 +28,7 @@ const Welcome = ({
       //   isWelcomePanelActive === true ? handleClickForToggle() : "";
       // }}
       className={`
-          z-[100] relative font-Roboto flex items-center justify-center w-[80vw] mx-auto sm:w-[250px] ease-in-out duration-500 md:w-[27vw] h-[74%] rounded-[20px]  
+          z-[100] relative font-Roboto flex  py-2   w-[80vw] mx-auto sm:w-[250px] ease-in-out duration-500 md:w-[27vw] h-[74%] rounded-[20px]  
         ${
           isToggled === true && isWelcomePanelActive
             ? "bg-[#A6A6A6] translate-x-[47vw] h-[113px] !w-[10px] mt-[30vh]   "
@@ -36,18 +36,29 @@ const Welcome = ({
         }
         ${
           isWelcomePanelActive && window.innerWidth > 766 && isToggled === false
-            ? "translate-x-[32vw] !h-[75%]  "
+            ? "translate-x-[32vw] !h-[78%] !backdrop-blur-[25px]  "
             : ""
         }
         `}
     >
-      <div className="cursor-pointer" onClick={handleClickOnWelcome}>
+      <div
+        className={`cursor-pointer " onClick={handleClickOnWelcome
+      ${isWelcomePanelActive === false ? "items-center justify-center" : ""}
+      `}
+      >
         {isWelcomePanelActive === false ? (
           "Welcome"
         ) : isToggled ? (
           ""
         ) : (
-          <SelectionPanel />
+          <div className="flex flex-col items-center ">
+            <img
+              className=" rounded-2xl w-[96%] "
+              src=" https://assets.vvplus.cc/draco/file_thumbnails/railing_sf_steel.png"
+              alt=""
+            />
+            <SelectionPanel />
+          </div>
         )}
       </div>
     </div>

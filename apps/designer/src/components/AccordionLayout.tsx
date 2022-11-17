@@ -1,14 +1,12 @@
 import React from "react";
 
-import {
-  BsFillArrowDownCircleFill,
-  BsFillArrowUpCircleFill,
-} from "react-icons/bs";
+import { AiOutlineArrowRight, AiOutlineArrowUp } from "react-icons/ai";
 import animateActiveCamera from "./Animations/animateCamera";
 import { scene_variable } from "./elements/Scene";
 
 interface Props {
   title: string;
+  design: string;
   children: JSX.Element;
   index: number;
   activeIndex: number;
@@ -31,6 +29,7 @@ interface target {
 
 const AccordionLayout = ({
   title,
+  design,
   children,
   index,
   activeIndex,
@@ -76,22 +75,23 @@ const AccordionLayout = ({
             });
           }
         }}
-        className="flex w-80 justify-between p-2 mt-2 rounded bg-green-400"
+        className="flex justify-between items-center p-2 mt-2 bg-gray-400 border-amber-100 border-[1px] rounded-2xl w-[26vw]"
       >
-        <div className="flex">
-          <div className="text-white font-bold">{title}</div>
+        <div className="flex gap-3">
+          <div className="font-bold ">{title}</div>
         </div>
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center gap-5">
+          <div className="font-bold ">{design}</div>
           {activeIndex === index ? (
-            <BsFillArrowDownCircleFill className="w-8 h-8" />
+            <AiOutlineArrowRight className="w-8 h-8" />
           ) : (
-            <BsFillArrowUpCircleFill className="w-8 h-8" />
+            <AiOutlineArrowUp className="w-8 h-8" />
           )}
         </div>
       </div>
 
       {activeIndex === index && (
-        <div className="shadow-3xl rounded-2xl shadow-cyan-500/50 p-4 mb-6">
+        <div className="p-4 mb-6 shadow-3xl rounded-2xl shadow-cyan-500/50">
           {children}
         </div>
       )}

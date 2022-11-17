@@ -5,9 +5,10 @@ import SelectCarousel from "./SelectCarousel";
 const Accordion = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col items-center justify-center">
       <AccordionLayout
         title="Balcony Railings"
+        design="Minimal Floor"
         index={1}
         activeIndex={activeIndex}
         setActiveIndex={setActiveIndex}
@@ -21,6 +22,7 @@ const Accordion = () => {
 
       <AccordionLayout
         title="Main Gate"
+        design="Simple"
         index={2}
         activeIndex={activeIndex}
         setActiveIndex={setActiveIndex}
@@ -34,6 +36,7 @@ const Accordion = () => {
 
       <AccordionLayout
         title="Garden"
+        design="All Steel"
         index={3}
         activeIndex={activeIndex}
         setActiveIndex={setActiveIndex}

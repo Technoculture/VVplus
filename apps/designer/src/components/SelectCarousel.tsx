@@ -7,7 +7,7 @@ const SelectCarousel = () => {
   const [active, setActive] = useState(false);
   return (
     <div className="h-32">
-      <div className="flex gap-2 box-border overflow-x-scroll overflow-y-hidden font-sans snap-mandatory scroll-smooth snap-x whitespace-nowrap h-40 w-80">
+      <div className="box-border flex h-40 gap-2 overflow-x-hidden overflow-x-scroll overflow-y-hidden font-sans snap-mandatory scroll-smooth snap-x whitespace-nowrap w-80">
         {data.options.map((e) => (
           <img
             key={e.id}
