@@ -23,7 +23,6 @@ const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
     scene_variable = scene;
   };
   const onRender = (scene: BABYLON.Scene) => {
-    console.log(scene);
     return;
   };
 

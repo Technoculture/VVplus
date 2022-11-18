@@ -1,6 +1,7 @@
 import React from "react";
 
-import { AiOutlineArrowRight, AiOutlineArrowUp } from "react-icons/ai";
+import { AiOutlineDown } from "react-icons/ai";
+import { MdKeyboardArrowRight } from "react-icons/md";
 import animateActiveCamera from "./Animations/animateCamera";
 import { scene_variable } from "./elements/Scene";
 
@@ -75,23 +76,25 @@ const AccordionLayout = ({
             });
           }
         }}
-        className="flex justify-between items-center p-2 mt-2 bg-gray-400 border-amber-100 border-[1px] rounded-2xl w-[26vw]"
+        className={`flex justify-between items-center px-5 py-1  mt-1 bg-gray-400 border-amber-100 border-[1px] rounded-2xl w-[26vw]
+        
+        `}
       >
         <div className="flex gap-3">
-          <div className="font-bold ">{title}</div>
+          <div className="text-lg ">{title}</div>
         </div>
         <div className="flex items-center justify-center gap-5">
-          <div className="font-bold ">{design}</div>
+          <div className="text-sm font-bold font-Roboto">{design}</div>
           {activeIndex === index ? (
-            <AiOutlineArrowRight className="w-8 h-8" />
+            <AiOutlineDown width={"10px"} height={"10px"} />
           ) : (
-            <AiOutlineArrowUp className="w-8 h-8" />
+            <MdKeyboardArrowRight width={"10px"} height={"10px"} />
           )}
         </div>
       </div>
 
       {activeIndex === index && (
-        <div className="p-4 mb-6 shadow-3xl rounded-2xl shadow-cyan-500/50">
+        <div className="p-4 shadow-3xl rounded-2xl shadow-cyan-500/50">
           {children}
         </div>
       )}

@@ -7,9 +7,35 @@ const Accordion = () => {
   return (
     <div className="flex flex-col items-center justify-center">
       <AccordionLayout
-        title="Balcony Railings"
-        design="Minimal Floor"
+        title="Main Gate"
+        design="Minimal Floral"
         index={1}
+        activeIndex={activeIndex}
+        setActiveIndex={setActiveIndex}
+        r={1000}
+        a={-9.424777961}
+        b={1.570796327}
+        t={{ x: 250, y: 70, z: 30 }}
+      >
+        <SelectCarousel />
+      </AccordionLayout>
+      <AccordionLayout
+        title="Garden"
+        design="All Steel"
+        index={2}
+        activeIndex={activeIndex}
+        setActiveIndex={setActiveIndex}
+        r={1000}
+        a={0}
+        b={0}
+        t={{ x: -300, y: -400, z: 400 }}
+      >
+        <SelectCarousel />
+      </AccordionLayout>
+      <AccordionLayout
+        title="Balcony Railings"
+        design="All Steel"
+        index={0}
         activeIndex={activeIndex}
         setActiveIndex={setActiveIndex}
         r={1000}
@@ -21,23 +47,9 @@ const Accordion = () => {
       </AccordionLayout>
 
       <AccordionLayout
-        title="Main Gate"
-        design="Simple"
-        index={2}
-        activeIndex={activeIndex}
-        setActiveIndex={setActiveIndex}
-        r={1000}
-        a={-9.424777961}
-        b={1.570796327}
-        t={{ x: 250, y: 70, z: 30 }}
-      >
-        <SelectCarousel />
-      </AccordionLayout>
-
-      <AccordionLayout
         title="Garden"
         design="All Steel"
-        index={3}
+        index={4}
         activeIndex={activeIndex}
         setActiveIndex={setActiveIndex}
         r={1000}

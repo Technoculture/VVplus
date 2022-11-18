@@ -15,7 +15,7 @@ export default function SceneComp(props: SceneProps) {
     antialias,
     adaptToDeviceRatio,
     onRender,
-    // onSceneReady,
+    onSceneReady,
     className,
     ...rest
   } = props;
