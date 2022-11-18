@@ -85,11 +85,7 @@ const AccordionLayout = ({
         </div>
         <div className="flex items-center justify-center gap-5">
           <div className="text-sm font-bold font-Roboto">{design}</div>
-          {activeIndex === index ? (
-            <AiOutlineDown width={"10px"} height={"10px"} />
-          ) : (
-            <MdKeyboardArrowRight width={"10px"} height={"10px"} />
-          )}
+          {activeIndex === index ? <AiOutlineDown /> : <MdKeyboardArrowRight />}
         </div>
       </div>
 
