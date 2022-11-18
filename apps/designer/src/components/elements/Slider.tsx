@@ -1,6 +1,6 @@
 import React from "react";
 import { Range } from "react-range";
-import data from "../../../public/house.json";
+// import data from "../../../public/house.json";
 import useStore from "../../global-stores/store";
 
 // Not in working condition yet, will be updated later with useStore and Zod which will implement feature to turn specific floors on/off depending on user's request
@@ -13,8 +13,8 @@ export default function Slider() {
   // }
   // console.log(store.floor);
   return (
-    <div className="w-full flex justify-center">
-      <div className="w-80 p-10 border-4 border-red-300">
+    <div className="flex justify-center w-full">
+      <div className="p-10 border-4 border-red-300 w-80">
         <h1 className="text-4xl">Range</h1>
         <Range
           step={1}

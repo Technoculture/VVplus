@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "./Cards/Card";
 import SelectionPanel from "./SelectionPanel";
+
 interface WelcomePanelProps {
   isWelcomePanelActive: boolean;
   handleClickOnWelcome: () => void;

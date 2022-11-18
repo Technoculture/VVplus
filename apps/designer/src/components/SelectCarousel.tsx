@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import data from "../../public/railings_sf.json";
 
 const SelectCarousel = () => {
