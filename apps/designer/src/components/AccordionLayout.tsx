@@ -76,7 +76,7 @@ const AccordionLayout = ({
             });
           }
         }}
-        className={`flex justify-between items-center px-5 py-1  mt-1 bg-gray-400 border-amber-100 border-[1px] rounded-2xl w-[26vw]
+        className={`flex justify-between items-center px-5  py-1  bg-white bg-opacity-40 border-white border-2xl border-2 rounded-2xl w-[26vw]
         
         `}
       >
@@ -90,9 +90,7 @@ const AccordionLayout = ({
       </div>
 
       {activeIndex === index && (
-        <div className="p-4 shadow-3xl rounded-2xl shadow-cyan-500/50">
-          {children}
-        </div>
+        <div className="py-1 rounded-2xl">{children}</div>
       )}
     </>
   );

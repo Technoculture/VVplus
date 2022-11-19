@@ -5,19 +5,17 @@ const SelectCarousel = () => {
   const root_url = data.root_url;
   // const [active, setActive] = useState(false);
   return (
-    <div className="h-fit">
-      <div className="box-border flex gap-2 overflow-x-hidden overflow-x-scroll overflow-y-hidden font-sans snap-mandatory scroll-smooth snap-x whitespace-nowrap w-fit">
-        {data.options.map((e) => (
-          <img
-            key={e.id}
-            src={root_url + e.thumbnail_url}
-            alt="..."
-            height=""
-            width="175px"
-            className="rounded-xl"
-          />
-        ))}
-      </div>
+    <div className="box-border flex gap-2 overflow-x-hidden overflow-x-scroll overflow-y-hidden font-sans snap-mandatory scroll-smooth snap-x whitespace-nowrap w-fit">
+      {data.options.map((e) => (
+        <img
+          key={e.id}
+          src={root_url + e.thumbnail_url}
+          alt="..."
+          height=""
+          width="175px"
+          className="rounded-xl h-[15vh]"
+        />
+      ))}
     </div>
   );
 };
