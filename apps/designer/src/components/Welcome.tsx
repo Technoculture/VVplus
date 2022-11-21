@@ -31,12 +31,12 @@ const Welcome = ({
         //   isWelcomePanelActive === true ? handleClickForToggle() : "";
         // }}
         className={`
-          z-[100] relative font-Roboto flex   py-2   w-[80vw] mx-auto sm:w-[250px] ease-in-out duration-500 md:w-[27vw] h-[74vh] rounded-[20px]  
+          z-[100] relative font-Roboto flex   py-2   w-[80vw] mx-auto sm:w-[250px] ease-in-out duration-500 lg:w-[27vw] md:w-[28vw] h-[74vh] rounded-[20px]  
           ${!isWelcomePanelActive ? "items-center justify-center" : ""}
         ${
           isToggled === true && isWelcomePanelActive
             ? "bg-[#A6A6A6] translate-x-[47vw] !h-[113px] !w-[10px] mt-[30vh]   "
-            : "bg-white bg-opacity-40 backdrop-blur-[25px]"
+            : "bg-white bg-[linear-gradient(169.51deg_rgba(255_245_245_0.85)_0.45%_rgba(255_234_234_0.11)_98.73%)] bg-opacity-40 backdrop-blur-[10px]"
         }
         ${
           isWelcomePanelActive && window.innerWidth > 766 && isToggled === false
@@ -58,7 +58,7 @@ const Welcome = ({
           ) : (
             <div className="flex flex-col items-center ">
               <img
-                className=" rounded-2xl w-[95%] pb-1 h-[28vh]  "
+                className=" rounded-2xl border-2 border-white  w-[94%]  h-[26vh] lg:h-[28vh]  "
                 src=" https://assets.vvplus.cc/draco/file_thumbnails/railing_sf_steel.png"
                 alt=""
               />

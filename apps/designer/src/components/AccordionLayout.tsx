@@ -1,7 +1,6 @@
 import React from "react";
 
-import { AiOutlineDown } from "react-icons/ai";
-import { MdKeyboardArrowRight } from "react-icons/md";
+import { AiOutlineDown, AiOutlineRight } from "react-icons/ai";
 import animateActiveCamera from "./Animations/animateCamera";
 import { scene_variable } from "./elements/Scene";
 
@@ -63,35 +62,44 @@ const AccordionLayout = ({
   return (
     <>
       <div
-        onClick={() => {
-          if (index !== activeIndex) {
-            handleSetIndex(index);
-            animation(r, a, b, t);
-          } else {
-            handleSetIndex(0);
-            animation(1000, -Math.PI * 3, Math.PI / 2, {
-              x: -300,
-              y: 200,
-              z: 230,
-            });
-          }
-        }}
-        className={`flex justify-between items-center px-5  py-1  bg-white bg-opacity-40 border-white border-2xl border-2 rounded-2xl w-[26vw]
+        className={`h-fit 
+      ${activeIndex === index ? "bg-white rounded-2xl" : ""}
+      `}
+      >
+        <div
+          onClick={() => {
+            if (index !== activeIndex) {
+              handleSetIndex(index);
+              animation(r, a, b, t);
+            } else {
+              handleSetIndex(0);
+              animation(1000, -Math.PI * 3, Math.PI / 2, {
+                x: -300,
+                y: 200,
+                z: 230,
+              });
+            }
+          }}
+          className={`flex justify-between items-center h-[5vh] lg:px-5 px-2   bg-white bg-opacity-40 border-white border-2xl border-2 rounded-2xl w-[26vw]
+        
         
         `}
-      >
-        <div className="flex gap-3">
-          <div className="text-lg ">{title}</div>
+        >
+          <div className="flex gap-3">
+            <div className="text-sm font-[Bodoni] lg:text-lg ">{title}</div>
+          </div>
+          <div className="flex items-center justify-center gap-3 lg:gap-5">
+            <div className="text-xs font-bold lg:text-sm font-[Roboto]">
+              {design}
+            </div>
+            {activeIndex === index ? <AiOutlineDown /> : <AiOutlineRight />}
+          </div>
         </div>
-        <div className="flex items-center justify-center gap-5">
-          <div className="text-sm font-bold font-Roboto">{design}</div>
-          {activeIndex === index ? <AiOutlineDown /> : <MdKeyboardArrowRight />}
-        </div>
-      </div>
 
-      {activeIndex === index && (
-        <div className="py-1 rounded-2xl">{children}</div>
-      )}
+        {activeIndex === index && (
+          <div className="px-1 py-[6px]  rounded-2xl">{children}</div>
+        )}
+      </div>
     </>
   );
 };
