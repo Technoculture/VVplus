@@ -63,7 +63,11 @@ const AccordionLayout = ({
     <>
       <div
         className={`h-fit 
-      ${activeIndex === index ? "bg-white rounded-2xl" : ""}
+      ${
+        activeIndex === index
+          ? "bg-white border-amber-100 border-2 rounded-2xl"
+          : ""
+      }
       `}
       >
         <div
@@ -80,16 +84,20 @@ const AccordionLayout = ({
               });
             }
           }}
-          className={`flex justify-between items-center h-[5vh] lg:px-5 px-2   bg-white bg-opacity-40 border-white border-2xl border-2 rounded-2xl w-[26vw]
-        
+          className={`flex justify-between items-center h-[5vh] lg:px-5 px-2   bg-white bg-opacity-40 border-amber-100  border-2 rounded-2xl w-[23vw] lg:w-[27vw]
+        ${activeIndex === index ? "border-none" : ""}
         
         `}
         >
           <div className="flex gap-3">
-            <div className="text-sm font-[Bodoni] lg:text-lg ">{title}</div>
+            <div className="md:text-xs font-[Bodoni] lg:text-lg ">{title}</div>
           </div>
-          <div className="flex items-center justify-center gap-3 lg:gap-5">
-            <div className="text-xs font-bold lg:text-sm font-[Roboto]">
+          <div className="flex items-center justify-center lg:gap-3 md:gap-1 lg:gap-5">
+            <div
+              className={`text-xs font-bold lg:text-sm font-[Roboto]
+            ${activeIndex === index ? "font-light" : ""}
+            `}
+            >
               {design}
             </div>
             {activeIndex === index ? <AiOutlineDown /> : <AiOutlineRight />}
@@ -97,7 +105,7 @@ const AccordionLayout = ({
         </div>
 
         {activeIndex === index && (
-          <div className="px-2 py-1 rounded-2xl">{children}</div>
+          <div className="px-3 py-1 scrollbar-hide rounded-2xl">{children}</div>
         )}
       </div>
     </>

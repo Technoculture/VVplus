@@ -7,7 +7,7 @@ const Accordion = () => {
   return (
     <div className="flex flex-col items-center justify-center h-fit">
       <div
-        className={` rounded-2xl mx-2  my-1
+        className={` rounded-2xl  mb-[10px] 
       
       
       `}
@@ -27,7 +27,7 @@ const Accordion = () => {
         </AccordionLayout>
       </div>
       <div
-        className={`  rounded-2xl mx-2 my-1 
+        className={`  rounded-2xl  mb-[10px] 
       
       `}
       >
@@ -47,7 +47,7 @@ const Accordion = () => {
       </div>
 
       <div
-        className={`  rounded-2xl mx-2 my-1 
+        className={`  rounded-2xl  mb-[10px] 
       
       `}
       >
@@ -66,7 +66,7 @@ const Accordion = () => {
         </AccordionLayout>
       </div>
       <div
-        className={`  rounded-2xl mx-2 my-1 
+        className={`  rounded-2xl
       
       `}
       >

@@ -31,16 +31,20 @@ const Welcome = ({
         //   isWelcomePanelActive === true ? handleClickForToggle() : "";
         // }}
         className={`
-          z-[100] relative font-Roboto flex   py-2    w-[80vw] mx-auto sm:w-[250px] ease-in-out duration-500 lg:w-[27vw] md:w-[28vw] h-[74vh] rounded-[20px]  
-          ${!isWelcomePanelActive ? "items-center justify-center" : ""}
+          z-[100] relative font-Roboto flex items-center   justify-center py-[10px] px-[10px]    w-[80vw] mx-auto sm:w-[250px] ease-in-out duration-500 lg:w-[28.6vw] md:w-[25vw] h-[74vh] rounded-[20px]  
+          ${
+            !isWelcomePanelActive
+              ? "items-center justify-center bg-gray-200 "
+              : "bg-gradient-to-b  from-red-50/[0.98] to-rose-100/[0.48]  backdrop-blur-[10px]"
+          }
         ${
           isToggled === true && isWelcomePanelActive
-            ? "bg-[#A6A6A6] translate-x-[62.7vw]    "
-            : "bg-white bg-[linear-gradient(169.51deg_rgba(255_245_245_0.85)_0.45%_rgba(255_234_234_0.11)_98.73%)] bg-opacity-40 backdrop-blur-[10px]"
+            ? "lg:translate-x-[63.6vw] md:translate-x-[61.5vw] !h-fit    "
+            : ""
         }
         ${
           isWelcomePanelActive && window.innerWidth > 766 && isToggled === false
-            ? "translate-x-[32vw] !h-fit   "
+            ? "translate-x-[34vw] !h-fit   "
             : ""
         }
         `}
@@ -53,12 +57,10 @@ const Welcome = ({
         >
           {isWelcomePanelActive === false ? (
             "Welcome"
-          ) : isToggled ? (
-            ""
           ) : (
-            <div className="flex flex-col items-center ">
+            <div className="flex flex-col gap-[10px] items-center ">
               <img
-                className=" rounded-2xl border-2 border-white  w-[96%]  h-[26vh] lg:h-[28vh]  "
+                className=" rounded-[10px] border-2 border-amber-100  w-[100%]  h-[26vh] lg:h-[28vh]  "
                 src=" https://assets.vvplus.cc/draco/file_thumbnails/railing_sf_steel.png"
                 alt=""
               />
