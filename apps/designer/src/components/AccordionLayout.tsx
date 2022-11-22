@@ -97,7 +97,7 @@ const AccordionLayout = ({
         </div>
 
         {activeIndex === index && (
-          <div className="px-1 py-[6px]  rounded-2xl">{children}</div>
+          <div className="px-2 py-1 rounded-2xl">{children}</div>
         )}
       </div>
     </>

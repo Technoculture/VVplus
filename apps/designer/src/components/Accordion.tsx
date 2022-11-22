@@ -54,7 +54,7 @@ const Accordion = () => {
         <AccordionLayout
           title="Balcony Railings"
           design="All Steel"
-          index={0}
+          index={3}
           activeIndex={activeIndex}
           setActiveIndex={setActiveIndex}
           r={1000}

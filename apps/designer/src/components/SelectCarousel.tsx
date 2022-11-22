@@ -5,25 +5,27 @@ const SelectCarousel = () => {
   const root_url = data.root_url;
   // const [active, setActive] = useState(false);
   return (
-    <div className="box-border relative flex gap-2 lg:h-[20vh] md:h-[15vh] overflow-x-hidden overflow-x-scroll overflow-y-hidden font-sans h-fit snap-mandatory scroll-smooth snap-x whitespace-nowrap w-fit">
-      {data.options.map((e) => (
-        <>
-          <img
-            key={e.id}
-            src={root_url + e.thumbnail_url}
-            alt="..."
-            height=""
-            width="43%"
-            className="rounded-xl lg:h-[15vh] h-[12vh]"
-          />
-          <div>
-            <p className="absolute font-[RobotMono] text-sm text-neutral-600  ml-[-43%] md:top-[78%] lg:top-[83.5%]">
-              INR {e.price}
-            </p>
-          </div>
-        </>
-      ))}
-    </div>
+    <>
+      <div className="box-border relative flex gap-2.5  lg:h-[20vh] md:h-[15vh]  overflow-x-hidden overflow-x-scroll overflow-y-hidden font-sans h-fit snap-mandatory scroll-smooth snap-x whitespace-nowrap w-fit">
+        {data.options.map((e) => (
+          <>
+            <img
+              key={e.id}
+              src={root_url + e.thumbnail_url}
+              alt="..."
+              height=""
+              width="43%"
+              className="rounded-xl lg:h-[15vh] h-[12vh]"
+            />
+            <div>
+              <p className="absolute font-[RobotMono] text-sm text-neutral-600  ml-[-43%] md:top-[78%] lg:top-[85%]">
+                INR {e.price}
+              </p>
+            </div>
+          </>
+        ))}
+      </div>
+    </>
   );
 };
 
