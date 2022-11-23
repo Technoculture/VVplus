@@ -31,7 +31,7 @@ const Welcome = ({
         //   isWelcomePanelActive === true ? handleClickForToggle() : "";
         // }}
         className={`
-          z-[100] relative font-Roboto flex items-center   justify-center py-[10px] px-[10px]    w-[80vw] mx-auto sm:w-[250px] ease-in-out duration-500 lg:w-[28.6vw] md:w-[25vw] h-[74vh] rounded-[20px]  
+          z-[100] relative font-Roboto flex items-center   justify-center py-[10px] px-[10px]    w-[80vw] mx-auto sm:w-[250px] ease-in-out duration-500 lg:w-[28.6vw] md:w-[26vw] h-[74vh] rounded-[20px]  
           ${
             !isWelcomePanelActive
               ? "items-center justify-center bg-gray-200 "
@@ -39,7 +39,7 @@ const Welcome = ({
           }
         ${
           isToggled === true && isWelcomePanelActive
-            ? "lg:translate-x-[63.6vw] md:translate-x-[61.5vw] !h-fit    "
+            ? "lg:translate-x-[63.6vw] md:translate-x-[62vw] !h-fit    "
             : ""
         }
         ${
