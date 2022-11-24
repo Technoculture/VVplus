@@ -31,15 +31,15 @@ const Welcome = ({
         //   isWelcomePanelActive === true ? handleClickForToggle() : "";
         // }}
         className={`
-          z-[100] relative font-Roboto flex items-center   justify-center py-[10px] px-[10px]    w-[80vw] mx-auto sm:w-[250px] ease-in-out duration-500 lg:w-[28.6vw] md:w-[26vw] h-[74vh] rounded-[20px]  
+          z-[100] relative font-Roboto flex items-center flex-col   justify-center   w-[80vw] mx-auto sm:w-[250px] ease-in-out duration-500 lg:w-[27vw] md:w-[26vw] h-[74vh] rounded-[20px]  
           ${
             !isWelcomePanelActive
               ? "items-center justify-center bg-gray-200 "
-              : "bg-gradient-to-b  from-red-50/[0.98] to-rose-100/[0.48]  backdrop-blur-[10px]"
+              : " "
           }
         ${
           isToggled === true && isWelcomePanelActive
-            ? "lg:translate-x-[63.6vw] md:translate-x-[62vw] !h-fit    "
+            ? "lg:translate-x-[62.85vw] md:translate-x-[62.5vw] !h-fit    "
             : ""
         }
         ${
@@ -58,9 +58,9 @@ const Welcome = ({
           {isWelcomePanelActive === false ? (
             "Welcome"
           ) : (
-            <div className="flex flex-col gap-[10px] items-center ">
+            <div className="flex w-[27vw] py-[10px] rounded-[20px] backdrop-blur-[10px] bg-gradient-to-b  from-red-50/[0.98] to-rose-100/[0.48]  flex-col gap-[10px] px-[10px] ">
               <img
-                className=" rounded-[10px] border-2 border-amber-100  w-[100%]  h-[26vh] lg:h-[28vh]  "
+                className=" rounded-[10px] border-[1px] border-amber-100  w-[100%]  h-[26vh] lg:h-[28vh]  "
                 src=" https://assets.vvplus.cc/draco/file_thumbnails/railing_sf_steel.png"
                 alt=""
               />
@@ -68,12 +68,8 @@ const Welcome = ({
             </div>
           )}
         </div>
+        {isWelcomePanelActive === true ? <FloorSlider /> : ""}
       </div>
-      {isWelcomePanelActive === true && isToggled === false ? (
-        <FloorSlider />
-      ) : (
-        ""
-      )}
     </>
   );
 };
