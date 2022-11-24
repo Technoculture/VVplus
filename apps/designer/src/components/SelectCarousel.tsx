@@ -15,12 +15,12 @@ const SelectCarousel = () => {
               alt="..."
               height=""
               width="45%"
-              className="rounded-[10px] lg:h-[15vh] h-[12vh]"
+              className="rounded-[10px] lg:h-[15vh] h-[11vh]"
             />
             <div>
               <p
                 key={e.id}
-                className="absolute font-[RobotMono] lg:text-sm md:text-xs text-neutral-600  ml-[-44%] lg:top-[85%] md:top-[80%]"
+                className="absolute font-[RobotMono] lg:text-sm md:text-xs text-neutral-600  ml-[-44%] lg:top-[85%] md:top-[85%]"
               >
                 INR {e.price}
               </p>
