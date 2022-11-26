@@ -6,7 +6,7 @@ const SelectCarousel = () => {
   // const [active, setActive] = useState(false);
   return (
     <>
-      <div className="box-border relative flex  gap-[5px] scrollbar-hide rounded-2xl lg:h-[20vh] md:h-[16vh]  overflow-x-hidden overflow-x-scroll overflow-y-hidden font-sans h-fit snap-mandatory scroll-smooth snap-x whitespace-nowrap w-fit">
+      <div className="box-border relative flex  gap-[5px] scrollbar-hide rounded-2xl h-[150px]  overflow-x-hidden overflow-x-scroll overflow-y-hidden font-sans h-fit snap-mandatory scroll-smooth snap-x whitespace-nowrap w-fit">
         {data.options.map((e) => (
           <>
             <img
@@ -14,13 +14,13 @@ const SelectCarousel = () => {
               src={root_url + e.thumbnail_url}
               alt="..."
               height=""
-              width="45%"
-              className="rounded-[10px] lg:h-[15vh] h-[11vh]"
+              width="155px"
+              className="rounded-[10px] h-[110px]  "
             />
             <div>
               <p
                 key={e.id}
-                className="absolute font-[RobotMono] lg:text-sm md:text-xs text-neutral-600  ml-[-44%] lg:top-[85%] md:top-[85%]"
+                className="absolute font-[RobotMono] lg:text-sm md:text-xs text-neutral-600  ml-[-46%] top-[85%] top-[85%]"
               >
                 INR {e.price}
               </p>

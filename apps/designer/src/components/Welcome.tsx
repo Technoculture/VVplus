@@ -31,7 +31,7 @@ const Welcome = ({
         //   isWelcomePanelActive === true ? handleClickForToggle() : "";
         // }}
         className={`
-          z-[100] relative font-Roboto flex items-center flex-col   justify-center   w-[80vw] mx-auto sm:w-[250px] ease-in-out duration-500 lg:w-[27vw] md:w-[26vw] h-[74vh] rounded-[20px]  
+          z-[100] relative font-Roboto flex items-center flex-col   justify-center   w-[80vw] mx-auto sm:w-[250px] ease-in-out duration-500 md:w-[27vw] h-[74vh] rounded-[20px]  
           ${
             !isWelcomePanelActive
               ? "items-center justify-center bg-gray-200 "
@@ -39,12 +39,12 @@ const Welcome = ({
           }
         ${
           isToggled === true && isWelcomePanelActive
-            ? "lg:translate-x-[62.85vw] md:translate-x-[62.5vw] !h-fit    "
+            ? "xl:translate-x-[62.4vw] lg:translate-x-[60vw] md:translate-x-[68.5vw] !h-fit    "
             : ""
         }
         ${
           isWelcomePanelActive && window.innerWidth > 766 && isToggled === false
-            ? "translate-x-[34vw] !h-fit   "
+            ? "xl:translate-x-[31vw] lg:translate-x-[28vw] md:translate-x-[24vw] !h-fit   "
             : ""
         }
         `}
@@ -58,9 +58,9 @@ const Welcome = ({
           {isWelcomePanelActive === false ? (
             "Welcome"
           ) : (
-            <div className="flex w-[27vw] py-[10px] rounded-[20px] backdrop-blur-[10px] bg-gradient-to-b  from-red-50/[0.98] to-rose-100/[0.48]  flex-col gap-[10px] px-[10px] ">
+            <div className="flex py-[10px] rounded-[20px] backdrop-blur-[10px] bg-gradient-to-b  from-red-50/[0.98] to-rose-100/[0.48]  flex-col gap-[10px] px-[10px] ">
               <img
-                className=" rounded-[10px] border-[1px] border-amber-100  w-[100%]  h-[26vh] lg:h-[28vh]  "
+                className=" rounded-[10px] border-[1px] border-amber-100  w-[380px]  h-[200px]  "
                 src=" https://assets.vvplus.cc/draco/file_thumbnails/railing_sf_steel.png"
                 alt=""
               />
