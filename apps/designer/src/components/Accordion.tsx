@@ -7,7 +7,7 @@ const Accordion = () => {
   return (
     <div className="flex flex-col h-fit">
       <div
-        className={` rounded-[15px]  mb-[10px] 
+        className={` transition-all duration-[1000ms]  rounded-[15px]  mb-[10px] 
       
       
       `}
@@ -27,7 +27,7 @@ const Accordion = () => {
         </AccordionLayout>
       </div>
       <div
-        className={`  rounded-[15px]  mb-[10px] 
+        className={` transition-all duration-[1000ms]   rounded-[15px]  mb-[10px] 
       
       `}
       >
@@ -47,7 +47,7 @@ const Accordion = () => {
       </div>
 
       <div
-        className={`  rounded-[15px]  mb-[10px] 
+        className={` transition-all duration-[1000ms]  rounded-[15px]  mb-[10px] 
       
       `}
       >
@@ -66,7 +66,7 @@ const Accordion = () => {
         </AccordionLayout>
       </div>
       <div
-        className={`  rounded-[15px]
+        className={` transition-all duration-[1000ms]   rounded-[15px]
       
       `}
       >

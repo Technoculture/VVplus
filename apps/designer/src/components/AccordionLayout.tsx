@@ -65,7 +65,7 @@ const AccordionLayout = ({
         className={`
       ${
         activeIndex === index
-          ? "bg-white border-amber-100  rounded-2xl border-[1px] w-[380px]"
+          ? "bg-white border-amber-100 max-h-[210px] transition-all  duration-[1000ms] rounded-2xl border-[1px] w-[380px]"
           : ""
       }
       `}
@@ -105,7 +105,13 @@ const AccordionLayout = ({
         </div>
 
         {activeIndex === index && (
-          <div className="px-5 scrollbar-hide rounded-2xl">{children}</div>
+          <div
+            className={`px-5  transition-all duration-[5000ms]   overflow-hiddenscrollbar-hide rounded-2xl
+          
+          `}
+          >
+            {children}
+          </div>
         )}
       </div>
     </>
