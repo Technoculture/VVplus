@@ -25,7 +25,7 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
     savePopupStore();
 
   return (
-    <>
+    <div className="py-[15px] h-[100vh] justify-between  flex flex-col">
       <Navbar
         isNavbarOpen={isNavbarOpen}
         isToggled={isToggled}
@@ -51,8 +51,9 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
           isSavePopupOpen={isSavePopupOpen}
         />
       )}
-      {isWelcomePanelActive === false && <LoadingBar />}
-    </>
+
+      <LoadingBar isWelcomePanelActive={isWelcomePanelActive} />
+    </div>
   );
 };
 

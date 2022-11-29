@@ -5,9 +5,9 @@ import SelectCarousel from "./SelectCarousel";
 const Accordion = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
-    <div className="flex flex-col h-fit">
+    <div className="flex flex-col gap-[10px] h-fit">
       <div
-        className={` transition-all duration-[1000ms]  rounded-[15px]  mb-[10px] 
+        className={`  rounded-[15px] 
       
       
       `}
@@ -27,7 +27,7 @@ const Accordion = () => {
         </AccordionLayout>
       </div>
       <div
-        className={` transition-all duration-[1000ms]   rounded-[15px]  mb-[10px] 
+        className={`    rounded-[15px]  
       
       `}
       >
@@ -47,7 +47,7 @@ const Accordion = () => {
       </div>
 
       <div
-        className={` transition-all duration-[1000ms]  rounded-[15px]  mb-[10px] 
+        className={`rounded-[15px]  
       
       `}
       >
@@ -66,7 +66,7 @@ const Accordion = () => {
         </AccordionLayout>
       </div>
       <div
-        className={` transition-all duration-[1000ms]   rounded-[15px]
+        className={`    rounded-[15px]
       
       `}
       >

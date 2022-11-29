@@ -31,10 +31,10 @@ const Welcome = ({
         //   isWelcomePanelActive === true ? handleClickForToggle() : "";
         // }}
         className={`
-          z-[100] relative font-Roboto flex items-center flex-col   justify-center   w-[80vw] mx-auto sm:w-[250px] ease-in-out duration-500 md:w-[27vw] h-[74vh] rounded-[20px]  
+          z-[100] relative font-Roboto flex items-center flex-col   justify-center   w-[80vw] mx-auto sm:w-[250px] ease-in-out duration-500 md:w-[27vw] h-[76vh]  rounded-[20px]  
           ${
             !isWelcomePanelActive
-              ? "items-center justify-center bg-gray-200 "
+              ? "items-center justify-center bg-gray-200 -mt-[5vh] "
               : " "
           }
         ${
@@ -44,7 +44,7 @@ const Welcome = ({
         }
         ${
           isWelcomePanelActive && window.innerWidth > 766 && isToggled === false
-            ? "xl:translate-x-[32vw] lg:translate-x-[28vw] md:translate-x-[24vw] !h-fit   "
+            ? "xl:translate-x-[34vw] lg:translate-x-[28vw] md:translate-x-[24vw] !h-fit   "
             : ""
         }
         `}
@@ -59,7 +59,7 @@ const Welcome = ({
             "Welcome"
           ) : (
             <div
-              className={`flex py-[10px] items-center justify-center rounded-[20px] backdrop-blur-[10px] bg-gradient-to-b  from-red-50/[0.98] to-rose-100/[0.48]  flex-col gap-[10px] px-[10px] 
+              className={`flex py-[10px] items-center justify-center  rounded-[20px] backdrop-blur-[10px] bg-gradient-to-b  from-red-50/[0.98] to-rose-100/[0.48]  flex-col gap-[10px] px-[10px] 
           
             `}
             >
@@ -68,6 +68,7 @@ const Welcome = ({
                 src=" https://assets.vvplus.cc/draco/file_thumbnails/railing_sf_steel.png"
                 alt=""
               />
+
               <SelectionPanel />
             </div>
           )}

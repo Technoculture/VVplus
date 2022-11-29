@@ -21,9 +21,9 @@ const Navbar = ({
 }: NavbarProps) => {
   //use eval("Math.PI") to find the value of pi in the js function after fetching from JSON
   return (
-    <div className="flex items-center h-24 ">
+    <div className="flex items-center ">
       <nav
-        className={`container z-20 flex select-none items-center justify-center  transition-all ease-in-out h-16  shadow-[0_4px_40px_rgba(74,74,74,0.25)]  m-auto my-[15px]  text-lg duration-500 bg-[#C1C1C1] w-fit rounded-[20px]
+        className={`container z-20 flex select-none items-center justify-center  transition-all ease-in-out h-16  shadow-[0_4px_40px_rgba(74,74,74,0.25)]  m-auto   text-lg duration-500 bg-[#C1C1C1] w-fit rounded-[20px]
       `}
       >
         <div className="text-[21px] flex gap-3 leading-[24px] font-RobotoSerif font-[400] md:px-10 px-8">
