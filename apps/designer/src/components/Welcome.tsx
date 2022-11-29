@@ -31,10 +31,10 @@ const Welcome = ({
         //   isWelcomePanelActive === true ? handleClickForToggle() : "";
         // }}
         className={`
-          z-[100] relative font-Roboto flex items-center flex-col   justify-center   w-[80vw] mx-auto sm:w-[250px] ease-in-out duration-500 md:w-[27vw] h-[76vh]  rounded-[20px]  
+          z-[100] relative font-Roboto flex items-center flex-col mt-2.5   justify-center   w-[80vw] mx-auto sm:w-[250px] ease-in-out duration-500 md:w-[27vw] md:h-[76vh] h-[85vh] rounded-[20px]  
           ${
             !isWelcomePanelActive
-              ? "items-center justify-center bg-gray-200 -mt-[5vh] "
+              ? "items-center justify-center bg-gray-200 md:mt-[-5vh] "
               : " "
           }
         ${

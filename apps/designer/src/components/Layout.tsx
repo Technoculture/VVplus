@@ -25,7 +25,7 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
     savePopupStore();
 
   return (
-    <div className="py-[15px] h-[100vh] justify-between  flex flex-col">
+    <div className="py-[15px]  h-[100vh] md:justify-between  flex flex-col">
       <Navbar
         isNavbarOpen={isNavbarOpen}
         isToggled={isToggled}
