@@ -51,7 +51,7 @@ const Welcome = ({
       >
         <div
           className={`
-      
+      ${isWelcomePanelActive === false ? "cursor-pointer" : ""}
       `}
           onClick={handleClickOnWelcome}
         >

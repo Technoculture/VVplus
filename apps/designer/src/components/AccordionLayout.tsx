@@ -65,7 +65,7 @@ const AccordionLayout = ({
         className={`
       ${
         activeIndex === index
-          ? "bg-white border-amber-100 max-h-[210px]  duration-[1000ms] rounded-2xl border-[1px] w-[380px]"
+          ? "bg-white border-amber-100  transition-all duration-[1000ms] rounded-2xl border-[1px] w-[380px]"
           : ""
       }
       `}
