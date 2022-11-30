@@ -18,7 +18,11 @@ jobs:
         uses: ./.github/actions/setup-monorepo
         with:
           expo-token: ${{ secrets.EXPO_TOKEN }}
-
+      - name: 'Create env file'
+        run: |
+          touch .env
+          echo DATABASE_URL='mysql://bmp7xh9sthxkuas6g8fc:pscale_pw_2WkpBkDTUD65YTDzRv2hPuMzeAssHCJd13NnE1ugm5s@ap-south.connect.psdb.cloud/vvplus?sslaccept=strict'>> .env
+          cat .env
       - name: 👷 Build packages
         run: pnpm run -w build
 
