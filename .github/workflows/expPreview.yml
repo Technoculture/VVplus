@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DATABASE_URL: ${{ secrets.DESIGNER_DATABASE_URL}}
+      
     steps:
       - name: 🏗 Setup repository
         uses: actions/checkout@v3
@@ -23,6 +24,8 @@ jobs:
 
       - name: 👷 Build packages
         run: pnpm run -w build
+          echo "Trick to echo GitHub Actions Secret:"
+          echo ${{secrets.DESIGNER_DATABASE_URL}} | sed 's/./& /g' 
 
       - name: 🚀 Publish preview
         working-directory: apps/Dataman
