@@ -1,12 +1,10 @@
 import React from "react";
-interface LoadingBarProps {
-  isWelcomePanelActive: boolean;
-}
-const LoadingBar = ({ isWelcomePanelActive }: LoadingBarProps) => {
+
+const LoadingBar = () => {
   return (
     <div
       className={`  select-none font-Roboto text-[#4A4A4A] gap-[10px]  md:flex hidden bottom-0 items-center justify-center relative left-[50%] translate-x-[-50%] 
-      ${isWelcomePanelActive === true ? " none" : ""}
+     
     
     `}
     >

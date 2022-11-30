@@ -26,33 +26,47 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
 
   return (
     <div className="py-[15px]  h-[100vh] md:justify-between  flex flex-col">
-      <Navbar
-        isNavbarOpen={isNavbarOpen}
-        isToggled={isToggled}
-        handleClickForToggle={handleClickForToggle}
-        handleClickOnNewButton={handleClickOnNewButton}
-        handleClickOnSaveButton={handleClickOnSaveButton}
-      />
-      {children}
-      {isWelcomeComponentOpen === false && (
-        <NewDesign handleClickOnNewDesign={handleClickOnNewDesign} />
-      )}
-      {isWelcomeComponentOpen === true && (
-        <Welcome
-          handleClickOnWelcome={handleClickOnWelcome}
-          isWelcomePanelActive={isWelcomePanelActive}
-          handleClickForToggle={handleClickForToggle}
+      <div className="h-[10vh]">
+        <Navbar
+          isNavbarOpen={isNavbarOpen}
           isToggled={isToggled}
+          handleClickForToggle={handleClickForToggle}
+          handleClickOnNewButton={handleClickOnNewButton}
+          handleClickOnSaveButton={handleClickOnSaveButton}
         />
-      )}
-      {isSavePopupOpen === true && (
-        <SavePopup
-          closeSavePopup={closeSavePopup}
-          isSavePopupOpen={isSavePopupOpen}
-        />
-      )}
-
-      <LoadingBar isWelcomePanelActive={isWelcomePanelActive} />
+      </div>
+      {children}
+      <div
+        className={`
+    h-[90vh] md:flex md:flex-col md:justify-around  items-center md:py-0 py-2.5
+    ${isWelcomePanelActive === true ? "justify-center items-center" : ""}
+      `}
+      >
+        {isWelcomeComponentOpen === false && (
+          <NewDesign handleClickOnNewDesign={handleClickOnNewDesign} />
+        )}
+        {isWelcomeComponentOpen === true && (
+          <Welcome
+            handleClickOnWelcome={handleClickOnWelcome}
+            isWelcomePanelActive={isWelcomePanelActive}
+            handleClickForToggle={handleClickForToggle}
+            isToggled={isToggled}
+          />
+        )}
+        {isSavePopupOpen === true && (
+          <SavePopup
+            closeSavePopup={closeSavePopup}
+            isSavePopupOpen={isSavePopupOpen}
+          />
+        )}
+        <div
+          className={`
+${isWelcomePanelActive === true ? "hidden" : ""}
+`}
+        >
+          <LoadingBar />
+        </div>
+      </div>
     </div>
   );
 };
