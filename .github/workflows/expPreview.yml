@@ -11,8 +11,9 @@ jobs:
   mobile:
     runs-on: ubuntu-latest
     env:
+      DATABASE_URL: ${{ secrets.DESIGNER_DATABASE_URL}}
       run: |
-        echo "${{secrets.DESIGNER_DATABASE_URL }}" > .env
+        echo $DATABASE_URL >.env
 
     steps:
       - name: 🏗 Setup repository
