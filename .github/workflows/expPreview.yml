@@ -23,9 +23,7 @@ jobs:
           expo-token: ${{ secrets.EXPO_TOKEN }}
 
       - name: 👷 Build packages
-        run: pnpm run -w build
-          echo "Trick to echo GitHub Actions Secret:"
-          echo ${{secrets.DESIGNER_DATABASE_URL}} | sed 's/./& /g' 
+        run: pnpm run -w build 
 
       - name: 🚀 Publish preview
         working-directory: apps/Dataman
