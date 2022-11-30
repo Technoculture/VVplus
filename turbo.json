@@ -2,7 +2,7 @@
   "$schema": "https://turborepo.org/schema.json",
   "pipeline": {
     "build": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^build","$VERCEL_URL","$PORT","$NODE_ENV"],
       "outputs": ["dist/**", ".next/**"]
     },
     "lint": {

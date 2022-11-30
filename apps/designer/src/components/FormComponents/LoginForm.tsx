@@ -6,13 +6,14 @@ import EnterOtpForm from "./EnterOtpForm";
 import SavedHouseForm from "./SavedHouseForm";
 import CancelButton from "../Buttons/CancelButton";
 
-let numProp=false;
+let blah = function() { return undefined; };
+
 interface LoginFormProps {
   closeSavePopup: () => void;
 }
-export function PropFunc(prop):JSX.Element {
-  console.log(prop);
-  numProp=prop;
+export function PropFunc(prop): JSX.Element {
+  console.log("prop",prop);
+  blah= prop;
   return <div></div>;
 }
 
@@ -54,10 +55,12 @@ const LoginForm = ({ closeSavePopup }: LoginFormProps) => {
             if (page === FormTitles.length - 1) {
               closeSavePopup();
             } else {
+              console.log("numProp", blah);
+              blah();
               setPage((p) => p + 1);
             }
           }}
-          disable={numProp}
+          disable={false}
         />
       </div>
     </div>

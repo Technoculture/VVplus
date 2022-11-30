@@ -21,21 +21,20 @@ const SaveNumberForm = () => {
   const addPhoneNumber = trpc.user.addPhoneNumber.useMutation({});
 
   async function savePhone() {
-    const input = {
-      phone: inputValue,
-    };
     try {
       await addPhoneNumber.mutateAsync(data);
       setInputValue("");
-    } catch {
+    } catch(err) {
+      console.log("Error:",err);
       throw new Error("Error:The phone number is not valid");
     }
   }
+  const val=inputValue.length>14?true:false;
   const chk =
     /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/.test(
       inputValue
     );
-  <PropFunc prop={true} />
+  <PropFunc prop={savePhone} />;
   return (
     <div className="flex flex-col items-center justify-between gap-10">
       <h1 className="text-2xl font-normal font-Roboto">Save</h1>
@@ -56,6 +55,7 @@ const SaveNumberForm = () => {
           placeholder="123-45-678"
           value={inputValue}
           disabled={inputValue.length > 14 || chk}
+          onBlur={savePhone}
         />
       </div>
     </div>
