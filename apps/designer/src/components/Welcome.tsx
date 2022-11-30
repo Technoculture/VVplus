@@ -50,7 +50,7 @@ const Welcome = ({
         `}
       >
         <div
-          className={`cursor-pointer
+          className={`
       
       `}
           onClick={handleClickOnWelcome}
@@ -59,7 +59,7 @@ const Welcome = ({
             "Welcome"
           ) : (
             <div
-              className={`flex py-[10px] items-center justify-center  rounded-[20px] backdrop-blur-[10px] bg-gradient-to-b  from-red-50/[0.98] to-rose-100/[0.48]  flex-col gap-[10px] px-[10px] 
+              className={`flex py-[10px] select-none items-center justify-center  rounded-[20px] backdrop-blur-[10px] bg-gradient-to-b  from-red-50/[0.98] to-rose-100/[0.48]  flex-col gap-[10px] px-[10px] 
           
             `}
             >

@@ -53,12 +53,7 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
             isToggled={isToggled}
           />
         )}
-        {isSavePopupOpen === true && (
-          <SavePopup
-            closeSavePopup={closeSavePopup}
-            isSavePopupOpen={isSavePopupOpen}
-          />
-        )}
+
         <div
           className={`
 ${isWelcomePanelActive === true ? "hidden" : ""}
@@ -67,6 +62,12 @@ ${isWelcomePanelActive === true ? "hidden" : ""}
           <LoadingBar />
         </div>
       </div>
+      {isSavePopupOpen === true && (
+        <SavePopup
+          closeSavePopup={closeSavePopup}
+          isSavePopupOpen={isSavePopupOpen}
+        />
+      )}
     </div>
   );
 };
