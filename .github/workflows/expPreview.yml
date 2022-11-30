@@ -10,10 +10,11 @@ concurrency:
 jobs:
   mobile:
     runs-on: ubuntu-latest
-    env:
-      DATABASE_URL: ${{ secrets.DESIGNER_DATABASE_URL}}
-      run: |
-        echo $DATABASE_URL >.env
+    steps:
+      - name: Make envfile
+        uses: SpicyPizza/create-envfile@v1.3
+        with:
+          DATABASE_URL: {{ secrets.DESINGER_DATABASE_URL}}
 
     steps:
       - name: 🏗 Setup repository
