@@ -11,7 +11,7 @@ jobs:
   mobile:
     runs-on: ubuntu-latest
     env:
-      DATABASE_URL: ${{secrets.DESIGNER_DATABASE_URL}}
+      DATABASE_URL: ${{ secrets.DESIGNER_DATABASE_URL}}
     steps:
       - name: 🏗 Setup repository
         uses: actions/checkout@v3
