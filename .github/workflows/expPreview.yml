@@ -9,8 +9,7 @@ concurrency:
 
 jobs:
   mobile:
-    env:
-        DATABASE_URL: ${{secrets.DESIGNER_DATABASE_URL}}
+    
     runs-on: ubuntu-latest
     steps:
       #convert the github secrets tokens into the env files
