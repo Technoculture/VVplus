@@ -27,6 +27,10 @@ pnpm installhooks
 
 # 5. Build the monorepo
 pnpm build
+
+#6. Make .env file in designer folder
+In env Write-> DATABASE_URL='mysql://bmp7xh9sthxkuas6g8fc:pscale_pw_2WkpBkDTUD65YTDzRv2hPuMzeAssHCJd13NnE1ugm5s@ap-south.connect.psdb.cloud/vvplus?sslaccept=strict'
+
 ```
 
 📝 [MUST READ](./wiki/Guidelines-for-Contributing) before contributing to this repository.

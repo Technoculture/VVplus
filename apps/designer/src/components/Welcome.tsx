@@ -1,5 +1,8 @@
 import React from "react";
 import Card from "./Cards/Card";
+import FloorSlider from "./FloorSlider";
+import SelectionPanel from "./SelectionPanel";
+
 interface WelcomePanelProps {
   isWelcomePanelActive: boolean;
   handleClickOnWelcome: () => void;
@@ -22,28 +25,57 @@ const Welcome = ({
       <Card />
     </div>
   ) : (
-    <div
-      onClick={() => {
-        isWelcomePanelActive === true ? handleClickForToggle() : "";
-      }}
-      className={`
-          z-[100] relative font-Roboto flex items-center justify-center w-[80vw]   mx-auto sm:w-[250px] ease-in-out duration-500   md:w-[27vw] h-[74%] rounded-[20px]  
+    <>
+      <div
+        // onClick={() => {
+        //   isWelcomePanelActive === true ? handleClickForToggle() : "";
+        // }}
+        className={`
+          z-[100] relative font-Roboto flex items-center flex-col   justify-center   w-[80vw] mx-auto sm:w-[250px] ease-in-out duration-500 md:w-[27vw] h-[76vh]  rounded-[20px]  
+          ${
+            !isWelcomePanelActive
+              ? "items-center justify-center bg-gray-200  "
+              : " "
+          }
         ${
           isToggled === true && isWelcomePanelActive
-            ? "bg-[#A6A6A6] translate-x-[47vw] h-[113px] !w-[10px] mt-[30vh]   "
-            : "bg-[#DADADA]   "
+            ? "xl:translate-x-[70vw] md:w-[54vw] lg:w-[42vw] md:translate-x-[73.5vw]  backdrop-blur-[10px] bg-gradient-to-b  from-red-50/[0.98] to-rose-100/[0.48]   lg:translate-x-[70vw] md:translate-x-[75vw] !h-fit    "
+            : ""
         }
         ${
           isWelcomePanelActive && window.innerWidth > 766 && isToggled === false
-            ? "translate-x-[32vw] !h-[75%]  "
+            ? "xl:translate-x-[34vw] lg:translate-x-[28vw] md:translate-x-[24vw] !h-fit   "
             : ""
         }
         `}
-    >
-      <h2 className="cursor-pointer" onClick={handleClickOnWelcome}>
-        {isWelcomePanelActive === false ? "Welcome " : ""}
-      </h2>
-    </div>
+      >
+        <div
+          className={`
+      ${isWelcomePanelActive === false ? "cursor-pointer" : ""}
+      `}
+          onClick={handleClickOnWelcome}
+        >
+          {isWelcomePanelActive === false ? (
+            "Welcome"
+          ) : (
+            <div
+              className={`flex py-[10px] select-none items-center justify-center  rounded-[20px] backdrop-blur-[10px] bg-gradient-to-b  from-red-50/[0.98] to-rose-100/[0.48]  flex-col gap-[10px] px-[10px] 
+          
+            `}
+            >
+              <img
+                className=" rounded-[10px] border-[1px] border-amber-100  w-[380px]  h-[200px]  "
+                src=" https://assets.vvplus.cc/draco/file_thumbnails/railing_sf_steel.png"
+                alt=""
+              />
+
+              <SelectionPanel />
+            </div>
+          )}
+        </div>
+        {isWelcomePanelActive === true ? <FloorSlider /> : ""}
+      </div>
+    </>
   );
 };
 

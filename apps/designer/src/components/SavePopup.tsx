@@ -14,7 +14,7 @@ const SavePopup = ({ closeSavePopup, isSavePopupOpen }: SavePopupProps) => {
     <div>
       {isSavePopupOpen === true && (
         <div
-          className={` font-Roboto  fixed top-0 left-0 flex items-center justify-center backdrop-blur-[25px] w-full   h-screen md:backdrop-blur-[10px] backdrop-brightness-[0.5] z-[100] md:bg-transparent bg-white
+          className={` font-Roboto select-none  fixed top-0 left-0 flex items-center justify-center backdrop-blur-[25px] w-full   h-screen md:backdrop-blur-[10px] backdrop-brightness-[0.5] z-[100] md:bg-transparent bg-white
   
       ${
         isSavePopupOpen === true

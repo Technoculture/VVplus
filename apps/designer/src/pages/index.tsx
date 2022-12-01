@@ -1,5 +1,5 @@
 import Scene from "../components/elements/Scene";
-import ReactCanvas from "../components/elements/SceneComponent";
+// import ReactCanvas from "../components/elements/SceneComponent";
 import navigationUseStore from "../globalStore/Navigation-Store/navigationStore";
 // import Slider from "../components/elements/Slider";
 
