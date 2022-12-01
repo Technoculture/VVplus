@@ -1,13 +1,16 @@
 import Navbar from "./Navbar";
 import React from "react";
 import { ScriptProps } from "next/script";
-import LoadingBar from "./LoadingBar";
+// import LoadingBar from "./LoadingBar";
 import Welcome from "./Welcome";
-import NewDesign from "./NewDesign";
+// import NewDesign from "./NewDesign";
+import TemplateCard from "./TemplateCard";
+
 import navigationUseStore from "../globalStore/Navigation-Store/navigationStore";
 import SavePopup from "./SavePopup";
 import { openWelcomeStore } from "../globalStore/Navigation-Store/openWelcomeStore";
 import { savePopupStore } from "../globalStore/Navigation-Store/savePopupStore";
+import SelectionBar from "./SelectionBar";
 
 const Layout: React.FC<ScriptProps> = ({ children }) => {
   // TODO: improve this type later
@@ -36,38 +39,24 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
         />
       </div>
       {children}
-      <div
-        className={`
-    h-[90vh] md:flex md:flex-col md:justify-around  items-center md:py-0 py-2.5
-    ${isWelcomePanelActive === true ? "justify-center items-center" : ""}
-      `}
-      >
-        {isWelcomeComponentOpen === false && (
-          <NewDesign handleClickOnNewDesign={handleClickOnNewDesign} />
-        )}
-        {isWelcomeComponentOpen === true && (
-          <Welcome
-            handleClickOnWelcome={handleClickOnWelcome}
-            isWelcomePanelActive={isWelcomePanelActive}
-            handleClickForToggle={handleClickForToggle}
-            isToggled={isToggled}
-          />
-        )}
-
-        <div
-          className={`
-${isWelcomePanelActive === true ? "hidden" : ""}
-`}
-        >
-          <LoadingBar />
-        </div>
-      </div>
+      {isWelcomeComponentOpen === false && (
+        <TemplateCard handleClickOnNewDesign={handleClickOnNewDesign} />
+      )}
+      {isWelcomeComponentOpen === true && (
+        <Welcome
+          handleClickOnWelcome={handleClickOnWelcome}
+          isWelcomePanelActive={isWelcomePanelActive}
+          handleClickForToggle={handleClickForToggle}
+          isToggled={isToggled}
+        />
+      )}
       {isSavePopupOpen === true && (
         <SavePopup
           closeSavePopup={closeSavePopup}
           isSavePopupOpen={isSavePopupOpen}
         />
       )}
+      {isWelcomePanelActive === false && <SelectionBar />}
     </div>
   );
 };

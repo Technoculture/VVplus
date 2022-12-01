@@ -1,4 +1,3 @@
-import React from "react";
 import ToggleableMenuButton from "./Buttons/ToggleableMenuButton";
 import MenuButton from "./Buttons/MenuButton";
 
@@ -9,9 +8,8 @@ interface NavbarProps {
   handleClickOnNewButton: () => void;
   handleClickOnSaveButton: () => void;
 }
+import React from "react";
 
-//Todo : Animation of navbar  when isNavbarOpen === true & false.
-//asset manager to implement the percentage loader and other easy to manage assets
 const Navbar = ({
   isNavbarOpen,
   isToggled,
@@ -21,39 +19,36 @@ const Navbar = ({
 }: NavbarProps) => {
   //use eval("Math.PI") to find the value of pi in the js function after fetching from JSON
   return (
-    <div className="flex items-center ">
-      <nav
-        className={`container z-20 flex select-none items-center justify-center   transition-all ease-in-out h-16  shadow-[0_4px_40px_rgba(74,74,74,0.25)]  m-auto   text-lg duration-500 bg-[#C1C1C1] w-fit rounded-[20px]
+    <nav
+      className={`font-RobotoSerif z-[100] select-none flex justify-center left-[50%] translate-x-[-50%]    p-[10px] text-[21px] font-[400] items-center gap-[10px] my-[20px] h-[65px] w-[222px] rounded-[20px] shadow-[0_4px_40px_rgba(74,74,74,0.05)] bg-gradient-to-r  relative bg-white border-[1px] border-[#F7F7F7] 
+      ${isNavbarOpen === true ? "!w-fit p-[10px_0px_10px_10px]" : ""}
       `}
-      >
-        <div className="text-[21px] flex gap-3 leading-[24px] font-RobotoSerif font-[400] md:px-10 px-8">
-          VV+
-          <div className="items-center justify-center hidden gap-3 md:flex">
-            <div className="h-6 w-[1.6px] bg-black"></div>
-            Designer
-          </div>
-        </div>
+    >
+      <div>
+        <h1 className="px-4 md:px-6">
+          VV + <span className="hidden md:inline-block"> Designer</span>{" "}
+        </h1>
+      </div>
 
-        {isNavbarOpen === true && window.innerWidth > 768 ? (
-          <div className="flex duration-500 transition-all ease-in-out gap-2 text-[20px] leading-6 ">
-            <MenuButton text={"New"} onClick={handleClickOnNewButton} />
-            <MenuButton text={"Save"} onClick={handleClickOnSaveButton} />
-            <ToggleableMenuButton
-              isToggled={isToggled}
-              onClick={handleClickForToggle}
-            />
-          </div>
-        ) : (
-          <div
-            className={`flex  gap-2 md:hidden mr-[10px]
-          ${isNavbarOpen === true ? "" : "hidden"}`}
-          >
-            <MenuButton text={"New"} onClick={handleClickOnNewButton} />
-            <MenuButton text={"Save"} onClick={handleClickOnSaveButton} />
-          </div>
-        )}
-      </nav>
-    </div>
+      {isNavbarOpen === true && window.innerWidth > 768 ? (
+        <div className="flex duration-500 transition-all ease-in-out gap-2 text-[20px] leading-6 ">
+          <MenuButton text={"New"} onClick={handleClickOnNewButton} />
+          <MenuButton text={"Save"} onClick={handleClickOnSaveButton} />
+          <ToggleableMenuButton
+            isToggled={isToggled}
+            onClick={handleClickForToggle}
+          />
+        </div>
+      ) : (
+        <div
+          className={`flex  gap-2 md:hidden mr-[10px]
+                  ${isNavbarOpen === true ? "" : "hidden"}`}
+        >
+          <MenuButton text={"New"} onClick={handleClickOnNewButton} />
+          <MenuButton text={"Save"} onClick={handleClickOnSaveButton} />
+        </div>
+      )}
+    </nav>
   );
 };
 
