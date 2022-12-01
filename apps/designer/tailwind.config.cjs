@@ -15,7 +15,7 @@ module.exports = {
       keyframes: {},
     },
   },
-  plugins: [require("tailwind-scrollbar-hide")],
+  plugins: [],
 };
 
 module.exports = require("config/tailwind.config");

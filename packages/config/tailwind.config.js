@@ -2,8 +2,6 @@ module.exports = {
   content: [
     "../../packages/ui/components/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
-    "./node_modules/flowbite-react/**/*.{js,jsx}",
-    "./node_modules/flowbite-react/**/*.{ts,tsx}",
   ],
   theme: {
     fontFamily: {
@@ -35,7 +33,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('flowbite/plugin')
-  ],
+  plugins: [],
 };
