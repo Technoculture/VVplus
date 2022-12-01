@@ -22,7 +22,7 @@ jobs:
       - name: 🏗 Setup monorepo
         uses: ./.github/actions/setup-monorepo
         with:
-          expo-token: ${{ secrets.EXPO_TOKEN }}
+          expo-token: ${{ secrets.DATAMAN_EXPO_ACCESS_TOKEN }}
 
       - name: 👷 Build packages
         run: pnpm run -w build 
