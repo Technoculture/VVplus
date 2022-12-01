@@ -11,11 +11,10 @@ jobs:
   mobile:
     runs-on: ubuntu-latest
     steps:
-      - name: Make envfile
-        uses: SpicyPizza/create-envfile@v1.3
-        with:
-          DATABASE_URL: {{ secrets.DESINGER_DATABASE_URL}}
-          
+      #convert the github secrets tokens into the env files
+
+      
+
       - name: 🏗 Setup repository
         uses: actions/checkout@v3
 
