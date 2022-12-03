@@ -1,0 +1,34 @@
+{
+    "expo": {
+      "owner": "technoculture",
+      "slug": "dataman",
+      "name": "dataman",
+      "version": "1.0.0",
+      "orientation": "landscape",
+      "userInterfaceStyle": "light",
+      "platforms": [
+        "android",
+        "web",
+        "ios"
+      ],
+      "updates": {
+        "fallbackToCacheTimeout": 0
+      },
+      "assetBundlePatterns": [
+        "**/*"
+      ],
+      "ios": {
+        "supportsTablet": true
+      },
+      "android": {
+        "package": "com.technoculture.dataman"
+      },
+      "extra": {
+        "eas": {
+          "projectId": "a3b5d6c6-1e03-4201-9433-53545009ca4c"
+        }
+      }
+    },
+    "private": true
+  }
+  
