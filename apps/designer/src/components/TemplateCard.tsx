@@ -1,7 +1,7 @@
 import React from "react";
 import CardNavigationButton from "./Buttons/CardNavigationButton";
 import Image from "next/image";
-import house from "./../assets/house.jpg";
+import house from "../../assets/house.jpg";
 
 import { onBoardUiStore } from "../globalStore/Navigation-Store/templateCardStore/onBoardUiStore";
 
