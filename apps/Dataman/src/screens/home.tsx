@@ -1,9 +1,21 @@
 import * as React from "react";
-import { View, Text } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { View } from "@ant-design/react-native";
+import { LoginScreen } from "./Login";
+
 export const HomeScreen = () => {
   return (
-    <View>
-      <Text>Hello this one is the home screen for the dataman</Text>
-    </View>
+    <SafeAreaView>
+      <View
+        style={{
+          width: "100%",
+          height: "100%",
+          backgroundColor: "white",
+          padding: 20,
+        }}
+      >
+        <LoginScreen />
+      </View>
+    </SafeAreaView>
   );
 };
