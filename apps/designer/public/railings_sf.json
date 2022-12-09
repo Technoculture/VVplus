@@ -1,33 +1,33 @@
 {
     "data": "Balcony Railings",
-    "root_url": "https://assets.vvplus.cc/draco",
+    "root_url": "https://assets.vvplus.cc/draco/",
     "options": [
         {
             "id": 0,
             "file_name": "Only Glass Railing",
-            "file_url": "/railing_sf_only_glass.glb",
-            "thumbnail_url": "/file_thumbnails/railing_sf_only_glass.png",
+            "file_url": "railing_sf_only_glass.glb",
+            "thumbnail_url": "file_thumbnails/railing_sf_only_glass.png",
             "price": "1,00,000"
         },
         {
             "id": 1,
             "file_name": "Steel Railing",
-            "file_url": "/railing_sf_steel.glb",
-            "thumbnail_url": "/file_thumbnails/railing_sf_steel.png",
+            "file_url": "railing_sf_steel.glb",
+            "thumbnail_url": "file_thumbnails/railing_sf_steel.png",
             "price": "90,000"
         },
         {
             "id": 2,
             "file_name": "Rimmed Glass Railing",
-            "file_url": "/railing_sf_rimmed_glass.glb",
-            "thumbnail_url": "/file_thumbnails/railing_sf_rimmed_glass.png",
-            "price": "1, 40,000"
+            "file_url": "railing_sf_rimmed_glass.glb",
+            "thumbnail_url": "file_thumbnails/railing_sf_rimmed_glass.png",
+            "price": "1,40,000"
         },
         {
             "id": 3,
             "file_name": "Classic Railing",
-            "file_url": "/railing_sf_classic.glb",
-            "thumbnail_url": "/file_thumbnails/railing_sf_classic.png",
+            "file_url": "railing_sf_classic.glb",
+            "thumbnail_url": "file_thumbnails/railing_sf_classic.png",
             "price": "1,00,000"
         }
     ]
