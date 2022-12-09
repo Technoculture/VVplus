@@ -39,24 +39,35 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
         />
       </div>
       {children}
-      {isWelcomeComponentOpen === false && (
-        <TemplateCard handleClickOnNewDesign={handleClickOnNewDesign} />
-      )}
-      {isWelcomeComponentOpen === true && (
-        <Welcome
-          handleClickOnWelcome={handleClickOnWelcome}
-          isWelcomePanelActive={isWelcomePanelActive}
-          handleClickForToggle={handleClickForToggle}
-          isToggled={isToggled}
-        />
-      )}
+      <div
+        className={`
+    h-[90vh] md:flex md:flex-col md:justify-around  items-center md:py-0 py-2.5`}
+      >
+        {isWelcomeComponentOpen === false && (
+          <TemplateCard handleClickOnNewDesign={handleClickOnNewDesign} />
+        )}
+        {isWelcomeComponentOpen === true && (
+          <Welcome
+            handleClickOnWelcome={handleClickOnWelcome}
+            isWelcomePanelActive={isWelcomePanelActive}
+            handleClickForToggle={handleClickForToggle}
+            isToggled={isToggled}
+          />
+        )}
+        <div
+          className={`
+${isWelcomePanelActive === true ? "hidden" : ""}
+`}
+        >
+          {isWelcomePanelActive === false && <SelectionBar />}
+        </div>
+      </div>
       {isSavePopupOpen === true && (
         <SavePopup
           closeSavePopup={closeSavePopup}
           isSavePopupOpen={isSavePopupOpen}
         />
       )}
-      {isWelcomePanelActive === false && <SelectionBar />}
     </div>
   );
 };

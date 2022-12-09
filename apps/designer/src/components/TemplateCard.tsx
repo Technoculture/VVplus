@@ -69,7 +69,7 @@ const TemplateCard = ({ handleClickOnNewDesign }: NewDesignProps) => {
   ];
 
   return (
-    <main className="flex flex-col relative  left-[50%] translate-x-[-50%]   md:my-8 md:gap-4 my-0 gap-2  justify-center items-center ">
+    <main className="relative flex flex-col items-center justify-center gap-2 md:gap-4 ">
       <h1 className="text-[25px] select-none font-medium font-Roboto text-[#000000] leading-[29px] ">
         Choose your Base model
       </h1>
