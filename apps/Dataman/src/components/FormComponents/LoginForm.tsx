@@ -1,10 +1,10 @@
 import React from "react";
 import {
-  View,
   WingBlank,
   Text,
   Button,
   WhiteSpace,
+  View,
 } from "@ant-design/react-native";
 
 const LoginForm = () => {
@@ -15,32 +15,53 @@ const LoginForm = () => {
 
         <WhiteSpace />
 
-        <Text style={{ fontWeight: "400" }}>
+        <Text style={{ color: "black", fontSize: 18 }}>
           Let us explore your dream house
         </Text>
       </WingBlank>
 
-      <WingBlank style={{ marginBottom: 5, marginTop: 5 }}>
-        <Text style={{ fontWeight: "bold", fontSize: 11 }}>
+      <WhiteSpace size="xl" />
+
+      <WingBlank>
+        <Text style={{ fontWeight: "bold", color: "black", fontSize: 11 }}>
           You will receive an SMS verification that may apply message and data
           rates.
         </Text>
       </WingBlank>
 
-      <WhiteSpace />
+      <WhiteSpace size="xl" />
 
       <WingBlank>
-        <Text style={{ textAlign: "center" }}>Send OTP</Text>
+        <Text style={{ textAlign: "center", fontSize: 18, color: "black" }}>
+          Send OTP
+        </Text>
       </WingBlank>
 
       <WingBlank>
         <Text>Text OTP here</Text>
       </WingBlank>
+
       <WhiteSpace />
 
       <WhiteSpace size="xl" />
-      <WingBlank>
-        <Button type="primary">Signin</Button>
+
+      <WingBlank
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Button
+          style={{
+            backgroundColor: "#4CAF50FF",
+            borderRadius: 50,
+            height: 57,
+            width: 300,
+          }}
+        >
+          Sign In
+        </Button>
       </WingBlank>
     </View>
   );

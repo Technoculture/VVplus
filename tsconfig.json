@@ -1,14 +1,9 @@
 {
-    "include": ["next.d.ts", "**/*.ts", "**/*.tsx"],
-    "baseUrl": ".",
-    "compilerOptions": {
-      //"declaration": false,
-      "sourceMap": true,
-      "outDir": "dist",
-      "strict": true,
-      "lib": ["esnext","DOM"],
-      "esModuleInterop": true,
-      "resolveJsonModule": true
-    },
-    "exclude": ["node_modules"]
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "jsx": "react-native",
+
+  },
+  "include": ["./src/*/","index.ts"],
 }

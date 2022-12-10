@@ -1,6 +1,6 @@
 import React from "react";
-import { Flex, WhiteSpace, View, WingBlank } from "@ant-design/react-native";
-import { Image } from "react-native";
+import { Flex, WhiteSpace, WingBlank } from "@ant-design/react-native";
+import { Image, View } from "react-native";
 import LoginForm from "../components/FormComponents/LoginForm";
 
 export const LoginScreen = () => {
@@ -48,8 +48,9 @@ export const LoginScreen = () => {
           alignItems: "flex-start",
           // backgroundColor: "pink",
           height: 50,
-          width: 300,
-          marginTop: 10,
+          width: 350,
+          marginTop: 20,
+         
         }}
       >
         <LoginForm />
