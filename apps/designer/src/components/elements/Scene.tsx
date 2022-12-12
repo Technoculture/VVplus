@@ -26,6 +26,9 @@ const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
     return;
   };
 
+  const assetsManager = new BABYLON.AssetsManager(scene_variable)
+  assetsManager.load()
+  
   return (
     <div>
       <SceneComp

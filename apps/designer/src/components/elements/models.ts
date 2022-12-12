@@ -19,6 +19,6 @@ export async function createModel(scene: BABYLON.Scene) {
           }
         }
       );
-    });
+    })
   });
 }

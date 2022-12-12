@@ -7,10 +7,7 @@ const Accordion = () => {
   return (
     <div className="flex flex-col gap-[10px] h-fit">
       <div
-        className={` select-none cursor-pointer rounded-[15px] 
-      
-      
-      `}
+        className={` select-none cursor-pointer rounded-[15px]`}
       >
         <AccordionLayout
           title="Main Gate"
@@ -23,13 +20,11 @@ const Accordion = () => {
           b={1.570796327}
           t={{ x: 250, y: 70, z: 30 }}
         >
-          <SelectCarousel />
+          <SelectCarousel/>
         </AccordionLayout>
       </div>
       <div
-        className={`select-none  cursor-pointer  rounded-[15px]  
-      
-      `}
+        className={`select-none  cursor-pointer  rounded-[15px]`}
       >
         <AccordionLayout
           title="Garden"
@@ -45,11 +40,8 @@ const Accordion = () => {
           <SelectCarousel />
         </AccordionLayout>
       </div>
-
       <div
-        className={`select-none cursor-pointerrounded-[15px]  
-      
-      `}
+        className={`select-none cursor-pointerrounded-[15px]`}
       >
         <AccordionLayout
           title="Balcony Railings"
