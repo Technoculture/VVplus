@@ -104,9 +104,12 @@ dist
 .tern-port
 
 **/build/
+<<<<<<< HEAD
 
 # Do not commit lock files, they tend to go out of sync
 .turbo
 yarn.lock
 
 **/.env
+=======
+>>>>>>> dev
