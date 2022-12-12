@@ -1,6 +1,7 @@
 import { Button, Card, View } from "@ant-design/react-native";
 import * as React from "react";
 import { Image, StyleSheet, Text } from "react-native";
+
 export const HomeScreen = () => {
   return (
     <View
@@ -37,7 +38,7 @@ export const HomeScreen = () => {
             <Text style={{ paddingHorizontal: 15, textAlign: "center" }}>
               Please check your latest house progress updated by Eng. Devanand
             </Text>
-            <Text style={{ fontSize: 25, fontWeight: "500", color: "#00B578" }}>
+            <Text style={{ fontSize: 25, fontWeight: "500", color: "#4AB04D" }}>
               Verify Construction Status
             </Text>
           </View>
@@ -73,7 +74,6 @@ export const HomeScreen = () => {
 };
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "#00B578",
     borderRadius: 100,
     paddingVertical: 5,
   },
