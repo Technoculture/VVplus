@@ -1,70 +1,77 @@
 import React from "react";
-import {
-  WingBlank,
-  Text,
-  Button,
-  WhiteSpace,
-  View,
-} from "@ant-design/react-native";
+import { WingBlank, Text, WhiteSpace, View } from "@ant-design/react-native";
+import { StyleSheet } from "react-native";
+import OtpField from "./OtpField";
+import PhoneNumberField from "./PhoneNumberField";
+import SignInButton from "./SignInButton";
 
 const LoginForm = () => {
   return (
-    <View>
-      <WingBlank style={{ marginTop: 5, marginBottom: 5 }}>
-        <Text style={{ fontWeight: "bold", fontSize: 18 }}>Login</Text>
-
+    <View style={styles.loginDetails}>
+      <WingBlank>
+        <Text style={styles.LoginText}>Login</Text>
         <WhiteSpace />
-
-        <Text style={{ color: "black", fontSize: 18 }}>
-          Let us explore your dream house
-        </Text>
+        <Text style={styles.dreamHouse}>Let us explore your dream house</Text>
       </WingBlank>
 
-      <WhiteSpace size="xl" />
+      <WingBlank style={styles.phoneNumberField}>
+        <PhoneNumberField />
+      </WingBlank>
 
       <WingBlank>
-        <Text style={{ fontWeight: "bold", color: "black", fontSize: 11 }}>
+        <Text style={styles.smsText}>
           You will receive an SMS verification that may apply message and data
           rates.
         </Text>
       </WingBlank>
 
-      <WhiteSpace size="xl" />
-
       <WingBlank>
-        <Text style={{ textAlign: "center", fontSize: 18, color: "black" }}>
-          Send OTP
-        </Text>
+        <Text style={styles.OtpText}>Send OTP</Text>
+      </WingBlank>
+
+      <WingBlank style={styles.OtpField}>
+        <OtpField />
       </WingBlank>
 
       <WingBlank>
-        <Text>Text OTP here</Text>
-      </WingBlank>
-
-      <WhiteSpace />
-
-      <WhiteSpace size="xl" />
-
-      <WingBlank
-        style={{
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Button
-          style={{
-            backgroundColor: "#4CAF50FF",
-            borderRadius: 50,
-            height: 57,
-            width: 300,
-          }}
-        >
-          Sign In
-        </Button>
+        <SignInButton />
       </WingBlank>
     </View>
   );
 };
 
 export default LoginForm;
+
+const styles = StyleSheet.create({
+  loginDetails: {
+    justifyContent: "space-between",
+    flex: 2,
+    marginVertical: 25,
+  },
+  LoginText: {
+    fontWeight: "bold",
+    fontSize: 18,
+  },
+  dreamHouse: {
+    fontSize: 18,
+  },
+  phoneNumberField: {
+    borderRadius: 10,
+    borderWidth: 1,
+    padding: 3,
+  },
+  smsText: {
+    fontWeight: "bold",
+    fontSize: 11,
+  },
+  OtpText: {
+    textAlign: "center",
+    fontSize: 18,
+  },
+  OtpField: {
+    borderWidth: 1,
+    borderRadius: 10,
+    height: 50,
+    padding: 3,
+  },
+});
