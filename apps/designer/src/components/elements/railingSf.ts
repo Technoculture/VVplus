@@ -3,12 +3,20 @@ import * as BABYLON from "@babylonjs/core";
 import data from "../../../public/railings_sf.json";
 import { Vector3 } from "@babylonjs/core";
 import { scene_variable } from "./Scene";
+import { mesh_dict } from "./models";
 
 export async function railingSf(index: number) {
   // to get mesh names
   //PROBLEM: Unable to set names for meshes, how to do that
   // scene_variable.importedMeshesFiles
-  console.log(scene_variable.meshes);
+  // console.log(scene_variable.meshes);
+  console.log(mesh_dict);
+  
+  // for (let index = 0; index < mesh_dict.length; index++) {
+  //   if(mesh_dict[i].)
+  // }
+  // scene_variable.meshes[2].setEnabled(true)  //not working 
+  //can try -> set visibility = 0 or 1 when turned on or off.
 
   //TODO: use asset container to get names of the mesh to be replaced
   const assetContainer = new BABYLON.AssetContainer(scene_variable)

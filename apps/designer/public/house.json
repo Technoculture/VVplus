@@ -9,18 +9,21 @@
                     "structId": 1,
                     "file": "plot.glb",
                     "name": "plot",
+                    "category": "plot", 
                     "description": "..."
                 },
                 {
                     "structId": 2,
                     "file": "boundary.glb",
                     "name": "boundary",
+                    "category": "boundary",
                     "description": "..."
                 },
                 {
                     "structId": 3,
                     "file": "pool.glb",
                     "name": "pool",
+                    "category": "pool",
                     "description": "..."
                 }
             ]
@@ -32,48 +35,56 @@
                     "structId": 1,
                     "file": "column_gf.glb",
                     "name": "ground floor column",
+                    "category": "column",
                     "description": "molding for the ground floor"
                 },
                 {
                     "structId": 2,
                     "file": "lift_gf.glb",
                     "name": "ground floor lift",
+                    "category": "lift",
                     "description": "molding for the ground floor"
                 },
                 {
                     "structId": 3,
                     "file": "main_gate.glb",
                     "name": "main gate",
+                    "category": "main_gate",
                     "description": "molding for the ground floor"
                 },
                 {
                     "structId": 4,
                     "file": "mold_gf.glb",
                     "name": "ground floor mold",
+                    "category": "mold",
                     "description": "molding for the ground floor"
                 },
                 {
                     "structId": 5,
                     "file": "mold_gf_front.glb",
                     "name": "ground floor front mold",
+                    "category": "front_mold",
                     "description": "molding for the ground floor"
                 },
                 {
                     "structId": 6,
                     "file": "str_gf.glb",
                     "name": "ground floor stairs",
+                    "category": "stairs",
                     "description": "molding for the ground floor"
                 },
                 {
                     "structId": 7,
                     "file": "window_gf.glb",
                     "name": "ground floor window",
+                    "category": "window",
                     "description": "molding for the ground floor"
                 },
                 {
                     "structId": 8,
                     "file": "planter_gf.glb",
                     "name": "ground floor planter",
+                    "category": "planter",
                     "description": "molding for the ground floor"
                 }
             ]
@@ -85,66 +96,77 @@
                     "structId": 1,
                     "file": "column_ff.glb",
                     "name": "first floor column",
+                    "category": "column",
                     "description": "structure for first floor"
                 },
                 {
                     "structId": 2,
                     "file": "cornice_ff.glb",
                     "name": "first floor cornice",
+                    "category": "cornice",
                     "description": "structure for first floor"
                 },
                 {
                     "structId": 3,
                     "file": "lift_ff.glb",
                     "name": "first floor lift",
+                    "category": "lift",
                     "description": "structure for first floor"
                 },
                 {
                     "structId": 4,
                     "file": "light_ff.glb",
                     "name": "first floor lights",
+                    "category": "lights",
                     "description": "structure for first floor"
                 },
                 {
                     "structId": 5,
                     "file": "mold_ff.glb",
                     "name": "first floor mold",
+                    "category": "mold",
                     "description": "structure for first floor"
                 },
                 {
                     "structId": 6,
                     "file": "mold_ff_front.glb",
                     "name": "first floor front mold",
+                    "category": "front_mold",
                     "description": "structure for first floor"
                 },
                 {
                     "structId": 7,
                     "file": "railing_ff.glb",
                     "name": "first floor railings",
+                    "category": "railings",
                     "description": "..."
                 },
                 {
                     "structId": 8,
                     "file": "str_ff.glb",
                     "name": "first floor stairs",
+                    "category": "stairs",
                     "description": "..."
                 },
                 {
                     "structId": 9,
                     "file": "window_ff.glb",
                     "name": "first floor window",
+                    "category": "window",
                     "description": "..."
                 },
                 {
                     "structId": 10,
                     "file": "planter_ff.glb",
                     "name": "first floor planters",
+                    "category": "planter",
                     "description": "..."
                 },
                 {
                     "structId": 11,
                     "file": "planter_ff_sm.glb",
                     "name": "first floor planters small",
+                    "category": "planter",
                     "description": "..."
                 }
             ]
@@ -156,65 +178,76 @@
                     "structId": 1,
                     "file": "column_sf.glb",
                     "name": "second floor column",
+                    "category": "column",
                     "description": "structure for the second floor"
                 },
                 {
                     "structId": 2,
                     "file": "cornice_sf.glb",
                     "name": "second floor cornice",
+                    "category": "cornice",
                     "description": "structure for the second floor"
                 },
                 {
                     "structId": 3,
                     "file": "lift_sf.glb",
                     "name": "second floor lift",
+                    "category": "lift",
                     "description": "structure for the second floor"
                 },
                 {
                     "structId": 4,
                     "file": "light_sf.glb",
                     "name": "second floor lights",
+                    "category": "lights",
                     "description": "structure for the second floor"
                 },
                 {
                     "structId": 5,
                     "file": "mold_sf.glb",
                     "name": "second floor mold",
+                    "category": "mold",
                     "description": "structure for the second floor"
                 },
                 {
                     "structId": 6,
                     "file": "mold_sf_front.glb",
                     "name": "second floor front mold",
+                    "category": "front_mold",
                     "description": "structure for the second floor"
                 },
                 {
                     "structId": 7,
                     "file": "railing_sf_rimmed_glass.glb",
+                    "category": "railings",
                     "name": "second floor railings",
                     "description": "..."
                 },
                 {
                     "structId": 8,
                     "file": "str_sf.glb",
+                    "category": "stairs",
                     "name": "second floor stairs",
                     "description": "..."
                 },
                 {
                     "structId": 9,
                     "file": "window_sf.glb",
+                    "category": "window",
                     "name": "second floor windows",
                     "description": "..."
                 },
                 {
                     "structId": 10,
                     "file": "planter_sf.glb",
+                    "category": "planter",
                     "name": "second floor planters",
                     "description": "..."
                 },
                 {
                     "structId": 11,
                     "file": "planter_sf_small.glb",
+                    "category": "planter",
                     "name": "second floor planters small",
                     "description": "..."
                 }
@@ -226,18 +259,21 @@
             "floorStructure": [{
                     "structId": 1,
                     "file": "mold_roof.glb",
+                    "category": "mold",
                     "name": "roof mold",
                     "description": "moldings for the roof"
                 },
                 {
                     "structId": 2,
                     "file": "railing_roof.glb",
+                    "category": "railings",
                     "name": "roof railings",
                     "description": "..."
                 },
                 {
                     "structId": 3,
                     "file": "str_roof.glb",
+                    "category": "stairs",
                     "name": "roof stairs",
                     "description": "..."
                 }
@@ -249,24 +285,28 @@
             "floorStructure": [{
                     "structId": 1,
                     "file": "door_mumty.glb",
+                    "category": "door",
                     "name": "mumty door",
                     "description": "structure for the mumty"
                 },
                 {
                     "structId": 2,
                     "file": "lift_mumty.glb",
+                    "category": "lift",
                     "name": "mumty lift",
                     "description": "structure for the mumty"
                 },
                 {
                     "structId": 3,
                     "file": "mold_mumty.glb",
+                    "category": "mold",
                     "name": "mumty mold",
                     "description": "structure for the mumty"
                 },
                 {
                     "structId": 4,
                     "file": "str_mumty.glb",
+                    "category": "stairs",
                     "name": "mumty stairs",
                     "description": "structure for the mumty"
                 }
