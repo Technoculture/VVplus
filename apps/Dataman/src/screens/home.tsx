@@ -17,7 +17,14 @@ export const HomeScreen = () => {
         flexDirection: "column",
       }}
     >
-      <Text style={{ fontSize: 28, fontWeight: "600", paddingHorizontal: 10 }}>
+      <Text
+        style={{
+          fontSize: 28,
+          fontWeight: "600",
+          paddingVertical: 5,
+          paddingHorizontal: 10,
+        }}
+      >
         Home
       </Text>
       <View>
