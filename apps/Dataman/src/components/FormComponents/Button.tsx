@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, View, Text } from "@ant-design/react-native";
+import { Button } from "@ant-design/react-native";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
