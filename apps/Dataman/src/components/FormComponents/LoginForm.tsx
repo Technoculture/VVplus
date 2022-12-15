@@ -1,30 +1,16 @@
 import React, { useState } from "react";
-import { Text, Flex, Button, WhiteSpace, View } from "@ant-design/react-native";
-import { Image, StyleSheet } from "react-native";
-import Header from "./Header";
+import { Text, Flex, WhiteSpace, View } from "@ant-design/react-native";
+import { StyleSheet } from "react-native";
 import { InputField } from "./InputField";
+import FormButton from "./Button";
 
 const LoginForm = () => {
-  const [Issignin, setIsSignIn] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
   const [otp, setOtp] = useState("");
-
-  const onChange = (value: any) => setOtp(value);
-  const onChangePhoneNumber = (value: any) => setPhoneNumber(value);
+  const [isEnteredPhoneNumber, setEnteredPhoneNumber] = useState(false);
 
   return (
     <View>
-      <View style={styles.header}>
-        <Header />
-      </View>
-
-      <View>
-        <Image
-          source={require("../../../assets/image.png")}
-          style={{ width: "100%", height: 200 }}
-        />
-      </View>
-
       <View style={styles.form}>
         <Flex direction="column" align="start" style={styles.formField}>
           <Flex.Item>
@@ -34,7 +20,7 @@ const LoginForm = () => {
           <Flex.Item style={styles.inputField}>
             <InputField
               value={phoneNumber}
-              onChange={onChangePhoneNumber}
+              onChange={(value: any) => setPhoneNumber(value)}
               maxLength={10}
               placeholder={"+91"}
             />
@@ -42,7 +28,7 @@ const LoginForm = () => {
         </Flex>
       </View>
 
-      {Issignin ? (
+      {isEnteredPhoneNumber ? (
         <View style={styles.form}>
           <Flex direction="column" align="start" style={styles.formField}>
             <Flex.Item>
@@ -52,7 +38,7 @@ const LoginForm = () => {
             <Flex.Item style={styles.inputField}>
               <InputField
                 value={otp}
-                onChange={onChange}
+                onChange={(value: any) => setOtp(value)}
                 maxLength={6}
                 placeholder={"6 Digit OTP"}
               />
@@ -63,23 +49,20 @@ const LoginForm = () => {
 
       <View style={styles.button}>
         <WhiteSpace size="xs" />
-        <Button
-          type="primary"
-          style={styles.button_text}
+        <FormButton
+          text={`${isEnteredPhoneNumber ? "SignIn" : "Send OTP"}`}
+          PropsType={"primary"}
           onPress={() => {
-            setIsSignIn(true);
-            setPhoneNumber("");
+            phoneNumber !== ""
+              ? setEnteredPhoneNumber(true)
+              : setEnteredPhoneNumber(false);
           }}
-        >
-          {Issignin ? "SignIn" : "Send OTP"}
-        </Button>
-        <WhiteSpace size="sm" />
-        {Issignin ? (
-          ""
-        ) : (
-          <Button type="ghost" style={styles.button_text}>
-            Register
-          </Button>
+        />
+
+        <WhiteSpace size="lg" />
+
+        {isEnteredPhoneNumber ? null : (
+          <FormButton text={"Register"} PropsType={"ghost"} />
         )}
         <WhiteSpace />
       </View>
@@ -90,12 +73,6 @@ const LoginForm = () => {
 export default LoginForm;
 
 const styles = StyleSheet.create({
-  header: {
-    height: 90,
-    paddingLeft: 12,
-    paddingVertical: 40,
-    color: "#333333",
-  },
   text_input: {
     color: "#333333",
     fontSize: 15,
@@ -116,9 +93,5 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     marginVertical: 40,
     padding: 10,
-  },
-  button_text: {
-    width: "100%",
-    borderRadius: 20,
   },
 });

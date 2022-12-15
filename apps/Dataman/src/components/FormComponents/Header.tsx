@@ -4,7 +4,7 @@ import { StyleSheet } from "react-native";
 
 const Header = () => {
   return (
-    <Flex direction="column" justify="start" align="start">
+    <Flex direction="column" align="start">
       <Flex.Item>
         <Text style={styles.text_header}>Sign In</Text>
       </Flex.Item>

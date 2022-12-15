@@ -1,14 +1,21 @@
 import React from "react";
 import { Button } from "@ant-design/react-native";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children?: React.ReactNode;
-  // ... your custom props here
+export interface ButtonProps {
+  onPress?: () => void;
+  text: React.ReactNode;
+  PropsType?: "primary" | "ghost";
 }
 
-const FormButton: React.FunctionComponent<ButtonProps> = ({
-  children,
-}: ButtonProps) => {
-  return <Button>{children}</Button>;
+export const FormButton = ({ onPress, text, PropsType }: ButtonProps) => {
+  return (
+    <Button
+      style={{ width: "100%", borderRadius: 20 }}
+      type={PropsType}
+      onPress={onPress}
+    >
+      {text}
+    </Button>
+  );
 };
 export default FormButton;
