@@ -5,7 +5,7 @@ import { railingSf } from "./elements/railingSf";
 const SelectCarousel = () => {
   const root_url = data.root_url;
   const [active, setActive] = useState(0);
-  function changeRailingDesign(id: number){
+  function changeRailingDesign(id: number) {
     setActive(id);
     railingSf(active);
   }
@@ -21,8 +21,8 @@ const SelectCarousel = () => {
               height=""
               width="155px"
               className="rounded-[10px] h-[110px]"
-              onClick={()=>{
-                changeRailingDesign(e.id)
+              onClick={() => {
+                changeRailingDesign(e.id);
               }}
             />
             <div>

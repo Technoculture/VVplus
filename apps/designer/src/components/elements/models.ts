@@ -2,45 +2,42 @@ import * as BABYLON from "@babylonjs/core";
 import data from "../../../public/house.json";
 import { Vector3 } from "@babylonjs/core";
 
-// TODO: add category to house.json for each glb model, create a global state usng jotai/zustand to manipulate the dictionary
+// TODO: create a global state usng jotai/zustand to manipulate the dictionary
 
-// TODO: create a dictionary for meshes, not an array
-
-// interface for mesh_dict
-interface Mesh_Dictionary {
-  [category: string]:
-    | BABYLON.ISceneLoaderPlugin
-    | BABYLON.ISceneLoaderPluginAsync;
+interface Mesh_List{
+  role: string,
+  mesh: BABYLON.AbstractMesh
 }
 
-// dictionary will have the following data format - { "catgory": mesh }
-// const mesh_dict: Mesh_Dictionary = {}
-const mesh_dict = [];
+const mesh_dict: Mesh_List[] = [];
 export async function createModel(scene: BABYLON.Scene) {
   data.floors.map((element) => {
     element.floorStructure.forEach((e) => {
-      const mesh_variable = BABYLON.SceneLoader.ImportMesh(
+      //TODO: use ImportMeshAsync here instead
+      let mesh_variable: BABYLON.AbstractMesh
+      BABYLON.SceneLoader.ImportMesh(
         "",
         data?.baseUrl || " ",
         e.file,
         scene,
         (newMeshes) => {
           if (newMeshes[0]) {
+            mesh_variable =  newMeshes[0]
             newMeshes[0].position.x = 0;
             newMeshes[0].position.y = 0;
             newMeshes[0].position.z = 300;
+            console.log(newMeshes[0]);
             newMeshes[0].scaling = new Vector3(40, 40, 40);
           }
         }
       );
-      // mesh_dict[e.category] = mesh_variable
       mesh_dict.push({
         role: e.category,
         mesh: mesh_variable,
       });
-    });
+    })
   });
-  console.log(mesh_dict);
+  // console.log(mesh_dict)
 }
 
 export { mesh_dict };
