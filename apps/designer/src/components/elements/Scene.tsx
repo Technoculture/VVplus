@@ -19,8 +19,8 @@ const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
     await createSkyBox(scene);
     await createGround();
     await createFog(scene);
-    await createModel(scene);
-    // Model(scene);
+    // await createModel(scene);
+    Model(scene);
     scene_variable = scene;
   };
   const onRender = (scene: BABYLON.Scene) => {

@@ -40,23 +40,28 @@ export async function createModel(scene: BABYLON.Scene) {
   // console.log(mesh_dict)
 }
 
-const mesh_list: Mesh_List[] = []
-export function Model(scene: BABYLON.Scene){
-  data.floors.map((element)=>{
-    element.floorStructure.map(async (e)=>{
-      const meshCall = await BABYLON.SceneLoader.ImportMeshAsync("",data?.baseUrl || " ",e.file, scene)
-      const mesh = meshCall.meshes
-      mesh[0].scaling = new Vector3(40,40,40)
-      mesh[0].position.x = 0
-      mesh[0].position.y = 0
-      mesh[0].position.z = 300
+const mesh_list: Mesh_List[] = [];
+export function Model(scene: BABYLON.Scene) {
+  data.floors.map((element) => {
+    element.floorStructure.map(async (e) => {
+      const meshCall = await BABYLON.SceneLoader.ImportMeshAsync(
+        "",
+        data?.baseUrl || " ",
+        e.file,
+        scene
+      );
+      const mesh = meshCall.meshes;
+      mesh[0].scaling = new Vector3(40, 40, 40);
+      mesh[0].position.x = 0;
+      mesh[0].position.y = 0;
+      mesh[0].position.z = 300;
       mesh_list.push({
         role: e.category,
-        mesh: mesh[0]
-      })
-    })
-  })
+        mesh: mesh[0],
+      });
+    });
+  });
   // console.log(mesh_list);
 }
 
-export { mesh_list, mesh_dict }
+export { mesh_list, mesh_dict };
