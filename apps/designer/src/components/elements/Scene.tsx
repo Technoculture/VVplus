@@ -3,7 +3,7 @@ import { createCamera } from "./freeCamera";
 import { createGround } from "./ground";
 import { createSkyBox } from "./skybox";
 import { createFog } from "./fog";
-import { createModel } from "./models";
+import { createModel, Model } from "./models";
 import * as BABYLON from "@babylonjs/core";
 import { HemisphericLight, Vector3 } from "@babylonjs/core";
 import "@babylonjs/loaders/glTF";
@@ -20,6 +20,7 @@ const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
     await createGround();
     await createFog(scene);
     await createModel(scene);
+    // Model(scene);
     scene_variable = scene;
   };
   const onRender = (scene: BABYLON.Scene) => {
