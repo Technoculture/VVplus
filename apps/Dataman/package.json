@@ -14,6 +14,8 @@
     "eas-build-post-install": "pnpm run -w build:mobile"
   },
   "dependencies": {
+    "@ant-design/react-native": "^5.0.3",
+    "babel-plugin-import": "^1.13.5",
     "expo": "^47.0.0",
     "expo-dev-client": "~2.0.0",
     "expo-updates": "~0.15.4",
@@ -25,14 +27,18 @@
     "react-native-web": "~0.18.7"
   },
   "devDependencies": {
-    "eslint-config-custom": "*",
     "@babel/core": "^7.19.3",
     "@babel/preset-env": "^7.1.6",
     "@types/react": "~18.0.25",
     "@types/react-dom": "~18.0.9",
     "@types/react-native": "~0.70.5",
     "babel-preset-expo": "~9.2.1",
+    "eslint-config-custom": "workspace:*",
     "typescript": "^4.7.4"
+  },
+  "resolutions": {
+    "@types/react": "~18.0.25",
+    "@types/react-dom": "~18.0.9"
   },
   "eslintConfig": {
     "extends": "eslint-config-custom",
@@ -44,7 +50,9 @@
     ],
     "overrides": [
       {
-        "files": ["*.js"],
+        "files": [
+          "*.js"
+        ],
         "env": {
           "node": true
         }
