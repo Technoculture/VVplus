@@ -1,7 +1,12 @@
 import React from "react";
-import { View, Text, List, InputItem, Button } from "@ant-design/react-native";
+import { View, Text, List, Button } from "@ant-design/react-native";
+import { StyleSheet } from "react-native";
+import { materialList } from "../components/MaterialList";
+import { NumberInputField } from "../components/NumberInputField";
+import { InputField } from "../components/InputField";
+import TabBar from "../components/TabBar";
 
-const MaterialPage = () => {
+const Material = () => {
   const Item = List.Item;
 
   return (
@@ -13,93 +18,97 @@ const MaterialPage = () => {
             Material Request Entry
           </Text>
         </Item>
-        <Item extra=">">
-          <Text>Voucher Type</Text>
-          <Text>Search Here</Text>
-        </Item>
-        <Item extra=">">
-          <Text>Endenter Name</Text>
-          <Text>Search Here</Text>
-        </Item>
-        <Item extra=">">
-          <Text>Department Name</Text>
-          <Text>Search Here</Text>
-        </Item>
-        <Item extra=">">
-          <Text>Choose Phase(Cost Center)</Text>
-          <Text>Search Here</Text>
-        </Item>
-        <Item>
-          <Text style={{ textAlign: "center" }}> Stock</Text>
-        </Item>
-        <Item>
-          <Text>Item</Text>
-          <Text>Search Here</Text>
-        </Item>
-
-        <Item
-          style={{
-            flexDirection: "row",
-            width: "100%",
-            height: 70,
-            padding: 5,
-          }}
-        >
-          <Item
-            style={{
-              alignItems: "flex-start",
-              width: "50%",
-              height: 70,
-            }}
-          >
-            <Text style={{ width: 150 }}>Request Quantity</Text>
-            <InputItem
-              type="text"
-              placeholder="Enter Number"
-              style={{
-                height: 30,
-                padding: 5,
-              }}
-            ></InputItem>
+      </List>
+      <List>
+        {materialList.map((list, index) => (
+          <Item key={index}>
+            <Text style={styles.list_text}>{list.title}</Text>
+            <Text style={styles.text}>{list.content}</Text>
           </Item>
-          {/* <Item
-            style={{
-              backgroundColor: "gray",
-              justifyContent: "flex-end",
-              width: "50%",
-              height: 100,
-              // alignItems: "flex-end",
-            }}
-          >
-            <Text style={{ width: 150 }}>Unit</Text>
-            <InputItem
-              type="text"
-              placeholder="Tonnes"
-              style={{ backgroundColor: "pink" }}
-            ></InputItem>
-          </Item> */}
+        ))}
+      </List>
+      <View>
+        <Text style={{ textAlign: "center", color: "#999999", fontSize: 15 }}>
+          Stock
+        </Text>
+      </View>
+      <List>
+        <Item>
+          <Text style={styles.list_text}>Item</Text>
+          <Text style={styles.text}>Search Here</Text>
+        </Item>
+        <Item>
+          <View style={styles.container}>
+            <View style={styles.inputBox}>
+              <Text>Request Quantity</Text>
+              <NumberInputField />
+            </View>
+            <View style={styles.inputBox}>
+              <Text>Unit</Text>
+              <InputField />
+            </View>
+          </View>
         </Item>
 
         <Item>
-          <Text>Current Stock:</Text>
-          {/* <Item extra="rf">Clear Item</Item> */}
-          <Text>Clear Item</Text>
+          <Text style={{ fontSize: 17, fontWeight: "700", color: " #333333" }}>
+            Current Stock:
+          </Text>
+          <View style={styles.container}>
+            <Text style={{ color: "#1677FF", fontSize: 17, fontWeight: "700" }}>
+              Clear Item
+            </Text>
+            <Button
+              type="primary"
+              style={{ width: 170, height: 30, borderRadius: 25 }}
+            >
+              Add Item to List
+            </Button>
+          </View>
         </Item>
         <Item>
-          <Text>Request Date</Text>
-          <Text>Enter Date</Text>
+          <Text style={styles.list_text}>Request Date</Text>
+          <Text style={styles.text}>Enter Date</Text>
         </Item>
       </List>
-      <View style={{ alignItems: "center", marginVertical: 5 }}>
-        <Button
-          type="primary"
-          style={{ width: "30%", height: 40, borderRadius: 48 }}
-        >
-          Submit
-        </Button>
+
+      <View>
+        <TabBar />
+        <View style={styles.button}>
+          <Button
+            type="primary"
+            style={{ width: "30%", height: 40, borderRadius: 48 }}
+          >
+            Submit
+          </Button>
+        </View>
       </View>
     </View>
   );
 };
 
-export default MaterialPage;
+export default Material;
+
+const styles = StyleSheet.create({
+  list_text: {
+    color: "#333333",
+    fontSize: 15,
+    fontWeight: "400",
+  },
+  text: {
+    color: "#333333",
+    fontSize: 17,
+    fontWeight: "400",
+  },
+  container: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  inputBox: {
+    width: "50%",
+  },
+  button: {
+    alignItems: "center",
+    marginVertical: 10,
+  },
+});

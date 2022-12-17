@@ -1,70 +1,84 @@
 import React from "react";
-import { View, Text, List, Button } from "@ant-design/react-native";
+import { View, Text, List, Button, InputItem } from "@ant-design/react-native";
+import { StyleSheet, ScrollView } from "react-native";
+import { receipt } from "../components/ReceiptList";
+import TabBar from "../components/TabBar";
 
 const Receipt = () => {
   const Item = List.Item;
-  return (
-    <View>
-      <View>
-        <List>
-          <Item extra="...">Back</Item>
-          <Item>
-            <Text style={{ fontSize: 24, color: "#333333", fontWeight: "700" }}>
-              Good Receipt Entry
-            </Text>
-          </Item>
-          <Item extra=">">
-            <Text>Party Bill Date</Text>
-            <Text>Enter Date</Text>
-          </Item>
-          <Item>
-            <Text>Party Challan No.</Text>
-          </Item>
-          <Item extra=">">
-            <Text>Voucher Type</Text>
-            <Text>Search Here</Text>
-          </Item>
 
-          <Item>
-            <Text>Date</Text>
-            <Text>Enter Date</Text>
-          </Item>
-          <Item>
-            <Text>Party Bill No.</Text>
-          </Item>
-          <Item>
-            <Text>Godown</Text>
-            <Text>Search Here</Text>
-          </Item>
-          <Item>
-            <Text>Cost Center</Text>
-            <Text>Search Here</Text>
-          </Item>
-          <Item>
-            <Text>Supplier</Text>
-            <Text>Search Here</Text>
-          </Item>
-          <Item>
-            <Text>Fill PO</Text>
-            <Text>Search Here</Text>
-          </Item>
-          <Item>
-            <Text>Total Bill Value</Text>
-          </Item>
-          <Item>
-            <Text>Remarks</Text>
-          </Item>
-        </List>
-        <View style={{ alignItems: "center", marginVertical: 10 }}>
-          <Button
-            type="primary"
-            style={{ width: "30%", height: 40, borderRadius: 48 }}
-          >
-            Submit
-          </Button>
+  return (
+    <ScrollView>
+      <View>
+        <View>
+          <List>
+            <Item extra="...">Back</Item>
+            <Item>
+              <Text
+                style={{ fontSize: 24, color: "#333333", fontWeight: "700" }}
+              >
+                Good Receipt Entry
+              </Text>
+            </Item>
+          </List>
+          <List>
+            {receipt.map((list, index) => (
+              <Item key={index}>
+                <Text style={styles.list_text}>{list.title}</Text>
+                <Text style={styles.text}>{list.content}</Text>
+              </Item>
+            ))}
+          </List>
+
+          <View>
+            <TabBar />
+          </View>
+
+          <List>
+            <Item>
+              <Text>Total Bill Value</Text>
+            </Item>
+            <Item>
+              <Text>Remarks</Text>
+              <InputItem type="text" />
+            </Item>
+          </List>
+
+          <View style={{ alignItems: "center", marginVertical: 10 }}>
+            <Button
+              type="primary"
+              style={{ width: "30%", height: 40, borderRadius: 48 }}
+            >
+              Submit
+            </Button>
+          </View>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 export default Receipt;
+
+const styles = StyleSheet.create({
+  list_text: {
+    color: "#333333",
+    fontSize: 15,
+    fontWeight: "400",
+  },
+  text: {
+    color: "#333333",
+    fontSize: 17,
+    fontWeight: "400",
+  },
+  container: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  inputBox: {
+    width: "50%",
+  },
+  button: {
+    alignItems: "center",
+    marginVertical: 10,
+  },
+});

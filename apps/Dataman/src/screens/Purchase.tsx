@@ -1,9 +1,10 @@
 import React from "react";
 import { View, Text, List, Card, Carousel } from "@ant-design/react-native";
 import { StyleSheet } from "react-native";
-import { Navbar } from "./Navbar";
+import TabBar from "../components/TabBar";
 
 const Purchase = () => {
+  const Item = List.Item;
   const list = [
     "Material Request Entry",
     "Material Request Approval",
@@ -12,22 +13,14 @@ const Purchase = () => {
   ];
   return (
     <View>
-      <Navbar />
-
-      <View
-        style={{
-          height: 50,
-          width: "100%",
-          backgroundColor: "white",
-          display: "flex",
-          paddingLeft: 12,
-          justifyContent: "center",
-        }}
-      >
-        <Text style={{ fontSize: 28, color: "#333333", fontWeight: "700" }}>
-          Purchase
-        </Text>
-      </View>
+      <List>
+        <Item extra="...">Back</Item>
+        <Item>
+          <Text style={{ fontSize: 28, color: "#333333", fontWeight: "700" }}>
+            Purchase
+          </Text>
+        </Item>
+      </List>
       <View>
         <Card full>
           <Card.Header
@@ -41,12 +34,24 @@ const Purchase = () => {
           />
           <Card.Body>
             <Carousel
-              dotActiveStyle={{ backgroundColor: "#1677FF", width: "5%" }}
-              style={[{ height: 200, marginHorizontal: 10 }, styles.container]}
+              dotActiveStyle={{
+                backgroundColor: "#1677FF",
+                width: 23,
+                height: 7,
+              }}
+              style={{ height: 200, marginHorizontal: 10 }}
             >
-              {[1, 2, 3, 4, 5].map((item, index) => (
+              {[1, 2, 3, 4].map((item, index) => (
                 <View key={index} style={styles.listContainer}>
-                  <Text style={{ fontSize: 25, color: "white" }}>{item}</Text>
+                  <Text
+                    style={{
+                      fontSize: 32,
+                      color: "white",
+                      fontWeight: "700",
+                    }}
+                  >
+                    {item}
+                  </Text>
                 </View>
               ))}
             </Carousel>
@@ -54,11 +59,15 @@ const Purchase = () => {
         </Card>
         <List>
           {list.map((purchaseItem, index) => (
-            <List.Item key={index} style={styles.container}>
+            <List.Item key={index} style={styles.listItem}>
               {purchaseItem}
             </List.Item>
           ))}
         </List>
+
+        <View style={{ marginVertical: 125 }}>
+          <TabBar />
+        </View>
       </View>
     </View>
   );
@@ -66,8 +75,10 @@ const Purchase = () => {
 export default Purchase;
 
 const styles = StyleSheet.create({
-  container: {
+  listItem: {
     borderColor: "#969696",
+    fontSize: 17,
+    fontWight: "700",
   },
   listContainer: {
     height: "100%",

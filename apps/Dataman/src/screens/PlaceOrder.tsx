@@ -1,94 +1,80 @@
 import React from "react";
-import { View, Text, List, Button, InputItem } from "@ant-design/react-native";
+import { View, Text, List, Button } from "@ant-design/react-native";
 import { StyleSheet } from "react-native";
+import { NumberInputField } from "../components/NumberInputField";
+import { InputField } from "../components/InputField";
+import { orderList } from "../components/OrderList";
+import TabBar from "../components/TabBar";
 
 const PlaceOrder = () => {
   const Item = List.Item;
+
   return (
     <View>
+      <List>
+        <Item extra="...">Back</Item>
+        <Item>
+          <Text style={{ fontSize: 24, color: "#333333", fontWeight: "700" }}>
+            Place Purchase Order
+          </Text>
+        </Item>
+      </List>
+      <List>
+        {orderList.map((list, index) => (
+          <Item key={index}>
+            <Text style={styles.list_text}>{list.title}</Text>
+            <Text style={styles.text}>{list.content}</Text>
+          </Item>
+        ))}
+      </List>
       <View>
-        <List>
-          <Item extra="...">Back</Item>
-          <Item>
-            <Text style={{ fontSize: 24, color: "#333333", fontWeight: "700" }}>
-              Place Purchase Order
+        <Text style={{ textAlign: "center", color: "#999999", fontSize: 15 }}>
+          Stock
+        </Text>
+      </View>
+      <List>
+        <Item>
+          <Text style={styles.list_text}>Item</Text>
+          <Text style={styles.text}>Search Here</Text>
+        </Item>
+        <Item>
+          <View style={styles.container}>
+            <View style={styles.inputBox}>
+              <Text>Request Quantity</Text>
+              <NumberInputField />
+            </View>
+            <View style={styles.inputBox}>
+              <Text>Unit</Text>
+              <InputField />
+            </View>
+          </View>
+        </Item>
+
+        <Item>
+          <Text style={{ fontSize: 17, fontWeight: "700", color: " #333333" }}>
+            Current Stock:
+          </Text>
+          <View style={styles.container}>
+            <Text style={{ color: "#1677FF", fontSize: 17, fontWeight: "700" }}>
+              Clear Item
             </Text>
-          </Item>
-          <Item extra=">">
-            <Text>Voucher Type</Text>
-            <Text>Search Here</Text>
-          </Item>
-          <Item extra=">">
-            <Text>Supplier</Text>
-            <Text>Search Here</Text>
-          </Item>
-          <Item extra=">">
-            <Text>Indent Selection</Text>
-            <Text>Search Here</Text>
-          </Item>
-
-          <Item>
-            <Text style={{ textAlign: "center" }}> Stock</Text>
-          </Item>
-          <Item>
-            <Text>Item</Text>
-            <Text>Search Here</Text>
-          </Item>
-
-          <Item
-            style={{
-              flexDirection: "row",
-              width: "100%",
-              height: 70,
-              padding: 5,
-            }}
-          >
-            <Item
-              style={{
-                alignItems: "flex-start",
-                width: "50%",
-                height: 70,
-              }}
+            <Button
+              type="primary"
+              style={{ width: 170, height: 30, borderRadius: 25 }}
             >
-              <Text style={{ width: 150 }}>Request Quantity</Text>
-              <InputItem
-                type="text"
-                placeholder="Enter Number"
-                style={{
-                  height: 30,
-                  padding: 5,
-                }}
-              ></InputItem>
-            </Item>
-            {/* <Item
-          style={{
-            backgroundColor: "gray",
-            justifyContent: "flex-end",
-            width: "50%",
-            height: 100,
-            // alignItems: "flex-end",
-          }}
-        >
-          <Text style={{ width: 150 }}>Unit</Text>
-          <InputItem
-            type="text"
-            placeholder="Tonnes"
-            style={{ backgroundColor: "pink" }}
-          ></InputItem>
-        </Item> */}
-          </Item>
+              Add Item to List
+            </Button>
+          </View>
+        </Item>
+        <Item>
+          <Text style={styles.list_text}>Request Date</Text>
+          <Text style={styles.text}>Enter Date</Text>
+        </Item>
+      </List>
 
-          <Item>
-            <Text>Current Stock:</Text>
-            {/* <Item extra="rf">Clear Item</Item> */}
-            <Text>Clear Item</Text>
-          </Item>
-          <Item>
-            <Text>Request Date</Text>
-            <Text>Enter Date</Text>
-          </Item>
-        </List>
-        <View style={{ alignItems: "center", marginVertical: 10 }}>
+      <View>
+        <TabBar />
+        <View style={styles.button}>
           <Button
             type="primary"
             style={{ width: "30%", height: 40, borderRadius: 48 }}
@@ -102,15 +88,27 @@ const PlaceOrder = () => {
 };
 
 export default PlaceOrder;
+
 const styles = StyleSheet.create({
-  container: {
-    borderColor: "#969696",
+  list_text: {
+    color: "#333333",
+    fontSize: 15,
+    fontWeight: "400",
   },
-  listContainer: {
-    height: "100%",
-    flexGrow: 1,
+  text: {
+    color: "#333333",
+    fontSize: 17,
+    fontWeight: "400",
+  },
+  container: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  inputBox: {
+    width: "50%",
+  },
+  button: {
     alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#ACE0FF",
+    marginVertical: 10,
   },
 });
