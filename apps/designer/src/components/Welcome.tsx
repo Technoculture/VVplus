@@ -39,7 +39,7 @@ const Welcome = ({
           }
         ${
           isToggled === true && isWelcomePanelActive
-            ? "xl:translate-x-[70vw] md:w-[54vw] lg:w-[42vw] md:translate-x-[73.5vw]  backdrop-blur-[10px] bg-gradient-to-b  from-red-50/[0.98] to-rose-100/[0.48]   lg:translate-x-[70vw] md:translate-x-[75vw] !h-fit    "
+            ? "xl:translate-x-[70vw] md:w-[54vw] lg:w-[42vw]   backdrop-blur-[10px] bg-gradient-to-b  from-red-50/[0.98] to-rose-100/[0.48]   lg:translate-x-[70vw] md:translate-x-[75vw] !h-fit    "
             : ""
         }
         ${
