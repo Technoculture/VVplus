@@ -28,13 +28,9 @@ importers:
 
   apps/Dataman:
     specifiers:
-      '@ant-design/react-native': ^5.0.2
+      '@ant-design/react-native': ^5.0.3
       '@babel/core': ^7.19.3
       '@babel/preset-env': ^7.1.6
-      '@react-native-community/cameraroll': ^4.1.2
-      '@react-native-community/segmented-control': ^2.2.2
-      '@react-native-community/slider': ^4.3.3
-      '@react-native-picker/picker': ^2.4.8
       '@types/react': ~18.0.25
       '@types/react-dom': ~18.0.9
       '@types/react-native': ~0.70.5
@@ -47,17 +43,12 @@ importers:
       react: 18.1.0
       react-dom: 18.1.0
       react-native: 0.70.5
-      react-native-gesture-handler: ^2.8.0
       react-native-safe-area-context: 4.4.1
       react-native-screens: ~3.18.0
       react-native-web: ~0.18.7
       typescript: ^4.7.4
     dependencies:
-      '@ant-design/react-native': 5.0.2_xmsy2haqdikyp7snesghop6auq
-      '@react-native-community/cameraroll': 4.1.2_tj3nonr5gneraukzjkxpsiy7yu
-      '@react-native-community/segmented-control': 2.2.2_tj3nonr5gneraukzjkxpsiy7yu
-      '@react-native-community/slider': 4.3.3
-      '@react-native-picker/picker': 2.4.8_tj3nonr5gneraukzjkxpsiy7yu
+      '@ant-design/react-native': 5.0.3_v7p3ullvh62ywkplbzitrxptoa
       babel-plugin-import: 1.13.5
       expo: 47.0.8_@babel+core@7.20.2
       expo-dev-client: 2.0.1_expo@47.0.8
@@ -65,7 +56,6 @@ importers:
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
       react-native: 0.70.5_54md7p3jw3ru3lahxqgw5vptci
-      react-native-gesture-handler: 2.8.0_tj3nonr5gneraukzjkxpsiy7yu
       react-native-safe-area-context: 4.4.1_tj3nonr5gneraukzjkxpsiy7yu
       react-native-screens: 3.18.2_tj3nonr5gneraukzjkxpsiy7yu
       react-native-web: 0.18.10_ef5jwxihqo6n7gxfmzogljlgcm
@@ -220,8 +210,8 @@ importers:
       eslint-plugin-react: 7.28.0
       typescript: ^4.7.4
     devDependencies:
-      '@typescript-eslint/eslint-plugin': 5.46.0_ltrnoetslyc7leilruqufkyqni
-      '@typescript-eslint/parser': 5.46.0_3rubbgt5ekhqrcgx4uwls3neim
+      '@typescript-eslint/eslint-plugin': 5.46.1_idivby7argpucpdtsgcl22ealy
+      '@typescript-eslint/parser': 5.46.1_3rubbgt5ekhqrcgx4uwls3neim
       eslint: 7.32.0
       eslint-config-next: 12.3.3_3rubbgt5ekhqrcgx4uwls3neim
       eslint-config-prettier: 8.5.0_eslint@7.32.0
@@ -249,10 +239,10 @@ packages:
       react: 18.1.0
     dev: false
 
-  /@ant-design/react-native/5.0.2_xmsy2haqdikyp7snesghop6auq:
-    resolution: {integrity: sha512-TkELOuj8owLzUCsQVOy53hPJrpOdK/FRloN7fdrrQELqUoFXX0RP2QjZSpWDTOuIGNwZO22gPnGIKYYfwA7SuA==}
+  /@ant-design/react-native/5.0.3_v7p3ullvh62ywkplbzitrxptoa:
+    resolution: {integrity: sha512-14Ne5qobKnZNwE7smQStYr77o2wjlgYiSkBwGOGsXcTBk5Nn+v1KcddWh91PIqm1bL0vzG9FPRHSFC3X1YhKDQ==}
     peerDependencies:
-      '@react-native-community/cameraroll': '>= 1.5.2'
+      '@react-native-camera-roll/camera-roll': '>= 5.0.0'
       '@react-native-community/segmented-control': '>= 1.4.0'
       '@react-native-community/slider': '>= 2.0.0'
       '@react-native-picker/picker': ^1.9.10
@@ -260,10 +250,6 @@ packages:
     dependencies:
       '@ant-design/icons-react-native': 2.3.2_react@18.1.0
       '@bang88/react-native-ultimate-listview': 4.1.0
-      '@react-native-community/cameraroll': 4.1.2_tj3nonr5gneraukzjkxpsiy7yu
-      '@react-native-community/segmented-control': 2.2.2_tj3nonr5gneraukzjkxpsiy7yu
-      '@react-native-community/slider': 4.3.3
-      '@react-native-picker/picker': 2.4.8_tj3nonr5gneraukzjkxpsiy7yu
       '@types/shallowequal': 1.1.1
       array-tree-filter: 2.1.0
       babel-runtime: 6.26.0
@@ -272,7 +258,6 @@ packages:
       rc-util: 4.21.1
       react-native-codegen: 0.0.7_@babel+preset-env@7.20.2
       react-native-collapsible: 1.6.0_tj3nonr5gneraukzjkxpsiy7yu
-      react-native-gesture-handler: 2.8.0_tj3nonr5gneraukzjkxpsiy7yu
       react-native-modal-popover: 2.1.0_tj3nonr5gneraukzjkxpsiy7yu
       shallowequal: 1.1.0
       utility-types: 3.10.0
@@ -1803,13 +1788,6 @@ packages:
       '@jridgewell/trace-mapping': 0.3.9
     dev: true
 
-  /@egjs/hammerjs/2.0.17:
-    resolution: {integrity: sha512-XQsZgjm2EcVUiZQf11UBJQfmZeEmOW8DpI1gsFeln6w0ae0ii4dMQEQ0kjl6DspdWX1aGY1/loyXnP0JS06e/A==}
-    engines: {node: '>=0.8.0'}
-    dependencies:
-      '@types/hammerjs': 2.0.41
-    dev: false
-
   /@eslint/eslintrc/0.4.3:
     resolution: {integrity: sha512-J6KFFz5QCYUJq3pf0mjEcCJVERbzv71PUIDczuh9JkwGEzced6CO5ADLHB1rbf/+oPBtoPfMYNOpGDzCANlbXw==}
     engines: {node: ^10.12.0 || >=12.0.0}
@@ -2458,17 +2436,6 @@ packages:
     resolution: {integrity: sha512-S+72PAl0zTCbIGou1uXD/McvzdtP+bjOs0LRmGZfcOQcVqR9x/0f6Z+dqpUU0zIcqHEl+0DOB8UXaTwRvssFsQ==}
     requiresBuild: true
 
-  /@react-native-community/cameraroll/4.1.2_tj3nonr5gneraukzjkxpsiy7yu:
-    resolution: {integrity: sha512-jkdhMByMKD2CZ/5MPeBieYn8vkCfC4MOTouPpBpps3I8N6HUYJk+1JnDdktVYl2WINnqXpQptDA2YptVyifYAg==}
-    deprecated: Package has been moved to @react-native-camera-roll/camera-roll starting with version 5.0
-    peerDependencies:
-      react: 16 || 17
-      react-native: '>=0.60'
-    dependencies:
-      react: 18.1.0
-      react-native: 0.70.5_54md7p3jw3ru3lahxqgw5vptci
-    dev: false
-
   /@react-native-community/cli-clean/9.2.1:
     resolution: {integrity: sha512-dyNWFrqRe31UEvNO+OFWmQ4hmqA07bR9Ief/6NnGwx67IO9q83D5PEAf/o96ML6jhSbDwCmpPKhPwwBbsyM3mQ==}
     dependencies:
@@ -2679,30 +2646,6 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@react-native-community/segmented-control/2.2.2_tj3nonr5gneraukzjkxpsiy7yu:
-    resolution: {integrity: sha512-14+4HnGVrg3USqMzcHCPCqPmPmaEj0ogQH4pHRFXjoVvJokzidXBcYyXl5yrwFcKGW6zTXI6Fx9Qgt4ydtS6tw==}
-    peerDependencies:
-      react: '>=16.0'
-      react-native: '>=0.62'
-    dependencies:
-      react: 18.1.0
-      react-native: 0.70.5_54md7p3jw3ru3lahxqgw5vptci
-    dev: false
-
-  /@react-native-community/slider/4.3.3:
-    resolution: {integrity: sha512-eVhMaVR08wWlseVWlDS7zgdhbVY0n2i7BF1qRxK+2N1VIKd7NsTIRzL57sFLgHVjbUmu/+hHfxCzLHmEaGxIQg==}
-    dev: false
-
-  /@react-native-picker/picker/2.4.8_tj3nonr5gneraukzjkxpsiy7yu:
-    resolution: {integrity: sha512-5NQ5XPo1B03YNqKFrV6h9L3CQaHlB80wd4ETHUEABRP2iLh7FHLVObX2GfziD+K/VJb8G4KZcZ23NFBFP1f7bg==}
-    peerDependencies:
-      react: '>=16'
-      react-native: '>=0.57'
-    dependencies:
-      react: 18.1.0
-      react-native: 0.70.5_54md7p3jw3ru3lahxqgw5vptci
-    dev: false
-
   /@react-native/assets/1.0.0:
     resolution: {integrity: sha512-KrwSpS1tKI70wuKl68DwJZYEvXktDHdZMG0k2AXD/rJVSlB23/X2CB2cutVR0HwNMJIal9HOUOBB2rVfa6UGtQ==}
     dev: false
@@ -2886,10 +2829,6 @@ packages:
     resolution: {integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==}
     dev: true
 
-  /@types/hammerjs/2.0.41:
-    resolution: {integrity: sha512-ewXv/ceBaJprikMcxCmWU1FKyMAQ2X7a9Gtmzw8fcg2kIePI1crERDM818W+XYrxqdBBOdlf2rm137bU+BltCA==}
-    dev: false
-
   /@types/istanbul-lib-coverage/2.0.4:
     resolution: {integrity: sha512-z/QT1XN4K4KYuslS23k62yDIDLwLFkzxOuMplDtObz0+y7VqJCaO2o+SPwHCvLFZh7xazvvoor2tA/hPz9ee7g==}
     dev: false
@@ -3018,8 +2957,8 @@ packages:
       '@types/yargs-parser': 21.0.0
     dev: false
 
-  /@typescript-eslint/eslint-plugin/5.46.0_ltrnoetslyc7leilruqufkyqni:
-    resolution: {integrity: sha512-QrZqaIOzJAjv0sfjY4EjbXUi3ZOFpKfzntx22gPGr9pmFcTjcFw/1sS1LJhEubfAGwuLjNrPV0rH+D1/XZFy7Q==}
+  /@typescript-eslint/eslint-plugin/5.46.1_idivby7argpucpdtsgcl22ealy:
+    resolution: {integrity: sha512-YpzNv3aayRBwjs4J3oz65eVLXc9xx0PDbIRisHj+dYhvBn02MjYOD96P8YGiWEIFBrojaUjxvkaUpakD82phsA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       '@typescript-eslint/parser': ^5.0.0
@@ -3029,10 +2968,10 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 5.46.0_3rubbgt5ekhqrcgx4uwls3neim
-      '@typescript-eslint/scope-manager': 5.46.0
-      '@typescript-eslint/type-utils': 5.46.0_3rubbgt5ekhqrcgx4uwls3neim
-      '@typescript-eslint/utils': 5.46.0_3rubbgt5ekhqrcgx4uwls3neim
+      '@typescript-eslint/parser': 5.46.1_3rubbgt5ekhqrcgx4uwls3neim
+      '@typescript-eslint/scope-manager': 5.46.1
+      '@typescript-eslint/type-utils': 5.46.1_3rubbgt5ekhqrcgx4uwls3neim
+      '@typescript-eslint/utils': 5.46.1_3rubbgt5ekhqrcgx4uwls3neim
       debug: 4.3.4
       eslint: 7.32.0
       ignore: 5.2.0
@@ -3045,8 +2984,8 @@ packages:
       - supports-color
     dev: true
 
-  /@typescript-eslint/parser/5.46.0_3rubbgt5ekhqrcgx4uwls3neim:
-    resolution: {integrity: sha512-joNO6zMGUZg+C73vwrKXCd8usnsmOYmgW/w5ZW0pG0RGvqeznjtGDk61EqqTpNrFLUYBW2RSBFrxdAZMqA4OZA==}
+  /@typescript-eslint/parser/5.46.1_3rubbgt5ekhqrcgx4uwls3neim:
+    resolution: {integrity: sha512-RelQ5cGypPh4ySAtfIMBzBGyrNerQcmfA1oJvPj5f+H4jI59rl9xxpn4bonC0tQvUKOEN7eGBFWxFLK3Xepneg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
@@ -3055,9 +2994,9 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/scope-manager': 5.46.0
-      '@typescript-eslint/types': 5.46.0
-      '@typescript-eslint/typescript-estree': 5.46.0_typescript@4.8.4
+      '@typescript-eslint/scope-manager': 5.46.1
+      '@typescript-eslint/types': 5.46.1
+      '@typescript-eslint/typescript-estree': 5.46.1_typescript@4.8.4
       debug: 4.3.4
       eslint: 7.32.0
       typescript: 4.8.4
@@ -3065,16 +3004,16 @@ packages:
       - supports-color
     dev: true
 
-  /@typescript-eslint/scope-manager/5.46.0:
-    resolution: {integrity: sha512-7wWBq9d/GbPiIM6SqPK9tfynNxVbfpihoY5cSFMer19OYUA3l4powA2uv0AV2eAZV6KoAh6lkzxv4PoxOLh1oA==}
+  /@typescript-eslint/scope-manager/5.46.1:
+    resolution: {integrity: sha512-iOChVivo4jpwUdrJZyXSMrEIM/PvsbbDOX1y3UCKjSgWn+W89skxWaYXACQfxmIGhPVpRWK/VWPYc+bad6smIA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
-      '@typescript-eslint/types': 5.46.0
-      '@typescript-eslint/visitor-keys': 5.46.0
+      '@typescript-eslint/types': 5.46.1
+      '@typescript-eslint/visitor-keys': 5.46.1
     dev: true
 
-  /@typescript-eslint/type-utils/5.46.0_3rubbgt5ekhqrcgx4uwls3neim:
-    resolution: {integrity: sha512-dwv4nimVIAsVS2dTA0MekkWaRnoYNXY26dKz8AN5W3cBFYwYGFQEqm/cG+TOoooKlncJS4RTbFKgcFY/pOiBCg==}
+  /@typescript-eslint/type-utils/5.46.1_3rubbgt5ekhqrcgx4uwls3neim:
+    resolution: {integrity: sha512-V/zMyfI+jDmL1ADxfDxjZ0EMbtiVqj8LUGPAGyBkXXStWmCUErMpW873zEHsyguWCuq2iN4BrlWUkmuVj84yng==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: '*'
@@ -3083,8 +3022,8 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/typescript-estree': 5.46.0_typescript@4.8.4
-      '@typescript-eslint/utils': 5.46.0_3rubbgt5ekhqrcgx4uwls3neim
+      '@typescript-eslint/typescript-estree': 5.46.1_typescript@4.8.4
+      '@typescript-eslint/utils': 5.46.1_3rubbgt5ekhqrcgx4uwls3neim
       debug: 4.3.4
       eslint: 7.32.0
       tsutils: 3.21.0_typescript@4.8.4
@@ -3093,13 +3032,13 @@ packages:
       - supports-color
     dev: true
 
-  /@typescript-eslint/types/5.46.0:
-    resolution: {integrity: sha512-wHWgQHFB+qh6bu0IAPAJCdeCdI0wwzZnnWThlmHNY01XJ9Z97oKqKOzWYpR2I83QmshhQJl6LDM9TqMiMwJBTw==}
+  /@typescript-eslint/types/5.46.1:
+    resolution: {integrity: sha512-Z5pvlCaZgU+93ryiYUwGwLl9AQVB/PQ1TsJ9NZ/gHzZjN7g9IAn6RSDkpCV8hqTwAiaj6fmCcKSQeBPlIpW28w==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@typescript-eslint/typescript-estree/5.46.0_typescript@4.8.4:
-    resolution: {integrity: sha512-kDLNn/tQP+Yp8Ro2dUpyyVV0Ksn2rmpPpB0/3MO874RNmXtypMwSeazjEN/Q6CTp8D7ExXAAekPEcCEB/vtJkw==}
+  /@typescript-eslint/typescript-estree/5.46.1_typescript@4.8.4:
+    resolution: {integrity: sha512-j9W4t67QiNp90kh5Nbr1w92wzt+toiIsaVPnEblB2Ih2U9fqBTyqV9T3pYWZBRt6QoMh/zVWP59EpuCjc4VRBg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       typescript: '*'
@@ -3107,8 +3046,8 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/types': 5.46.0
-      '@typescript-eslint/visitor-keys': 5.46.0
+      '@typescript-eslint/types': 5.46.1
+      '@typescript-eslint/visitor-keys': 5.46.1
       debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
@@ -3119,17 +3058,17 @@ packages:
       - supports-color
     dev: true
 
-  /@typescript-eslint/utils/5.46.0_3rubbgt5ekhqrcgx4uwls3neim:
-    resolution: {integrity: sha512-4O+Ps1CRDw+D+R40JYh5GlKLQERXRKW5yIQoNDpmXPJ+C7kaPF9R7GWl+PxGgXjB3PQCqsaaZUpZ9dG4U6DO7g==}
+  /@typescript-eslint/utils/5.46.1_3rubbgt5ekhqrcgx4uwls3neim:
+    resolution: {integrity: sha512-RBdBAGv3oEpFojaCYT4Ghn4775pdjvwfDOfQ2P6qzNVgQOVrnSPe5/Pb88kv7xzYQjoio0eKHKB9GJ16ieSxvA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
       '@types/json-schema': 7.0.11
       '@types/semver': 7.3.13
-      '@typescript-eslint/scope-manager': 5.46.0
-      '@typescript-eslint/types': 5.46.0
-      '@typescript-eslint/typescript-estree': 5.46.0_typescript@4.8.4
+      '@typescript-eslint/scope-manager': 5.46.1
+      '@typescript-eslint/types': 5.46.1
+      '@typescript-eslint/typescript-estree': 5.46.1_typescript@4.8.4
       eslint: 7.32.0
       eslint-scope: 5.1.1
       eslint-utils: 3.0.0_eslint@7.32.0
@@ -3139,11 +3078,11 @@ packages:
       - typescript
     dev: true
 
-  /@typescript-eslint/visitor-keys/5.46.0:
-    resolution: {integrity: sha512-E13gBoIXmaNhwjipuvQg1ByqSAu/GbEpP/qzFihugJ+MomtoJtFAJG/+2DRPByf57B863m0/q7Zt16V9ohhANw==}
+  /@typescript-eslint/visitor-keys/5.46.1:
+    resolution: {integrity: sha512-jczZ9noovXwy59KjRTk1OftT78pwygdcmCuBf8yMoWt/8O8l+6x2LSEze0E4TeepXK4MezW3zGSyoDRZK7Y9cg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
-      '@typescript-eslint/types': 5.46.0
+      '@typescript-eslint/types': 5.46.1
       eslint-visitor-keys: 3.3.0
     dev: true
 
@@ -4753,11 +4692,11 @@ packages:
     dependencies:
       '@next/eslint-plugin-next': 12.3.3
       '@rushstack/eslint-patch': 1.2.0
-      '@typescript-eslint/parser': 5.46.0_3rubbgt5ekhqrcgx4uwls3neim
+      '@typescript-eslint/parser': 5.46.1_3rubbgt5ekhqrcgx4uwls3neim
       eslint: 7.32.0
       eslint-import-resolver-node: 0.3.6
       eslint-import-resolver-typescript: 2.7.1_hpmu7kn6tcn2vnxpfzvv33bxmy
-      eslint-plugin-import: 2.26.0_rfyfs2e3wn433qt3bctnvhm7bi
+      eslint-plugin-import: 2.26.0_krm4ri7ancn2y7h3s5y4lrtuf4
       eslint-plugin-jsx-a11y: 6.6.1_eslint@7.32.0
       eslint-plugin-react: 7.31.10_eslint@7.32.0
       eslint-plugin-react-hooks: 4.6.0_eslint@7.32.0
@@ -4803,7 +4742,7 @@ packages:
     dependencies:
       debug: 4.3.4
       eslint: 7.32.0
-      eslint-plugin-import: 2.26.0_rfyfs2e3wn433qt3bctnvhm7bi
+      eslint-plugin-import: 2.26.0_krm4ri7ancn2y7h3s5y4lrtuf4
       glob: 7.2.3
       is-glob: 4.0.3
       resolve: 1.22.1
@@ -4812,7 +4751,7 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-module-utils/2.7.4_kcrt4jzw4zglpy3wjrkwwcfjaq:
+  /eslint-module-utils/2.7.4_ztdidt5ac5dabwmpigkjfkuw2a:
     resolution: {integrity: sha512-j4GT+rqzCoRKHwURX7pddtIPGySnX9Si/cgMI5ztrcqOPtk5dDEeZ34CQVPphnqkJytlc97Vuk05Um2mJ3gEQA==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -4833,7 +4772,7 @@ packages:
       eslint-import-resolver-webpack:
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 5.46.0_3rubbgt5ekhqrcgx4uwls3neim
+      '@typescript-eslint/parser': 5.46.1_3rubbgt5ekhqrcgx4uwls3neim
       debug: 3.2.7
       eslint: 7.32.0
       eslint-import-resolver-node: 0.3.6
@@ -4842,7 +4781,7 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-import/2.26.0_rfyfs2e3wn433qt3bctnvhm7bi:
+  /eslint-plugin-import/2.26.0_krm4ri7ancn2y7h3s5y4lrtuf4:
     resolution: {integrity: sha512-hYfi3FXaM8WPLf4S1cikh/r4IxnO6zrhZbEGz2b660EJRbuxgpDS5gkCuYgGWg2xxh2rBuIr4Pvhve/7c31koA==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -4852,14 +4791,14 @@ packages:
       '@typescript-eslint/parser':
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 5.46.0_3rubbgt5ekhqrcgx4uwls3neim
+      '@typescript-eslint/parser': 5.46.1_3rubbgt5ekhqrcgx4uwls3neim
       array-includes: 3.1.6
       array.prototype.flat: 1.3.1
       debug: 2.6.9
       doctrine: 2.1.0
       eslint: 7.32.0
       eslint-import-resolver-node: 0.3.6
-      eslint-module-utils: 2.7.4_kcrt4jzw4zglpy3wjrkwwcfjaq
+      eslint-module-utils: 2.7.4_ztdidt5ac5dabwmpigkjfkuw2a
       has: 1.0.3
       is-core-module: 2.11.0
       is-glob: 4.0.3
@@ -5948,12 +5887,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       source-map: 0.7.4
-    dev: false
-
-  /hoist-non-react-statics/3.3.2:
-    resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
-    dependencies:
-      react-is: 16.13.1
     dev: false
 
   /hooks/0.3.2:
@@ -8462,21 +8395,6 @@ packages:
       react: '*'
       react-native: '*'
     dependencies:
-      react: 18.1.0
-      react-native: 0.70.5_54md7p3jw3ru3lahxqgw5vptci
-    dev: false
-
-  /react-native-gesture-handler/2.8.0_tj3nonr5gneraukzjkxpsiy7yu:
-    resolution: {integrity: sha512-poOSfz/w0IyD6Qwq7aaIRRfEaVTl1ecQFoyiIbpOpfNTjm2B1niY2FLrdVQIOtIOe+K9nH55Qal04nr4jGkHdQ==}
-    peerDependencies:
-      react: '*'
-      react-native: '*'
-    dependencies:
-      '@egjs/hammerjs': 2.0.17
-      hoist-non-react-statics: 3.3.2
-      invariant: 2.2.4
-      lodash: 4.17.21
-      prop-types: 15.8.1
       react: 18.1.0
       react-native: 0.70.5_54md7p3jw3ru3lahxqgw5vptci
     dev: false
