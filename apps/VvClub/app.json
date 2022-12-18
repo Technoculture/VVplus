@@ -2,7 +2,7 @@
   "expo": {
     "owner": "technoculture",
     "name": "vvclub",
-    "slug": "vvclub",
+    "slug": "mediapipe",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -29,7 +29,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "4e25e43f-a276-43c2-aa24-feafb645c1fc"
+        "projectId": "ab821e6d-4369-48e5-b0be-d6e380462320"
       }
     }
   }

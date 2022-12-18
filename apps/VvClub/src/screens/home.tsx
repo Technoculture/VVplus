@@ -1,5 +1,5 @@
 import * as React from "react";
-import { View, Text,SafeAreaView} from "react-native";
+import { View, Text, SafeAreaView } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export const HomeScreen = () => {
