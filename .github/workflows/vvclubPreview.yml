@@ -1,0 +1,38 @@
+name: preview
+
+on:
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  VvClub:
+    
+    runs-on: ubuntu-latest
+    steps:
+      #convert the github secrets tokens into the env files
+
+      
+
+      - name: 🏗 Setup repository
+        uses: actions/checkout@v3
+
+      - name: 🏗 Setup monorepo
+        uses: ./.github/actions/setup-monorepo
+        with:
+          expo-token: ${{ secrets.VVCLUB_EXPO_ACCESS_TOKEN }}
+
+      - name: 👷 Build packages
+        run: pnpm run -w build 
+
+      - name: 🚀 Publish preview
+        working-directory: apps/vvclub
+        run: expo publish --release-channel=pr-${{ github.event.number }}
+
+      - name: 💬 Comment preview
+        uses: expo/expo-github-action/preview-comment@v7
+        with:
+          project: apps/vvclub
+          channel: pr-${{ github.event.number }}
