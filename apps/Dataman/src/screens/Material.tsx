@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, List, Button } from "@ant-design/react-native";
 import { StyleSheet } from "react-native";
+import AntDesign from "react-native-vector-icons/AntDesign";
 import { materialList } from "../components/MaterialList";
 import { NumberInputField } from "../components/NumberInputField";
 import { InputField } from "../components/InputField";
@@ -12,7 +13,9 @@ const Material = () => {
   return (
     <View>
       <List>
-        <Item extra="...">Back</Item>
+        <Item extra={<AntDesign name="ellipsis1" color="black" size={20} />}>
+          Back
+        </Item>
         <Item>
           <Text style={{ fontSize: 24, color: "#333333", fontWeight: "700" }}>
             Material Request Entry
