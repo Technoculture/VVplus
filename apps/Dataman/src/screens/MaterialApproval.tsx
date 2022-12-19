@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, Button, WhiteSpace, List } from "@ant-design/react-native";
 import { NumberInputField } from "../components/NumberInputField";
+import AntDesign from "react-native-vector-icons/AntDesign";
 import { StyleSheet } from "react-native";
 
 const MaterialApproval = () => {
@@ -9,7 +10,9 @@ const MaterialApproval = () => {
   return (
     <View>
       <List>
-        <Item extra="...">Back</Item>
+        <Item extra={<AntDesign name="ellipsis1" color="black" size={20} />}>
+          Back
+        </Item>
         <Item>
           <Text style={styles.header}>Material Request Approval</Text>
         </Item>
