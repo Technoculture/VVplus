@@ -9,6 +9,8 @@ interface Mesh_List {
   mesh: BABYLON.AbstractMesh;
 }
 
+// creatng models using ImportMesh 
+/*
 const mesh_dict: Mesh_List[] = [];
 export async function createModel(scene: BABYLON.Scene) {
   data.floors.map((element) => {
@@ -37,8 +39,12 @@ export async function createModel(scene: BABYLON.Scene) {
       });
     });
   });
-  // console.log(mesh_dict)
+  console.log(mesh_dict)
 }
+*/
+
+//Creating Models using ImportMeshAsync
+// TODO: try to resolve errors using try catch method
 
 const mesh_list: Mesh_List[] = [];
 export function Model(scene: BABYLON.Scene) {
@@ -61,7 +67,6 @@ export function Model(scene: BABYLON.Scene) {
       });
     });
   });
-  // console.log(mesh_list);
 }
 
-export { mesh_list, mesh_dict };
+export { mesh_list };

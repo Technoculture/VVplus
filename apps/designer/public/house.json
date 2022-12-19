@@ -9,7 +9,7 @@
                     "structId": 1,
                     "file": "plot.glb",
                     "name": "plot",
-                    "category": "plot", 
+                    "category": "plot",
                     "description": "..."
                 },
                 {
@@ -23,7 +23,7 @@
                     "structId": 3,
                     "file": "pool.glb",
                     "name": "pool",
-                    "category": "pool",
+                    "category": "garden",
                     "description": "..."
                 }
             ]
@@ -312,5 +312,50 @@
                 }
             ]
         }
+    ],
+    "choosableOptions": [
+        [{
+                "id": 0,
+                "name": "only glass railings",
+                "file": "railing_ff_rimmed_glass.glb",
+                "default": false,
+                "category": "railings"
+            },
+            {
+                "id": 1,
+                "name": "steel railings",
+                "file": "railing_ff_rimmed_glass.glb",
+                "default": false,
+                "category": "railings"
+            },
+            {
+                "id": 2,
+                "name": "rimmed glass railings",
+                "file": "railing_ff_rimmed_glass.glb",
+                "default": true,
+                "category": "railings"
+            },
+            {
+                "id": 3,
+                "name": "classic railings",
+                "file": "railing_ff_rimmed_glass.glb",
+                "default": false,
+                "category": "railings"
+            }
+        ],
+        [{
+            "id": 0,
+            "name": "main gate",
+            "file": "main_gate.glb",
+            "default": true,
+            "category": "main_gate"
+        }],
+        [{
+            "id": 0,
+            "name": "pool",
+            "file": "pool.glb",
+            "default": true,
+            "category": "garden"
+        }]
     ]
 }
