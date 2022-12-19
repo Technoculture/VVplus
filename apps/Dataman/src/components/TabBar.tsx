@@ -1,10 +1,12 @@
 import React from "react";
 import { Tabs, View, Text } from "@ant-design/react-native";
 import { TouchableOpacity } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
 
 const TabBar = () => {
   const tabs = [
     { title: "First Tab" },
+
     { title: "Second Tab" },
     { title: "Third Tab" },
   ];

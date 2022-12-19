@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, List, Card, Carousel } from "@ant-design/react-native";
+import AntDesign from "react-native-vector-icons/AntDesign";
 import { StyleSheet } from "react-native";
 import TabBar from "../components/TabBar";
 
@@ -14,7 +15,13 @@ const Purchase = () => {
   return (
     <View>
       <List>
-        <Item extra="...">Back</Item>
+        <Item
+          thumb={<AntDesign name="left" color="black" size={20} />}
+          extra={<AntDesign name="ellipsis1" color="black" size={20} />}
+        >
+          Back
+        </Item>
+
         <Item>
           <Text style={{ fontSize: 28, color: "#333333", fontWeight: "700" }}>
             Purchase
@@ -59,7 +66,11 @@ const Purchase = () => {
         </Card>
         <List>
           {list.map((purchaseItem, index) => (
-            <List.Item key={index} style={styles.listItem}>
+            <List.Item
+              key={index}
+              style={styles.listItem}
+              extra={<AntDesign name="right" color="#969696" size={20} />}
+            >
               {purchaseItem}
             </List.Item>
           ))}
