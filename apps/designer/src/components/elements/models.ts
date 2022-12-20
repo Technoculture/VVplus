@@ -7,9 +7,10 @@ import { Vector3 } from "@babylonjs/core";
 interface Mesh_List {
   role: string;
   mesh: BABYLON.AbstractMesh;
+  floorName: string;
 }
 
-// creatng models using ImportMesh 
+// creatng models using ImportMesh
 /*
 const mesh_dict: Mesh_List[] = [];
 export async function createModel(scene: BABYLON.Scene) {
@@ -64,9 +65,32 @@ export function Model(scene: BABYLON.Scene) {
       mesh_list.push({
         role: e.category,
         mesh: mesh[0],
+        floorName: element.floorName
       });
     });
-  });
+  })
+  
+  data.choosableOptions[0].map( async (e) => {
+    const meshCall = await BABYLON.SceneLoader.ImportMeshAsync(
+      "",
+      data?.baseUrl || " ",
+      e.file,
+      scene
+    );
+    const mesh = meshCall.meshes;
+    mesh[0].scaling = new Vector3(40, 40, 40);
+    mesh[0].position.x = 0;
+    mesh[0].position.y = 0;
+    mesh[0].position.z = 300;
+    mesh_list.push({
+      role: e.category,
+      mesh: mesh[0],
+      floorName: e.floorName
+    });
+    if(e.default === false){
+      mesh[0].setEnabled(false);
+    }
+  })
 }
 
 export { mesh_list };

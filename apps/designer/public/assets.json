@@ -1,0 +1,57 @@
+    [{
+            "camera": {
+                "alpha": 12121,
+                "beta": 12121,
+                "radius": 12121,
+                "target": {
+                    "x": 12121,
+                    "y": 12121,
+                    "z": 12121
+                }
+            },
+            "floor": 0,
+            "url": "http://www.example.com"
+        },
+        {
+            "camera": {
+                "alpha": 12121,
+                "beta": 12121,
+                "radius": 12121,
+                "target": {
+                    "x": 12121,
+                    "y": 12121,
+                    "z": 12121
+                }
+            },
+            "floor": 1,
+            "url": "http://www.example.com"
+        },
+        {
+            "camera": {
+                "alpha": 12121,
+                "beta": 12121,
+                "radius": 12121,
+                "target": {
+                    "x": 12121,
+                    "y": 12121,
+                    "z": 12121
+                }
+            },
+            "floor": 2,
+            "url": "http://www.example.com"
+        },
+        {
+            "camera": {
+                "alpha": 12121,
+                "beta": 12121,
+                "radius": 12121,
+                "target": {
+                    "x": 12121,
+                    "y": 12121,
+                    "z": 12121
+                }
+            },
+            "floor": "roof",
+            "url": "http://www.example.com"
+        }
+    ]

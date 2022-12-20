@@ -217,13 +217,6 @@
                     "description": "structure for the second floor"
                 },
                 {
-                    "structId": 7,
-                    "file": "railing_sf_rimmed_glass.glb",
-                    "category": "railings",
-                    "name": "second floor railings",
-                    "description": "..."
-                },
-                {
                     "structId": 8,
                     "file": "str_sf.glb",
                     "category": "stairs",
@@ -317,45 +310,125 @@
         [{
                 "id": 0,
                 "name": "only glass railings",
-                "file": "railing_ff_rimmed_glass.glb",
+                "file": "railing_sf_only_glass.glb",
                 "default": false,
-                "category": "railings"
+                "category": "railings",
+                "floorName": "second-floor",
+                "thumbnail_url": "file_thumbnails/railing_sf_only_glass.png",
+                "price": "1,00,000"
             },
             {
                 "id": 1,
                 "name": "steel railings",
-                "file": "railing_ff_rimmed_glass.glb",
+                "file": "railing_sf_steel.glb",
                 "default": false,
-                "category": "railings"
+                "category": "railings",
+                "floorName": "second-floor",
+                "thumbnail_url": "file_thumbnails/railing_sf_steel.png",
+                "price": "90,000"
             },
             {
                 "id": 2,
                 "name": "rimmed glass railings",
                 "file": "railing_ff_rimmed_glass.glb",
                 "default": true,
-                "category": "railings"
+                "category": "railings",
+                "floorName": "second-floor",
+                "thumbnail_url": "file_thumbnails/railing_sf_rimmed_glass.png",
+                "price": "1,40,000"
             },
             {
                 "id": 3,
                 "name": "classic railings",
-                "file": "railing_ff_rimmed_glass.glb",
+                "file": "railing_sf_classic.glb",
                 "default": false,
-                "category": "railings"
+                "category": "railings",
+                "floorName": "second-floor",
+                "thumbnail_url": "file_thumbnails/railing_sf_classic.png",
+                "price": "1,00,000"
             }
         ],
         [{
-            "id": 0,
-            "name": "main gate",
-            "file": "main_gate.glb",
-            "default": true,
-            "category": "main_gate"
-        }],
+                "id": 0,
+                "name": "main gate",
+                "file": "main_gate.glb",
+                "default": true,
+                "category": "main_gate",
+                "floorName": "ground-floor",
+                "thumbnail_url": "file_thumbnails/railing_sf_classic.png",
+                "price": "1,00,000"
+            },
+            {
+                "id": 1,
+                "name": "steel railings",
+                "file": "railing_sf_steel.glb",
+                "default": false,
+                "category": "railings",
+                "floorName": "second-floor",
+                "thumbnail_url": "file_thumbnails/railing_sf_steel.png",
+                "price": "90,000"
+            },
+            {
+                "id": 2,
+                "name": "rimmed glass railings",
+                "file": "railing_ff_rimmed_glass.glb",
+                "default": false,
+                "category": "railings",
+                "floorName": "second-floor",
+                "thumbnail_url": "file_thumbnails/railing_sf_rimmed_glass.png",
+                "price": "1,40,000"
+            },
+            {
+                "id": 3,
+                "name": "classic railings",
+                "file": "railing_sf_classic.glb",
+                "default": false,
+                "category": "railings",
+                "floorName": "second-floor",
+                "thumbnail_url": "file_thumbnails/railing_sf_classic.png",
+                "price": "1,00,000"
+            }
+        ],
         [{
-            "id": 0,
-            "name": "pool",
-            "file": "pool.glb",
-            "default": true,
-            "category": "garden"
-        }]
+                "id": 0,
+                "name": "pool",
+                "file": "pool.glb",
+                "default": true,
+                "category": "garden",
+                "floorName": "plot",
+                "thumbnail_url": "file_thumbnails/railing_sf_steel.png",
+                "price": "90,000"
+            },
+            {
+                "id": 1,
+                "name": "steel railings",
+                "file": "railing_sf_steel.glb",
+                "default": false,
+                "category": "railings",
+                "floorName": "second-floor",
+                "thumbnail_url": "file_thumbnails/railing_sf_steel.png",
+                "price": "90,000"
+            },
+            {
+                "id": 2,
+                "name": "rimmed glass railings",
+                "file": "railing_ff_rimmed_glass.glb",
+                "default": false,
+                "category": "railings",
+                "floorName": "second-floor",
+                "thumbnail_url": "file_thumbnails/railing_sf_rimmed_glass.png",
+                "price": "1,40,000"
+            },
+            {
+                "id": 3,
+                "name": "classic railings",
+                "file": "railing_sf_classic.glb",
+                "default": false,
+                "category": "railings",
+                "floorName": "second-floor",
+                "thumbnail_url": "file_thumbnails/railing_sf_classic.png",
+                "price": "1,00,000"
+            }
+        ]
     ]
 }
