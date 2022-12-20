@@ -10,6 +10,14 @@ export const SettingsScreen = () => {
         flexDirection: "column",
       }}
     >
+      <List>
+        <List.Item
+          thumb={<AntDesign name="left" size={20} />}
+          extra={<AntDesign name="ellipsis1" size={20} />}
+        >
+          Back
+        </List.Item>
+      </List>
       <Text
         style={{
           fontSize: 28,
@@ -60,50 +68,31 @@ export const SettingsScreen = () => {
             <Text style={{ paddingLeft: 5 }}>Attendance Shortage Alert</Text>
           </List.Item>
           <List.Item
+            arrow="horizontal"
             thumb={<Octicons name="list-unordered" size={20} />}
-            extra={
-              <View>
-                <Text style={{ fontSize: 10 }}>Indian Rupee</Text>
-                <AntDesign name="right" size={14} color="#969696" />
-              </View>
-            }
+            extra={<Text style={{ color: "#cccccc" }}>Indian Rupee</Text>}
           >
             <Text style={{ paddingLeft: 5 }}>Change Currency</Text>
           </List.Item>
           <List.Item
+            arrow="horizontal"
             thumb={<Octicons name="list-unordered" size={20} />}
-            extra={
-              <View>
-                <Text style={{ fontSize: 10 }}>Indian Rupee</Text>
-                <AntDesign name="right" size={14} color="#969696" />
-              </View>
-            }
+            extra={<Text style={{ color: "#cccccc" }}>English</Text>}
           >
             <Text style={{ paddingLeft: 5 }}>Change Language</Text>
           </List.Item>
           <List.Item
+            arrow="horizontal"
             thumb={<Octicons name="list-unordered" size={20} />}
-            extra={
-              <View>
-                <Text style={{ fontSize: 10 }}>Indian Rupee</Text>
-                <AntDesign name="right" size={14} color="#969696" />
-              </View>
-            }
+            extra={<Text style={{ color: "#cccccc" }}>Metric</Text>}
           >
             <Text style={{ paddingLeft: 5 }}>Units</Text>
           </List.Item>
           <List.Item
-            align="middle"
+            arrow="horizontal"
             thumb={<Octicons name="list-unordered" size={20} />}
-            extra={
-              <View>
-                <AntDesign name="right" size={14} color="#969696" />
-              </View>
-            }
+            extra={<Text style={{ color: "#cccccc" }}>987654321</Text>}
           >
-            <List.Item.Brief style={{ width: "50%", textAlign: "right" }}>
-              <Text>Indian Rupee</Text>
-            </List.Item.Brief>
             <Text style={{ paddingLeft: 5 }}>Change Mobile Number</Text>
           </List.Item>
         </List>
