@@ -13,7 +13,8 @@ export async function selector(index: number, category: string) {
 
 export function floorSelector(floorId: string) {
   // set camera to bird's eye view if floor != outdoor, else set camera to frontal view
-  if (floorId === "outdoor") {  //if outdoor is selected
+  if (floorId === "outdoor") {
+    //if outdoor is selected
     const freeCamera = new ArcRotateCamera(
       "camera",
       -Math.PI * 3,
@@ -34,7 +35,8 @@ export function floorSelector(floorId: string) {
     mesh_list.map((e) => {
       e.mesh.setEnabled(true);
     });
-  } else if (floorId === "roof") { //if roof is selected
+  } else if (floorId === "roof") {
+    //if roof is selected
     const freeCamera = new ArcRotateCamera(
       "camera",
       0,
@@ -55,7 +57,8 @@ export function floorSelector(floorId: string) {
     mesh_list.map((e) => {
       e.mesh.setEnabled(true);
     });
-  } else if (floorId === "first-floor") { //if first floor is selected
+  } else if (floorId === "first-floor") {
+    //if first floor is selected
     mesh_list.map((e) => {
       if (
         e.floorName === "second-floor" ||
@@ -82,7 +85,8 @@ export function floorSelector(floorId: string) {
     scene_variable.activeCamera = freeCamera;
     const canvas = scene_variable.getEngine().getRenderingCanvas();
     scene_variable.activeCamera.attachControl(canvas, true);
-  } else if (floorId === "second-floor") { // if second floor is selected
+  } else if (floorId === "second-floor") {
+    // if second floor is selected
     mesh_list.map((e) => {
       if (e.floorName === "roof" || e.floorName === "mumty") {
         e.mesh.setEnabled(false);
