@@ -1,14 +1,14 @@
 import { useState } from "react";
 // import data from "../../public/railings_sf.json";
-import data from "../../public/house.json"
-import { selector } from "./elements/selector"
+import data from "../../public/house.json";
+import { selector } from "./elements/selector";
 
 const SelectCarousel = () => {
   const root_url = data.baseUrl;
   const [active, setActive] = useState(0);
-  function changeRailingDesign(id: number) {
+  function changeDesign(id: number, category: string) {
     setActive(id);
-    selector(active);
+    selector(active, category);
   }
   return (
     <>
@@ -23,7 +23,7 @@ const SelectCarousel = () => {
               width="155px"
               className="rounded-[10px] h-[110px]"
               onClick={() => {
-                changeRailingDesign(e.id);
+                changeDesign(e.id, e.category);
               }}
             />
             <div>

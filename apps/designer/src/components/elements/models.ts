@@ -65,12 +65,12 @@ export function Model(scene: BABYLON.Scene) {
       mesh_list.push({
         role: e.category,
         mesh: mesh[0],
-        floorName: element.floorName
+        floorName: element.floorName,
       });
     });
-  })
-  
-  data.choosableOptions[0].map( async (e) => {
+  });
+
+  data.choosableOptions[0].map(async (e) => {
     const meshCall = await BABYLON.SceneLoader.ImportMeshAsync(
       "",
       data?.baseUrl || " ",
@@ -85,12 +85,12 @@ export function Model(scene: BABYLON.Scene) {
     mesh_list.push({
       role: e.category,
       mesh: mesh[0],
-      floorName: e.floorName
+      floorName: e.floorName,
     });
-    if(e.default === false){
+    if (e.default === false) {
       mesh[0].setEnabled(false);
     }
-  })
+  });
 }
 
 export { mesh_list };
