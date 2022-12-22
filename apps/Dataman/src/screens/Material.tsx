@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, List, Button } from "@ant-design/react-native";
 import { StyleSheet } from "react-native";
-import AntDesign from "react-native-vector-icons/AntDesign";
+import { AntDesign } from "@expo/vector-icons";
 import { materialList } from "../components/MaterialList";
 import { NumberInputField } from "../components/NumberInputField";
 import { InputField } from "../components/InputField";
@@ -13,7 +13,10 @@ const Material = () => {
   return (
     <View>
       <List>
-        <Item extra={<AntDesign name="ellipsis1" color="black" size={20} />}>
+        <Item
+          thumb={<AntDesign name="left" color="black" size={20} />}
+          extra={<AntDesign name="ellipsis1" color="black" size={20} />}
+        >
           Back
         </Item>
         <Item>
@@ -24,7 +27,7 @@ const Material = () => {
       </List>
       <List>
         {materialList.map((list, index) => (
-          <Item key={index}>
+          <Item key={index} arrow="horizontal">
             <Text style={styles.list_text}>{list.title}</Text>
             <Text style={styles.text}>{list.content}</Text>
           </Item>
@@ -36,7 +39,7 @@ const Material = () => {
         </Text>
       </View>
       <List>
-        <Item>
+        <Item arrow="horizontal">
           <Text style={styles.list_text}>Item</Text>
           <Text style={styles.text}>Search Here</Text>
         </Item>
@@ -69,7 +72,7 @@ const Material = () => {
             </Button>
           </View>
         </Item>
-        <Item>
+        <Item arrow="horizontal">
           <Text style={styles.list_text}>Request Date</Text>
           <Text style={styles.text}>Enter Date</Text>
         </Item>

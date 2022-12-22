@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "@ant-design/react-native": "^5.0.3",
-    "@types/react-native-vector-icons": "^6.4.12",
     "babel-plugin-import": "^1.13.5",
     "expo": "^47.0.0",
     "expo-dev-client": "~2.0.0",

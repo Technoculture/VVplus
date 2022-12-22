@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, List, Button } from "@ant-design/react-native";
 import { StyleSheet } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
 import { NumberInputField } from "../components/NumberInputField";
 import { InputField } from "../components/InputField";
 import { orderList } from "../components/OrderList";
@@ -12,7 +13,12 @@ const PlaceOrder = () => {
   return (
     <View>
       <List>
-        <Item extra="...">Back</Item>
+        <Item
+          thumb={<AntDesign name="left" color="black" size={20} />}
+          extra={<AntDesign name="ellipsis1" color="black" size={20} />}
+        >
+          Back
+        </Item>
         <Item>
           <Text style={{ fontSize: 24, color: "#333333", fontWeight: "700" }}>
             Place Purchase Order
@@ -21,7 +27,7 @@ const PlaceOrder = () => {
       </List>
       <List>
         {orderList.map((list, index) => (
-          <Item key={index}>
+          <Item key={index} arrow="horizontal">
             <Text style={styles.list_text}>{list.title}</Text>
             <Text style={styles.text}>{list.content}</Text>
           </Item>
@@ -33,7 +39,7 @@ const PlaceOrder = () => {
         </Text>
       </View>
       <List>
-        <Item>
+        <Item arrow="horizontal">
           <Text style={styles.list_text}>Item</Text>
           <Text style={styles.text}>Search Here</Text>
         </Item>
@@ -66,7 +72,7 @@ const PlaceOrder = () => {
             </Button>
           </View>
         </Item>
-        <Item>
+        <Item arrow="horizontal">
           <Text style={styles.list_text}>Request Date</Text>
           <Text style={styles.text}>Enter Date</Text>
         </Item>

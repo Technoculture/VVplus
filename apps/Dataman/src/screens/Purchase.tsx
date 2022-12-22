@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, List, Card, Carousel } from "@ant-design/react-native";
-import AntDesign from "react-native-vector-icons/AntDesign";
+import { AntDesign, Octicons } from "@expo/vector-icons";
 import { StyleSheet } from "react-native";
 import TabBar from "../components/TabBar";
 
@@ -68,10 +68,10 @@ const Purchase = () => {
           {list.map((purchaseItem, index) => (
             <List.Item
               key={index}
-              style={styles.listItem}
-              extra={<AntDesign name="right" color="#969696" size={20} />}
+              arrow="horizontal"
+              thumb={<Octicons name="list-unordered" size={20} />}
             >
-              {purchaseItem}
+              <Text style={styles.listItem}>{purchaseItem}</Text>
             </List.Item>
           ))}
         </List>
@@ -90,6 +90,7 @@ const styles = StyleSheet.create({
     borderColor: "#969696",
     fontSize: 17,
     fontWight: "700",
+    paddingLeft: 5,
   },
   listContainer: {
     height: "100%",

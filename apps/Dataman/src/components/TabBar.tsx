@@ -1,14 +1,19 @@
 import React from "react";
 import { Tabs, View, Text } from "@ant-design/react-native";
 import { TouchableOpacity } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
+import {
+  SimpleLineIcons,
+  MaterialCommunityIcons,
+  Octicons,
+} from "@expo/vector-icons";
 
 const TabBar = () => {
   const tabs = [
-    { title: "First Tab" },
-
-    { title: "Second Tab" },
-    { title: "Third Tab" },
+    { title: <SimpleLineIcons name="user" size={20} /> },
+    {
+      title: <MaterialCommunityIcons name="truck-outline" size={20} />,
+    },
+    { title: <Octicons name="list-unordered" size={20} /> },
   ];
 
   return (
@@ -40,7 +45,7 @@ const TabBar = () => {
                 >
                   <Text
                     style={{
-                      color: tabProps.activeTab === i ? "red" : "#333333",
+                      color: tabProps.activeTab === i ? "black" : "#969696",
                     }}
                   >
                     {tab.title}
