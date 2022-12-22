@@ -110,6 +110,4 @@ export function floorSelector(floorId: string) {
     const canvas = scene_variable.getEngine().getRenderingCanvas();
     scene_variable.activeCamera.attachControl(canvas, true);
   }
-  // function to setEnabled(true) the assets which are on the selected floor
-  // function to setEnabled(false) the assets which are not on the selected floor
 }

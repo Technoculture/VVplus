@@ -10,6 +10,12 @@ interface Mesh_List {
   floorName: string;
 }
 
+interface Selector_Mesh_List {
+  role: string;
+  mesh: BABYLON.AbstractMesh;
+  floorName: string;
+}
+
 // creatng models using ImportMesh
 /*
 const mesh_dict: Mesh_List[] = [];
