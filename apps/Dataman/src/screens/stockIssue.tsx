@@ -4,7 +4,7 @@ import NavBar from "../components/NavBar";
 import { Button, InputItem, List, Text } from "@ant-design/react-native";
 import { AntDesign } from "@expo/vector-icons";
 
-const StockReceive = () => {
+const StockIssue = () => {
   const [quantity, setQuantity] = useState<string>();
   const [rate, setRate] = useState<string>();
   const [remarks, setRemarks] = useState<string>();
@@ -21,7 +21,7 @@ const StockReceive = () => {
                 paddingVertical: 5,
               }}
             >
-              Stock Receive Entry
+              Stock Issue Entry
             </Text>
           </List.Item>
           <List.Item arrow="horizontal">
@@ -33,7 +33,7 @@ const StockReceive = () => {
           </List.Item>
           <List.Item arrow="horizontal">
             <List.Item.Brief>
-              <Text>Indentor Name</Text>
+              <Text>Issue to</Text>
             </List.Item.Brief>
             Search Here
           </List.Item>
@@ -139,7 +139,7 @@ const StockReceive = () => {
   );
 };
 
-export default StockReceive;
+export default StockIssue;
 
 const styles = StyleSheet.create({
   container: {

@@ -4,7 +4,7 @@ import NavBar from "../components/NavBar";
 import { Button, InputItem, List, Text } from "@ant-design/react-native";
 import { AntDesign } from "@expo/vector-icons";
 
-const StockReceive = () => {
+const PhasetoPhase = () => {
   const [quantity, setQuantity] = useState<string>();
   const [rate, setRate] = useState<string>();
   const [remarks, setRemarks] = useState<string>();
@@ -21,7 +21,7 @@ const StockReceive = () => {
                 paddingVertical: 5,
               }}
             >
-              Stock Receive Entry
+              Phase to Phase Transfer
             </Text>
           </List.Item>
           <List.Item arrow="horizontal">
@@ -33,18 +33,30 @@ const StockReceive = () => {
           </List.Item>
           <List.Item arrow="horizontal">
             <List.Item.Brief>
-              <Text>Indentor Name</Text>
+              <Text>Date</Text>
             </List.Item.Brief>
-            Search Here
+            Enter Date
           </List.Item>
           <List.Item arrow="horizontal">
             <List.Item.Brief>
-              <Text>Department Name</Text>
+              <Text>Issue to which Staff</Text>
             </List.Item.Brief>
             Search Here
           </List.Item>
           <List.Item arrow="horizontal">
-            <List.Item.Brief>Choose Phase(Cost Center)</List.Item.Brief>
+            <List.Item.Brief>From Which Phase</List.Item.Brief>
+            Search Here
+          </List.Item>
+          <List.Item arrow="horizontal">
+            <List.Item.Brief>Location(From)</List.Item.Brief>
+            Search Here
+          </List.Item>
+          <List.Item arrow="horizontal">
+            <List.Item.Brief>To Phase</List.Item.Brief>
+            Search Here
+          </List.Item>
+          <List.Item arrow="horizontal">
+            <List.Item.Brief>Location(To)</List.Item.Brief>
             Search Here
           </List.Item>
         </List>
@@ -139,7 +151,7 @@ const StockReceive = () => {
   );
 };
 
-export default StockReceive;
+export default PhasetoPhase;
 
 const styles = StyleSheet.create({
   container: {
