@@ -2,6 +2,7 @@ import * as React from "react";
 import * as Font from "expo-font";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StoreScreen } from "./screens/store";
+import StockReceive from "./screens/stockRecieve";
 
 export const App = () => {
   const [fontsLoaded, setFontsLoaded] = React.useState(false);
@@ -23,7 +24,8 @@ export const App = () => {
   if (fontsLoaded === false) return null;
   return (
     <SafeAreaView>
-      <StoreScreen />
+      {/* <StoreScreen /> */}
+      <StockReceive />
     </SafeAreaView>
   );
 };
