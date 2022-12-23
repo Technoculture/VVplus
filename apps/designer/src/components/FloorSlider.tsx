@@ -9,7 +9,7 @@ const elements = [
 ];
 
 const FloorSlider = () => {
-  const [selectedId, setSelectedId] = useState("outside")
+  const [selectedId, setSelectedId] = useState("outside");
   const handleClick = (id) => {
     setSelectedId(id);
     floorSelector(id);
@@ -26,7 +26,7 @@ const FloorSlider = () => {
           <div
             id={e.id}
             className={`${setSelectedClass(e.id)}`}
-            onClick={()=>handleClick(e.id)}
+            onClick={() => handleClick(e.id)}
           >
             {e.value}
           </div>

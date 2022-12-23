@@ -3,12 +3,16 @@ import * as BABYLON from "@babylonjs/core";
 import data from "../../../public/railings_sf.json";
 import { Vector3, ArcRotateCamera } from "@babylonjs/core";
 import { scene_variable } from "./Scene";
-import { mesh_list } from "./models";
+import { mesh_list, choice_list } from "./models";
 
 export async function selector(index: number, category: string) {
-  // function to setEnabled(true) the asset which has been selected
-  // function to setEnabled(false) the assets which have not been selected
-  console.log(mesh_list);
+  choice_list.map((e)=>{
+    if(e.role === category && e.index === index){
+      e.mesh.setEnabled(true);
+    }else if(e.role === category && e.index !== index){
+      e.mesh.setEnabled(false);
+    }
+  })
 }
 
 export function floorSelector(floorId: string) {
