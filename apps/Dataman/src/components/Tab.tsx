@@ -8,6 +8,7 @@ import {
 import SalesScreens from "../screens/SalesScreen";
 import WorkEntry from "../screens/WorkEntry";
 import UnitCancellation from "../screens/UnitCancellation";
+import Cheque from "../screens/Cheque";
 
 export const Tab = () => {
   const [selectedTab, setSelectedTab] = useState("");
@@ -16,7 +17,12 @@ export const Tab = () => {
   };
 
   return (
-    <View style={{ flex: 1 }}>
+    <View
+      style={{
+        height: "100%",
+        bottom: 0,
+      }}
+    >
       <TabBar
         unselectedTintColor="#999999"
         tintColor="##0000FF"
@@ -58,6 +64,7 @@ export const Tab = () => {
           title=""
         >
           <WorkEntry />
+          {/* <Cheque /> */}
         </TabBar.Item>
       </TabBar>
     </View>
