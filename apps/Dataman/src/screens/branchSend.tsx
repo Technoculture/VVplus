@@ -4,7 +4,7 @@ import NavBar from "../components/NavBar";
 import { Button, List, Text } from "@ant-design/react-native";
 import { AntDesign } from "@expo/vector-icons";
 
-const BranchToBranch = () => {
+const BranchSend = () => {
   return (
     <View>
       <NavBar />
@@ -75,4 +75,4 @@ const BranchToBranch = () => {
   );
 };
 
-export default BranchToBranch;
+export default BranchSend;

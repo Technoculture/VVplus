@@ -5,7 +5,8 @@ import { StoreScreen } from "./screens/store";
 import StockReceive from "./screens/stockRecieve";
 import StockIssue from "./screens/stockIssue";
 import PhasetoPhase from "./screens/phaseToPhase";
-import BranchToBranch from "./screens/branchToBranch";
+import BranchSend from "./screens/branchSend";
+import BranchReceive from "./screens/branchReceive";
 
 export const App = () => {
   const [fontsLoaded, setFontsLoaded] = React.useState(false);
@@ -31,7 +32,8 @@ export const App = () => {
       {/* <StockReceive /> */}
       {/* <StockIssue /> */}
       {/* <PhasetoPhase /> */}
-      <BranchToBranch />
+      {/* <BranchSend /> */}
+      <BranchReceive />
     </SafeAreaView>
   );
 };
