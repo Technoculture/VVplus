@@ -12,7 +12,7 @@ const StockReceive = () => {
     <View>
       <NavBar />
       <ScrollView>
-        <List style={{ marginVertical: 10 }}>
+        <List style={{ marginBottom: 10 }}>
           <List.Item>
             <Text
               style={{
