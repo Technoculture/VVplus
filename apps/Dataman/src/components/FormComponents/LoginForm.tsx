@@ -11,7 +11,7 @@ const LoginForm = () => {
 
   return (
     <View>
-      <View style={styles.form}>
+      <View>
         <Flex direction="column" align="start" style={styles.formField}>
           <Flex.Item>
             <Text style={styles.text_input}>Phone Number</Text>
@@ -29,7 +29,7 @@ const LoginForm = () => {
       </View>
 
       {isEnteredPhoneNumber ? (
-        <View style={styles.form}>
+        <View>
           <Flex direction="column" align="start" style={styles.formField}>
             <Flex.Item>
               <Text style={styles.text_input}>OTP</Text>
@@ -53,9 +53,14 @@ const LoginForm = () => {
           text={`${isEnteredPhoneNumber ? "SignIn" : "Send OTP"}`}
           PropsType={"primary"}
           onPress={() => {
-            phoneNumber !== ""
-              ? setEnteredPhoneNumber(true)
-              : setEnteredPhoneNumber(false);
+            if (phoneNumber !== "") {
+              setEnteredPhoneNumber(true);
+              setPhoneNumber("");
+            } else if (isEnteredPhoneNumber ? "SignIn" : "") {
+              setEnteredPhoneNumber(true);
+            } else {
+              setEnteredPhoneNumber(false);
+            }
           }}
         />
 
@@ -77,16 +82,13 @@ const styles = StyleSheet.create({
     color: "#333333",
     fontSize: 15,
   },
-  form: {
-    paddingLeft: 12,
-  },
+
   formField: {
-    paddingTop: 12,
+    padding: 10,
     height: 80,
   },
   inputField: {
     width: "100%",
-    paddingBottom: 20,
   },
   button: {
     alignItems: "center",
