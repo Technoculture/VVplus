@@ -1,63 +1,70 @@
-import React from "react";
-import { Tabs, View, Text } from "@ant-design/react-native";
-import { TouchableOpacity } from "react-native";
+import React, { useState } from "react";
+import { View, TabBar } from "@ant-design/react-native";
 import {
   SimpleLineIcons,
   MaterialCommunityIcons,
   Octicons,
 } from "@expo/vector-icons";
+import Purchase from "../screens/Purchase";
+import MaterialRequest from "../screens/MaterialRequest";
+import Receipt from "../screens/Receipt";
 
-const TabBar = () => {
-  const tabs = [
-    { title: <SimpleLineIcons name="user" size={20} /> },
-    {
-      title: <MaterialCommunityIcons name="truck-outline" size={20} />,
-    },
-    { title: <Octicons name="list-unordered" size={20} /> },
-  ];
+export const Tab = () => {
+  const [selectedTab, setSelectedTab] = useState("");
+  const changeTab = (tabName: any) => {
+    setSelectedTab(tabName);
+  };
 
   return (
-    <View>
-      <View style={{ height: 30 }}>
-        <Tabs
-          tabs={tabs}
-          renderTabBar={(tabProps) => (
-            <View
-              style={{
-                paddingHorizontal: 16,
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "space-evenly",
-              }}
-            >
-              {tabProps.tabs.map((tab, i) => (
-                <TouchableOpacity
-                  activeOpacity={0.9}
-                  key={tab.key || i}
-                  style={{
-                    padding: 6,
-                  }}
-                  onPress={() => {
-                    const { goToTab, onTabClick } = tabProps;
-                    onTabClick && onTabClick(tabs[i], i);
-                    goToTab && goToTab(i);
-                  }}
-                >
-                  <Text
-                    style={{
-                      color: tabProps.activeTab === i ? "black" : "#969696",
-                    }}
-                  >
-                    {tab.title}
-                  </Text>
-                </TouchableOpacity>
-              ))}
-            </View>
-          )}
-        ></Tabs>
-      </View>
+    <View
+      style={{
+        height: "100%",
+        bottom: 0,
+      }}
+    >
+      <TabBar
+        unselectedTintColor="#999999"
+        tintColor="##0000FF"
+        barTintColor="#ffffff"
+      >
+        <TabBar.Item
+          icon={<SimpleLineIcons name="user" size={20} />}
+          selected={selectedTab === "Purchase"}
+          onPress={() => {
+            changeTab("Purchase");
+          }}
+          title=""
+        >
+          <Purchase />
+        </TabBar.Item>
+        <TabBar.Item
+          icon={
+            <MaterialCommunityIcons
+              name="truck-outline"
+              size={20}
+              selectedcolor="black"
+            />
+          }
+          selected={selectedTab === "Material Request"}
+          onPress={() => {
+            changeTab("Material Request");
+          }}
+          title=""
+        >
+          <MaterialRequest />
+        </TabBar.Item>
+
+        <TabBar.Item
+          icon={<Octicons name="list-unordered" size={20} />}
+          selected={selectedTab === "Material Approval"}
+          onPress={() => {
+            changeTab("Material Approval");
+          }}
+          title=""
+        >
+          <Receipt />
+        </TabBar.Item>
+      </TabBar>
     </View>
   );
 };
-
-export default TabBar;

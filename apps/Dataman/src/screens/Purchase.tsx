@@ -1,11 +1,11 @@
 import React from "react";
 import { View, Text, List, Card, Carousel } from "@ant-design/react-native";
-import { AntDesign, Octicons } from "@expo/vector-icons";
+import { Octicons } from "@expo/vector-icons";
 import { StyleSheet } from "react-native";
-import TabBar from "../components/TabBar";
+import { Navbar } from "../components/Navbar";
+import { PageHeader } from "../components/PageHeader";
 
 const Purchase = () => {
-  const Item = List.Item;
   const list = [
     "Material Request Entry",
     "Material Request Approval",
@@ -14,20 +14,11 @@ const Purchase = () => {
   ];
   return (
     <View>
-      <List>
-        <Item
-          thumb={<AntDesign name="left" color="black" size={20} />}
-          extra={<AntDesign name="ellipsis1" color="black" size={20} />}
-        >
-          Back
-        </Item>
+      <View>
+        <Navbar />
+        <PageHeader text="Purchase" />
+      </View>
 
-        <Item>
-          <Text style={{ fontSize: 28, color: "#333333", fontWeight: "700" }}>
-            Purchase
-          </Text>
-        </Item>
-      </List>
       <View>
         <Card full>
           <Card.Header
@@ -75,10 +66,6 @@ const Purchase = () => {
             </List.Item>
           ))}
         </List>
-
-        <View style={{ marginVertical: 125 }}>
-          <TabBar />
-        </View>
       </View>
     </View>
   );

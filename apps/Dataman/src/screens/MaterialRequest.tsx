@@ -1,19 +1,20 @@
 import React from "react";
 import { View, Text, List, Button } from "@ant-design/react-native";
-import { StyleSheet, ScrollView } from "react-native";
+import { ScrollView, StyleSheet } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-import { InputField } from "../components/InputField";
 import { Navbar } from "../components/Navbar";
+import { InputField } from "../components/InputField";
 import { PageHeader } from "../components/PageHeader";
 import { FormButton } from "../components/Button";
 
-const PlaceOrder = () => {
+const MaterialRequest = () => {
   const Item = List.Item;
 
   return (
     <View style={{ height: "100%" }}>
       <Navbar />
-      <PageHeader text="Place Purchase Order" />
+      <PageHeader text="Material Request Entry" />
+
       <ScrollView>
         <List>
           <Item arrow="horizontal">
@@ -24,17 +25,18 @@ const PlaceOrder = () => {
             <Text style={styles.text}>Search Here</Text>
           </Item>
         </List>
+
         <List>
           <Item arrow="horizontal">
-            <Text style={styles.list_text}>Date</Text>
-            <Text style={styles.text}>Enter Date</Text>
-          </Item>
-          <Item arrow="horizontal">
-            <Text style={styles.list_text}>Supplier</Text>
+            <Text style={styles.list_text}>Endenter Name</Text>
             <Text style={styles.text}>Search Here</Text>
           </Item>
           <Item arrow="horizontal">
-            <Text style={styles.list_text}>Indent Selection</Text>
+            <Text style={styles.list_text}>Department Name</Text>
+            <Text style={styles.text}>Search Here</Text>
+          </Item>
+          <Item arrow="horizontal">
+            <Text style={styles.list_text}>Choose Phase(Cost Center)</Text>
             <Text style={styles.text}>Search Here</Text>
           </Item>
         </List>
@@ -43,6 +45,7 @@ const PlaceOrder = () => {
             Stock
           </Text>
         </View>
+
         <List>
           <Item arrow="horizontal">
             <Item.Brief>
@@ -84,6 +87,7 @@ const PlaceOrder = () => {
               </Button>
             </View>
           </Item>
+
           <Item arrow="horizontal">
             <Item.Brief>
               <Text style={styles.list_text}>Request Date</Text>
@@ -92,7 +96,6 @@ const PlaceOrder = () => {
             <Text style={styles.text}>Enter Date</Text>
           </Item>
         </List>
-
         <View>
           <FormButton />
         </View>
@@ -101,7 +104,7 @@ const PlaceOrder = () => {
   );
 };
 
-export default PlaceOrder;
+export default MaterialRequest;
 
 const styles = StyleSheet.create({
   list_text: {

@@ -1,21 +1,23 @@
 import React, { useState } from "react";
 import { View, InputItem } from "@ant-design/react-native";
 
-export const InputField = () => {
-  const [tonnes, setTonnes] = useState("");
+export type InputProps = {
+  placeholder: any;
+};
 
+export const InputField = ({ placeholder }: InputProps) => {
+  const [number, setNumber] = useState("");
   return (
     <View>
       <InputItem
         type="number"
-        value={tonnes}
+        value={number}
         onChange={(value: any) => {
-          setTonnes(value);
+          setNumber(value);
         }}
-        placeholder="Tonnes"
+        placeholder={placeholder}
         style={{
-          height: 20,
-          width: "10%",
+          height: 30,
         }}
       />
     </View>

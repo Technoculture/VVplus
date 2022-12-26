@@ -1,66 +1,79 @@
 import React from "react";
-import { View, Text, List, Button, InputItem } from "@ant-design/react-native";
+import { View, Text, List } from "@ant-design/react-native";
 import { StyleSheet, ScrollView } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-import { receipt } from "../components/ReceiptList";
-import TabBar from "../components/TabBar";
+import { Navbar } from "../components/Navbar";
+import { InputField } from "../components/InputField";
+import { PageHeader } from "../components/PageHeader";
+import { FormButton } from "../components/Button";
 
 const Receipt = () => {
   const Item = List.Item;
-
   return (
-    <ScrollView>
-      <View>
-        <View>
-          <List>
-            <Item
-              thumb={<AntDesign name="left" color="black" size={20} />}
-              extra={<AntDesign name="ellipsis1" color="black" size={20} />}
-            >
-              Back
-            </Item>
-            <Item>
-              <Text
-                style={{ fontSize: 24, color: "#333333", fontWeight: "700" }}
-              >
-                Good Receipt Entry
-              </Text>
-            </Item>
-          </List>
-          <List>
-            {receipt.map((list, index) => (
-              <Item key={index} arrow="horizontal">
-                <Text style={styles.list_text}>{list.title}</Text>
-                <Text style={styles.text}>{list.content}</Text>
-              </Item>
-            ))}
-          </List>
+    <View style={{ height: "100%" }}>
+      <Navbar />
+      <PageHeader text="Good Receipt Entry" />
+      <ScrollView>
+        <List>
+          <Item arrow="horizontal">
+            <Text style={styles.list_text}>Party Bill Date</Text>
+            <Text style={styles.text}>Enter Date</Text>
+          </Item>
+          <Item>
+            <Text>Party Challan No.</Text>
+          </Item>
+          <Item arrow="horizontal">
+            <Item.Brief>
+              <Text style={styles.list_text}>Voucher Type</Text>
+              <AntDesign name="questioncircleo" />
+            </Item.Brief>
+            <Text style={styles.text}>Search Here</Text>
+          </Item>
+          <Item arrow="horizontal">
+            <Text style={styles.list_text}>Date</Text>
+            <Text style={styles.text}>Enter Date</Text>
+          </Item>
+          <Item>
+            <Text>Party Bill No.</Text>
+          </Item>
 
-          <View>
-            <TabBar />
-          </View>
+          <Item arrow="horizontal">
+            <Text style={styles.list_text}>Go Down</Text>
+            <Text style={styles.text}>Search Here</Text>
+          </Item>
+          <Item arrow="horizontal">
+            <Text style={styles.list_text}>Cost Center</Text>
+            <Text style={styles.text}>Search Here</Text>
+          </Item>
 
-          <List>
-            <Item>
-              <Text>Total Bill Value</Text>
-            </Item>
-            <Item>
-              <Text>Remarks</Text>
-              <InputItem type="text" />
-            </Item>
-          </List>
+          <Item arrow="horizontal">
+            <Text style={styles.list_text}>Supplier</Text>
+            <Text style={styles.text}>Search Here</Text>
+          </Item>
 
-          <View style={{ alignItems: "center", marginVertical: 10 }}>
-            <Button
-              type="primary"
-              style={{ width: "30%", height: 40, borderRadius: 48 }}
-            >
-              Submit
-            </Button>
-          </View>
-        </View>
-      </View>
-    </ScrollView>
+          <Item arrow="horizontal">
+            <Item.Brief>
+              <Text style={styles.list_text}>Fill PO</Text>
+              <AntDesign name="questioncircleo" />
+            </Item.Brief>
+            <Text style={styles.text}>Search Here</Text>
+          </Item>
+        </List>
+
+        <List>
+          <Item>
+            <Text>Total Bill Value</Text>
+            <InputField placeholder={""} />
+          </Item>
+          <Item>
+            <Text>Remarks</Text>
+            <InputField placeholder={""} />
+          </Item>
+        </List>
+
+        <FormButton />
+      </ScrollView>
+    </View>
   );
 };
 export default Receipt;
@@ -75,16 +88,5 @@ const styles = StyleSheet.create({
     color: "#333333",
     fontSize: 17,
     fontWeight: "400",
-  },
-  container: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-  inputBox: {
-    width: "50%",
-  },
-  button: {
-    alignItems: "center",
-    marginVertical: 10,
   },
 });
