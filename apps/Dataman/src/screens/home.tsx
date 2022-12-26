@@ -1,9 +1,16 @@
 import * as React from "react";
-import { View, Text } from "react-native";
+import { View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { ContractorScreen } from "./Contractor";
+import DailyManPowerScreen from "./DailyManPower";
+
 export const HomeScreen = () => {
   return (
-    <View>
-      <Text>Hello this one is the home screen for the dataman</Text>
-    </View>
+    <SafeAreaView>
+      <View>
+        {/* <ContractorScreen /> */}
+        <DailyManPowerScreen />
+      </View>
+    </SafeAreaView>
   );
 };
