@@ -1,6 +1,6 @@
 import React from "react";
-import { View, Text, List, InputItem } from "@ant-design/react-native";
-import { StyleSheet } from "react-native";
+import { View, Text, List } from "@ant-design/react-native";
+import { StyleSheet, ScrollView } from "react-native";
 import { Navbar } from "../components/Navbar";
 import { PageHeader } from "../components/PageHeader";
 import { FormButton } from "../components/Button";
@@ -26,41 +26,42 @@ const UnitCancellation = () => {
     },
   ];
   return (
-    <View>
+    <View style={{ height: "100%" }}>
       <View>
         <Navbar />
         <PageHeader text="Unit Cancellation" />
       </View>
+      <ScrollView>
+        <List>
+          {UNIT_LIST.map((item, index) => (
+            <List.Item key={index} arrow="horizontal">
+              <Text style={styles.list_text}>{item.title}</Text>
+              <Text style={styles.text}>{item.content}</Text>
+            </List.Item>
+          ))}
+        </List>
 
-      <List>
-        {UNIT_LIST.map((item, index) => (
-          <List.Item key={index} arrow="horizontal">
-            <Text style={styles.list_text}>{item.title}</Text>
-            <Text style={styles.text}>{item.content}</Text>
+        <List>
+          <List.Item>
+            <Text style={styles.list_text}>Base Amount (Deduction Amount)</Text>
+            <InputField />
           </List.Item>
-        ))}
-      </List>
 
-      <List>
-        <List.Item style={{ height: 60 }}>
-          <Text>Base Amount (Deduction Amount)</Text>
-          <InputItem style={{ height: 20 }}></InputItem>
-        </List.Item>
-
-        <List.Item arrow="horizontal">
-          <Text>Tax</Text>
-          <Text>Search Here</Text>
-        </List.Item>
-        <List.Item>
-          <Text>Tax</Text>
-          <InputField />
-        </List.Item>
-        <List.Item>
-          <Text>Remarks</Text>
-          <InputField />
-        </List.Item>
-      </List>
-      <FormButton />
+          <List.Item arrow="horizontal">
+            <Text style={styles.list_text}>Tax</Text>
+            <Text style={styles.text}>Search Here</Text>
+          </List.Item>
+          <List.Item>
+            <Text style={styles.list_text}>Tax</Text>
+            <InputField />
+          </List.Item>
+          <List.Item>
+            <Text style={styles.list_text}>Remarks</Text>
+            <InputField />
+          </List.Item>
+        </List>
+        <FormButton />
+      </ScrollView>
     </View>
   );
 };

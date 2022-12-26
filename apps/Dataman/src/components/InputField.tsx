@@ -11,9 +11,6 @@ export const InputField = () => {
         onChange={(value: any) => {
           setValue(value);
         }}
-        style={{
-          height: 20,
-        }}
       />
     </View>
   );

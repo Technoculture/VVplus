@@ -6,9 +6,8 @@ import {
   Octicons,
 } from "@expo/vector-icons";
 import SalesScreens from "../screens/SalesScreen";
-import WorkEntry from "../screens/WorkEntry";
-import UnitCancellation from "../screens/UnitCancellation";
 import Cheque from "../screens/Cheque";
+import WorkEntry from "../screens/WorkEntry";
 
 export const Tab = () => {
   const [selectedTab, setSelectedTab] = useState("");
@@ -52,7 +51,7 @@ export const Tab = () => {
           }}
           title=""
         >
-          <UnitCancellation />
+          <WorkEntry />
         </TabBar.Item>
 
         <TabBar.Item
@@ -63,8 +62,7 @@ export const Tab = () => {
           }}
           title=""
         >
-          <WorkEntry />
-          {/* <Cheque /> */}
+          <Cheque />
         </TabBar.Item>
       </TabBar>
     </View>

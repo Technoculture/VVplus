@@ -27,7 +27,7 @@ export const DEPOSIT_LIST = [
   },
   {
     title: "Deposit Date",
-    conent: "Enter Date",
+    content: "Enter Date",
   },
   {
     title: "Fill Grid",

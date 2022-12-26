@@ -52,20 +52,20 @@ const WorkEntry = () => {
 
         <List>
           <List.Item>
-            <Text>Base Amount</Text>
+            <Text style={styles.list_text}>Base Amount</Text>
             <InputField />
           </List.Item>
 
           <List.Item>
-            <Text>Tax</Text>
+            <Text style={styles.list_text}>Tax</Text>
             <InputField />
           </List.Item>
           <List.Item>
-            <Text>Net Amount</Text>
+            <Text style={styles.list_text}>Net Amount</Text>
             <InputField />
           </List.Item>
           <List.Item>
-            <Text>Remarks</Text>
+            <Text style={styles.list_text}>Remarks</Text>
             <InputField />
           </List.Item>
           <List.Item>

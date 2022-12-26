@@ -20,10 +20,8 @@ const Cheque = () => {
 
   return (
     <View>
-      <View>
-        <Navbar />
-        <PageHeader text="Cheque Entry/Update" />
-      </View>
+      <Navbar />
+      <PageHeader text="Cheque Entry/Update" />
 
       <View style={{ height: "100%" }}>
         <Tabs tabs={TABS} tabBarActiveTextColor="#1677FF">
@@ -44,8 +42,8 @@ const Cheque = () => {
             <FormButton />
           </View>
 
-          <ScrollView>
-            <View>
+          <View style={{ height: "70%" }}>
+            <ScrollView>
               <List>
                 {DEPOSIT_LIST.map((item, index) => (
                   <List.Item key={index} arrow="horizontal">
@@ -57,63 +55,66 @@ const Cheque = () => {
 
               <List>
                 <List.Item>
-                  <Text>Bank</Text>
+                  <Text style={styles.list_text}>Bank:</Text>
                   <InputField />
                 </List.Item>
 
                 <List.Item>
-                  <Text>Name of Customer</Text>
+                  <Text style={styles.list_text}>Name of Customer:</Text>
                   <InputField />
                 </List.Item>
                 <List.Item>
-                  <Text>Cheque Date</Text>
+                  <Text style={styles.list_text}>Cheque Date:</Text>
                   <InputField />
                 </List.Item>
                 <List.Item>
-                  <Text>Amount</Text>
+                  <Text style={styles.list_text}>Amount:</Text>
                   <InputField />
                 </List.Item>
                 <List.Item>
-                  <Text>Site</Text>
+                  <Text style={styles.list_text}>Site:</Text>
                   <InputField />
                 </List.Item>
               </List>
               <FormButton />
-            </View>
-          </ScrollView>
+            </ScrollView>
+          </View>
 
-          <View>
-            <List>
-              {CLEARED_LIST.map((item, index) => (
-                <List.Item key={index} arrow="horizontal">
-                  <Text style={styles.list_text}>{item.title}</Text>
-                  <Text style={styles.text}>{item.content}</Text>
+          <View style={{ height: "70%" }}>
+            <ScrollView>
+              <List>
+                {CLEARED_LIST.map((item, index) => (
+                  <List.Item key={index} arrow="horizontal">
+                    <Text style={styles.list_text}>{item.title}</Text>
+                    <Text style={styles.text}>{item.content}</Text>
+                  </List.Item>
+                ))}
+              </List>
+              <List>
+                <List.Item>
+                  <Text style={styles.list_text}>Name of Customer:</Text>
+                  <InputField />
                 </List.Item>
-              ))}
-            </List>
-            <List>
-              <List.Item>
-                <Text>Name of Customer</Text>
-                <InputField />
-              </List.Item>
-              <List.Item>
-                <Text>Cheque Date</Text>
-                <InputField />
-              </List.Item>
-              <List.Item>
-                <Text>Amount</Text>
-                <InputField />
-              </List.Item>
-              <List.Item>
-                <Text>Site</Text>
-                <InputField />
-              </List.Item>
-              <List.Item>
-                <Text>Cleared Date</Text>
-                <Text>Enter Date</Text>
-              </List.Item>
-            </List>
-            <FormButton />
+                <List.Item>
+                  <Text style={styles.list_text}>Cheque Date:</Text>
+                  <InputField />
+                </List.Item>
+                <List.Item>
+                  <Text style={styles.list_text}>Amount:</Text>
+                  <InputField />
+                </List.Item>
+                <List.Item>
+                  <Text style={styles.list_text}>Site:</Text>
+                  <InputField />
+                </List.Item>
+                <List.Item>
+                  <Text style={styles.list_text}>Cleared Date</Text>
+                  <Text style={styles.text}>Enter Date</Text>
+                </List.Item>
+              </List>
+
+              <FormButton />
+            </ScrollView>
           </View>
         </Tabs>
       </View>
