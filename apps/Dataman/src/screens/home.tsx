@@ -1,16 +1,16 @@
 import * as React from "react";
 import { StyleSheet, Text } from "react-native";
 import { Card, Carousel, List, View } from "@ant-design/react-native";
-import { AntDesign } from "@expo/vector-icons";
 
 export const HomeScreen = () => {
-  const listMap = [
+  const homeOptionsArray = [
     "Purchase",
     "Store",
     "Sales",
     "Contractors",
     "Approval Requests",
   ];
+  const carouselOptionArray = [1, 2, 3, 4, 5];
   return (
     <View
       style={{
@@ -41,7 +41,7 @@ export const HomeScreen = () => {
               dotActiveStyle={{ backgroundColor: "#1677FF", width: "5%" }}
               style={[{ height: 200, marginHorizontal: 10 }, styles.container]}
             >
-              {[1, 2, 3, 4, 5].map((item, idx) => (
+              {carouselOptionArray.map((item, idx) => (
                 <View key={idx} style={styles.listContainer}>
                   <Text style={{ fontSize: 25, color: "white" }}>{item}</Text>
                 </View>
@@ -50,12 +50,8 @@ export const HomeScreen = () => {
           </Card.Body>
         </Card>
         <List>
-          {listMap.map((item, idx) => (
-            <List.Item
-              key={idx}
-              style={styles.container}
-              extra={<AntDesign name="right" size={20} color="#969696" />}
-            >
+          {homeOptionsArray.map((item, idx) => (
+            <List.Item key={idx} style={styles.container} arrow="horizontal">
               {item}
             </List.Item>
           ))}

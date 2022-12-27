@@ -1,9 +1,9 @@
 import { List } from "@ant-design/react-native";
 import * as React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
 
 export const NotificationScreen = () => {
+  const notificationOptionsArray = ["Notification1", "Notification2"];
   return (
     <View
       style={{
@@ -22,12 +22,8 @@ export const NotificationScreen = () => {
       </Text>
       <View>
         <List>
-          {["Notification1", "Notification2"].map((item, idx) => (
-            <List.Item
-              key={idx}
-              style={styles.container}
-              extra={<AntDesign name="right" size={20} color="#969696" />}
-            >
+          {notificationOptionsArray.map((item, idx) => (
+            <List.Item key={idx} style={styles.container} arrow="horizontal">
               {item}
             </List.Item>
           ))}

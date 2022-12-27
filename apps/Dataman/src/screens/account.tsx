@@ -1,10 +1,9 @@
 import { Button, List } from "@ant-design/react-native";
 import * as React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
 
 export const AccountScreen = () => {
-  const listArray = [
+  const accountOptionsArray = [
     { title: "Settings", subtitle: "Lorem ipsum dolor sit amet, conssectetur" },
     {
       title: "Request Advance",
@@ -61,12 +60,8 @@ export const AccountScreen = () => {
           </List.Item>
         </List>
         <List>
-          {listArray.map((item, idx) => (
-            <List.Item
-              key={idx}
-              style={styles.container}
-              extra={<AntDesign name="right" size={20} color="#969696" />}
-            >
+          {accountOptionsArray.map((item, idx) => (
+            <List.Item key={idx} style={styles.container} arrow="horizontal">
               {item.title}
               <List.Item.Brief>{item?.subtitle}</List.Item.Brief>
             </List.Item>
