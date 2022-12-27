@@ -3,6 +3,7 @@ import { HomeScreen } from "./screens/home";
 import * as Font from "expo-font";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ContractorScreen } from "./screens/contractors";
+import DailyManpower from "./screens/manpower";
 
 export const App = () => {
   const [fontsLoaded, setFontsLoaded] = React.useState(false);
@@ -24,7 +25,8 @@ export const App = () => {
   if (fontsLoaded === false) return null;
   return (
     <SafeAreaView>
-      <ContractorScreen />
+      {/* <ContractorScreen /> */}
+      <DailyManpower />
     </SafeAreaView>
   );
 };

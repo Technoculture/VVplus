@@ -2,6 +2,7 @@ import * as React from "react";
 import { StyleSheet, Text } from "react-native";
 import { Card, Carousel, List, View } from "@ant-design/react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import NavBar from "../components/NavBar";
 
 export const ContractorScreen = () => {
   const listMap = ["Daily Manpower"];
@@ -11,6 +12,7 @@ export const ContractorScreen = () => {
         flexDirection: "column",
       }}
     >
+      <NavBar />
       <Text
         style={{
           fontSize: 28,
