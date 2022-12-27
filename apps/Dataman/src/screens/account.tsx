@@ -1,6 +1,6 @@
 import { Button, List } from "@ant-design/react-native";
 import * as React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, Image } from "react-native";
 
 export const AccountScreen = () => {
   const accountOptionsArray = [
@@ -19,37 +19,21 @@ export const AccountScreen = () => {
     },
   ];
   return (
-    <View
-      style={{
-        flexDirection: "column",
-      }}
-    >
-      <Text
-        style={{
-          fontSize: 28,
-          fontWeight: "600",
-          paddingVertical: 5,
-          paddingHorizontal: 10,
-        }}
-      >
-        Account
-      </Text>
+    <View className="flex-col">
+      <Text className="text-3xl font-semibold py-1 px-2">Account</Text>
       <View>
         <List
           renderHeader={
-            <Text
-              style={{ color: "#969696", fontSize: 14, paddingHorizontal: 10 }}
-            >
-              Preview
-            </Text>
+            <Text className="text-gray-500 text-sm px-2">Preview</Text>
           }
         >
           <List.Item
-            style={styles.container}
+            style={{ borderColor: "#969696" }}
             thumb={
               <Image
                 style={{ marginRight: 15 }}
                 source={require("../../assets/avatar.png")}
+                alt="avatar"
               />
             }
           >
@@ -61,20 +45,17 @@ export const AccountScreen = () => {
         </List>
         <List>
           {accountOptionsArray.map((item, idx) => (
-            <List.Item key={idx} style={styles.container} arrow="horizontal">
+            <List.Item
+              key={idx}
+              style={{ borderColor: "#969696" }}
+              arrow="horizontal"
+            >
               {item.title}
               <List.Item.Brief>{item?.subtitle}</List.Item.Brief>
             </List.Item>
           ))}
         </List>
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "center",
-            marginVertical: 25,
-          }}
-        >
+        <View className="flex-row justify-center items-center py-6">
           <Button
             type="ghost"
             style={{
@@ -88,8 +69,3 @@ export const AccountScreen = () => {
     </View>
   );
 };
-const styles = StyleSheet.create({
-  container: {
-    borderColor: "#969696",
-  },
-});
