@@ -6410,7 +6410,7 @@ packages:
     peerDependencies:
       expo: '*'
     dependencies:
-      expo: 47.0.8_@babel+core@7.20.5
+      expo: 47.0.8_@babel+core@7.20.2
     dev: false
 
   /expo-asset/8.6.2_expo@47.0.8:
@@ -6434,7 +6434,7 @@ packages:
       expo: '*'
     dependencies:
       '@expo/config': 7.0.3
-      expo: 47.0.8_@babel+core@7.20.5
+      expo: 47.0.8_@babel+core@7.20.2
       uuid: 3.4.0
     transitivePeerDependencies:
       - supports-color
@@ -6445,7 +6445,7 @@ packages:
     peerDependencies:
       expo: '*'
     dependencies:
-      expo: 47.0.8_@babel+core@7.20.5
+      expo: 47.0.8_@babel+core@7.20.2
       expo-dev-launcher: 2.0.2_expo@47.0.8
       expo-dev-menu: 2.0.2_expo@47.0.8
       expo-dev-menu-interface: 1.0.0_expo@47.0.8
@@ -6458,7 +6458,7 @@ packages:
     peerDependencies:
       expo: '*'
     dependencies:
-      expo: 47.0.8_@babel+core@7.20.5
+      expo: 47.0.8_@babel+core@7.20.2
       expo-dev-menu: 2.0.2_expo@47.0.8
       resolve-from: 5.0.0
       semver: 7.3.8
@@ -6469,7 +6469,7 @@ packages:
     peerDependencies:
       expo: '*'
     dependencies:
-      expo: 47.0.8_@babel+core@7.20.5
+      expo: 47.0.8_@babel+core@7.20.2
     dev: false
 
   /expo-dev-menu/2.0.2_expo@47.0.8:
@@ -6477,7 +6477,7 @@ packages:
     peerDependencies:
       expo: '*'
     dependencies:
-      expo: 47.0.8_@babel+core@7.20.5
+      expo: 47.0.8_@babel+core@7.20.2
       expo-dev-menu-interface: 1.0.0_expo@47.0.8
       semver: 7.3.8
     dev: false
@@ -6492,7 +6492,7 @@ packages:
     peerDependencies:
       expo: '*'
     dependencies:
-      expo: 47.0.8_@babel+core@7.20.5
+      expo: 47.0.8_@babel+core@7.20.2
     dev: false
     optional: true
 
@@ -6501,7 +6501,7 @@ packages:
     peerDependencies:
       expo: '*'
     dependencies:
-      expo: 47.0.8_@babel+core@7.20.5
+      expo: 47.0.8_@babel+core@7.20.2
       uuid: 3.4.0
     dev: false
 
@@ -6510,7 +6510,7 @@ packages:
     peerDependencies:
       expo: '*'
     dependencies:
-      expo: 47.0.8_@babel+core@7.20.5
+      expo: 47.0.8_@babel+core@7.20.2
       fontfaceobserver: 2.3.0
     dev: false
 
@@ -6523,7 +6523,7 @@ packages:
     peerDependencies:
       expo: '*'
     dependencies:
-      expo: 47.0.8_@babel+core@7.20.5
+      expo: 47.0.8_@babel+core@7.20.2
     dev: false
 
   /expo-manifests/0.4.0:
@@ -6559,7 +6559,7 @@ packages:
     peerDependencies:
       expo: '*'
     dependencies:
-      expo: 47.0.8_@babel+core@7.20.5
+      expo: 47.0.8_@babel+core@7.20.2
     dev: false
 
   /expo-updates/0.15.6_expo@47.0.8:
@@ -6573,7 +6573,7 @@ packages:
       '@expo/config-plugins': 5.0.4
       '@expo/metro-config': 0.5.1
       arg: 4.1.0
-      expo: 47.0.8_@babel+core@7.20.5
+      expo: 47.0.8_@babel+core@7.20.2
       expo-eas-client: 0.4.1
       expo-manifests: 0.4.0
       expo-structured-headers: 3.0.1
@@ -7893,7 +7893,7 @@ packages:
       '@babel/plugin-proposal-nullish-coalescing-operator': 7.18.6_@babel+core@7.20.5
       '@babel/plugin-proposal-optional-chaining': 7.18.9_@babel+core@7.20.5
       '@babel/plugin-transform-modules-commonjs': 7.19.6_@babel+core@7.20.5
-      '@babel/preset-env': 7.20.2_@babel+core@7.20.5
+      '@babel/preset-env': 7.20.2_@babel+core@7.20.2
       '@babel/preset-flow': 7.18.6_@babel+core@7.20.5
       '@babel/preset-typescript': 7.18.6_@babel+core@7.20.5
       '@babel/register': 7.18.9_@babel+core@7.20.5
@@ -9939,7 +9939,7 @@ packages:
       react-native: '*'
     dependencies:
       react: 18.1.0
-      react-native: 0.70.5_2hkxedd44to6uuf252s62q5boq
+      react-native: 0.70.5_54md7p3jw3ru3lahxqgw5vptci
     dev: false
 
   /react-native-screens/3.18.2_tj3nonr5gneraukzjkxpsiy7yu:
@@ -9950,7 +9950,7 @@ packages:
     dependencies:
       react: 18.1.0
       react-freeze: 1.0.3_react@18.1.0
-      react-native: 0.70.5_2hkxedd44to6uuf252s62q5boq
+      react-native: 0.70.5_54md7p3jw3ru3lahxqgw5vptci
       warn-once: 0.1.1
     dev: false
 
