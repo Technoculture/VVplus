@@ -1,80 +1,84 @@
-import { StyleSheet, ScrollView, View } from "react-native";
+import { Text, ScrollView, View } from "react-native";
 import React, { useState } from "react";
 import NavBar from "../components/NavBar";
-import { Button, InputItem, List, Text } from "@ant-design/react-native";
+import { Button, InputItem, List } from "@ant-design/react-native";
 import { AntDesign } from "@expo/vector-icons";
 
 const PhasetoPhase = () => {
   const [quantity, setQuantity] = useState<string>();
   const [rate, setRate] = useState<string>();
   const [remarks, setRemarks] = useState<string>();
+  const stockFormOptions = [
+    {
+      label: "Voucher Type",
+      placeholder: "Search Here",
+      icon: "questioncircleo",
+    },
+    {
+      label: "Date",
+      placeholder: "Enter Date",
+    },
+    {
+      label: "Issue To Which Staff",
+      placeholder: "Search Here",
+    },
+    {
+      label: "From Which Phase",
+      placeholder: "Search Here",
+    },
+    {
+      label: "Location(From)",
+      placeholder: "Search Here",
+    },
+    {
+      label: "To Phase",
+      placeholder: "Search Here",
+    },
+    {
+      label: "Location(To)",
+      placeholder: "Search Here",
+    },
+  ];
   return (
     <View>
       <NavBar />
       <ScrollView>
-        <List style={{ marginBottom: 10 }}>
+        <List>
           <List.Item>
-            <Text
-              style={{
-                fontSize: 28,
-                fontWeight: "600",
-                paddingVertical: 5,
-              }}
-            >
-              Phase to Phase Transfer
+            <Text className="text-3xl font-semibold py-1 px-2">
+              Stock Issue Entry
             </Text>
           </List.Item>
-          <List.Item arrow="horizontal">
-            <List.Item.Brief>
-              <Text>Voucher Type </Text>
-              <AntDesign name="questioncircleo" />
-            </List.Item.Brief>
-            Search Here
-          </List.Item>
-          <List.Item arrow="horizontal">
-            <List.Item.Brief>
-              <Text>Date</Text>
-            </List.Item.Brief>
-            Enter Date
-          </List.Item>
-          <List.Item arrow="horizontal">
-            <List.Item.Brief>
-              <Text>Issue to which Staff</Text>
-            </List.Item.Brief>
-            Search Here
-          </List.Item>
-          <List.Item arrow="horizontal">
-            <List.Item.Brief>From Which Phase</List.Item.Brief>
-            Search Here
-          </List.Item>
-          <List.Item arrow="horizontal">
-            <List.Item.Brief>Location(From)</List.Item.Brief>
-            Search Here
-          </List.Item>
-          <List.Item arrow="horizontal">
-            <List.Item.Brief>To Phase</List.Item.Brief>
-            Search Here
-          </List.Item>
-          <List.Item arrow="horizontal">
-            <List.Item.Brief>Location(To)</List.Item.Brief>
-            Search Here
-          </List.Item>
+          {stockFormOptions.map(
+            (
+              item: { label: string; placeholder: string; icon?: string },
+              idx
+            ) => (
+              <List.Item key={idx} arrow="horizontal">
+                <List.Item.Brief>
+                  <Text>{item.label}</Text>
+                  {item.icon !== undefined ? (
+                    <AntDesign name={item.icon} />
+                  ) : null}
+                </List.Item.Brief>
+                {item.placeholder}
+              </List.Item>
+            )
+          )}
         </List>
-        <Text style={{ textAlign: "center", color: "#999999", fontSize: 15 }}>
-          Stock
-        </Text>
-        <List style={{ marginVertical: 10 }}>
+        <Text className="text-center text-gray-400 text-base">Stock</Text>
+        <List>
           <List.Item arrow="horizontal">
             <List.Item.Brief>
               <Text>Item </Text>
               <AntDesign name="questioncircleo" />
             </List.Item.Brief>
-            <Text>Search Here</Text>
+            <Text className="text-base">Search Here</Text>
           </List.Item>
           <List.Item>
-            <View style={styles.container}>
-              <View style={{ flex: 1 }}>
-                <Text style={{ fontSize: 16 }}>Request Quantity</Text>
+            <View className="flex-row justify-between">
+              <View className="flex-[1]">
+                <Text className="text-base">Request Quantity</Text>
                 <InputItem
                   type="number"
                   value={quantity}
@@ -82,12 +86,8 @@ const PhasetoPhase = () => {
                   placeholder={"Enter Number"}
                 />
               </View>
-              <View
-                style={{
-                  flex: 1,
-                }}
-              >
-                <Text style={{ fontSize: 16 }}>Rate</Text>
+              <View className="flex-[1]">
+                <Text className="text-base">Rate</Text>
                 <InputItem
                   type="number"
                   value={rate}
@@ -98,15 +98,9 @@ const PhasetoPhase = () => {
             </View>
           </List.Item>
           <List.Item>
-            <Text
-              style={{ fontSize: 17, fontWeight: "700", marginVertical: 5 }}
-            >
-              Current Stock:
-            </Text>
-            <View style={styles.container}>
-              <Text
-                style={{ color: "#1677FF", fontSize: 17, fontWeight: "700" }}
-              >
+            <Text className="text-base font-bold my-1">Current Stock:</Text>
+            <View className="flex-row justify-between my-1">
+              <Text className="text-base font-bold text-blue-500">
                 Clear Item
               </Text>
               <Button type="primary" style={{ borderRadius: 25, height: 30 }}>
@@ -124,24 +118,10 @@ const PhasetoPhase = () => {
             />
           </List.Item>
         </List>
-        <Text
-          style={{
-            padding: 10,
-            color: "#1677FF",
-            fontSize: 17,
-            fontWeight: "700",
-          }}
-        >
+        <Text className="p-2 text-base font-bold text-blue-500">
           Total Amount :0.00
         </Text>
-        <View
-          style={{
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            marginBottom: 100,
-          }}
-        >
+        <View className="flex-col justify-center items-center mb-24">
           <Button type="primary" style={{ borderRadius: 25 }}>
             Submit
           </Button>
@@ -152,11 +132,3 @@ const PhasetoPhase = () => {
 };
 
 export default PhasetoPhase;
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginVertical: 5,
-  },
-});

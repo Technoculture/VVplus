@@ -1,71 +1,69 @@
-import { ScrollView, View } from "react-native";
+import { Text, ScrollView, View } from "react-native";
 import React from "react";
 import NavBar from "../components/NavBar";
-import { Button, List, Text } from "@ant-design/react-native";
+import { Button, List } from "@ant-design/react-native";
 import { AntDesign } from "@expo/vector-icons";
 
 const BranchSend = () => {
+  const stockFormOptions = [
+    {
+      label: "Voucher Type",
+      placeholder: "Search Here",
+      icon: "questioncircleo",
+    },
+    {
+      label: "Voucher No. Date",
+      placeholder: "Enter Date",
+    },
+    {
+      label: "From Cost Center",
+      placeholder: "Search Here",
+    },
+    {
+      label: "Godown",
+      placeholder: "Search Here",
+    },
+    {
+      label: "To Cost Center",
+      placeholder: "Search Here",
+    },
+    {
+      label: "Site to",
+      placeholder: "Search Here",
+    },
+    {
+      label: "Indent No.",
+      placeholder: "Search Here",
+    },
+  ];
   return (
     <View>
       <NavBar />
       <ScrollView>
         <List>
           <List.Item>
-            <Text
-              style={{
-                fontSize: 28,
-                fontWeight: "600",
-                paddingVertical: 5,
-              }}
-            >
-              Branch to Branch Send
+            <Text className="text-3xl font-semibold py-1 px-2">
+              Stock Issue Entry
             </Text>
           </List.Item>
-          <List.Item arrow="horizontal">
-            <List.Item.Brief>
-              <Text>Voucher Type </Text>
-              <AntDesign name="questioncircleo" />
-            </List.Item.Brief>
-            Search Here
-          </List.Item>
-          <List.Item arrow="horizontal">
-            <List.Item.Brief>
-              <Text>Voucher No. Data</Text>
-            </List.Item.Brief>
-            Enter Date
-          </List.Item>
-          <List.Item arrow="horizontal">
-            <List.Item.Brief>
-              <Text>From Cost Center</Text>
-            </List.Item.Brief>
-            Search Here
-          </List.Item>
-          <List.Item arrow="horizontal">
-            <List.Item.Brief>Godown</List.Item.Brief>
-            Search Here
-          </List.Item>
-          <List.Item arrow="horizontal">
-            <List.Item.Brief>To Cost Center</List.Item.Brief>
-            Search Here
-          </List.Item>
-          <List.Item arrow="horizontal">
-            <List.Item.Brief>Site to</List.Item.Brief>
-            Search Here
-          </List.Item>
-          <List.Item arrow="horizontal">
-            <List.Item.Brief>Indent No.</List.Item.Brief>
-            Search Here
-          </List.Item>
+          {stockFormOptions.map(
+            (
+              item: { label: string; placeholder: string; icon?: string },
+              idx
+            ) => (
+              <List.Item key={idx} arrow="horizontal">
+                <List.Item.Brief>
+                  <Text>{item.label}</Text>
+                  {item.icon !== undefined ? (
+                    <AntDesign name={item.icon} />
+                  ) : null}
+                </List.Item.Brief>
+                {item.placeholder}
+              </List.Item>
+            )
+          )}
         </List>
-        <View
-          style={{
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            marginTop: 15,
-            marginBottom: 100,
-          }}
-        >
+        <View className="flex-col justify-center items-center mb-24 mt-4">
           <Button type="primary" style={{ borderRadius: 25 }}>
             Submit
           </Button>
