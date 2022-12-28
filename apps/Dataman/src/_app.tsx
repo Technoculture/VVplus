@@ -10,7 +10,12 @@ import {
   Octicons,
 } from "@expo/vector-icons";
 import * as Font from "expo-font";
-import { LoginScreen } from "./screens/LoginScreen";
+import { StoreScreen } from "./screens/store";
+import StockReceive from "./screens/stockRecieve";
+import StockIssue from "./screens/stockIssue";
+import PhasetoPhase from "./screens/phaseToPhase";
+import BranchSend from "./screens/branchSend";
+import BranchReceive from "./screens/branchReceive";
 
 export const App = () => {
   const [selectedTab, setSelectedTab] = useState("Home");
@@ -36,8 +41,8 @@ export const App = () => {
   if (fontsLoaded === false) return null;
   return (
     <SafeAreaView>
-      <View style={{ height: "100%" }}>
-        {/* <TabBar
+      {/* <View style={{ height: "100%" }}>
+        <TabBar
           unselectedTintColor="#999999"
           tintColor="#0000FF"
           barTintColor="#f5f5f5"
@@ -78,9 +83,9 @@ export const App = () => {
           >
             <AccountScreen />
           </TabBar.Item>
-        </TabBar> */}
-        <LoginScreen />
-      </View>
+        </TabBar>
+      </View> */}
+      <BranchReceive />
     </SafeAreaView>
   );
 };
