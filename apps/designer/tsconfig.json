@@ -2,11 +2,12 @@
   "extends": "../../tsconfig.json",
   "include": [
     "next-env.d.ts",
+    "**/*.js",
     "**/*.ts",
     "**/*.tsx",
     "**/*.cjs",
     "**/*.mjs"
-, "postcss.config.cjs"  ],
+, "postcss.config.cjs", "next.config.js"  ],
   "compilerOptions": {
   //  "preserveSymlinks": true,
     "types": ["babylonjs"],

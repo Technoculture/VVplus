@@ -1,13 +1,16 @@
 import Navbar from "./Navbar";
 import React from "react";
 import { ScriptProps } from "next/script";
-import LoadingBar from "./LoadingBar";
+// import LoadingBar from "./LoadingBar";
 import Welcome from "./Welcome";
-import NewDesign from "./NewDesign";
+// import NewDesign from "./NewDesign";
+import TemplateCard from "./TemplateCard";
+
 import navigationUseStore from "../globalStore/Navigation-Store/navigationStore";
 import SavePopup from "./SavePopup";
 import { openWelcomeStore } from "../globalStore/Navigation-Store/openWelcomeStore";
 import { savePopupStore } from "../globalStore/Navigation-Store/savePopupStore";
+import SelectionBar from "./SelectionBar";
 
 const Layout: React.FC<ScriptProps> = ({ children }) => {
   // TODO: improve this type later
@@ -38,12 +41,10 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
       {children}
       <div
         className={`
-    h-[90vh] md:flex md:flex-col md:justify-around  items-center md:py-0 py-2.5
-    ${isWelcomePanelActive === true ? "justify-center items-center" : ""}
-      `}
+    h-[90vh] md:flex md:flex-col md:justify-around  items-center md:py-0 py-2.5`}
       >
         {isWelcomeComponentOpen === false && (
-          <NewDesign handleClickOnNewDesign={handleClickOnNewDesign} />
+          <TemplateCard handleClickOnNewDesign={handleClickOnNewDesign} />
         )}
         {isWelcomeComponentOpen === true && (
           <Welcome
@@ -53,13 +54,12 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
             isToggled={isToggled}
           />
         )}
-
         <div
           className={`
 ${isWelcomePanelActive === true ? "hidden" : ""}
 `}
         >
-          <LoadingBar />
+          {isWelcomePanelActive === false && <SelectionBar />}
         </div>
       </div>
       {isSavePopupOpen === true && (
