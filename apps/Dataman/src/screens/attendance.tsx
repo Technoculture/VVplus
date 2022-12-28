@@ -1,40 +1,24 @@
 import { Button, List } from "@ant-design/react-native";
 import * as React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
+import { View, Text, Image } from "react-native";
 import NavBar from "../components/NavBar";
 
 export const AttendanceScreen = () => {
   return (
-    <View
-      style={{
-        flexDirection: "column",
-      }}
-    >
+    <View className="flex-col">
       <NavBar />
-      <Text
-        style={{
-          fontSize: 28,
-          fontWeight: "600",
-          paddingVertical: 5,
-          paddingHorizontal: 10,
-        }}
-      >
-        Attendance
-      </Text>
-      <View style={{ height: "100%", flexDirection: "column" }}>
+      <Text className="text-3xl font-semibold py-1 px-2">Attendance</Text>
+      <View className="h-full flex-col">
         <List
           style={{ marginVertical: 10 }}
           renderHeader={
-            <Text
-              style={{ color: "#969696", fontSize: 14, paddingHorizontal: 10 }}
-            >
-              Preview
-            </Text>
+            <Text className="text-gray-400 text-sm px-2">Preview</Text>
           }
         >
           <List.Item
-            style={styles.container}
+            style={{
+              borderColor: "#969696",
+            }}
             thumb={
               <Image
                 style={{ marginRight: 15 }}
@@ -48,14 +32,7 @@ export const AttendanceScreen = () => {
             </List.Item.Brief>
           </List.Item>
         </List>
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
+        <View className="flex-[1] flex-col justify-center items-center">
           <Button
             type="ghost"
             style={{
@@ -78,8 +55,3 @@ export const AttendanceScreen = () => {
     </View>
   );
 };
-const styles = StyleSheet.create({
-  container: {
-    borderColor: "#969696",
-  },
-});
