@@ -37,8 +37,8 @@ export const App = () => {
   if (fontsLoaded === false) return null;
   return (
     <SafeAreaView>
-      {/* <View style={{ height: "100%" }}>
-         <TabBar
+      <View style={{ height: "100%" }}>
+        <TabBar
           unselectedTintColor="#999999"
           tintColor="#0000FF"
           barTintColor="#f5f5f5"
@@ -79,10 +79,8 @@ export const App = () => {
           >
             <AccountScreen />
           </TabBar.Item>
-        </TabBar> 
-      </View> */}
-      <ContractorScreen />
-      {/* <DailyManpower/> */}
+        </TabBar>
+      </View>
     </SafeAreaView>
   );
 };
