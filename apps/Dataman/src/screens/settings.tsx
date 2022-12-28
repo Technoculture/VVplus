@@ -5,6 +5,25 @@ import { Octicons } from "@expo/vector-icons";
 import NavBar from "../components/NavBar";
 
 export const SettingsScreen = () => {
+  const settingsOptionsArray = [
+    {
+      title: "Change Currency",
+      subtitle: "Indian Rupee",
+    },
+
+    {
+      title: "Change Language",
+      subtitle: "English",
+    },
+    {
+      title: "Units",
+      subtitle: "Metric",
+    },
+    {
+      title: "Change Mobile No.",
+      subtitle: "987654321",
+    },
+  ];
   return (
     <View className="flex-col">
       <NavBar />
@@ -42,34 +61,18 @@ export const SettingsScreen = () => {
           >
             <Text className="pl-1">Attendance Shortage Alert</Text>
           </List.Item>
-          <List.Item
-            arrow="horizontal"
-            thumb={<Octicons name="list-unordered" size={20} />}
-            extra={<Text className="text-gray-400">Indian Rupee</Text>}
-          >
-            <Text className="pl-1">Change Currency</Text>
-          </List.Item>
-          <List.Item
-            arrow="horizontal"
-            thumb={<Octicons name="list-unordered" size={20} />}
-            extra={<Text className="text-gray-400">English</Text>}
-          >
-            <Text className="pl-1">Change Language</Text>
-          </List.Item>
-          <List.Item
-            arrow="horizontal"
-            thumb={<Octicons name="list-unordered" size={20} />}
-            extra={<Text className="text-gray-400">Metric</Text>}
-          >
-            <Text className="pl-1">Units</Text>
-          </List.Item>
-          <List.Item
-            arrow="horizontal"
-            thumb={<Octicons name="list-unordered" size={20} />}
-            extra={<Text className="text-gray-400">987654321</Text>}
-          >
-            <Text className="pl-1">Change Mobile Number</Text>
-          </List.Item>
+          {settingsOptionsArray.map(
+            (item: { title: string; subtitle: string }, idx) => (
+              <List.Item
+                key={idx}
+                arrow="horizontal"
+                thumb={<Octicons name="list-unordered" size={20} />}
+                extra={<Text className="text-gray-400">{item.subtitle}</Text>}
+              >
+                <Text className="pl-1">{item.title}</Text>
+              </List.Item>
+            )
+          )}
         </List>
       </View>
     </View>
