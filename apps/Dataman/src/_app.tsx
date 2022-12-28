@@ -10,7 +10,6 @@ import {
   Octicons,
 } from "@expo/vector-icons";
 import * as Font from "expo-font";
-import { SettingsScreen } from "./screens/settings";
 
 export const App = () => {
   const [selectedTab, setSelectedTab] = useState("Home");
