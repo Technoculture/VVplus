@@ -8,5 +8,5 @@
   "include": [
     "./src/**/*",
     "index.ts"
-  ],
+, "tailwind.config.js", "app.d.ts"  ],
 }

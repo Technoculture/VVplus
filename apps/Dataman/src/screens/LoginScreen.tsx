@@ -1,20 +1,19 @@
 import React from "react";
-import { View } from "@ant-design/react-native";
-import { StyleSheet, Image } from "react-native";
+import { Image, View } from "react-native";
 import LoginForm from "../components/FormComponents/LoginForm";
 import Header from "../components/FormComponents/Header";
 
 export const LoginScreen = () => {
   return (
     <View>
-      <View style={styles.header}>
+      <View className="flex flex-col h-20 pl-4 justify-center">
         <Header />
       </View>
 
       <View>
         <Image
           source={require("../../assets/image.png")}
-          style={{ width: "100%", height: 200 }}
+          className="w-full h-50"
         />
       </View>
       <View>
@@ -23,11 +22,3 @@ export const LoginScreen = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  header: {
-    height: 90,
-    paddingLeft: 12,
-    justifyContent: "center",
-  },
-});

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Text, Flex, WhiteSpace, View } from "@ant-design/react-native";
-import { StyleSheet } from "react-native";
+import { WhiteSpace } from "@ant-design/react-native";
+import { Text, View } from "react-native";
 import { InputField } from "./InputField";
 import FormButton from "./Button";
 
@@ -11,43 +11,33 @@ const LoginForm = () => {
 
   return (
     <View>
-      <View>
-        <Flex direction="column" align="start" style={styles.formField}>
-          <Flex.Item>
-            <Text style={styles.text_input}>Phone Number</Text>
-          </Flex.Item>
-
-          <Flex.Item style={styles.inputField}>
-            <InputField
-              value={phoneNumber}
-              onChange={(value: any) => setPhoneNumber(value)}
-              maxLength={10}
-              placeholder={"+91"}
-            />
-          </Flex.Item>
-        </Flex>
+      <View className="flex flex-col items-start h-50 w-full p-2">
+        <Text className="text-zinc-800 text-base pl-4">Phone Number</Text>
+        <View className="w-full">
+          <InputField
+            value={phoneNumber}
+            onChange={(value: any) => setPhoneNumber(value)}
+            maxLength={10}
+            placeholder={"+91"}
+          />
+        </View>
       </View>
 
       {isEnteredPhoneNumber ? (
-        <View>
-          <Flex direction="column" align="start" style={styles.formField}>
-            <Flex.Item>
-              <Text style={styles.text_input}>OTP</Text>
-            </Flex.Item>
-
-            <Flex.Item style={styles.inputField}>
-              <InputField
-                value={otp}
-                onChange={(value: any) => setOtp(value)}
-                maxLength={6}
-                placeholder={"6 Digit OTP"}
-              />
-            </Flex.Item>
-          </Flex>
+        <View className="flex flex-col items-start h-50 w-full p-2">
+          <Text className="text-zinc-800 text-base pl-4">OTP</Text>
+          <View className="w-full">
+            <InputField
+              value={otp}
+              onChange={(value: any) => setOtp(value)}
+              maxLength={6}
+              placeholder={"6 Digit OTP"}
+            />
+          </View>
         </View>
       ) : null}
 
-      <View style={styles.button}>
+      <View className="flex flex-col items-center justify-center p-4 mt-8">
         <WhiteSpace size="xs" />
         <FormButton
           text={`${isEnteredPhoneNumber ? "SignIn" : "Send OTP"}`}
@@ -65,7 +55,6 @@ const LoginForm = () => {
         />
 
         <WhiteSpace size="lg" />
-
         {isEnteredPhoneNumber ? null : (
           <FormButton text={"Register"} PropsType={"ghost"} />
         )}
@@ -76,24 +65,3 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
-
-const styles = StyleSheet.create({
-  text_input: {
-    color: "#333333",
-    fontSize: 15,
-  },
-
-  formField: {
-    padding: 10,
-    height: 80,
-  },
-  inputField: {
-    width: "100%",
-  },
-  button: {
-    alignItems: "center",
-    justifyContent: "space-between",
-    marginVertical: 40,
-    padding: 10,
-  },
-});
