@@ -1,63 +1,70 @@
 import React from "react";
-import { View, Text, List, Button } from "@ant-design/react-native";
-import { StyleSheet, ScrollView } from "react-native";
+import { List, Button } from "@ant-design/react-native";
+import { ScrollView, View, Text } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { InputField } from "../components/InputField";
 import { Navbar } from "../components/Navbar";
 import { PageHeader } from "../components/PageHeader";
 import { FormButton } from "../components/Button";
+import { VOUCHER_LIST } from "../components/listComponents/MaterialRequestList";
+import { PLACE_ORDER_LIST } from "../components/listComponents/PlaceOrderList";
 
 const PlaceOrder = () => {
   const Item = List.Item;
 
   return (
-    <View style={{ height: "100%" }}>
+    <View className="h-full">
       <Navbar />
       <PageHeader text="Place Purchase Order" />
       <ScrollView>
         <List>
-          <Item arrow="horizontal">
-            <Item.Brief>
-              <Text style={styles.list_text}>Voucher Type</Text>
-              <AntDesign name="questioncircleo" />
-            </Item.Brief>
-            <Text style={styles.text}>Search Here</Text>
-          </Item>
+          {VOUCHER_LIST.map((item, index) => (
+            <Item arrow="horizontal" key={index}>
+              <Item.Brief>
+                <Text className="text-zinc-800 text-base font-normal">
+                  {item.title}
+                </Text>
+                <AntDesign name="questioncircleo" />
+              </Item.Brief>
+              <Text className="text-zinc-800 text-lg font-normal">
+                {item.content}
+              </Text>
+            </Item>
+          ))}
         </List>
         <List>
-          <Item arrow="horizontal">
-            <Text style={styles.list_text}>Date</Text>
-            <Text style={styles.text}>Enter Date</Text>
-          </Item>
-          <Item arrow="horizontal">
-            <Text style={styles.list_text}>Supplier</Text>
-            <Text style={styles.text}>Search Here</Text>
-          </Item>
-          <Item arrow="horizontal">
-            <Text style={styles.list_text}>Indent Selection</Text>
-            <Text style={styles.text}>Search Here</Text>
-          </Item>
+          {PLACE_ORDER_LIST.map((item, index) => (
+            <List.Item key={index} arrow="horizontal">
+              <Text className="text-zinc-800 text-base font-normal">
+                {item.title}
+              </Text>
+              <Text className="text-zinc-800 text-lg font-normal">
+                {item.content}
+              </Text>
+            </List.Item>
+          ))}
         </List>
         <View>
-          <Text style={{ textAlign: "center", color: "#999999", fontSize: 15 }}>
-            Stock
-          </Text>
+          <Text className="text-center text-neutral-400 text-base">Stock</Text>
         </View>
+
         <List>
           <Item arrow="horizontal">
             <Item.Brief>
-              <Text style={styles.list_text}>Item</Text>
+              <Text className="text-zinc-800 text-base font-normal">Item</Text>
               <AntDesign name="questioncircleo" />
             </Item.Brief>
-            <Text style={styles.text}>Search Here</Text>
+            <Text className="text-zinc-800 text-lg font-normal">
+              Search Here
+            </Text>
           </Item>
           <Item>
-            <View style={styles.container}>
-              <View style={styles.inputBox}>
+            <View className="flex flex-row justify-between">
+              <View className="w-3/5">
                 <Text>Request Quantity</Text>
                 <InputField placeholder={"Enter Number"} />
               </View>
-              <View style={styles.inputBox}>
+              <View className="w-3/5">
                 <Text>Unit</Text>
                 <InputField placeholder={"Tonnes"} />
               </View>
@@ -65,15 +72,11 @@ const PlaceOrder = () => {
           </Item>
 
           <Item>
-            <Text
-              style={{ fontSize: 17, fontWeight: "700", color: " #333333" }}
-            >
+            <Text className="text-base font-bold text-zinc-800">
               Current Stock:
             </Text>
-            <View style={styles.container}>
-              <Text
-                style={{ color: "#1677FF", fontSize: 17, fontWeight: "700" }}
-              >
+            <View className="flex flex-row justify-between">
+              <Text className=" text-blue-600 text-base font-bold ">
                 Clear Item
               </Text>
               <Button
@@ -84,15 +87,19 @@ const PlaceOrder = () => {
               </Button>
             </View>
           </Item>
+
           <Item arrow="horizontal">
             <Item.Brief>
-              <Text style={styles.list_text}>Request Date</Text>
+              <Text className="text-zinc-800 text-base font-normal">
+                Request Date
+              </Text>
               <AntDesign name="questioncircleo" />
             </Item.Brief>
-            <Text style={styles.text}>Enter Date</Text>
+            <Text className="text-zinc-800 text-lg font-normal">
+              Enter Date
+            </Text>
           </Item>
         </List>
-
         <View>
           <FormButton />
         </View>
@@ -102,23 +109,3 @@ const PlaceOrder = () => {
 };
 
 export default PlaceOrder;
-
-const styles = StyleSheet.create({
-  list_text: {
-    color: "#333333",
-    fontSize: 15,
-    fontWeight: "400",
-  },
-  text: {
-    color: "#333333",
-    fontSize: 17,
-    fontWeight: "400",
-  },
-  container: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-  inputBox: {
-    width: "50%",
-  },
-});

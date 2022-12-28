@@ -1,5 +1,6 @@
 import React from "react";
-import { List, Text } from "@ant-design/react-native";
+import { List } from "@ant-design/react-native";
+import { Text } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
 export const Navbar = () => {
@@ -10,7 +11,7 @@ export const Navbar = () => {
           thumb={<AntDesign name="left" color="black" size={20} />}
           extra={<AntDesign name="ellipsis1" color="black" size={20} />}
         >
-          <Text style={{ fontSize: 15, color: "#333333" }}>Back</Text>
+          <Text className="text-base text-zinc-800">Back</Text>
         </List.Item>
       </List>
     </>

@@ -1,6 +1,6 @@
 import React from "react";
-import { View, Text, Button, WhiteSpace, List } from "@ant-design/react-native";
-import { StyleSheet } from "react-native";
+import { Button, WhiteSpace, List } from "@ant-design/react-native";
+import { View, Text } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { Navbar } from "../components/Navbar";
 import { PageHeader } from "../components/PageHeader";
@@ -16,24 +16,42 @@ const MaterialApproval = () => {
       <List>
         <Item arrow="horizontal">
           <Item.Brief>
-            <Text style={styles.list_text}>Indent Date</Text>
+            <Text className="text-zinc-800 text-lg font-normal">
+              Indent Date
+            </Text>
             <AntDesign name="questioncircleo" color="black" />
           </Item.Brief>
-          <Text style={styles.text}>Enter Date</Text>
+          <Text className="text-zinc-800 text-lg font-normal">Enter Date</Text>
         </Item>
 
         <Item>
-          <Text style={styles.list_text}>Indent Number</Text>
+          <Text className="text-zinc-800 text-base font-normal">
+            Indent Number
+          </Text>
           <InputField placeholder="Enter Number" />
         </Item>
       </List>
 
-      <View style={styles.buttonContainer}>
-        <Button type="primary" style={styles.button}>
+      <View className=" flex flex-col items-center justify-center gap-1 mt-10">
+        <Button
+          type="primary"
+          style={{
+            width: "30%",
+            height: 40,
+            borderRadius: 48,
+          }}
+        >
           Submit
         </Button>
         <WhiteSpace size="lg" />
-        <Button type="warning" style={styles.button}>
+        <Button
+          type="warning"
+          style={{
+            width: "30%",
+            height: 40,
+            borderRadius: 48,
+          }}
+        >
           Deny
         </Button>
       </View>
@@ -43,24 +61,4 @@ const MaterialApproval = () => {
 
 export default MaterialApproval;
 
-const styles = StyleSheet.create({
-  list_text: {
-    color: "#333333",
-    fontSize: 15,
-    fontWeight: "400",
-  },
-  text: {
-    color: "#333333",
-    fontSize: 17,
-    fontWeight: "400",
-  },
-  buttonContainer: {
-    alignItems: "center",
-    marginVertical: 25,
-  },
-  button: {
-    width: "30%",
-    height: 40,
-    borderRadius: 48,
-  },
-});
+// marginVertical: 25

@@ -5,9 +5,6 @@ import {
   MaterialCommunityIcons,
   Octicons,
 } from "@expo/vector-icons";
-import Purchase from "../screens/Purchase";
-import MaterialRequest from "../screens/MaterialRequest";
-import Receipt from "../screens/Receipt";
 
 export const Tab = () => {
   const [selectedTab, setSelectedTab] = useState("");
@@ -34,9 +31,7 @@ export const Tab = () => {
             changeTab("Purchase");
           }}
           title=""
-        >
-          <Purchase />
-        </TabBar.Item>
+        ></TabBar.Item>
         <TabBar.Item
           icon={
             <MaterialCommunityIcons
@@ -50,9 +45,7 @@ export const Tab = () => {
             changeTab("Material Request");
           }}
           title=""
-        >
-          <MaterialRequest />
-        </TabBar.Item>
+        ></TabBar.Item>
 
         <TabBar.Item
           icon={<Octicons name="list-unordered" size={20} />}
@@ -61,9 +54,7 @@ export const Tab = () => {
             changeTab("Material Approval");
           }}
           title=""
-        >
-          <Receipt />
-        </TabBar.Item>
+        ></TabBar.Item>
       </TabBar>
     </View>
   );

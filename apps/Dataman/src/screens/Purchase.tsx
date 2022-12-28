@@ -1,17 +1,19 @@
 import React from "react";
-import { View, Text, List, Card, Carousel } from "@ant-design/react-native";
+import { List, Card, Carousel } from "@ant-design/react-native";
+import { Text, View } from "react-native";
 import { Octicons } from "@expo/vector-icons";
-import { StyleSheet } from "react-native";
 import { Navbar } from "../components/Navbar";
 import { PageHeader } from "../components/PageHeader";
 
 const Purchase = () => {
-  const list = [
+  const PURCHASE_LIST = [
     "Material Request Entry",
     "Material Request Approval",
     "Place Purchase Order",
     "Good Receipt",
   ];
+  const NUMBER_LIST = [1, 2, 3, 4];
+
   return (
     <View>
       <View>
@@ -23,9 +25,7 @@ const Purchase = () => {
         <Card full>
           <Card.Header
             title={
-              <Text
-                style={{ color: "#969696", fontSize: 14, fontWeight: "400" }}
-              >
+              <Text className="text-neutral-400 font-normal text-sm">
                 Important Updates
               </Text>
             }
@@ -39,30 +39,27 @@ const Purchase = () => {
               }}
               style={{ height: 200, marginHorizontal: 10 }}
             >
-              {[1, 2, 3, 4].map((item, index) => (
-                <View key={index} style={styles.listContainer}>
-                  <Text
-                    style={{
-                      fontSize: 32,
-                      color: "white",
-                      fontWeight: "700",
-                    }}
-                  >
-                    {item}
-                  </Text>
+              {NUMBER_LIST.map((item, index) => (
+                <View
+                  key={index}
+                  className="h-full grow items-center justify-center bg-sky-200"
+                >
+                  <Text className="text-white font-bold text-3xl">{item}</Text>
                 </View>
               ))}
             </Carousel>
           </Card.Body>
         </Card>
         <List>
-          {list.map((purchaseItem, index) => (
+          {PURCHASE_LIST.map((purchaseItem, index) => (
             <List.Item
               key={index}
               arrow="horizontal"
               thumb={<Octicons name="list-unordered" size={20} />}
             >
-              <Text style={styles.listItem}>{purchaseItem}</Text>
+              <Text className="font-semibold text-lg pl-5 border-neutral-400">
+                {purchaseItem}
+              </Text>
             </List.Item>
           ))}
         </List>
@@ -71,19 +68,3 @@ const Purchase = () => {
   );
 };
 export default Purchase;
-
-const styles = StyleSheet.create({
-  listItem: {
-    borderColor: "#969696",
-    fontSize: 17,
-    fontWight: "700",
-    paddingLeft: 5,
-  },
-  listContainer: {
-    height: "100%",
-    flexGrow: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#ACE0FF",
-  },
-});
