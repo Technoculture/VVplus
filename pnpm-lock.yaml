@@ -40,6 +40,7 @@ importers:
       expo: ^47.0.0
       expo-dev-client: ~2.0.0
       expo-updates: ~0.15.4
+      nativewind: 2.0.10
       react: 18.1.0
       react-dom: 18.1.0
       react-native: 0.70.5
@@ -53,6 +54,7 @@ importers:
       expo: 47.0.8_@babel+core@7.20.2
       expo-dev-client: 2.0.1_expo@47.0.8
       expo-updates: 0.15.6_expo@47.0.8
+      nativewind: 2.0.10_react@18.1.0
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
       react-native: 0.70.5_54md7p3jw3ru3lahxqgw5vptci
@@ -626,7 +628,7 @@ packages:
       '@babel/helper-annotate-as-pure': 7.18.6
       '@babel/helper-environment-visitor': 7.18.9
       '@babel/helper-wrap-function': 7.19.0
-      '@babel/types': 7.20.2
+      '@babel/types': 7.20.5
     transitivePeerDependencies:
       - supports-color
 
@@ -640,7 +642,7 @@ packages:
       '@babel/helper-annotate-as-pure': 7.18.6
       '@babel/helper-environment-visitor': 7.18.9
       '@babel/helper-wrap-function': 7.19.0
-      '@babel/types': 7.20.2
+      '@babel/types': 7.20.5
     transitivePeerDependencies:
       - supports-color
 
@@ -10099,7 +10101,7 @@ packages:
     dependencies:
       object-assign: 4.1.1
       react: 18.1.0
-      react-is: 17.0.2
+      react-is: 18.2.0
     dev: false
 
   /react-slider/2.0.4_react@18.2.0:

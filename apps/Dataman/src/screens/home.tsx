@@ -1,16 +1,10 @@
 import * as React from "react";
-import { View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { ContractorScreen } from "./Contractor";
-import DailyManPowerScreen from "./DailyManPower";
+import { View, Text } from "react-native";
 
 export const HomeScreen = () => {
   return (
-    <SafeAreaView>
-      <View>
-        {/* <ContractorScreen /> */}
-        <DailyManPowerScreen />
-      </View>
-    </SafeAreaView>
+    <View>
+      <Text>This is the home screen for dataman app </Text>
+    </View>
   );
 };

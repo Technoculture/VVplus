@@ -1,6 +1,8 @@
 import * as React from "react";
-import { HomeScreen } from "./screens/home";
+import { View } from "react-native";
 import * as Font from "expo-font";
+import { SafeAreaView } from "react-native-safe-area-context";
+import ContractorApprovalScreen from "./screens/ContractorApproval";
 
 export const App = () => {
   const [fontsLoaded, setFontsLoaded] = React.useState(false);
@@ -22,7 +24,11 @@ export const App = () => {
   if (fontsLoaded === false) return null;
   return (
     <>
-      <HomeScreen />
+      <SafeAreaView>
+        <View style={{ height: "100%" }}>
+          <ContractorApprovalScreen />
+        </View>
+      </SafeAreaView>
     </>
   );
 };
