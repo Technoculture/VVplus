@@ -1,63 +1,60 @@
-import { ScrollView, View } from "react-native";
+import { ScrollView, View, Text } from "react-native";
 import React from "react";
 import NavBar from "../components/NavBar";
-import { Button, List, Text } from "@ant-design/react-native";
+import { Button, List } from "@ant-design/react-native";
+import { AntDesign } from "@expo/vector-icons";
 
 const DailyManpower = () => {
+  const stockFormOptions = [
+    {
+      label: "Date",
+      placeholder: "Enter Date",
+    },
+    {
+      label: "Party Name",
+      placeholder: "Search Here",
+    },
+    {
+      label: "Phase(Cost Name)",
+      placeholder: "Search Here",
+    },
+    {
+      label: "Resource Type",
+      placeholder: "Search Here",
+    },
+    {
+      label: "Quantity",
+    },
+    { label: "Remarks" },
+  ];
   return (
     <View>
       <NavBar />
       <ScrollView>
         <List>
           <List.Item>
-            <Text
-              style={{
-                fontSize: 28,
-                fontWeight: "600",
-                paddingVertical: 5,
-              }}
-            >
-              Daily Manpower
+            <Text className="text-3xl font-semibold py-1 px-2">
+              Stock Issue Entry
             </Text>
           </List.Item>
-          <List.Item arrow="horizontal">
-            <List.Item.Brief>
-              <Text>Date</Text>
-            </List.Item.Brief>
-            Enter Date
-          </List.Item>
-          <List.Item arrow="horizontal">
-            <List.Item.Brief>
-              <Text>Party Name</Text>
-            </List.Item.Brief>
-            Search Here
-          </List.Item>
-          <List.Item arrow="horizontal">
-            <List.Item.Brief>
-              <Text>Phase (Cost Center)</Text>
-            </List.Item.Brief>
-            Search Here
-          </List.Item>
-          <List.Item arrow="horizontal">
-            <List.Item.Brief>Resource Type</List.Item.Brief>
-            Search Here
-          </List.Item>
-          <List.Item>
-            <List.Item.Brief>Quantity</List.Item.Brief>{" "}
-          </List.Item>
-          <List.Item>
-            <List.Item.Brief>Remarks</List.Item.Brief>
-          </List.Item>
+          {stockFormOptions.map(
+            (
+              item: { label: string; placeholder?: string; icon?: string },
+              idx
+            ) => (
+              <List.Item key={idx} arrow="horizontal">
+                <List.Item.Brief>
+                  <Text>{item.label}</Text>
+                  {item.icon !== undefined ? (
+                    <AntDesign name={item.icon} />
+                  ) : null}
+                </List.Item.Brief>
+                {item.placeholder}
+              </List.Item>
+            )
+          )}
         </List>
-        <View
-          style={{
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            marginTop: 15,
-            marginBottom: 100,
-          }}
-        >
+        <View className="flex-col justify-center items-center mb-24 mt-4">
           <Button type="primary" style={{ borderRadius: 25 }}>
             Submit
           </Button>
