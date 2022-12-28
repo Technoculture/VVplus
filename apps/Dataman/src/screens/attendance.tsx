@@ -21,8 +21,9 @@ export const AttendanceScreen = () => {
             }}
             thumb={
               <Image
-                style={{ marginRight: 15 }}
+                className="mr-4"
                 source={require("../../assets/avatar.png")}
+                alt="username"
               />
             }
           >
