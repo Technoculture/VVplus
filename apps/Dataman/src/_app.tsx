@@ -10,7 +10,6 @@ import {
   Octicons,
 } from "@expo/vector-icons";
 import * as Font from "expo-font";
-import { LoginScreen } from "./screens/LoginScreen";
 import { ContractorScreen } from "./screens/contractors";
 import DailyManpower from "./screens/manpower";
 
