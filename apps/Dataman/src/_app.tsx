@@ -11,7 +11,7 @@ import {
 } from "@expo/vector-icons";
 import * as Font from "expo-font";
 import { LoginScreen } from "./screens/LoginScreen";
-import Purchase from "./screens/Purchase"
+import Purchase from "./screens/Purchase";
 
 export const App = () => {
   const [selectedTab, setSelectedTab] = useState("Home");
@@ -81,7 +81,7 @@ export const App = () => {
           </TabBar.Item>
         </TabBar> */}
         {/* <LoginScreen /> */}
-        <Purchase/>
+        <Purchase />
       </View>
     </SafeAreaView>
   );
