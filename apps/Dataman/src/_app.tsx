@@ -10,8 +10,6 @@ import {
   Octicons,
 } from "@expo/vector-icons";
 import * as Font from "expo-font";
-import { ContractorScreen } from "./screens/contractors";
-import DailyManpower from "./screens/manpower";
 
 export const App = () => {
   const [selectedTab, setSelectedTab] = useState("Home");
