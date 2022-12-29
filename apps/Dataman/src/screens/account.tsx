@@ -31,7 +31,7 @@ export const AccountScreen = () => {
             style={{ borderColor: "#969696" }}
             thumb={
               <Image
-                style={{ marginRight: 15 }}
+                className="mr-4"
                 source={require("../../assets/avatar.png")}
                 alt="avatar"
               />
