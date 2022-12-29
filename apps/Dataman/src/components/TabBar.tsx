@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { View, TabBar } from "@ant-design/react-native";
+import { TabBar } from "@ant-design/react-native";
+import { View } from "react-native";
 import {
   SimpleLineIcons,
   MaterialCommunityIcons,
@@ -13,12 +14,7 @@ export const Tab = () => {
   };
 
   return (
-    <View
-      style={{
-        height: "100%",
-        bottom: 0,
-      }}
-    >
+    <View className="h-full">
       <TabBar
         unselectedTintColor="#999999"
         tintColor="##0000FF"

@@ -2,7 +2,7 @@ import React from "react";
 import { List, Card, Carousel } from "@ant-design/react-native";
 import { Text, View } from "react-native";
 import { Octicons } from "@expo/vector-icons";
-import { Navbar } from "../components/Navbar";
+import NavBar from "../components/NavBar";
 import { PageHeader } from "../components/PageHeader";
 
 const Purchase = () => {
@@ -17,7 +17,7 @@ const Purchase = () => {
   return (
     <View>
       <View>
-        <Navbar />
+        <NavBar />
         <PageHeader text="Purchase" />
       </View>
 

@@ -16,9 +16,6 @@ export const InputField = ({ placeholder }: InputProps) => {
           setNumber(value);
         }}
         placeholder={placeholder}
-        style={{
-          height: 30,
-        }}
       />
     </View>
   );

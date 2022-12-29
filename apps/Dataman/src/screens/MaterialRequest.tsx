@@ -2,7 +2,7 @@ import React from "react";
 import { List, Button } from "@ant-design/react-native";
 import { ScrollView, View, Text } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-import { Navbar } from "../components/Navbar";
+import NavBar from "../components/NavBar";
 import { InputField } from "../components/InputField";
 import { PageHeader } from "../components/PageHeader";
 import { FormButton } from "../components/Button";
@@ -16,7 +16,7 @@ const MaterialRequest = () => {
 
   return (
     <View className="h-full">
-      <Navbar />
+      <NavBar />
       <PageHeader text="Material Request Entry" />
 
       <ScrollView>

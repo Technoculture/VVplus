@@ -2,7 +2,7 @@ import React from "react";
 import { Button, WhiteSpace, List } from "@ant-design/react-native";
 import { View, Text } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-import { Navbar } from "../components/Navbar";
+import NavBar from "../components/NavBar";
 import { PageHeader } from "../components/PageHeader";
 import { InputField } from "../components/InputField";
 
@@ -11,7 +11,7 @@ const MaterialApproval = () => {
 
   return (
     <View>
-      <Navbar />
+      <NavBar />
       <PageHeader text="Material Request Approval" />
       <List>
         <Item arrow="horizontal">
@@ -32,33 +32,13 @@ const MaterialApproval = () => {
         </Item>
       </List>
 
-      <View className=" flex flex-col items-center justify-center gap-1 mt-10">
-        <Button
-          type="primary"
-          style={{
-            width: "30%",
-            height: 40,
-            borderRadius: 48,
-          }}
-        >
-          Submit
-        </Button>
+      <View className="flex flex-col items-center justify-center gap-1 mt-10 ">
+        <Button type="primary">Submit</Button>
         <WhiteSpace size="lg" />
-        <Button
-          type="warning"
-          style={{
-            width: "30%",
-            height: 40,
-            borderRadius: 48,
-          }}
-        >
-          Deny
-        </Button>
+        <Button type="warning">Deny</Button>
       </View>
     </View>
   );
 };
 
 export default MaterialApproval;
-
-// marginVertical: 25
