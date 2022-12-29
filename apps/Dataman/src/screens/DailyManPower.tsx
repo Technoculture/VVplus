@@ -76,12 +76,7 @@ export const DailyManPowerScreen = () => {
       </List>
 
       <View className="flex flex-col items-center p-5 mt-10">
-        <Button
-          style={{ width: "30%", height: 40, borderRadius: 48 }}
-          type="primary"
-        >
-          Submit
-        </Button>
+        <Button type="primary">Submit</Button>
       </View>
     </View>
   );
