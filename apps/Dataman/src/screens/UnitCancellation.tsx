@@ -1,32 +1,15 @@
 import React from "react";
-import { View, Text, List } from "@ant-design/react-native";
-import { StyleSheet, ScrollView } from "react-native";
+import { List } from "@ant-design/react-native";
+import { View, Text, ScrollView } from "react-native";
 import { Navbar } from "../components/Navbar";
 import { PageHeader } from "../components/PageHeader";
 import { FormButton } from "../components/Button";
+import { UNIT_LIST } from "../components/listComponents/UnitList";
 import { InputField } from "../components/InputField";
 
 const UnitCancellation = () => {
-  const UNIT_LIST = [
-    {
-      title: "Cancellation Date",
-      content: "Enter Date",
-    },
-    {
-      title: "Booking ID",
-      content: "Search Here",
-    },
-    {
-      title: "Change Applicable",
-      content: "Search Here",
-    },
-    {
-      title: "Due Date",
-      content: "Enter Date",
-    },
-  ];
   return (
-    <View style={{ height: "100%" }}>
+    <View className="h-full">
       <View>
         <Navbar />
         <PageHeader text="Unit Cancellation" />
@@ -35,28 +18,36 @@ const UnitCancellation = () => {
         <List>
           {UNIT_LIST.map((item, index) => (
             <List.Item key={index} arrow="horizontal">
-              <Text style={styles.list_text}>{item.title}</Text>
-              <Text style={styles.text}>{item.content}</Text>
+              <Text className="text-zinc-800 text-base font-normal">
+                {item.title}
+              </Text>
+              <Text className="text-zinc-800 text-lg font-normal">
+                {item.content}
+              </Text>
             </List.Item>
           ))}
         </List>
 
         <List>
           <List.Item>
-            <Text style={styles.list_text}>Base Amount (Deduction Amount)</Text>
+            <Text className="text-zinc-800 text-base font-normal">
+              Base Amount (Deduction Amount)
+            </Text>
             <InputField />
           </List.Item>
 
           <List.Item arrow="horizontal">
-            <Text style={styles.list_text}>Tax</Text>
-            <Text style={styles.text}>Search Here</Text>
+            <Text className="text-zinc-800 text-base font-normal">Tax</Text>
+            <Text className="text-zinc-800 text-lg font-normal">
+              Search Here
+            </Text>
           </List.Item>
           <List.Item>
-            <Text style={styles.list_text}>Tax</Text>
+            <Text className="text-zinc-800 text-base font-normal">Tax</Text>
             <InputField />
           </List.Item>
           <List.Item>
-            <Text style={styles.list_text}>Remarks</Text>
+            <Text className="text-zinc-800 text-base font-normal">Remarks</Text>
             <InputField />
           </List.Item>
         </List>
@@ -66,15 +57,3 @@ const UnitCancellation = () => {
   );
 };
 export default UnitCancellation;
-const styles = StyleSheet.create({
-  list_text: {
-    color: "#333333",
-    fontSize: 15,
-    fontWeight: "400",
-  },
-  text: {
-    color: "#333333",
-    fontSize: 17,
-    fontWeight: "400",
-  },
-});

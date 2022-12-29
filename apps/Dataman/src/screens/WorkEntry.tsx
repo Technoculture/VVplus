@@ -1,71 +1,65 @@
 import React from "react";
-import { View, Text, List } from "@ant-design/react-native";
-import { ScrollView, StyleSheet } from "react-native";
+import { List } from "@ant-design/react-native";
+import { ScrollView, View, Text } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { Navbar } from "../components/Navbar";
 import { InputField } from "../components/InputField";
 import { FormButton } from "../components/Button";
 import { PageHeader } from "../components/PageHeader";
+import { ENTRY_LIST } from "../components/listComponents/EntryList";
 
 const WorkEntry = () => {
-  const ENTRY_LIST = [
-    {
-      title: "Booking ID",
-      content: "Search Here",
-    },
-    {
-      title: "Stage(ex: purpose, Extra Work, Extra Land)",
-      content: "Search Here",
-    },
-    {
-      title: "OverHead",
-      content: "Search Here",
-    },
-    {
-      title: "Date of Estimate",
-      content: "Enter Date",
-    },
-  ];
-
   return (
-    <View style={{ height: "100%" }}>
+    <View className="h-full">
       <Navbar />
       <PageHeader text="Extra Work Entry" />
       <ScrollView>
         <List>
           <List.Item arrow="horizontal">
             <List.Item.Brief>
-              <Text style={styles.list_text}>Voucher Type</Text>
+              <Text className="text-zinc-800 text-base font-normal">
+                Voucher Type
+              </Text>
               <AntDesign name="questioncircleo" />
             </List.Item.Brief>
-            <Text style={styles.text}>Search Here</Text>
+            <Text className="text-zinc-800 text-lg font-normal">
+              Search Here
+            </Text>
           </List.Item>
         </List>
         <List>
           {ENTRY_LIST.map((item, index) => (
             <List.Item key={index} arrow="horizontal">
-              <Text style={styles.list_text}>{item.title}</Text>
-              <Text style={styles.text}>{item.content}</Text>
+              <Text className="text-zinc-800 text-base font-normal">
+                {item.title}
+              </Text>
+              <Text className="text-zinc-800 text-lg font-normal">
+                {item.content}
+              </Text>
             </List.Item>
           ))}
         </List>
 
         <List>
           <List.Item>
-            <Text style={styles.list_text}>Base Amount</Text>
+            <Text className="text-zinc-800 text-base font-normal">
+              Base Amount
+            </Text>
             <InputField />
           </List.Item>
 
           <List.Item>
-            <Text style={styles.list_text}>Tax</Text>
+            <Text className="text-zinc-800 text-base font-normal">Tax</Text>
             <InputField />
           </List.Item>
           <List.Item>
-            <Text style={styles.list_text}>Net Amount</Text>
+            <Text className="text-zinc-800 text-base font-normal">
+              Net Amount
+            </Text>
             <InputField />
           </List.Item>
           <List.Item>
-            <Text style={styles.list_text}>Remarks</Text>
+            <Text className="text-zinc-800 text-base font-normal">Remarks</Text>
             <InputField />
           </List.Item>
           <List.Item>
@@ -78,16 +72,3 @@ const WorkEntry = () => {
 };
 
 export default WorkEntry;
-
-const styles = StyleSheet.create({
-  list_text: {
-    color: "#333333",
-    fontSize: 15,
-    fontWeight: "400",
-  },
-  text: {
-    color: "#333333",
-    fontSize: 17,
-    fontWeight: "400",
-  },
-});

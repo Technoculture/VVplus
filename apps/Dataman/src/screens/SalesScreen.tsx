@@ -1,7 +1,7 @@
 import React from "react";
-import { List, View, Text, Card, Carousel } from "@ant-design/react-native";
+import { List, Card, Carousel } from "@ant-design/react-native";
+import { View, Text } from "react-native";
 import { Octicons } from "@expo/vector-icons";
-import { StyleSheet } from "react-native";
 import { Navbar } from "../components/Navbar";
 import { PageHeader } from "../components/PageHeader";
 
@@ -11,6 +11,7 @@ const SalesScreens = () => {
     "Unit Cancellation",
     "Cheque Entry/Update",
   ];
+  const NUMBER_LIST = [1, 2, 3, 4];
 
   return (
     <View>
@@ -23,9 +24,7 @@ const SalesScreens = () => {
         <Card full>
           <Card.Header
             title={
-              <Text
-                style={{ color: "#969696", fontSize: 14, fontWeight: "400" }}
-              >
+              <Text className="text-neutral-400 text-base font-normal">
                 Important Updates
               </Text>
             }
@@ -33,15 +32,18 @@ const SalesScreens = () => {
           <Card.Body>
             <Carousel
               dotActiveStyle={{ backgroundColor: "#1677FF", width: "5%" }}
-              style={[{ height: 200, marginHorizontal: 10 }, styles.container]}
+              style={{
+                height: 200,
+                marginHorizontal: 10,
+                borderColor: "#969696",
+              }}
             >
-              {[1, 2, 3, 4].map((item, index) => (
-                <View key={index} style={styles.listContainer}>
-                  <Text
-                    style={{ fontSize: 32, color: "white", fontWeight: "700" }}
-                  >
-                    {item}
-                  </Text>
+              {NUMBER_LIST.map((item, index) => (
+                <View
+                  key={index}
+                  className="h-full grow items-center justify-center bg-sky-200"
+                >
+                  <Text className="text-2xl text-white font-bold">{item}</Text>
                 </View>
               ))}
             </Carousel>
@@ -54,7 +56,9 @@ const SalesScreens = () => {
               thumb={<Octicons name="list-unordered" size={20} />}
               arrow="horizontal"
             >
-              <Text style={styles.listItem}>{item}</Text>
+              <Text className="text-lg text-zinc-800 font-normal pl-5 border-neutral-400">
+                {item}
+              </Text>
             </List.Item>
           ))}
         </List>
@@ -64,24 +68,3 @@ const SalesScreens = () => {
 };
 
 export default SalesScreens;
-
-const styles = StyleSheet.create({
-  container: {
-    borderColor: "#969696",
-  },
-  listContainer: {
-    height: "100%",
-    flexGrow: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#ACE0FF",
-  },
-
-  listItem: {
-    borderColor: "#969696",
-    color: "#333333",
-    fontSize: 17,
-    fontWight: "700",
-    paddingLeft: 7,
-  },
-});
