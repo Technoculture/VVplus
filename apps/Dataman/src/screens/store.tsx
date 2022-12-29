@@ -2,33 +2,29 @@ import * as React from "react";
 import { Text, View } from "react-native";
 import { Card, Carousel, List } from "@ant-design/react-native";
 
-export const HomeScreen = () => {
-  const homeOptionsArray = [
-    "Purchase",
-    "Store",
-    "Sales",
-    "Contractors",
-    "Approval Requests",
+export const StoreScreen = () => {
+  const storeOptionsArray = [
+    "Stock Recieve Entry",
+    "Stock Issue Entry",
+    "Phase to Phase Transfer",
+    "Branch to Branch Send",
+    "Branch to Branch Receive",
   ];
   const carouselOptionArray = [1, 2, 3, 4, 5];
   return (
     <View className="flex-col">
-      <Text className="text-3xl font-semibold py-1 px-2">Home</Text>
+      <Text className="text-3xl font-semibold py-1 px-2">Store</Text>
       <View>
         <Card full>
           <Card.Header
             title={
-              <Text className="text-gray-500 text-sm">Important Updates</Text>
+              <Text className="text-gray-400 text-sm">Important Updates</Text>
             }
           />
           <Card.Body>
             <Carousel
               dotActiveStyle={{ backgroundColor: "#1677FF", width: "5%" }}
-              style={{
-                height: 200,
-                marginHorizontal: 10,
-                borderColor: "#969696",
-              }}
+              style={{ height: 200, marginHorizontal: 10 }}
             >
               {carouselOptionArray.map((item, idx) => (
                 <View
@@ -42,7 +38,7 @@ export const HomeScreen = () => {
           </Card.Body>
         </Card>
         <List>
-          {homeOptionsArray.map((item, idx) => (
+          {storeOptionsArray.map((item, idx) => (
             <List.Item
               key={idx}
               style={{ borderColor: "#969696" }}
