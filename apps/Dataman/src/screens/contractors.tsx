@@ -1,19 +1,16 @@
 import * as React from "react";
-import { View, Text } from "react-native";
+import { Text, View } from "react-native";
 import { Card, Carousel, List } from "@ant-design/react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import NavBar from "../components/NavBar";
 
-export const HomeScreen = () => {
-  const homeOptionsArray = [
-    "Purchase",
-    "Store",
-    "Sales",
-    "Contractors",
-    "Approval Requests",
-  ];
+export const ContractorScreen = () => {
+  const listMap = ["Daily Manpower"];
   const carouselOptionArray = [1, 2, 3, 4, 5];
   return (
     <View className="flex-col">
-      <Text className="text-3xl font-semibold py-1 px-2">Home</Text>
+      <NavBar />
+      <Text className="text-3xl font-semibold py-1 px-2">Contractors</Text>
       <View>
         <Card full>
           <Card.Header
@@ -42,8 +39,11 @@ export const HomeScreen = () => {
           </Card.Body>
         </Card>
         <List>
-          {homeOptionsArray.map((item, idx) => (
+          {listMap.map((item, idx) => (
             <List.Item
+              thumb={
+                <MaterialCommunityIcons name="format-list-checkbox" size={24} />
+              }
               key={idx}
               style={{ borderColor: "#969696" }}
               arrow="horizontal"
