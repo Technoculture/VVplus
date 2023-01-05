@@ -38,6 +38,10 @@
     "eslint-config-custom": "workspace:*",
     "typescript": "^4.7.4"
   },
+  "resolutions": {
+    "@types/react": "^17.0.21",
+    "@types/react-dom": "^17.0.9"
+  },
   "eslintConfig": {
     "extends": "eslint-config-custom",
     "ignorePatterns": [
