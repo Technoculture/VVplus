@@ -4,6 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { HomeScreen } from "./screens/home";
 import { NotificationScreen } from "./screens/notifications";
 import { AccountScreen } from "./screens/account";
+
 import {
   SimpleLineIcons,
   MaterialCommunityIcons,
