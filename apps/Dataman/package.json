@@ -25,7 +25,7 @@
     "react-native-web": "~0.18.7"
   },
   "devDependencies": {
-    "eslint-config-custom": "*",
+    "eslint-config-custom": "workspace:*",
     "@babel/core": "^7.19.3",
     "@babel/preset-env": "^7.1.6",
     "@types/react": "~18.0.25",
@@ -35,30 +35,20 @@
     "typescript": "^4.7.4"
   },
   "eslintConfig": {
-    "ecmaFeatures": {
-      "no-unused-vars": [
-        "warn",
-        {
-          "argsIgnorePattern": "^_",
-          "varsIgnorePattern": "^_"
-        }
-      ]
-    },
     "ignorePatterns": [
       "node_modules",
       "build",
       ".expo",
       ".expo-shared"
     ],
-    "overrides": [
+    "overrides":[
       {
-        "files": [
-          "*.js"
-        ],
-        "env": {
-          "node": true
+        "files":["*.js"],
+        "env":{
+          "node":true
         }
       }
-    ]
+    ],
+    "extends": "eslint-config-custom"
   }
 }

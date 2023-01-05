@@ -6,13 +6,13 @@ import { scene_variable } from "./Scene";
 import { mesh_list, choice_list } from "./models";
 
 export async function selector(index: number, category: string) {
-  choice_list.map((e)=>{
-    if(e.role === category && e.index === index){
+  choice_list.map((e) => {
+    if (e.role === category && e.index === index) {
       e.mesh.setEnabled(true);
-    }else if(e.role === category && e.index !== index){
+    } else if (e.role === category && e.index !== index) {
       e.mesh.setEnabled(false);
     }
-  })
+  });
 }
 
 export function floorSelector(floorId: string) {
@@ -39,7 +39,30 @@ export function floorSelector(floorId: string) {
     mesh_list.map((e) => {
       e.mesh.setEnabled(true);
     });
-  } else if (floorId === "roof") {
+  }else if( floorId ==="zero-floor"){
+    const freeCamera = new ArcRotateCamera(
+      "camera",
+      600,
+      650,
+      900,
+      new Vector3(200,180, 100),
+      scene_variable
+    );
+    freeCamera.wheelPrecision = 1;
+    freeCamera.panningSensibility = 10;
+    freeCamera.lowerRadiusLimit = 500;
+    freeCamera.upperRadiusLimit = 2000;
+    freeCamera.upperBetaLimit = Math.PI / 2;
+    scene_variable.activeCamera = freeCamera;
+    const canvas = scene_variable.getEngine().getRenderingCanvas();
+    scene_variable.activeCamera.attachControl(canvas, true);
+
+    mesh_list.map((e) => {
+      e.mesh.setEnabled(true);
+    });
+
+  }
+   else if (floorId === "roof") {
     //if roof is selected
     const freeCamera = new ArcRotateCamera(
       "camera",
@@ -75,10 +98,10 @@ export function floorSelector(floorId: string) {
 
     const freeCamera = new ArcRotateCamera(
       "camera",
-      0,
-      0,
-      1000,
-      new Vector3(200, 100, 330),
+      500,
+      500,
+    750,
+      new Vector3(200, 240, 130),
       scene_variable
     );
     freeCamera.wheelPrecision = 1;
@@ -99,10 +122,10 @@ export function floorSelector(floorId: string) {
 
     const freeCamera = new ArcRotateCamera(
       "camera",
-      0,
-      0,
-      1000,
-      new Vector3(200, 100, 330),
+      500,
+      500,
+      750,
+      new Vector3(200, 400, 130),
       scene_variable
     );
     freeCamera.wheelPrecision = 1;

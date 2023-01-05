@@ -81,7 +81,6 @@ export function Model(scene: BABYLON.Scene) {
 
   // console.log(data.choosableOptions[0]);
 
-  
   data.choosableOptions.map((element) => {
     element.map(async (e) => {
       const meshCall = await BABYLON.SceneLoader.ImportMeshAsync(
@@ -106,7 +105,6 @@ export function Model(scene: BABYLON.Scene) {
       }
     });
   });
-  
 }
 
 export { mesh_list, choice_list };

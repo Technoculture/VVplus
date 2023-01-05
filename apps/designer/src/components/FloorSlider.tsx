@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { floorSelector, selector } from "./elements/selector";
+import { floorSelector } from "./elements/selector";
 
 const elements = [
   {
@@ -7,6 +7,12 @@ const elements = [
     value: "Outdoor",
     style:
       "w-[25%] flex items-center justify-center cursor-pointer rounded-l-[20px]  bg-white bg-opacity-40 text-black -ml-[1px] h-8 z-[100] bg-bray-200",
+  },
+  {
+    id: "zero-floor",
+    value: "Floor 0",
+    style:
+      "w-[25%] flex items-center justify-center cursor-pointer   bg-white bg-opacity-40 text-black -ml-[1px] h-8 z-[100] bg-bray-200",
   },
   {
     id: "first-floor",
