@@ -15,3 +15,22 @@ export const InputField = () => {
     </View>
   );
 };
+// export type InputProps = {
+//   placeholder: any;
+// };
+
+// export const InputField = ({ placeholder }: InputProps) => {
+//   const [number, setNumber] = useState("");
+//   return (
+//     <View>
+//       <InputItem
+//         type="number"
+//         value={number}
+//         onChange={(value: any) => {
+//           setNumber(value);
+//         }}
+//         placeholder={placeholder}
+//       />
+//     </View>
+//   );
+// };

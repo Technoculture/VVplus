@@ -10,7 +10,7 @@ export const PageHeader = ({ text }: TextProps) => {
   return (
     <>
       <List.Item>
-        <Text className="text-2xl text-zinc-800 font-bold">{text}</Text>
+        <Text className="text-2xl font-bold text-zinc-800">{text}</Text>
       </List.Item>
     </>
   );
