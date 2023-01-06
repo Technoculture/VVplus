@@ -1,7 +1,7 @@
 import { Button, List } from "@ant-design/react-native";
 import * as React from "react";
 import { View, Text, Image } from "react-native";
-import NavBar from "../components/NavBar";
+import { NavBar } from "../components/NavBar";
 
 export const AttendanceScreen = () => {
   return (

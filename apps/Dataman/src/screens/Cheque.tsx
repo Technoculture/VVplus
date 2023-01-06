@@ -1,7 +1,7 @@
 import React from "react";
 import { List, Tabs } from "@ant-design/react-native";
 import { View, Text, ScrollView } from "react-native";
-import { Navbar } from "../components/Navbar";
+import { NavBar } from "../components/NavBar";
 import { FormButton } from "../components/Button";
 import { InputField } from "../components/InputField";
 import {
@@ -20,7 +20,7 @@ const Cheque = () => {
 
   return (
     <View>
-      <Navbar />
+      <NavBar />
       <PageHeader text="Cheque Entry/Update" />
 
       <View className="h-full">

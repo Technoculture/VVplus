@@ -2,7 +2,7 @@ import { Switch, List } from "@ant-design/react-native";
 import * as React from "react";
 import { Text, Image, View } from "react-native";
 import { Octicons } from "@expo/vector-icons";
-import NavBar from "../components/NavBar";
+import { NavBar } from "../components/NavBar";
 
 export const SettingsScreen = () => {
   const settingsOptionsArray = [

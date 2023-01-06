@@ -14,6 +14,7 @@ export const LoginScreen = () => {
         <Image
           source={require("../../assets/image.png")}
           className="w-full h-50"
+          alt=""
         />
       </View>
       <View>

@@ -2,7 +2,7 @@ import React from "react";
 import { Button, WhiteSpace, List } from "@ant-design/react-native";
 import { View, Text } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-import NavBar from "../components/NavBar";
+import { NavBar } from "../components/NavBar";
 import { PageHeader } from "../components/PageHeader";
 import { InputField } from "../components/InputField";
 
@@ -33,9 +33,9 @@ const MaterialApproval = () => {
       </List>
 
       <View className="flex flex-col items-center justify-center gap-1 mt-10 ">
-        <Button type="primary">Submit</Button>
+        <Button type="primary" style={{ borderRadius: 25 }}>Submit</Button>
         <WhiteSpace size="lg" />
-        <Button type="warning">Deny</Button>
+        <Button type="warning" style={{ borderRadius: 25 }}>Deny</Button>
       </View>
     </View>
   );

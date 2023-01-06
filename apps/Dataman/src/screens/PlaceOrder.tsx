@@ -3,7 +3,7 @@ import { List, Button } from "@ant-design/react-native";
 import { ScrollView, View, Text } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { InputField } from "../components/InputField";
-import NavBar from "../components/NavBar";
+import { NavBar } from "../components/NavBar";
 import { PageHeader } from "../components/PageHeader";
 import { FormButton } from "../components/Button";
 import { VOUCHER_LIST } from "../components/listComponents/MaterialRequestList";
