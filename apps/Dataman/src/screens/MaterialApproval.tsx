@@ -33,9 +33,13 @@ const MaterialApproval = () => {
       </List>
 
       <View className="flex flex-col items-center justify-center gap-1 mt-10 ">
-        <Button type="primary" style={{ borderRadius: 25 }}>Submit</Button>
+        <Button type="primary" style={{ borderRadius: 25 }}>
+          Submit
+        </Button>
         <WhiteSpace size="lg" />
-        <Button type="warning" style={{ borderRadius: 25 }}>Deny</Button>
+        <Button type="warning" style={{ borderRadius: 25 }}>
+          Deny
+        </Button>
       </View>
     </View>
   );
