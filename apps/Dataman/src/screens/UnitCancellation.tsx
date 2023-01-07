@@ -1,7 +1,7 @@
 import React from "react";
 import { List } from "@ant-design/react-native";
 import { View, Text, ScrollView } from "react-native";
-import { Navbar } from "../components/Navbar";
+import { NavBar } from "../components/Navbar";
 import { PageHeader } from "../components/PageHeader";
 import { FormButton } from "../components/Button";
 import { UNIT_LIST } from "../components/listComponents/UnitList";
@@ -11,7 +11,7 @@ const UnitCancellation = () => {
   return (
     <View className="h-full">
       <View>
-        <Navbar />
+        <NavBar />
         <PageHeader text="Unit Cancellation" />
       </View>
       <ScrollView>

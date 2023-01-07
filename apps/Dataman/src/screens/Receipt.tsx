@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, List } from "@ant-design/react-native";
 import { ScrollView } from "react-native";
-import NavBar from "../components/Navbar";
+import { NavBar } from "../components/Navbar";
 import { InputField } from "../components/InputField";
 import { PageHeader } from "../components/PageHeader";
 import { FormButton } from "../components/Button";

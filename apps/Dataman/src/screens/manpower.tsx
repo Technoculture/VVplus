@@ -1,6 +1,6 @@
 import { ScrollView, View, Text } from "react-native";
 import React from "react";
-import NavBar from "../components/NavBar";
+import { NavBar } from "../components/Navbar";
 import { Button, List } from "@ant-design/react-native";
 import { AntDesign } from "@expo/vector-icons";
 

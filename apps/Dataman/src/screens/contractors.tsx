@@ -2,7 +2,7 @@ import * as React from "react";
 import { Text, View } from "react-native";
 import { Card, Carousel, List } from "@ant-design/react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import NavBar from "../components/NavBar";
+import { NavBar } from "../components/Navbar";
 
 export const ContractorScreen = () => {
   const listMap = ["Daily Manpower"];

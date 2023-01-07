@@ -2,7 +2,7 @@ import React from "react";
 import { List } from "@ant-design/react-native";
 import { AntDesign } from "@expo/vector-icons";
 
-const NavBar = () => {
+export const NavBar = () => {
   return (
     <List>
       <List.Item
@@ -15,4 +15,3 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
