@@ -11,6 +11,7 @@ import {
   Octicons,
 } from "@expo/vector-icons";
 import * as Font from "expo-font";
+import Cheque from "./screens/Cheque";
 
 export const App = () => {
   const [selectedTab, setSelectedTab] = useState("Home");
@@ -50,7 +51,8 @@ export const App = () => {
             selected={selectedTab === "Home"}
             onPress={() => changeTab("Home")}
           >
-            <HomeScreen />
+            {/* <HomeScreen /> */}
+            <Cheque/>
           </TabBar.Item>
           <TabBar.Item
             icon={<MaterialCommunityIcons name="truck-outline" size={20} />}

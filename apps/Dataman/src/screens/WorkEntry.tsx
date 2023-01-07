@@ -2,7 +2,7 @@ import React from "react";
 import { List } from "@ant-design/react-native";
 import { ScrollView, View, Text } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-import { NavBar } from "../components/NavBar";
+import { NavBar } from "../components/Navbar";
 import { InputField } from "../components/InputField";
 import { FormButton } from "../components/Button";
 import { PageHeader } from "../components/PageHeader";

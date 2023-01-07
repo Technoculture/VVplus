@@ -2,7 +2,7 @@ import React from "react";
 import { Button, WhiteSpace, List } from "@ant-design/react-native";
 import { View, Text } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-import { NavBar } from "../components/NavBar";
+import { NavBar } from "../components/Navbar";
 import { PageHeader } from "../components/PageHeader";
 import { InputField } from "../components/InputField";
 
