@@ -6,7 +6,6 @@ export const NotificationScreen = () => {
   const notificationOptionsArray = ["Notification1", "Notification2"];
   return (
     <View className="flex-col">
-      <Text className="text-3xl font-semibold py-1 px-2">Notifications</Text>
       <View>
         <List>
           {notificationOptionsArray.map((item, idx) => (

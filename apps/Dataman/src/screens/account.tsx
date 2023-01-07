@@ -2,9 +2,16 @@ import { Button, List } from "@ant-design/react-native";
 import * as React from "react";
 import { View, Text, Image } from "react-native";
 
-export const AccountScreen = () => {
+export const AccountScreen = ({ navigation }: any) => {
   const accountOptionsArray = [
-    { title: "Settings", subtitle: "Lorem ipsum dolor sit amet, conssectetur" },
+    {
+      title: (
+        <Text onPress={() => navigation.navigate("SettingsScreen")}>
+          Settings
+        </Text>
+      ),
+      subtitle: "Lorem ipsum dolor sit amet, conssectetur",
+    },
     {
       title: "Request Advance",
       subtitle: "Lorem ipsum dolor sit amet, conssectetur",
@@ -20,7 +27,6 @@ export const AccountScreen = () => {
   ];
   return (
     <View className="flex-col">
-      <Text className="text-3xl font-semibold py-1 px-2">Account</Text>
       <View>
         <List
           renderHeader={

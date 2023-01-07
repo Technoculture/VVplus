@@ -9,12 +9,6 @@ export const ContractorApprovalScreen = () => {
   return (
     <View>
       <List>
-        <List.Item
-          thumb={<AntDesign name="left" color="black" size={20} />}
-          extra={<AntDesign name="ellipsis1" color="black" size={20} />}
-        >
-          <Text className="text-base text-zinc-800">Back</Text>
-        </List.Item>
         <List.Item>
           <Text className="text-zinc-800 text-2xl font-bold">
             Approval Requests

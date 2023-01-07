@@ -1,19 +1,70 @@
 import * as React from "react";
 import { View, Text } from "react-native";
 import { Card, Carousel, List } from "@ant-design/react-native";
+import { Octicons } from "@expo/vector-icons";
 
-export const HomeScreen = () => {
+export const HomeScreen = ({ navigation }: any) => {
   const homeOptionsArray = [
-    "Purchase",
-    "Store",
-    "Sales",
-    "Contractors",
-    "Approval Requests",
+    {
+      title: (
+        <Text
+          onPress={() => {
+            navigation.navigate("Purchase");
+          }}
+        >
+          Purchase
+        </Text>
+      ),
+    },
+    {
+      title: (
+        <Text
+          onPress={() => {
+            navigation.navigate("StoreScreen");
+          }}
+        >
+          Store
+        </Text>
+      ),
+    },
+    {
+      title: (
+        <Text
+          onPress={() => {
+            navigation.navigate("SalesScreens");
+          }}
+        >
+          Sales
+        </Text>
+      ),
+    },
+    {
+      title: (
+        <Text
+          onPress={() => {
+            navigation.navigate("ContractorScreen");
+          }}
+        >
+          Contractors
+        </Text>
+      ),
+    },
+    {
+      title: (
+        <Text
+          onPress={() => {
+            navigation.navigate("ContractorApprovalScreen");
+          }}
+        >
+          Approval Requests
+        </Text>
+      ),
+    },
   ];
+
   const carouselOptionArray = [1, 2, 3, 4, 5];
   return (
     <View className="flex-col">
-      <Text className="text-3xl font-semibold py-1 px-2">Home</Text>
       <View>
         <Card full>
           <Card.Header
@@ -47,8 +98,11 @@ export const HomeScreen = () => {
               key={idx}
               style={{ borderColor: "#969696" }}
               arrow="horizontal"
+              thumb={<Octicons name="list-unordered" size={20} />}
             >
-              {item}
+              <Text className="pl-2 text-lg text-zinc-800 font-normal border-neutral-400">
+                {item.title}
+              </Text>
             </List.Item>
           ))}
         </List>

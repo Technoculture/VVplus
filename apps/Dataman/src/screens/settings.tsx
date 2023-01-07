@@ -2,7 +2,6 @@ import { Switch, List } from "@ant-design/react-native";
 import * as React from "react";
 import { Text, Image, View } from "react-native";
 import { Octicons } from "@expo/vector-icons";
-import { NavBar } from "../components/Navbar";
 
 export const SettingsScreen = () => {
   const settingsOptionsArray = [
@@ -26,7 +25,6 @@ export const SettingsScreen = () => {
   ];
   return (
     <View className="flex-col">
-      <NavBar />
       <Text className="text-3xl font-semibold py-1 px-2">Settings</Text>
       <View>
         <List

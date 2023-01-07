@@ -2,14 +2,12 @@ import * as React from "react";
 import { Text, View } from "react-native";
 import { Card, Carousel, List } from "@ant-design/react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { NavBar } from "../components/Navbar";
 
 export const ContractorScreen = () => {
   const listMap = ["Daily Manpower"];
   const carouselOptionArray = [1, 2, 3, 4, 5];
   return (
     <View className="flex-col">
-      <NavBar />
       <Text className="text-3xl font-semibold py-1 px-2">Contractors</Text>
       <View>
         <Card full>

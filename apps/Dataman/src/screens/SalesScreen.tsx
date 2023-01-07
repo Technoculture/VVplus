@@ -2,7 +2,7 @@ import React from "react";
 import { List, Card, Carousel } from "@ant-design/react-native";
 import { View, Text } from "react-native";
 import { Octicons } from "@expo/vector-icons";
-import { NavBar } from "../components/Navbar";
+
 import { PageHeader } from "../components/PageHeader";
 
 const SalesScreens = () => {
@@ -16,7 +16,6 @@ const SalesScreens = () => {
   return (
     <View>
       <View>
-        <NavBar />
         <PageHeader text="Sales" />
       </View>
 
