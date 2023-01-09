@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Text, View } from "react-native";
 import { InputItem, List, Button } from "@ant-design/react-native";
-import { AntDesign } from "@expo/vector-icons";
+import { PageHeader } from "../components/PageHeader";
 
 export const DailyManPowerScreen = () => {
   const [quantity, setQuantity] = useState();
@@ -27,20 +27,7 @@ export const DailyManPowerScreen = () => {
   ];
   return (
     <View>
-      <List>
-        <List.Item
-          thumb={<AntDesign name="left" color="black" size={20} />}
-          extra={<AntDesign name="ellipsis1" color="black" size={20} />}
-        >
-          <Text className="text-zinc-800 text-base font-bold">Back</Text>
-        </List.Item>
-        <List.Item>
-          <Text className="text-zinc-800 font-bold text-2xl">
-            Daily Manpower
-          </Text>
-        </List.Item>
-      </List>
-
+      <PageHeader text="Daily Manpower" />
       <List>
         {DAILY_MANPOWER_LIST.map((item, idx) => (
           <List.Item key={idx} arrow="horizontal">
@@ -75,8 +62,10 @@ export const DailyManPowerScreen = () => {
         </List.Item>
       </List>
 
-      <View className="flex flex-col items-center p-5 mt-10">
-        <Button type="primary">Submit</Button>
+      <View className="flex-col justify-center items-center mb-24 mt-4">
+        <Button type="primary" style={{ borderRadius: 25 }}>
+          Submit
+        </Button>
       </View>
     </View>
   );

@@ -2,14 +2,43 @@ import React from "react";
 import { List, Card, Carousel } from "@ant-design/react-native";
 import { View, Text } from "react-native";
 import { Octicons } from "@expo/vector-icons";
-
 import { PageHeader } from "../components/PageHeader";
 
-const SalesScreens = () => {
+const SalesScreens = ({ navigation }: any) => {
   const SALES_LIST = [
-    "Extra Work Entry",
-    "Unit Cancellation",
-    "Cheque Entry/Update",
+    {
+      title: (
+        <Text
+          onPress={() => {
+            navigation.navigate("WorkEntry");
+          }}
+        >
+          Extra Work Entry
+        </Text>
+      ),
+    },
+    {
+      title: (
+        <Text
+          onPress={() => {
+            navigation.navigate("UnitCancellation");
+          }}
+        >
+          Unit Cancellation
+        </Text>
+      ),
+    },
+    {
+      title: (
+        <Text
+          onPress={() => {
+            navigation.navigate("Cheque");
+          }}
+        >
+          Cheque Entry/Update
+        </Text>
+      ),
+    },
   ];
   const NUMBER_LIST = [1, 2, 3, 4];
 
@@ -56,7 +85,7 @@ const SalesScreens = () => {
               arrow="horizontal"
             >
               <Text className="text-lg text-zinc-800 font-normal pl-5 border-neutral-400">
-                {item}
+                {item.title}
               </Text>
             </List.Item>
           ))}

@@ -2,13 +2,24 @@ import * as React from "react";
 import { Text, View } from "react-native";
 import { Card, Carousel, List } from "@ant-design/react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { PageHeader } from "../components/PageHeader";
 
-export const ContractorScreen = () => {
-  const listMap = ["Daily Manpower"];
+export const ContractorScreen = ({ navigation }: any) => {
+  const listMap = [
+    {
+      title: (
+        <Text onPress={() => navigation.navigate("DailyManpower")}>
+          Daily Manpower
+        </Text>
+      ),
+    },
+  ];
   const carouselOptionArray = [1, 2, 3, 4, 5];
   return (
     <View className="flex-col">
-      <Text className="text-3xl font-semibold py-1 px-2">Contractors</Text>
+      <View>
+        <PageHeader text="Contractors" />
+      </View>
       <View>
         <Card full>
           <Card.Header
@@ -46,7 +57,7 @@ export const ContractorScreen = () => {
               style={{ borderColor: "#969696" }}
               arrow="horizontal"
             >
-              {item}
+              <Text className="text-zinc-800 text-base pl-3">{item.title}</Text>
             </List.Item>
           ))}
         </List>

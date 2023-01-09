@@ -1,6 +1,6 @@
 import { List } from "@ant-design/react-native";
 import * as React from "react";
-import { View, Text } from "react-native";
+import { View } from "react-native";
 
 export const NotificationScreen = () => {
   const notificationOptionsArray = ["Notification1", "Notification2"];

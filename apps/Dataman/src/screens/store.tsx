@@ -1,19 +1,73 @@
 import * as React from "react";
 import { Text, View } from "react-native";
 import { Card, Carousel, List } from "@ant-design/react-native";
+import { Octicons } from "@expo/vector-icons";
+import { PageHeader } from "../components/PageHeader";
 
-export const StoreScreen = () => {
+export const StoreScreen = ({ navigation }: any) => {
   const storeOptionsArray = [
-    "Stock Recieve Entry",
-    "Stock Issue Entry",
-    "Phase to Phase Transfer",
-    "Branch to Branch Send",
-    "Branch to Branch Receive",
+    {
+      title: (
+        <Text
+          onPress={() => {
+            navigation.navigate("StockReceive");
+          }}
+        >
+          Stock Receive Entry
+        </Text>
+      ),
+    },
+    {
+      title: (
+        <Text
+          onPress={() => {
+            navigation.navigate("StockIssue");
+          }}
+        >
+          Stock Issue Entry
+        </Text>
+      ),
+    },
+    {
+      title: (
+        <Text
+          onPress={() => {
+            navigation.navigate("PhaseToPhase");
+          }}
+        >
+          Phase To Phase Transfer
+        </Text>
+      ),
+    },
+    {
+      title: (
+        <Text
+          onPress={() => {
+            navigation.navigate("BranchSend");
+          }}
+        >
+          Branch To Branch Send
+        </Text>
+      ),
+    },
+    {
+      title: (
+        <Text
+          onPress={() => {
+            navigation.navigate("BranchReceive");
+          }}
+        >
+          Branch To Branch Receive
+        </Text>
+      ),
+    },
   ];
   const carouselOptionArray = [1, 2, 3, 4, 5];
   return (
     <View className="flex-col">
-      <Text className="text-3xl font-semibold py-1 px-2">Store</Text>
+      <View>
+        <PageHeader text="Store" />
+      </View>
       <View>
         <Card full>
           <Card.Header
@@ -43,8 +97,11 @@ export const StoreScreen = () => {
               key={idx}
               style={{ borderColor: "#969696" }}
               arrow="horizontal"
+              thumb={<Octicons name="list-unordered" size={20} />}
             >
-              {item}
+              <Text className="font-semibold text-lg pl-5 border-neutral-400">
+                {item.title}
+              </Text>
             </List.Item>
           ))}
         </List>

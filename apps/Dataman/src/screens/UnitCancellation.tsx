@@ -1,7 +1,6 @@
 import React from "react";
 import { List } from "@ant-design/react-native";
 import { View, Text, ScrollView } from "react-native";
-import { NavBar } from "../components/Navbar";
 import { PageHeader } from "../components/PageHeader";
 import { FormButton } from "../components/Button";
 import { UNIT_LIST } from "../components/listComponents/UnitList";
@@ -11,7 +10,6 @@ const UnitCancellation = () => {
   return (
     <View className="h-full">
       <View>
-        <NavBar />
         <PageHeader text="Unit Cancellation" />
       </View>
       <ScrollView>
@@ -33,7 +31,7 @@ const UnitCancellation = () => {
             <Text className="text-zinc-800 text-base font-normal">
               Base Amount (Deduction Amount)
             </Text>
-            <InputField />
+            <InputField placeholder={" "} />
           </List.Item>
 
           <List.Item arrow="horizontal">
@@ -44,11 +42,11 @@ const UnitCancellation = () => {
           </List.Item>
           <List.Item>
             <Text className="text-zinc-800 text-base font-normal">Tax</Text>
-            <InputField />
+            <InputField placeholder={""} />
           </List.Item>
           <List.Item>
             <Text className="text-zinc-800 text-base font-normal">Remarks</Text>
-            <InputField />
+            <InputField placeholder={""} />
           </List.Item>
         </List>
         <FormButton />

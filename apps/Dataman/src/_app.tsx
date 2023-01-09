@@ -1,13 +1,11 @@
-import { View } from "@ant-design/react-native";
 import { useEffect, useState } from "react";
+import { View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import TabNavigation from "./components/NavigationComponents/TabNavigation";
 import { NavigationContainer } from "@react-navigation/native";
 import * as Font from "expo-font";
 
 export const App = () => {
-  // const Stack = createNativeStackNavigator();
-
   const [fontsLoaded, setFontsLoaded] = useState(false);
   useEffect(() => {
     async function loader() {
@@ -27,7 +25,7 @@ export const App = () => {
   if (fontsLoaded === false) return null;
   return (
     <SafeAreaView>
-      <View style={{ height: "100%" }}>
+      <View className="h-full">
         <NavigationContainer>
           <TabNavigation />
         </NavigationContainer>

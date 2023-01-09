@@ -4,12 +4,52 @@ import { Text, View } from "react-native";
 import { Octicons } from "@expo/vector-icons";
 import { PageHeader } from "../components/PageHeader";
 
-const Purchase = () => {
+const Purchase = ({ navigation }: any) => {
   const PURCHASE_LIST = [
-    "Material Request Entry",
-    "Material Request Approval",
-    "Place Purchase Order",
-    "Good Receipt",
+    {
+      title: (
+        <Text
+          onPress={() => {
+            navigation.navigate("MaterialRequest");
+          }}
+        >
+          Material Request Entry
+        </Text>
+      ),
+    },
+    {
+      title: (
+        <Text
+          onPress={() => {
+            navigation.navigate("MaterialApproval");
+          }}
+        >
+          Material Request Approval
+        </Text>
+      ),
+    },
+    {
+      title: (
+        <Text
+          onPress={() => {
+            navigation.navigate("PlaceOrder");
+          }}
+        >
+          Place Purchase Order
+        </Text>
+      ),
+    },
+    {
+      title: (
+        <Text
+          onPress={() => {
+            navigation.navigate("Receipt");
+          }}
+        >
+          Good Receipt
+        </Text>
+      ),
+    },
   ];
   const NUMBER_LIST = [1, 2, 3, 4];
 
@@ -56,7 +96,7 @@ const Purchase = () => {
               thumb={<Octicons name="list-unordered" size={20} />}
             >
               <Text className="font-semibold text-lg pl-5 border-neutral-400">
-                {purchaseItem}
+                {purchaseItem.title}
               </Text>
             </List.Item>
           ))}

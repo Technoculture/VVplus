@@ -6,19 +6,13 @@ import {
 } from "@expo/vector-icons";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { HomeScreen } from "../../screens/home";
-import Purchase from "../../screens/Purchase";
-import { StoreScreen } from "../../screens/store";
-import SalesScreens from "../../screens/SalesScreen";
-import ContractorApprovalScreen from "../../screens/ContractorApproval";
-import { ContractorScreen } from "../../screens/contractors";
 import { AccountScreen } from "../../screens/account";
 import { SettingsScreen } from "../../screens/settings";
 import { NotificationScreen } from "../../screens/notifications";
+import NativeHomeStack from "./NativeHomeStack";
 
 const Tab = createBottomTabNavigator<TabNavigation>();
 const AccountStack = createNativeStackNavigator();
-const HomeStack = createNativeStackNavigator();
 const NotificationStack = createNativeStackNavigator();
 
 export type TabNavigation = {
@@ -27,7 +21,7 @@ export type TabNavigation = {
   AccountTab: undefined;
 };
 
-export default function TabNavigation() {
+const TabNavigation = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -54,37 +48,7 @@ export default function TabNavigation() {
       })}
     >
       <Tab.Screen name="HomeTab" options={{ title: "Home" }}>
-        {() => (
-          <HomeStack.Navigator>
-            <HomeStack.Screen name="Home" component={HomeScreen} />
-
-            <HomeStack.Screen
-              name="Purchase"
-              component={Purchase}
-              options={{ title: "Back" }}
-            />
-            <HomeStack.Screen
-              name="StoreScreen"
-              component={StoreScreen}
-              options={{ title: "Back" }}
-            />
-            <HomeStack.Screen
-              name="SalesScreens"
-              component={SalesScreens}
-              options={{ title: "Back" }}
-            />
-            <HomeStack.Screen
-              name="ContractorScreen"
-              component={ContractorScreen}
-              options={{ title: "Back" }}
-            />
-            <HomeStack.Screen
-              name="ContractorApprovalScreen"
-              component={ContractorApprovalScreen}
-              options={{ title: "Back" }}
-            />
-          </HomeStack.Navigator>
-        )}
+        {() => <NativeHomeStack />}
       </Tab.Screen>
 
       <Tab.Screen name="Notification">
@@ -111,4 +75,6 @@ export default function TabNavigation() {
       </Tab.Screen>
     </Tab.Navigator>
   );
-}
+};
+
+export default TabNavigation;

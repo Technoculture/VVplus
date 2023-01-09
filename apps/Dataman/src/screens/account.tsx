@@ -28,11 +28,10 @@ export const AccountScreen = ({ navigation }: any) => {
   return (
     <View className="flex-col">
       <View>
-        <List
-          renderHeader={
-            <Text className="text-gray-500 text-sm px-2">Preview</Text>
-          }
-        >
+        <List>
+          <List.Item>
+            <Text className="text-gray-500 text-lg">Preview</Text>
+          </List.Item>
           <List.Item
             style={{ borderColor: "#969696" }}
             thumb={
@@ -43,7 +42,7 @@ export const AccountScreen = ({ navigation }: any) => {
               />
             }
           >
-            <Text>UserName</Text>
+            <Text>Matt Weirzbicki</Text>
             <List.Item.Brief>
               <Text>Profile Rating: 5 stars</Text>
             </List.Item.Brief>
