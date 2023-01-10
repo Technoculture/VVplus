@@ -1,55 +1,15 @@
 import React from "react";
 import { List, Card, Carousel } from "@ant-design/react-native";
 import { Text, View } from "react-native";
-import { Octicons } from "@expo/vector-icons";
 import { PageHeader } from "../components/PageHeader";
+import { MenuItem } from "../components/MenuItems";
 
 const Purchase = ({ navigation }: any) => {
   const PURCHASE_LIST = [
-    {
-      title: (
-        <Text
-          onPress={() => {
-            navigation.navigate("MaterialRequest");
-          }}
-        >
-          Material Request Entry
-        </Text>
-      ),
-    },
-    {
-      title: (
-        <Text
-          onPress={() => {
-            navigation.navigate("MaterialApproval");
-          }}
-        >
-          Material Request Approval
-        </Text>
-      ),
-    },
-    {
-      title: (
-        <Text
-          onPress={() => {
-            navigation.navigate("PlaceOrder");
-          }}
-        >
-          Place Purchase Order
-        </Text>
-      ),
-    },
-    {
-      title: (
-        <Text
-          onPress={() => {
-            navigation.navigate("Receipt");
-          }}
-        >
-          Good Receipt
-        </Text>
-      ),
-    },
+    "Material Request Entry",
+    "Material Approval",
+    "Place Order",
+    "Goods Receipt",
   ];
   const NUMBER_LIST = [1, 2, 3, 4];
 
@@ -89,16 +49,17 @@ const Purchase = ({ navigation }: any) => {
           </Card.Body>
         </Card>
         <List>
-          {PURCHASE_LIST.map((purchaseItem, index) => (
-            <List.Item
+          {PURCHASE_LIST.map((item, index) => (
+            <MenuItem
+              myKey={index}
               key={index}
-              arrow="horizontal"
-              thumb={<Octicons name="list-unordered" size={20} />}
-            >
-              <Text className="font-semibold text-lg pl-5 border-neutral-400">
-                {purchaseItem.title}
-              </Text>
-            </List.Item>
+              item={item}
+              onPress={() => {
+                navigation.navigate(PURCHASE_LIST[index], {
+                  item,
+                });
+              }}
+            />
           ))}
         </List>
       </View>

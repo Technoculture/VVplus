@@ -47,7 +47,12 @@ const TabNavigation = () => {
         headerShown: false,
       })}
     >
-      <Tab.Screen name="HomeTab" options={{ title: "Home" }}>
+      <Tab.Screen
+        name="HomeTab"
+        options={{
+          title: "Home",
+        }}
+      >
         {() => <NativeHomeStack />}
       </Tab.Screen>
 
@@ -66,7 +71,7 @@ const TabNavigation = () => {
           <AccountStack.Navigator>
             <AccountStack.Screen name="Accounts" component={AccountScreen} />
             <AccountStack.Screen
-              name="SettingsScreen"
+              name="Settings"
               component={SettingsScreen}
               options={{ title: "Back" }}
             />

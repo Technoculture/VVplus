@@ -5,11 +5,7 @@ import { View, Text, Image } from "react-native";
 export const AccountScreen = ({ navigation }: any) => {
   const accountOptionsArray = [
     {
-      title: (
-        <Text onPress={() => navigation.navigate("SettingsScreen")}>
-          Settings
-        </Text>
-      ),
+      title: "Settings",
       subtitle: "Lorem ipsum dolor sit amet, conssectetur",
     },
     {
@@ -54,6 +50,11 @@ export const AccountScreen = ({ navigation }: any) => {
               key={idx}
               style={{ borderColor: "#969696" }}
               arrow="horizontal"
+              onPress={() =>
+                navigation.navigate("Settings", {
+                  item,
+                })
+              }
             >
               {item.title}
               <List.Item.Brief>{item?.subtitle}</List.Item.Brief>

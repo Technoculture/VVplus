@@ -1,67 +1,18 @@
 import * as React from "react";
 import { Text, View } from "react-native";
 import { Card, Carousel, List } from "@ant-design/react-native";
-import { Octicons } from "@expo/vector-icons";
 import { PageHeader } from "../components/PageHeader";
+import { MenuItem } from "../components/MenuItems";
 
 export const StoreScreen = ({ navigation }: any) => {
   const storeOptionsArray = [
-    {
-      title: (
-        <Text
-          onPress={() => {
-            navigation.navigate("StockReceive");
-          }}
-        >
-          Stock Receive Entry
-        </Text>
-      ),
-    },
-    {
-      title: (
-        <Text
-          onPress={() => {
-            navigation.navigate("StockIssue");
-          }}
-        >
-          Stock Issue Entry
-        </Text>
-      ),
-    },
-    {
-      title: (
-        <Text
-          onPress={() => {
-            navigation.navigate("PhaseToPhase");
-          }}
-        >
-          Phase To Phase Transfer
-        </Text>
-      ),
-    },
-    {
-      title: (
-        <Text
-          onPress={() => {
-            navigation.navigate("BranchSend");
-          }}
-        >
-          Branch To Branch Send
-        </Text>
-      ),
-    },
-    {
-      title: (
-        <Text
-          onPress={() => {
-            navigation.navigate("BranchReceive");
-          }}
-        >
-          Branch To Branch Receive
-        </Text>
-      ),
-    },
+    "Stock Receive Entry",
+    "Stock Issue Entry",
+    "Phase To Phase Transfer",
+    "Branch To Branch Send",
+    "Branch To Branch Receive",
   ];
+
   const carouselOptionArray = [1, 2, 3, 4, 5];
   return (
     <View className="flex-col">
@@ -92,17 +43,17 @@ export const StoreScreen = ({ navigation }: any) => {
           </Card.Body>
         </Card>
         <List>
-          {storeOptionsArray.map((item, idx) => (
-            <List.Item
-              key={idx}
-              style={{ borderColor: "#969696" }}
-              arrow="horizontal"
-              thumb={<Octicons name="list-unordered" size={20} />}
-            >
-              <Text className="font-semibold text-lg pl-5 border-neutral-400">
-                {item.title}
-              </Text>
-            </List.Item>
+          {storeOptionsArray.map((item, index) => (
+            <MenuItem
+              myKey={index}
+              key={index}
+              item={item}
+              onPress={() => {
+                navigation.navigate(storeOptionsArray[index], {
+                  item,
+                });
+              }}
+            />
           ))}
         </List>
       </View>

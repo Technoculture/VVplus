@@ -1,19 +1,11 @@
 import * as React from "react";
 import { Text, View } from "react-native";
 import { Card, Carousel, List } from "@ant-design/react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { PageHeader } from "../components/PageHeader";
+import { MenuItem } from "../components/MenuItems";
 
 export const ContractorScreen = ({ navigation }: any) => {
-  const listMap = [
-    {
-      title: (
-        <Text onPress={() => navigation.navigate("DailyManpower")}>
-          Daily Manpower
-        </Text>
-      ),
-    },
-  ];
+  const CONTRACTOR_LIST = ["Daily Manpower"];
   const carouselOptionArray = [1, 2, 3, 4, 5];
   return (
     <View className="flex-col">
@@ -48,17 +40,17 @@ export const ContractorScreen = ({ navigation }: any) => {
           </Card.Body>
         </Card>
         <List>
-          {listMap.map((item, idx) => (
-            <List.Item
-              thumb={
-                <MaterialCommunityIcons name="format-list-checkbox" size={24} />
-              }
-              key={idx}
-              style={{ borderColor: "#969696" }}
-              arrow="horizontal"
-            >
-              <Text className="text-zinc-800 text-base pl-3">{item.title}</Text>
-            </List.Item>
+          {CONTRACTOR_LIST.map((item, index) => (
+            <MenuItem
+              myKey={index}
+              key={index}
+              item={item}
+              onPress={() => {
+                navigation.navigate(CONTRACTOR_LIST[index], {
+                  item,
+                });
+              }}
+            />
           ))}
         </List>
       </View>

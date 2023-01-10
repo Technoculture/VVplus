@@ -1,65 +1,15 @@
 import * as React from "react";
 import { View, Text } from "react-native";
 import { Card, Carousel, List } from "@ant-design/react-native";
-import { Octicons } from "@expo/vector-icons";
+import { MenuItem } from "../components/MenuItems";
 
 export const HomeScreen = ({ navigation }: any) => {
   const homeOptionsArray = [
-    {
-      title: (
-        <Text
-          onPress={() => {
-            navigation.navigate("Purchase");
-          }}
-        >
-          Purchase
-        </Text>
-      ),
-    },
-    {
-      title: (
-        <Text
-          onPress={() => {
-            navigation.navigate("StoreScreen");
-          }}
-        >
-          Store
-        </Text>
-      ),
-    },
-    {
-      title: (
-        <Text
-          onPress={() => {
-            navigation.navigate("SalesScreens");
-          }}
-        >
-          Sales
-        </Text>
-      ),
-    },
-    {
-      title: (
-        <Text
-          onPress={() => {
-            navigation.navigate("ContractorScreen");
-          }}
-        >
-          Contractors
-        </Text>
-      ),
-    },
-    {
-      title: (
-        <Text
-          onPress={() => {
-            navigation.navigate("ContractorApprovalScreen");
-          }}
-        >
-          Approval Requests
-        </Text>
-      ),
-    },
+    "Purchase",
+    "Store",
+    "Sales",
+    "Contractor",
+    "Approval Requests",
   ];
 
   const carouselOptionArray = [1, 2, 3, 4, 5];
@@ -93,17 +43,17 @@ export const HomeScreen = ({ navigation }: any) => {
           </Card.Body>
         </Card>
         <List>
-          {homeOptionsArray.map((item, idx) => (
-            <List.Item
-              key={idx}
-              style={{ borderColor: "#969696" }}
-              arrow="horizontal"
-              thumb={<Octicons name="list-unordered" size={20} />}
-            >
-              <Text className="pl-2 text-lg text-zinc-800 font-normal border-neutral-400">
-                {item.title}
-              </Text>
-            </List.Item>
+          {homeOptionsArray.map((item, index) => (
+            <MenuItem
+              myKey={index}
+              key={index}
+              item={item}
+              onPress={() => {
+                navigation.navigate(homeOptionsArray[index], {
+                  item,
+                });
+              }}
+            />
           ))}
         </List>
       </View>

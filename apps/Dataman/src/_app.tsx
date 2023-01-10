@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import TabNavigation from "./components/NavigationComponents/TabNavigation";
 import { NavigationContainer } from "@react-navigation/native";
 import * as Font from "expo-font";
+import TabNavigation from "./components/NavigationComponents/TabNavigation";
 
 export const App = () => {
   const [fontsLoaded, setFontsLoaded] = useState(false);

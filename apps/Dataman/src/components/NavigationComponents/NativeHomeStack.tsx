@@ -33,93 +33,93 @@ const NativeHomeStack = () => {
         options={{ title: "Back" }}
       />
       <HomeStack.Screen
-        name="MaterialRequest"
+        name="Material Request Entry"
         component={MaterialRequest}
         options={{ title: "Back" }}
       />
       <HomeStack.Screen
-        name="MaterialApproval"
+        name="Material Approval"
         component={MaterialApproval}
         options={{ title: "Back" }}
       />
       <HomeStack.Screen
-        name="PlaceOrder"
+        name="Place Order"
         component={PlaceOrder}
         options={{ title: "Back" }}
       />
       <HomeStack.Screen
-        name="Receipt"
+        name="Goods Receipt"
         component={Receipt}
         options={{ title: "Back" }}
       />
       <HomeStack.Screen
-        name="StoreScreen"
+        name="Store"
         component={StoreScreen}
         options={{ title: "Back" }}
       />
 
       <HomeStack.Screen
-        name="StockReceive"
+        name="Stock Receive Entry"
         component={StockReceive}
         options={{ title: "Back" }}
       />
       <HomeStack.Screen
-        name="StockIssue"
+        name="Stock Issue Entry"
         component={StockIssue}
         options={{ title: "Back" }}
       />
       <HomeStack.Screen
-        name="PhaseToPhase"
+        name="Phase To Phase Transfer"
         component={PhasetoPhase}
         options={{ title: "Back" }}
       />
       <HomeStack.Screen
-        name="BranchSend"
+        name="Branch To Branch Send"
         component={BranchSend}
         options={{ title: "Back" }}
       />
       <HomeStack.Screen
-        name="BranchReceive"
+        name="Branch To Branch Receive"
         component={BranchReceive}
         options={{ title: "Back" }}
       />
       <HomeStack.Screen
-        name="SalesScreens"
+        name="Sales"
         component={SalesScreens}
         options={{ title: "Back" }}
       />
       <HomeStack.Screen
-        name="WorkEntry"
+        name="Extra Work Entry"
         component={WorkEntry}
         options={{ title: "Back" }}
       />
       <HomeStack.Screen
-        name="UnitCancellation"
+        name="Unit Cancellation"
         component={UnitCancellation}
         options={{ title: "Back" }}
       />
       <HomeStack.Screen
-        name="Cheque"
+        name="Cheque Entry/Update"
         component={Cheque}
         options={{ title: "Back" }}
       />
       <HomeStack.Screen
-        name="ContractorScreen"
+        name="Contractor"
         component={ContractorScreen}
         options={{ title: "Back" }}
       />
       <HomeStack.Screen
-        name="DailyManpower"
+        name="Daily Manpower"
         component={DailyManpower}
         options={{ title: "Back" }}
       />
       <HomeStack.Screen
-        name="ContractorApprovalScreen"
+        name="Approval Requests"
         component={ContractorApprovalScreen}
         options={{ title: "Back" }}
       />
       <HomeStack.Screen
-        name="DailyManPowerScreen"
+        name="Daily Manpowers"
         component={DailyManPowerScreen}
         options={{ title: "Back" }}
       />
