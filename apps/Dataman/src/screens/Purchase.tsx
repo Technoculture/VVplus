@@ -1,23 +1,21 @@
 import React from "react";
 import { List, Card, Carousel } from "@ant-design/react-native";
 import { Text, View } from "react-native";
-import { Octicons } from "@expo/vector-icons";
-import { NavBar } from "../components/Navbar";
 import { PageHeader } from "../components/PageHeader";
+import { MenuItem } from "../components/MenuItems";
 
-const Purchase = () => {
+const Purchase = ({ navigation }: any) => {
   const PURCHASE_LIST = [
     "Material Request Entry",
-    "Material Request Approval",
-    "Place Purchase Order",
-    "Good Receipt",
+    "Material Approval",
+    "Place Order",
+    "Goods Receipt",
   ];
   const NUMBER_LIST = [1, 2, 3, 4];
 
   return (
     <View>
       <View>
-        <NavBar />
         <PageHeader text="Purchase" />
       </View>
 
@@ -51,16 +49,17 @@ const Purchase = () => {
           </Card.Body>
         </Card>
         <List>
-          {PURCHASE_LIST.map((purchaseItem, index) => (
-            <List.Item
+          {PURCHASE_LIST.map((item, index) => (
+            <MenuItem
+              myKey={index}
               key={index}
-              arrow="horizontal"
-              thumb={<Octicons name="list-unordered" size={20} />}
-            >
-              <Text className="font-semibold text-lg pl-5 border-neutral-400">
-                {purchaseItem}
-              </Text>
-            </List.Item>
+              item={item}
+              onPress={() => {
+                navigation.navigate(PURCHASE_LIST[index], {
+                  item,
+                });
+              }}
+            />
           ))}
         </List>
       </View>

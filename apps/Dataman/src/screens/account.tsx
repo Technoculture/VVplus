@@ -2,9 +2,12 @@ import { Button, List } from "@ant-design/react-native";
 import * as React from "react";
 import { View, Text, Image } from "react-native";
 
-export const AccountScreen = () => {
+export const AccountScreen = ({ navigation }: any) => {
   const accountOptionsArray = [
-    { title: "Settings", subtitle: "Lorem ipsum dolor sit amet, conssectetur" },
+    {
+      title: "Settings",
+      subtitle: "Lorem ipsum dolor sit amet, conssectetur",
+    },
     {
       title: "Request Advance",
       subtitle: "Lorem ipsum dolor sit amet, conssectetur",
@@ -20,13 +23,11 @@ export const AccountScreen = () => {
   ];
   return (
     <View className="flex-col">
-      <Text className="text-3xl font-semibold py-1 px-2">Account</Text>
       <View>
-        <List
-          renderHeader={
-            <Text className="text-gray-500 text-sm px-2">Preview</Text>
-          }
-        >
+        <List>
+          <List.Item>
+            <Text className="text-gray-500 text-lg">Preview</Text>
+          </List.Item>
           <List.Item
             style={{ borderColor: "#969696" }}
             thumb={
@@ -37,7 +38,7 @@ export const AccountScreen = () => {
               />
             }
           >
-            <Text>UserName</Text>
+            <Text>Matt Weirzbicki</Text>
             <List.Item.Brief>
               <Text>Profile Rating: 5 stars</Text>
             </List.Item.Brief>
@@ -49,6 +50,11 @@ export const AccountScreen = () => {
               key={idx}
               style={{ borderColor: "#969696" }}
               arrow="horizontal"
+              onPress={() =>
+                navigation.navigate("Settings", {
+                  item,
+                })
+              }
             >
               {item.title}
               <List.Item.Brief>{item?.subtitle}</List.Item.Brief>

@@ -1,27 +1,18 @@
 import * as React from "react";
 import { Text, View } from "react-native";
 import { Card, Carousel, List } from "@ant-design/react-native";
-import { MaterialCommunityIcons, AntDesign } from "@expo/vector-icons";
+import { MenuItem } from "../components/MenuItems";
+import { PageHeader } from "../components/PageHeader";
 
-export const ContractorApprovalScreen = () => {
+export const ContractorApprovalScreen = ({ navigation }: any) => {
   const NUMBER_LIST = [1, 2, 3, 4];
 
+  const Approval_Screen = ["Daily Manpowers"];
   return (
     <View>
-      <List>
-        <List.Item
-          thumb={<AntDesign name="left" color="black" size={20} />}
-          extra={<AntDesign name="ellipsis1" color="black" size={20} />}
-        >
-          <Text className="text-base text-zinc-800">Back</Text>
-        </List.Item>
-        <List.Item>
-          <Text className="text-zinc-800 text-2xl font-bold">
-            Approval Requests
-          </Text>
-        </List.Item>
-      </List>
-
+      <View>
+        <PageHeader text="Approval Requests" />
+      </View>
       <View>
         <Card full>
           <Card.Header
@@ -52,14 +43,18 @@ export const ContractorApprovalScreen = () => {
           </Card.Body>
         </Card>
         <List>
-          <List.Item
-            thumb={
-              <MaterialCommunityIcons name="format-list-checkbox" size={24} />
-            }
-            arrow="horizontal"
-          >
-            <Text className="text-zinc-800 text-base pl-3">Daily Manpower</Text>
-          </List.Item>
+          {Approval_Screen.map((item, index) => (
+            <MenuItem
+              myKey={index}
+              key={index}
+              item={item}
+              onPress={() => {
+                navigation.navigate(Approval_Screen[index], {
+                  item,
+                });
+              }}
+            />
+          ))}
         </List>
       </View>
     </View>

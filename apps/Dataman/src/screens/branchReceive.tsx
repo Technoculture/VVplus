@@ -1,8 +1,8 @@
-import { Text, ScrollView, View } from "react-native";
 import React from "react";
-import { NavBar } from "../components/Navbar";
+import { Text, ScrollView, View } from "react-native";
 import { Button, List } from "@ant-design/react-native";
 import { AntDesign } from "@expo/vector-icons";
+import { PageHeader } from "../components/PageHeader";
 
 const BranchReceive = () => {
   const stockFormOptions = [
@@ -39,14 +39,9 @@ const BranchReceive = () => {
   ];
   return (
     <View>
-      <NavBar />
       <ScrollView>
         <List>
-          <List.Item>
-            <Text className="text-3xl font-semibold py-1 px-2">
-              Stock Issue Entry
-            </Text>
-          </List.Item>
+          <PageHeader text="Branch To Branch Receive" />
           {stockFormOptions.map(
             (
               item: { label: string; placeholder?: string; icon?: string },

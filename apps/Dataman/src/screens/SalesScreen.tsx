@@ -1,11 +1,10 @@
 import React from "react";
 import { List, Card, Carousel } from "@ant-design/react-native";
 import { View, Text } from "react-native";
-import { Octicons } from "@expo/vector-icons";
-import { NavBar } from "../components/Navbar";
+import { MenuItem } from "../components/MenuItems";
 import { PageHeader } from "../components/PageHeader";
 
-const SalesScreens = () => {
+const SalesScreens = ({ navigation }: any) => {
   const SALES_LIST = [
     "Extra Work Entry",
     "Unit Cancellation",
@@ -16,7 +15,6 @@ const SalesScreens = () => {
   return (
     <View>
       <View>
-        <NavBar />
         <PageHeader text="Sales" />
       </View>
 
@@ -51,15 +49,16 @@ const SalesScreens = () => {
         </Card>
         <List>
           {SALES_LIST.map((item, index) => (
-            <List.Item
+            <MenuItem
+              myKey={index}
               key={index}
-              thumb={<Octicons name="list-unordered" size={20} />}
-              arrow="horizontal"
-            >
-              <Text className="text-lg text-zinc-800 font-normal pl-5 border-neutral-400">
-                {item}
-              </Text>
-            </List.Item>
+              item={item}
+              onPress={() => {
+                navigation.navigate(SALES_LIST[index], {
+                  item,
+                });
+              }}
+            />
           ))}
         </List>
       </View>
