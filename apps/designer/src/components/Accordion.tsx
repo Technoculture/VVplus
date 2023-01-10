@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AccordionLayout from "./AccordionLayout";
 import SelectCarousel from "./SelectCarousel";
-
+import data from "../../public/cameraAngles.json";
 const Accordion = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
@@ -13,10 +13,14 @@ const Accordion = () => {
           index={1}
           activeIndex={activeIndex}
           setActiveIndex={setActiveIndex}
-          r={1000}
-          a={-9.424777961}
-          b={1.570796327}
-          t={{ x: 250, y: 70, z: 30 }}
+          r={data[0].front.target_value.radius}
+          a={data[0].front.target_value.alpha}
+          b={data[0].front.target_value.beta}
+          t={{
+            x: data[0].front.target_value.target.x,
+            y: data[0].front.target_value.target.y,
+            z: data[0].front.target_value.target.z,
+          }}
         >
           <SelectCarousel />
         </AccordionLayout>
@@ -28,10 +32,14 @@ const Accordion = () => {
           index={2}
           activeIndex={activeIndex}
           setActiveIndex={setActiveIndex}
-          r={1000}
-          a={0}
-          b={0}
-          t={{ x: -300, y: -400, z: 400 }}
+          r={data[2].top.target_value.radius}
+          a={data[2].top.target_value.alpha}
+          b={data[2].top.target_value.beta}
+          t={{
+            x: data[2].top.target_value.target.x,
+            y: data[2].top.target_value.target.y,
+            z: data[2].top.target_value.target.z,
+          }}
         >
           <SelectCarousel />
         </AccordionLayout>
@@ -43,10 +51,14 @@ const Accordion = () => {
           index={3}
           activeIndex={activeIndex}
           setActiveIndex={setActiveIndex}
-          r={1000}
-          a={-9.424777961}
-          b={1.570796327}
-          t={{ x: 500, y: 350, z: 280 }}
+          r={data[3].front.target_value.radius}
+          a={data[3].front.target_value.alpha}
+          b={data[3].front.target_value.beta}
+          t={{
+            x: data[3].front.target_value.target.x,
+            y: data[3].front.target_value.target.y,
+            z: data[3].front.target_value.target.z,
+          }}
         >
           <SelectCarousel />
         </AccordionLayout>
@@ -62,10 +74,14 @@ const Accordion = () => {
           index={4}
           activeIndex={activeIndex}
           setActiveIndex={setActiveIndex}
-          r={1000}
-          a={0}
-          b={0}
-          t={{ x: -300, y: -400, z: 400 }}
+          r={data[2].top.target_value.radius}
+          a={data[2].top.target_value.alpha}
+          b={data[2].top.target_value.beta}
+          t={{
+            x: data[2].top.target_value.target.x,
+            y: data[2].top.target_value.target.y,
+            z: data[2].top.target_value.target.z,
+          }}
         >
           <SelectCarousel />
         </AccordionLayout>

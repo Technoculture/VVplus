@@ -39,13 +39,13 @@ export function floorSelector(floorId: string) {
     mesh_list.map((e) => {
       e.mesh.setEnabled(true);
     });
-  }else if( floorId ==="zero-floor"){
+  } else if (floorId === "zero-floor") {
     const freeCamera = new ArcRotateCamera(
       "camera",
       600,
       650,
       900,
-      new Vector3(200,180, 100),
+      new Vector3(200, 180, 100),
       scene_variable
     );
     freeCamera.wheelPrecision = 1;
@@ -60,9 +60,7 @@ export function floorSelector(floorId: string) {
     mesh_list.map((e) => {
       e.mesh.setEnabled(true);
     });
-
-  }
-   else if (floorId === "roof") {
+  } else if (floorId === "roof") {
     //if roof is selected
     const freeCamera = new ArcRotateCamera(
       "camera",
@@ -100,7 +98,7 @@ export function floorSelector(floorId: string) {
       "camera",
       500,
       500,
-    750,
+      750,
       new Vector3(200, 240, 130),
       scene_variable
     );

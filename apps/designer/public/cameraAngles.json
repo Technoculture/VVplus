@@ -102,5 +102,53 @@
 
             }
         }
+    },
+    {
+        "name": "garden",
+        "top": {
+            "key": "garden top",
+            "target_value": {
+                "alpha": 0,
+                "beta": 0,
+                "radius": 1000,
+                "target": {
+                    "x": -300,
+                    "y": -400,
+                    "z": 400
+                }
+            },
+            "properties":{
+
+            }
+        },
+
+            "properties": {
+
+            }
+        
+    },
+    {
+        "name": "balcony railings",
+        "front": {
+            "key": "railing top",
+            "target_value": {
+                "alpha": -9.424777961,
+                "beta": 1.5707796327,
+                "radius": 1000,
+                "target": {
+                    "x": 500,
+                    "y": 350,
+                    "z": 280
+                }
+            },
+            "properties":{
+
+            }
+        },
+
+            "properties": {
+
+            }
+        
     }
 ]

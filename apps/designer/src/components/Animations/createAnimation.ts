@@ -29,7 +29,6 @@ function createAnimation({ property, from, to }: AniProps) {
       value: to,
     },
   ]);
-
   return animation;
 }
 
