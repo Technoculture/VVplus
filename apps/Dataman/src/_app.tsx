@@ -4,6 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { NavigationContainer } from "@react-navigation/native";
 import * as Font from "expo-font";
 import TabNavigation from "./components/NavigationComponents/TabNavigation";
+import { LoginScreen } from "./screens/LoginScreen";
 
 export const App = () => {
   const [fontsLoaded, setFontsLoaded] = useState(false);
@@ -26,9 +27,10 @@ export const App = () => {
   return (
     <SafeAreaView>
       <View className="h-full">
-        <NavigationContainer>
+        {/* <NavigationContainer>
           <TabNavigation />
-        </NavigationContainer>
+        </NavigationContainer> */}
+        <LoginScreen />
       </View>
     </SafeAreaView>
   );

@@ -8,6 +8,15 @@ const LoginForm = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [otp, setOtp] = useState("");
   const [isEnteredPhoneNumber, setEnteredPhoneNumber] = useState(false);
+  const [error, setError] = useState({ phoneNumber: false, otp: false });
+
+  const handleChange = (value: string) => {
+    setPhoneNumber(value);
+
+    setError({ phoneNumber: false, otp: false });
+  };
+
+  const chk = /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/;
 
   return (
     <View>
@@ -16,10 +25,15 @@ const LoginForm = () => {
         <View className="w-full">
           <InputField
             value={phoneNumber}
-            onChange={(value: any) => setPhoneNumber(value)}
+            onChange={handleChange}
             maxLength={10}
             placeholder={"+91"}
           />
+          {error.phoneNumber ? (
+            <Text className="text-red-600 text-center">
+              Please enter valid Phone Number
+            </Text>
+          ) : null}
         </View>
       </View>
 
@@ -29,10 +43,18 @@ const LoginForm = () => {
           <View className="w-full">
             <InputField
               value={otp}
-              onChange={(value: any) => setOtp(value)}
+              onChange={(value: any) => {
+                setOtp(value);
+                setError({ phoneNumber: false, otp: false });
+              }}
               maxLength={6}
               placeholder={"6 Digit OTP"}
             />
+            {error.otp ? (
+              <Text className="text-red-600 text-center">
+                Please enter valid otp
+              </Text>
+            ) : null}
           </View>
         </View>
       ) : null}
@@ -43,13 +65,21 @@ const LoginForm = () => {
           text={`${isEnteredPhoneNumber ? "SignIn" : "Send OTP"}`}
           PropsType={"primary"}
           onPress={() => {
-            if (phoneNumber !== "") {
-              setEnteredPhoneNumber(true);
-              setPhoneNumber("");
-            } else if (isEnteredPhoneNumber ? "SignIn" : "") {
-              setEnteredPhoneNumber(true);
-            } else {
+            if (phoneNumber === "" && otp === "") {
+              setError({ phoneNumber: true, otp: true });
               setEnteredPhoneNumber(false);
+            } else if (!chk.test(phoneNumber)) {
+              setError({ ...error, phoneNumber: true });
+            } else {
+              setEnteredPhoneNumber(true);
+            }
+
+            if (
+              isEnteredPhoneNumber
+                ? "SignIn"
+                : "" && otp === "" && phoneNumber !== " "
+            ) {
+              setError({ ...error, otp: true });
             }
           }}
         />
