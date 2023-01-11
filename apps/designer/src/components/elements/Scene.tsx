@@ -11,25 +11,26 @@ import {
   useThree,
 } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+// import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { OrbitControls, PerspectiveCamera, Plane } from "@react-three/drei";
 
 // TODO: Create JSON parsing with zod and handle the elemental breakdown of building model into several parts
 let scene_variable: THREE.Scene;
-extend({ OrbitControls });
-declare module "@react-three/fiber" {
-  interface ThreeElements {
-    orbitControls: Node<OrbitControls, typeof OrbitControls>;
-  }
-}
+// extend({ OrbitControls });
+// declare module "@react-three/fiber" {
+//   interface ThreeElements {
+//     orbitControls: Node<OrbitControls, typeof OrbitControls>;
+//   }
+// }
 const CameraControls = () => {
   // Get a reference to the Three.js Camera, and the canvas html element.
   // We need these to setup the OrbitControls class.
   // https://threejs.org/docs/#examples/en/controls/OrbitControls
 
-  // const {
-  //   camera,
-  //   gl: { domElement },
-  // } = useThree();
+  const {
+    camera,
+    gl: { domElement },
+  } = useThree();
 
   // Ref to the controls, so that we can update them on every frame using useFrame
   const controls = useRef(null);
@@ -38,14 +39,14 @@ const CameraControls = () => {
     return controls.current.update();
   });
   return (
-    <orbitControls
+    <OrbitControls
       ref={controls}
-      // args={[camera, domElement]}
-      // panSpeed={10}
-      // minDistance={500}
-      // maxDistance={2000}
-      // maxPolarAngle={Math.PI / 2}
-      // target={[0, 0, 0]}
+      args={[camera, domElement]}
+      panSpeed={10}
+      minDistance={500}
+      maxDistance={2000}
+      maxPolarAngle={Math.PI / 2}
+      target={[0, 0, 0]}
     />
   );
 };
@@ -65,8 +66,13 @@ const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
   ${isWelcomePanelActive === true ? "z-[1] visible" : "z-[-100] hidden"}`}
     >
       <Canvas>
-        <perspectiveCamera />
+        <PerspectiveCamera position={[0, 50, 10]} />
         <CameraControls />
+        {/* <hemisphereLight position={[-1, 1, -1]} intensity={0.1} /> */}
+        {/* <mesh> */}
+        <Plane args={[1200, 1200, 1, 1]}></Plane>
+        {/* <meshStandardMaterial map={texture} /> */}
+        {/* </mesh> */}
       </Canvas>
     </div>
   );
