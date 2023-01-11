@@ -6,18 +6,22 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.cjs",
-    "**/*.mjs"
-, "postcss.config.cjs", "next.config.js"  ],
+    "**/*.mjs",
+    "postcss.config.cjs",
+    "next.config.js"
+  ],
   "compilerOptions": {
-  //  "preserveSymlinks": true,
-    "types": ["babylonjs"],
+    //  "preserveSymlinks": true,
+    "types": [
+      "babylonjs"
+    ],
     "target": "es5",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext",
       "esnext.asynciterable",
-      "DOM",
+      "DOM"
     ],
     "allowJs": true,
     "skipLibCheck": true,

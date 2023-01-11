@@ -1,42 +1,73 @@
-import SceneComp from "./SceneComp";
-import { createCamera } from "./freeCamera";
-import { createGround } from "./ground";
-import { createSkyBox } from "./skybox";
-import { createFog } from "./fog";
-import { createModel } from "./models";
-import * as BABYLON from "@babylonjs/core";
-import { HemisphericLight, Vector3 } from "@babylonjs/core";
+import * as THREE from "three";
 import "@babylonjs/loaders/glTF";
+import {
+  BufferGeometryNode,
+  Canvas,
+  extend,
+  LightNode,
+  Node,
+  Object3DNode,
+  useFrame,
+  useThree,
+} from "@react-three/fiber";
+import { useEffect, useRef, useState } from "react";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 // TODO: Create JSON parsing with zod and handle the elemental breakdown of building model into several parts
+let scene_variable: THREE.Scene;
+extend({ OrbitControls });
+declare module "@react-three/fiber" {
+  interface ThreeElements {
+    orbitControls: Node<OrbitControls, typeof OrbitControls>;
+  }
+}
+const CameraControls = () => {
+  // Get a reference to the Three.js Camera, and the canvas html element.
+  // We need these to setup the OrbitControls class.
+  // https://threejs.org/docs/#examples/en/controls/OrbitControls
 
-let scene_variable: BABYLON.Scene;
-const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
-  const onSceneReady = async (scene: BABYLON.Scene) => {
-    createCamera(scene);
-    const light = new HemisphericLight("light", new Vector3(-1, 1, -1), scene);
-    light.intensity = 0.7;
-    await createSkyBox(scene);
-    await createGround();
-    await createFog(scene);
-    await createModel(scene);
-    scene_variable = scene;
-  };
-  const onRender = (scene: BABYLON.Scene) => {
-    return;
-  };
+  // const {
+  //   camera,
+  //   gl: { domElement },
+  // } = useThree();
 
+  // Ref to the controls, so that we can update them on every frame using useFrame
+  const controls = useRef(null);
+  useFrame((state) => {
+    // controls.current.target.copy([0, 0, 20]);
+    return controls.current.update();
+  });
   return (
-    <div>
-      <SceneComp
-        antialias={true}
-        adaptToDeviceRatio={true}
-        onSceneReady={onSceneReady}
-        onRender={onRender}
-        className={`
+    <orbitControls
+      ref={controls}
+      // args={[camera, domElement]}
+      // panSpeed={10}
+      // minDistance={500}
+      // maxDistance={2000}
+      // maxPolarAngle={Math.PI / 2}
+      // target={[0, 0, 0]}
+    />
+  );
+};
+const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
+  const [texture, setTexture] = useState<THREE.Texture>();
+  useEffect(() => {
+    setTexture(
+      new THREE.TextureLoader().load(
+        "https://assets.vvplus.cc/misc/ground_texture.png"
+      )
+    );
+  }, []);
+  return (
+    <div
+      className={`
   absolute top-0 w-full h-screen
-  ${isWelcomePanelActive === true ? "z-[1]" : "z-[-100]"}`}
-      />
+  ${isWelcomePanelActive === true ? "z-[1] visible" : "z-[-100] hidden"}`}
+    >
+      <Canvas>
+        <perspectiveCamera />
+        <CameraControls />
+      </Canvas>
     </div>
   );
 };
