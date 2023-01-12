@@ -3,14 +3,14 @@ import { View, InputItem } from "@ant-design/react-native";
 
 export type InputProps = {
   value: string;
-  onChange: (value: string) => void;
+  onChangeText: (value: any) => void;
   maxLength: number;
   placeholder: any;
 };
 
 export const InputField = ({
   value,
-  onChange,
+  onChangeText,
   maxLength,
   placeholder,
 }: InputProps) => {
@@ -20,7 +20,7 @@ export const InputField = ({
         type="number"
         maxLength={maxLength}
         value={value}
-        onChange={onChange}
+        onChangeText={onChangeText}
         placeholder={placeholder}
         placeholderTextColor={"#CCCCCC"}
         style={{
