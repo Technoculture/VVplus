@@ -15,7 +15,7 @@ const LoginForm = () => {
   console.log(errors);
 
   const onSubmit = (data: any) => {
-    if (isEnteredPhoneNumber === true && "Send OTP") {
+    if (isEnteredPhoneNumber === false && "Send OTP") {
       setEnteredPhoneNumber(true);
       console.log(data, "send otp");
     }
