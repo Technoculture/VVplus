@@ -21,7 +21,7 @@ export type TabNavigation = {
   AccountTab: undefined;
 };
 
-const TabNavigation = () => {
+const TabNavigation = ({ navigation }: any) => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({

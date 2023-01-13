@@ -5,7 +5,11 @@ import { useForm, Controller } from "react-hook-form";
 import { InputField } from "./InputField";
 import FormButton from "./Button";
 
-const LoginForm = () => {
+export type loginNavigationProps = {
+  navigation: any;
+};
+
+const LoginForm = ({ navigation }: loginNavigationProps) => {
   const [isEnteredPhoneNumber, setEnteredPhoneNumber] = useState(false);
   const {
     control,
@@ -19,8 +23,13 @@ const LoginForm = () => {
       setEnteredPhoneNumber(true);
       console.log(data, "send otp");
     }
-    if (isEnteredPhoneNumber === true && "Sign In") {
-      console.log("navigate to home screen");
+    try {
+      if (isEnteredPhoneNumber === true && "Sign In") {
+        console.log(data, "navigate to home screen");
+        navigation.navigate("TabNavigation");
+      }
+    } catch (errors) {
+      console.log(errors);
     }
   };
 
