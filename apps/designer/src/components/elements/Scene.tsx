@@ -1,38 +1,37 @@
 import * as THREE from "three";
 import "@babylonjs/loaders/glTF";
 import {
-  BufferGeometryNode,
   Canvas,
   extend,
   LightNode,
-  Node,
-  Object3DNode,
   useFrame,
   useThree,
 } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
-// import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { OrbitControls, PerspectiveCamera, Plane } from "@react-three/drei";
+import {
+  HemisphereLight,
+  MeshStandardMaterial as _MeshStandardMaterial,
+} from "three";
+import { createSkyBox } from "./skybox";
 
 // TODO: Create JSON parsing with zod and handle the elemental breakdown of building model into several parts
 let scene_variable: THREE.Scene;
-// extend({ OrbitControls });
-// declare module "@react-three/fiber" {
-//   interface ThreeElements {
-//     orbitControls: Node<OrbitControls, typeof OrbitControls>;
-//   }
-// }
+extend({ HemisphereLight, MeshStandardMaterial: _MeshStandardMaterial });
+declare module "@react-three/fiber" {
+  interface ThreeElements {
+    hemisphereLightt: LightNode<HemisphereLight, typeof HemisphereLight>;
+    // meshStandardMaterial: MaterialNode<
+    //   MeshStandardMaterial,
+    //   [MeshStandardMaterialParameters]
+    // >;
+  }
+}
 const CameraControls = () => {
-  // Get a reference to the Three.js Camera, and the canvas html element.
-  // We need these to setup the OrbitControls class.
-  // https://threejs.org/docs/#examples/en/controls/OrbitControls
-
   const {
     camera,
     gl: { domElement },
   } = useThree();
-
-  // Ref to the controls, so that we can update them on every frame using useFrame
   const controls = useRef(null);
   useFrame((state) => {
     // controls.current.target.copy([0, 0, 20]);
@@ -45,20 +44,27 @@ const CameraControls = () => {
       panSpeed={10}
       minDistance={500}
       maxDistance={2000}
-      maxPolarAngle={Math.PI / 2}
+      minPolarAngle={-Math.PI / 2}
       target={[0, 0, 0]}
     />
   );
 };
+
 const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
-  const [texture, setTexture] = useState<THREE.Texture>();
+  const [groundTexture, setGroundTexture] = useState<THREE.Texture>();
+  function SceneInit() {
+    const { scene } = useThree();
+    createSkyBox(scene);
+    return null;
+  }
   useEffect(() => {
-    setTexture(
+    setGroundTexture(
       new THREE.TextureLoader().load(
         "https://assets.vvplus.cc/misc/ground_texture.png"
       )
     );
   }, []);
+
   return (
     <div
       className={`
@@ -66,13 +72,13 @@ const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
   ${isWelcomePanelActive === true ? "z-[1] visible" : "z-[-100] hidden"}`}
     >
       <Canvas>
+        <SceneInit />
         <PerspectiveCamera position={[0, 50, 10]} />
         <CameraControls />
         {/* <hemisphereLight position={[-1, 1, -1]} intensity={0.1} /> */}
-        {/* <mesh> */}
-        <Plane args={[1200, 1200, 1, 1]}></Plane>
-        {/* <meshStandardMaterial map={texture} /> */}
-        {/* </mesh> */}
+        {/* <Plane name="ground" args={[1200, 1200, 1, 1]}>
+          {/* <meshStandardMaterial map={groundTexture} /> */}
+        {/* </Plane> */}
       </Canvas>
     </div>
   );
