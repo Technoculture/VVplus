@@ -1,14 +1,17 @@
-import * as BABYLON from "@babylonjs/core";
+import * as THREE from "three";
 
-export async function createGround() {
+export function createGround(scene: THREE.Scene) {
   const groundUrl = "https://assets.vvplus.cc/misc/ground_texture.png";
-  const ground = BABYLON.MeshBuilder.CreateGround("ground", {
-    width: 12000,
-    height: 12000,
+  const groundGeometry = new THREE.PlaneGeometry(1200, 1200);
+  const groundMaterial = new THREE.MeshStandardMaterial({
+    map: new THREE.TextureLoader().load(groundUrl),
   });
-  ground.position.y = -10;
-  const groundMat = new BABYLON.StandardMaterial("groundMat");
-  groundMat.diffuseTexture = new BABYLON.Texture(groundUrl);
-  groundMat.diffuseTexture.hasAlpha = true;
-  ground.material = groundMat;
+  const ground = new THREE.Mesh(groundGeometry, groundMaterial);
+  scene.add(ground);
+  return null;
+  // <Mesh>
+  //   <directionalLight intensity={0.5} />
+  //   <SphereGeometry />
+  //   <meshBasicMaterial />
+  // </Mesh>
 }

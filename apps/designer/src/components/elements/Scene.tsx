@@ -14,6 +14,7 @@ import {
   MeshStandardMaterial as _MeshStandardMaterial,
 } from "three";
 import { createSkyBox } from "./skybox";
+import { createGround } from "./ground";
 
 // TODO: Create JSON parsing with zod and handle the elemental breakdown of building model into several parts
 let scene_variable: THREE.Scene;
@@ -42,28 +43,22 @@ const CameraControls = () => {
       ref={controls}
       args={[camera, domElement]}
       panSpeed={10}
-      minDistance={500}
-      maxDistance={2000}
-      minPolarAngle={-Math.PI / 2}
+      minDistance={100}
+      maxDistance={10000}
+      maxAzimuthAngle={Math.PI / 20}
+      maxPolarAngle={(19 * Math.PI) / 20}
       target={[0, 0, 0]}
     />
   );
 };
 
 const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
-  const [groundTexture, setGroundTexture] = useState<THREE.Texture>();
-  function SceneInit() {
+  function SceneInitialize() {
     const { scene } = useThree();
     createSkyBox(scene);
+    createGround(scene);
     return null;
   }
-  useEffect(() => {
-    setGroundTexture(
-      new THREE.TextureLoader().load(
-        "https://assets.vvplus.cc/misc/ground_texture.png"
-      )
-    );
-  }, []);
 
   return (
     <div
@@ -72,13 +67,10 @@ const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
   ${isWelcomePanelActive === true ? "z-[1] visible" : "z-[-100] hidden"}`}
     >
       <Canvas>
-        <SceneInit />
-        <PerspectiveCamera position={[0, 50, 10]} />
+        <SceneInitialize />
+        <PerspectiveCamera position={[0, 100, 10]} />
         <CameraControls />
         {/* <hemisphereLight position={[-1, 1, -1]} intensity={0.1} /> */}
-        {/* <Plane name="ground" args={[1200, 1200, 1, 1]}>
-          {/* <meshStandardMaterial map={groundTexture} /> */}
-        {/* </Plane> */}
       </Canvas>
     </div>
   );
