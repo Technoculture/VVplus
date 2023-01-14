@@ -44,6 +44,7 @@ const TabNavigation = ({ navigation }: any) => {
         },
         tabBarInactiveTintColor: "gray",
         tabBarActiveTintColor: "blue",
+        tabBarHideOnKeyboard: true,
         headerShown: false,
       })}
     >

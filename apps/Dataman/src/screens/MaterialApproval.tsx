@@ -3,10 +3,23 @@ import { Button, WhiteSpace, List } from "@ant-design/react-native";
 import { View, Text } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { PageHeader } from "../components/PageHeader";
+import { useForm, Controller } from "react-hook-form";
 import { InputField } from "../components/InputField";
+import { FormButton } from "../components/Button";
 
 const MaterialApproval = () => {
   const Item = List.Item;
+
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  console.log(errors);
+
+  const onSubmit = (data: any) => {
+    console.log(data, "submitted");
+  };
 
   return (
     <View>
@@ -26,16 +39,47 @@ const MaterialApproval = () => {
           <Text className="text-zinc-800 text-base font-normal">
             Indent Number
           </Text>
-          <InputField placeholder="Enter Number" />
+          <Controller
+            control={control}
+            rules={{
+              required: "This field is required",
+              pattern: {
+                value:
+                  /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/,
+                message: "Enter valid Number",
+              },
+            }}
+            render={({ field: { onChange, value }, fieldState: { error } }) => (
+              <>
+                <View
+                  className={`border rounded bg-white ${
+                    error ? `border-red-600` : `border-white`
+                  }`}
+                >
+                  <InputField
+                    placeholder={"Enter Number"}
+                    onChangeText={onChange}
+                    value={value}
+                    maxLength={10}
+                  />
+                </View>
+                {error && (
+                  <Text className="text-red-600 self-stretch text-center">
+                    {error.message}
+                  </Text>
+                )}
+              </>
+            )}
+            name="Indent Number"
+          />
         </Item>
       </List>
 
       <View className="flex flex-col items-center justify-center gap-1 mt-10">
-        <Button type="primary" style={{ borderRadius: 25 }}>
-          Submit
-        </Button>
+        <FormButton onPress={handleSubmit(onSubmit)} />
+
         <WhiteSpace size="lg" />
-        <Button type="warning" style={{ borderRadius: 25 }}>
+        <Button type="warning" style={{ borderRadius: 25, width: 90 }}>
           Deny
         </Button>
       </View>

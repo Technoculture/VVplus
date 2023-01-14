@@ -42,6 +42,11 @@ const LoginForm = ({ navigation }: loginNavigationProps) => {
             control={control}
             rules={{
               required: "phone number is required",
+              pattern: {
+                value:
+                  /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/,
+                message: "Enter Valid Phone Number",
+              },
               minLength: {
                 value: 10,
                 message: "phone number should be minimum 10 characters long",
@@ -81,6 +86,10 @@ const LoginForm = ({ navigation }: loginNavigationProps) => {
                 control={control}
                 rules={{
                   required: "OTP is required",
+                  pattern: {
+                    value: /^\d{6}$/,
+                    message: "Enter valid OTP",
+                  },
                   minLength: {
                     value: 6,
                     message: "OTP should be minimum 6 characters long",

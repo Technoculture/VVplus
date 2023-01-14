@@ -21,6 +21,7 @@ export const InputField = ({
         maxLength={maxLength}
         value={value}
         onChangeText={onChangeText}
+        valueAsNumber={true}
         placeholder={placeholder}
         placeholderTextColor={"#CCCCCC"}
         style={{
