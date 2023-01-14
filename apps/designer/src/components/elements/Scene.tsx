@@ -15,6 +15,7 @@ import {
 } from "three";
 import { createSkyBox } from "./skybox";
 import { createGround } from "./ground";
+import { createFog } from "./fog";
 
 // TODO: Create JSON parsing with zod and handle the elemental breakdown of building model into several parts
 let scene_variable: THREE.Scene;
@@ -57,6 +58,7 @@ const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
     const { scene } = useThree();
     createSkyBox(scene);
     createGround(scene);
+    createFog(scene);
     return null;
   }
 

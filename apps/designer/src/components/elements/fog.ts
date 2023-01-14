@@ -1,9 +1,8 @@
-import * as BABYLON from "@babylonjs/core";
+import * as THREE from "three";
+import { FogExp2 } from "three";
 
-export async function createFog(scene: BABYLON.Scene) {
-  scene.fogMode = BABYLON.Scene.FOGMODE_LINEAR;
-  scene.fogDensity = 0.001;
-  scene.fogStart = 5000.0;
-  scene.fogEnd = 6000.0;
-  scene.fogColor = new BABYLON.Color3(0.796, 0.769, 0.769);
+export function createFog(scene: THREE.Scene) {
+  // const fog = new Fog(new Color(0.796, 0.769, 0.769), 5000, 6000);
+  const fog = new FogExp2("#CBCBCB", 0.00105);
+  scene.fog = fog;
 }
