@@ -1,24 +1,17 @@
-import * as BABYLON from "@babylonjs/core";
 import data from "../../../public/house.json";
-import { Vector3 } from "@babylonjs/core";
+import { Scene } from "three";
+import { useGLTF } from "@react-three/drei";
 
-export async function createModel(scene: BABYLON.Scene) {
+export function createModel(scene: Scene) {
+  // const building = [];
   data.floors.map((element) => {
+    // const floor = [];
     element.floorStructure.map((e) => {
-      BABYLON.SceneLoader.ImportMesh(
-        "",
-        data?.baseUrl || " ",
-        e.file,
-        scene,
-        (newMeshes) => {
-          if (newMeshes[0]) {
-            newMeshes[0].position.y = 0;
-            newMeshes[0].position.x = 0;
-            newMeshes[0].position.z = 300;
-            newMeshes[0].scaling = new Vector3(40, 40, 40);
-          }
-        }
-      );
+      const model = useGLTF(data.baseUrl + e.file);
+      // model.scene.name = element.floorName + e.file.split(".")[0];
+      model.scene.scale.set(10, 10, 10);
+      model.scene.position.set(0, 0, 0);
+      scene.add(model.scene);
     });
   });
 }

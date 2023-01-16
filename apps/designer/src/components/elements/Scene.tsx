@@ -7,8 +7,8 @@ import {
   useFrame,
   useThree,
 } from "@react-three/fiber";
-import { useEffect, useRef, useState } from "react";
-import { OrbitControls, PerspectiveCamera, Plane } from "@react-three/drei";
+import { useRef } from "react";
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import {
   HemisphereLight,
   MeshStandardMaterial as _MeshStandardMaterial,
@@ -16,6 +16,7 @@ import {
 import { createSkyBox } from "./skybox";
 import { createGround } from "./ground";
 import { createFog } from "./fog";
+import { createModel } from "./models";
 
 // TODO: Create JSON parsing with zod and handle the elemental breakdown of building model into several parts
 let scene_variable: THREE.Scene;
@@ -59,6 +60,7 @@ const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
     createSkyBox(scene);
     createGround(scene);
     createFog(scene);
+    createModel(scene);
     return null;
   }
 

@@ -7,6 +7,7 @@ export function createGround(scene: THREE.Scene) {
     map: new THREE.TextureLoader().load(groundUrl),
   });
   const ground = new THREE.Mesh(groundGeometry, groundMaterial);
+  ground.rotateX(-Math.PI / 2);
   scene.add(ground);
   return null;
   // <Mesh>
