@@ -1,8 +1,9 @@
 import React from "react";
 import { ScrollView, View, Text } from "react-native";
-import { Button, List } from "@ant-design/react-native";
+import { List } from "@ant-design/react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { PageHeader } from "../components/PageHeader";
+import { FormButton } from "../components/Button";
 
 const DailyManpower = () => {
   const stockFormOptions = [
@@ -50,9 +51,7 @@ const DailyManpower = () => {
           )}
         </List>
         <View className="flex-col justify-center items-center mb-24 mt-4">
-          <Button type="primary" style={{ borderRadius: 25 }}>
-            Submit
-          </Button>
+          <FormButton />
         </View>
       </ScrollView>
     </View>

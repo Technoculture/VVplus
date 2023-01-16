@@ -2,7 +2,6 @@ import React from "react";
 import { List } from "@ant-design/react-native";
 import { ScrollView, View, Text } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-import { useForm } from "react-hook-form";
 import { PageHeader } from "../components/PageHeader";
 import { PurchaseValidations } from "../Utils/PurchaseValidations";
 import {
@@ -49,7 +48,6 @@ const MaterialRequest = () => {
         <View>
           <Text className="text-center text-neutral-400 text-base">Stock</Text>
         </View>
-
         <PurchaseValidations />
       </ScrollView>
     </View>
