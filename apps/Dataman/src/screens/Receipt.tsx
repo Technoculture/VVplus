@@ -1,7 +1,6 @@
 import React from "react";
 import { View, Text, List } from "@ant-design/react-native";
 import { ScrollView } from "react-native";
-import { NavBar } from "../components/Navbar";
 import { InputField } from "../components/InputField";
 import { PageHeader } from "../components/PageHeader";
 import { FormButton } from "../components/Button";
@@ -13,8 +12,7 @@ const Receipt = () => {
   return (
     <ScrollView>
       <View className="h-full">
-        <NavBar />
-        <PageHeader text="Good Receipt Entry" />
+        <PageHeader text="Goods Receipt Entry" />
 
         <List>
           {RECEIPT_LIST.map((item, index) => (

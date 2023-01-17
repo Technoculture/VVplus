@@ -2,7 +2,6 @@ import React from "react";
 import { List } from "@ant-design/react-native";
 import { ScrollView, View, Text } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-import { NavBar } from "../components/Navbar";
 import { InputField } from "../components/InputField";
 import { FormButton } from "../components/Button";
 import { PageHeader } from "../components/PageHeader";
@@ -11,7 +10,6 @@ import { ENTRY_LIST } from "../components/listComponents/EntryList";
 const WorkEntry = () => {
   return (
     <View className="h-full">
-      <NavBar />
       <PageHeader text="Extra Work Entry" />
       <ScrollView>
         <List>
@@ -45,22 +43,22 @@ const WorkEntry = () => {
             <Text className="text-zinc-800 text-base font-normal">
               Base Amount
             </Text>
-            <InputField />
+            <InputField placeholder={""} />
           </List.Item>
 
           <List.Item>
             <Text className="text-zinc-800 text-base font-normal">Tax</Text>
-            <InputField />
+            <InputField placeholder={""} />
           </List.Item>
           <List.Item>
             <Text className="text-zinc-800 text-base font-normal">
               Net Amount
             </Text>
-            <InputField />
+            <InputField placeholder={""} />
           </List.Item>
           <List.Item>
             <Text className="text-zinc-800 text-base font-normal">Remarks</Text>
-            <InputField />
+            <InputField placeholder={""} />
           </List.Item>
           <List.Item>
             <FormButton />

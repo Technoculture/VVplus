@@ -1,19 +1,20 @@
 import * as React from "react";
 import { View, Text } from "react-native";
 import { Card, Carousel, List } from "@ant-design/react-native";
+import { MenuItem } from "../components/MenuItems";
 
-export const HomeScreen = () => {
+export const HomeScreen = ({ navigation }: any) => {
   const homeOptionsArray = [
     "Purchase",
     "Store",
     "Sales",
-    "Contractors",
+    "Contractor",
     "Approval Requests",
   ];
+
   const carouselOptionArray = [1, 2, 3, 4, 5];
   return (
     <View className="flex-col">
-      <Text className="text-3xl font-semibold py-1 px-2">Home</Text>
       <View>
         <Card full>
           <Card.Header
@@ -42,14 +43,17 @@ export const HomeScreen = () => {
           </Card.Body>
         </Card>
         <List>
-          {homeOptionsArray.map((item, idx) => (
-            <List.Item
-              key={idx}
-              style={{ borderColor: "#969696" }}
-              arrow="horizontal"
-            >
-              {item}
-            </List.Item>
+          {homeOptionsArray.map((item, index) => (
+            <MenuItem
+              myKey={index}
+              key={index}
+              item={item}
+              onPress={() => {
+                navigation.navigate(homeOptionsArray[index], {
+                  item,
+                });
+              }}
+            />
           ))}
         </List>
       </View>

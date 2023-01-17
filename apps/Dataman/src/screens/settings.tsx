@@ -1,8 +1,8 @@
-import { Switch, List } from "@ant-design/react-native";
 import * as React from "react";
+import { Switch, List } from "@ant-design/react-native";
 import { Text, Image, View } from "react-native";
 import { Octicons } from "@expo/vector-icons";
-import { NavBar } from "../components/Navbar";
+import { PageHeader } from "../components/PageHeader";
 
 export const SettingsScreen = () => {
   const settingsOptionsArray = [
@@ -26,8 +26,7 @@ export const SettingsScreen = () => {
   ];
   return (
     <View className="flex-col">
-      <NavBar />
-      <Text className="text-3xl font-semibold py-1 px-2">Settings</Text>
+      <PageHeader text="Settings" />
       <View>
         <List
           renderHeader={
@@ -44,7 +43,7 @@ export const SettingsScreen = () => {
               />
             }
           >
-            <Text>UserName</Text>
+            <Text>Matt Wierzbicki</Text>
             <List.Item.Brief>
               <Text>Profile Rating: 5 stars</Text>
             </List.Item.Brief>

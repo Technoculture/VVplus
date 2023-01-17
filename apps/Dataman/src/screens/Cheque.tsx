@@ -1,7 +1,6 @@
 import React from "react";
 import { List, Tabs } from "@ant-design/react-native";
 import { View, Text, ScrollView } from "react-native";
-import { NavBar } from "../components/Navbar";
 import { FormButton } from "../components/Button";
 import { InputField } from "../components/InputField";
 import {
@@ -20,9 +19,7 @@ const Cheque = () => {
 
   return (
     <View>
-      <NavBar />
       <PageHeader text="Cheque Entry/Update" />
-
       <View className="h-full">
         <Tabs tabs={TABS} tabBarActiveTextColor="#1677FF">
           <View>
@@ -46,7 +43,7 @@ const Cheque = () => {
             <FormButton />
           </View>
 
-          <View className="h-3/5">
+          <View className="h-4/5">
             <ScrollView>
               <List>
                 {DEPOSIT_LIST.map((item, index) => (
@@ -66,39 +63,42 @@ const Cheque = () => {
                   <Text className="text-zinc-800 text-base font-normal">
                     Bank:
                   </Text>
-                  <InputField />
+                  <InputField placeholder={" "} />
                 </List.Item>
 
                 <List.Item>
                   <Text className="text-zinc-800 text-base font-normal">
                     Name of Customer:
                   </Text>
-                  <InputField />
+                  <InputField placeholder={" "} />
                 </List.Item>
                 <List.Item>
                   <Text className="text-zinc-800 text-base font-normal">
                     Cheque Date:
                   </Text>
-                  <InputField />
+                  <InputField placeholder={" "} />
                 </List.Item>
                 <List.Item>
                   <Text className="text-zinc-800 text-base font-normal">
                     Amount:
                   </Text>
-                  <InputField />
+                  <InputField placeholder={" "} />
                 </List.Item>
                 <List.Item>
                   <Text className="text-zinc-800 text-base font-normal">
                     Site:
                   </Text>
-                  <InputField />
+                  <InputField placeholder={" "} />
                 </List.Item>
               </List>
-              <FormButton />
+
+              <View className="flex flex-col mb-10">
+                <FormButton />
+              </View>
             </ScrollView>
           </View>
 
-          <View className="h-3/5">
+          <View className="h-4/5">
             <ScrollView>
               <List>
                 {CLEARED_LIST.map((item, index) => (
@@ -117,25 +117,25 @@ const Cheque = () => {
                   <Text className="text-zinc-800 text-base font-normal">
                     Name of Customer:
                   </Text>
-                  <InputField />
+                  <InputField placeholder={" "} />
                 </List.Item>
                 <List.Item>
                   <Text className="text-zinc-800 text-base font-normal">
                     Cheque Date:
                   </Text>
-                  <InputField />
+                  <InputField placeholder={" "} />
                 </List.Item>
                 <List.Item>
                   <Text className="text-zinc-800 text-base font-normal">
                     Amount:
                   </Text>
-                  <InputField />
+                  <InputField placeholder={" "} />
                 </List.Item>
                 <List.Item>
                   <Text className="text-zinc-800 text-base font-normal">
                     Site:
                   </Text>
-                  <InputField />
+                  <InputField placeholder={" "} />
                 </List.Item>
                 <List.Item>
                   <Text className="text-zinc-800 text-base font-normal">
@@ -146,8 +146,9 @@ const Cheque = () => {
                   </Text>
                 </List.Item>
               </List>
-
-              <FormButton />
+              <View className="flex flex-col mb-10">
+                <FormButton />
+              </View>
             </ScrollView>
           </View>
         </Tabs>

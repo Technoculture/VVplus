@@ -1,19 +1,24 @@
 import * as React from "react";
 import { Text, View } from "react-native";
 import { Card, Carousel, List } from "@ant-design/react-native";
+import { PageHeader } from "../components/PageHeader";
+import { MenuItem } from "../components/MenuItems";
 
-export const StoreScreen = () => {
+export const StoreScreen = ({ navigation }: any) => {
   const storeOptionsArray = [
-    "Stock Recieve Entry",
+    "Stock Receive Entry",
     "Stock Issue Entry",
-    "Phase to Phase Transfer",
-    "Branch to Branch Send",
-    "Branch to Branch Receive",
+    "Phase To Phase Transfer",
+    "Branch To Branch Send",
+    "Branch To Branch Receive",
   ];
+
   const carouselOptionArray = [1, 2, 3, 4, 5];
   return (
     <View className="flex-col">
-      <Text className="text-3xl font-semibold py-1 px-2">Store</Text>
+      <View>
+        <PageHeader text="Store" />
+      </View>
       <View>
         <Card full>
           <Card.Header
@@ -38,14 +43,17 @@ export const StoreScreen = () => {
           </Card.Body>
         </Card>
         <List>
-          {storeOptionsArray.map((item, idx) => (
-            <List.Item
-              key={idx}
-              style={{ borderColor: "#969696" }}
-              arrow="horizontal"
-            >
-              {item}
-            </List.Item>
+          {storeOptionsArray.map((item, index) => (
+            <MenuItem
+              myKey={index}
+              key={index}
+              item={item}
+              onPress={() => {
+                navigation.navigate(storeOptionsArray[index], {
+                  item,
+                });
+              }}
+            />
           ))}
         </List>
       </View>
