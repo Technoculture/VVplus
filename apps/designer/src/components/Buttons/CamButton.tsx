@@ -1,6 +1,5 @@
 import React from "react";
 import animateActiveCamera from "../Animations/animateCamera";
-import { scene_variable } from "../elements/Scene";
 
 export interface ButtonProps
   extends React.DetailedHTMLProps<
@@ -21,16 +20,16 @@ export interface ButtonProps
 
 const CamButton = ({ text, r, a, b, t }: ButtonProps) => {
   function animation() {
-    animateActiveCamera(scene_variable, {
-      radius: r,
-      alpha: a,
-      beta: b,
-      target: {
-        x: t.x,
-        y: t.y,
-        z: t.z,
-      },
-    });
+    // animateActiveCamera({
+    //   radius: r,
+    //   alpha: a,
+    //   beta: b,
+    //   target: {
+    //     x: t.x,
+    //     y: t.y,
+    //     z: t.z,
+    //   },
+    // });
   }
   return (
     <button

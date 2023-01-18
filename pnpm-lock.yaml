@@ -157,6 +157,7 @@ importers:
       config: workspace:*
       eslint: 7.32.0
       eslint-config-custom: workspace:*
+      gsap: ^3.11.4
       hooks: ^0.3.2
       next: 12.2.5
       next-transpile-modules: 9.0.0
@@ -191,6 +192,7 @@ importers:
       babylonjs: 5.35.0
       babylonjs-gltf2interface: 5.35.0
       babylonjs-hook: 0.1.1_62lwnjhtdidj4wz36sxgbsavhq
+      gsap: 3.11.4
       hooks: 0.3.2
       next: 12.2.5_672uxklweod7ene3nqtsh262ca
       react: 18.2.0
@@ -7452,6 +7454,10 @@ packages:
   /graphql/15.8.0:
     resolution: {integrity: sha512-5gghUc24tP9HRznNpV2+FIoq3xKkj5dTQqf4v0CpdPbFVwFkWoxOM+o+2OC9ZSvjEMTjfmG9QT+gcvggTwW1zw==}
     engines: {node: '>= 10.x'}
+    dev: false
+
+  /gsap/3.11.4:
+    resolution: {integrity: sha512-McHhEguHyExMMnjqKA8G+7TvxmlKQGMbjgwAilnFe1e4id7V/tFveRQ2YMZhTYu0oxHGWvbPltdVYQOu3z1SCA==}
     dev: false
 
   /hard-rejection/2.1.0:

@@ -14,6 +14,7 @@ const Accordion = () => {
       >
         <AccordionLayout
           title="Main Gate"
+          glbTitle="plot-boundary"
           design="Minimal Floral"
           index={1}
           activeIndex={activeIndex}
@@ -21,18 +22,15 @@ const Accordion = () => {
           r={1000}
           a={-9.424777961}
           b={1.570796327}
-          t={{ x: 250, y: 70, z: 30 }}
+          t={{ x: 220, y: 50, z: 0 }}
         >
           <SelectCarousel />
         </AccordionLayout>
       </div>
-      <div
-        className={`select-none  cursor-pointer  rounded-[15px]  
-      
-      `}
-      >
+      <div className={`select-none  cursor-pointer  rounded-[15px]`}>
         <AccordionLayout
           title="Garden"
+          glbTitle="plot-pool"
           design="All Steel"
           index={2}
           activeIndex={activeIndex}
@@ -40,7 +38,7 @@ const Accordion = () => {
           r={1000}
           a={0}
           b={0}
-          t={{ x: -300, y: -400, z: 400 }}
+          t={{ x: 100, y: 100, z: 0 }}
         >
           <SelectCarousel />
         </AccordionLayout>
@@ -53,6 +51,7 @@ const Accordion = () => {
       >
         <AccordionLayout
           title="Balcony Railings"
+          glbTitle="first-floor-railing_ff"
           design="All Steel"
           index={3}
           activeIndex={activeIndex}
@@ -60,7 +59,7 @@ const Accordion = () => {
           r={1000}
           a={-9.424777961}
           b={1.570796327}
-          t={{ x: 500, y: 350, z: 280 }}
+          t={{ x: 100, y: 100, z: -50 }}
         >
           <SelectCarousel />
         </AccordionLayout>
@@ -73,13 +72,14 @@ const Accordion = () => {
         <AccordionLayout
           title="Garden"
           design="All Steel"
+          glbTitle="plot-pool"
           index={4}
           activeIndex={activeIndex}
           setActiveIndex={setActiveIndex}
           r={1000}
           a={0}
           b={0}
-          t={{ x: -300, y: -400, z: 400 }}
+          t={{ x: 100, y: 100, z: 0 }}
         >
           <SelectCarousel />
         </AccordionLayout>

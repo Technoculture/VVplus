@@ -2,10 +2,10 @@ import React from "react";
 
 import { AiOutlineDown, AiOutlineRight } from "react-icons/ai";
 import animateActiveCamera from "./Animations/animateCamera";
-import { scene_variable } from "./elements/Scene";
 
 interface Props {
   title: string;
+  glbTitle?: string;
   design: string;
   children: JSX.Element;
   index: number;
@@ -29,6 +29,7 @@ interface target {
 
 const AccordionLayout = ({
   title,
+  glbTitle,
   design,
   children,
   index,
@@ -40,7 +41,7 @@ const AccordionLayout = ({
   t,
 }: Props) => {
   function animation(r: number, a: number, b: number, t: target) {
-    animateActiveCamera(scene_variable, {
+    animateActiveCamera({
       radius: r,
       alpha: a,
       beta: b,
@@ -49,6 +50,7 @@ const AccordionLayout = ({
         y: t.y,
         z: t.z,
       },
+      glbTitle,
     });
   }
   const handleSetIndex = (index) => {
@@ -105,13 +107,7 @@ const AccordionLayout = ({
         </div>
 
         {activeIndex === index && (
-          <div
-            className={`px-5 scrollbar-hide rounded-2xl
-          
-          `}
-          >
-            {children}
-          </div>
+          <div className={`px-5 scrollbar-hide rounded-2xl`}>{children}</div>
         )}
       </div>
     </>

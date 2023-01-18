@@ -4,7 +4,7 @@ import Accordion from "./Accordion";
 const SelectionPanel = () => {
   return (
     <>
-      <Accordion />{" "}
+      <Accordion />
     </>
   );
 };
