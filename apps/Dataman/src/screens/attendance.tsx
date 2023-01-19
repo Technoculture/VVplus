@@ -1,12 +1,10 @@
 import { Button, List } from "@ant-design/react-native";
 import * as React from "react";
 import { View, Text, Image } from "react-native";
-import { NavBar } from "../components/Navbar";
 
 export const AttendanceScreen = () => {
   return (
     <View className="flex-col">
-      <NavBar />
       <Text className="text-3xl font-semibold py-1 px-2">Attendance</Text>
       <View className="h-full flex-col">
         <List

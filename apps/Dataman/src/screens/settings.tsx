@@ -3,27 +3,9 @@ import { Switch, List } from "@ant-design/react-native";
 import { Text, Image, View } from "react-native";
 import { Octicons } from "@expo/vector-icons";
 import { PageHeader } from "../components/PageHeader";
+import { settingsOptionsArray } from "../components/listComponents/SettingsList";
 
 export const SettingsScreen = () => {
-  const settingsOptionsArray = [
-    {
-      title: "Change Currency",
-      subtitle: "Indian Rupee",
-    },
-
-    {
-      title: "Change Language",
-      subtitle: "English",
-    },
-    {
-      title: "Units",
-      subtitle: "Metric",
-    },
-    {
-      title: "Change Mobile No.",
-      subtitle: "987654321",
-    },
-  ];
   return (
     <View className="flex-col">
       <PageHeader text="Settings" />

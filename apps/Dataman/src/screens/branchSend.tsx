@@ -1,41 +1,12 @@
 import React from "react";
 import { Text, ScrollView, View } from "react-native";
-import { Button, List } from "@ant-design/react-native";
+import { List } from "@ant-design/react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { PageHeader } from "../components/PageHeader";
+import { FormButton } from "../components/Button";
+import { stockFormOptions } from "../components/listComponents/BranchLists";
 
 const BranchSend = () => {
-  const stockFormOptions = [
-    {
-      label: "Voucher Type",
-      placeholder: "Search Here",
-      icon: "questioncircleo",
-    },
-    {
-      label: "Voucher No. Date",
-      placeholder: "Enter Date",
-    },
-    {
-      label: "From Cost Center",
-      placeholder: "Search Here",
-    },
-    {
-      label: "Godown",
-      placeholder: "Search Here",
-    },
-    {
-      label: "To Cost Center",
-      placeholder: "Search Here",
-    },
-    {
-      label: "Site to",
-      placeholder: "Search Here",
-    },
-    {
-      label: "Indent No.",
-      placeholder: "Search Here",
-    },
-  ];
   return (
     <View>
       <ScrollView>
@@ -59,9 +30,7 @@ const BranchSend = () => {
           )}
         </List>
         <View className="flex-col justify-center items-center mb-24 mt-4">
-          <Button type="primary" style={{ borderRadius: 25 }}>
-            Submit
-          </Button>
+          <FormButton />
         </View>
       </ScrollView>
     </View>

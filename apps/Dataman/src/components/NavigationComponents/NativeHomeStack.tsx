@@ -16,7 +16,7 @@ import PhasetoPhase from "../../screens/phaseToPhase";
 import BranchSend from "../../screens/branchSend";
 import BranchReceive from "../../screens/branchReceive";
 import WorkEntry from "../../screens/WorkEntry";
-import UnitCancellation from "../../screens/UnitCancellation";
+import { UnitCancellation } from "../../screens/UnitCancellation";
 import Cheque from "../../screens/Cheque";
 import DailyManpower from "../../screens/manpower";
 import DailyManPowerScreen from "../../screens/DailyManPower";

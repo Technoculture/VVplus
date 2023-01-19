@@ -25,7 +25,7 @@ const TabNavigation = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
+        tabBarIcon: () => {
           if (route.name === "HomeTab") {
             return <SimpleLineIcons name="user" size={20} color="#969696" />;
           } else if (route.name === "Notification") {
@@ -44,6 +44,7 @@ const TabNavigation = () => {
         },
         tabBarInactiveTintColor: "gray",
         tabBarActiveTintColor: "blue",
+        tabBarHideOnKeyboard: true,
         headerShown: false,
       })}
     >
