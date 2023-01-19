@@ -4,6 +4,7 @@ import { Text, View } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import { InputField } from "./InputField";
 import FormButton from "./Button";
+import { OTP_REGEX, PHONE_REGEX } from "../../Utils/Validator";
 
 export type loginNavigationProps = {
   navigation: any;
@@ -43,8 +44,7 @@ const LoginForm = ({ navigation }: loginNavigationProps) => {
             rules={{
               required: "phone number is required",
               pattern: {
-                value:
-                  /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/,
+                value: PHONE_REGEX,
                 message: "Enter Valid Phone Number",
               },
               minLength: {
@@ -87,7 +87,7 @@ const LoginForm = ({ navigation }: loginNavigationProps) => {
                 rules={{
                   required: "OTP is required",
                   pattern: {
-                    value: /^\d{6}$/,
+                    value: OTP_REGEX,
                     message: "Enter valid OTP",
                   },
                   minLength: {

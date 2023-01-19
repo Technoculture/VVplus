@@ -44,7 +44,6 @@ const PlaceOrder = () => {
         <View>
           <Text className="text-center text-neutral-400 text-base">Stock</Text>
         </View>
-
         <PurchaseValidations />
       </ScrollView>
     </View>

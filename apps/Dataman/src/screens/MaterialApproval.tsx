@@ -6,6 +6,7 @@ import { AntDesign } from "@expo/vector-icons";
 import { PageHeader } from "../components/PageHeader";
 import { InputField } from "../components/InputField";
 import { FormButton } from "../components/Button";
+import { PHONE_REGEX } from "../Utils/Validator";
 
 const MaterialApproval = () => {
   const Item = List.Item;
@@ -44,8 +45,7 @@ const MaterialApproval = () => {
             rules={{
               required: "This field is required",
               pattern: {
-                value:
-                  /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/,
+                value: PHONE_REGEX,
                 message: "Enter valid Number",
               },
             }}

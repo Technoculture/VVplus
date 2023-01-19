@@ -7,6 +7,7 @@ import { InputField } from "../components/InputField";
 import { FormButton } from "../components/Button";
 import { PageHeader } from "../components/PageHeader";
 import { ENTRY_LIST } from "../components/listComponents/EntryList";
+import { PHONE_REGEX } from "../Utils/Validator";
 
 const WorkEntry = () => {
   const {
@@ -59,8 +60,7 @@ const WorkEntry = () => {
               rules={{
                 required: "This field is required",
                 pattern: {
-                  value:
-                    /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/,
+                  value: PHONE_REGEX,
                   message: "Enter valid Number",
                 },
               }}
@@ -99,8 +99,7 @@ const WorkEntry = () => {
               rules={{
                 required: "This field is required",
                 pattern: {
-                  value:
-                    /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/,
+                  value: PHONE_REGEX,
                   message: "Enter valid Number",
                 },
               }}
@@ -140,8 +139,7 @@ const WorkEntry = () => {
               rules={{
                 required: "This field is required",
                 pattern: {
-                  value:
-                    /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/,
+                  value: PHONE_REGEX,
                   message: "Enter valid Number",
                 },
               }}
@@ -179,8 +177,7 @@ const WorkEntry = () => {
               rules={{
                 required: "This field is required",
                 pattern: {
-                  value:
-                    /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/,
+                  value: PHONE_REGEX,
                   message: "Enter valid Number",
                 },
               }}

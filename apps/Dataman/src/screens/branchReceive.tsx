@@ -3,47 +3,16 @@ import { Text, ScrollView, View } from "react-native";
 import { List } from "@ant-design/react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { PageHeader } from "../components/PageHeader";
+import { BRANCH_RECEIVE } from "../components/listComponents/BranchLists";
 import { FormButton } from "../components/Button";
 
 const BranchReceive = () => {
-  const stockFormOptions = [
-    {
-      label: "Voucher Type",
-      placeholder: "Search Here",
-      icon: "questioncircleo",
-    },
-    {
-      label: "Voucher No. Date",
-      placeholder: "Enter Date",
-    },
-    {
-      label: "Receiving in Godown",
-      placeholder: "Search Here",
-    },
-    {
-      label: "Receiving Goods from Branch(Supplier)",
-      placeholder: "Search Here",
-    },
-    {
-      label: "Fill Transfer Entry",
-      placeholder: "Search Here",
-    },
-    {
-      label: "Gate Entry No.",
-    },
-    {
-      label: "Vehicle No.",
-    },
-    {
-      label: "Remarks",
-    },
-  ];
   return (
     <View>
       <ScrollView>
         <List>
           <PageHeader text="Branch To Branch Receive" />
-          {stockFormOptions.map(
+          {BRANCH_RECEIVE.map(
             (
               item: { label: string; placeholder?: string; icon?: string },
               idx

@@ -1,36 +1,18 @@
-import { ScrollView, View, Text } from "react-native";
 import React from "react";
+import { ScrollView, View, Text } from "react-native";
 import { List } from "@ant-design/react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { PageHeader } from "../components/PageHeader";
 import { StoreValidations } from "../Utils/StoreValidations";
+import { STOCK_RECEIVE } from "../components/listComponents/StockLists";
 
 const StockReceive = () => {
-  const stockFormOptions = [
-    {
-      label: "Voucher Type",
-      placeholder: "Search Here",
-      icon: "questioncircleo",
-    },
-    {
-      label: "Indentor Name",
-      placeholder: "Search Here",
-    },
-    {
-      label: "Department Name",
-      placeholder: "Search Here",
-    },
-    {
-      label: "Choose Phase(Cost Center)",
-      placeholder: "Search Here",
-    },
-  ];
   return (
     <View>
       <ScrollView>
         <List style={{ marginBottom: 10 }}>
           <PageHeader text="Stock Receive Entry" />
-          {stockFormOptions.map(
+          {STOCK_RECEIVE.map(
             (
               item: { label: string; placeholder: string; icon?: string },
               idx

@@ -5,6 +5,8 @@ import { List } from "@ant-design/react-native";
 import { PageHeader } from "../components/PageHeader";
 import { InputField } from "../components/InputField";
 import { FormButton } from "../components/Button";
+import { DAILY_MANPOWER_LIST } from "../components/listComponents/DailyManPowerList";
+import { PHONE_REGEX } from "../Utils/Validator";
 
 export const DailyManPowerScreen = () => {
   const {
@@ -18,24 +20,6 @@ export const DailyManPowerScreen = () => {
     console.log(data, "submitted");
   };
 
-  const DAILY_MANPOWER_LIST = [
-    {
-      title: "Date",
-      content: "Enter Date",
-    },
-    {
-      title: "Party Name",
-      content: "Search Here",
-    },
-    {
-      title: "Phase(Cost Center)",
-      content: "Search Here",
-    },
-    {
-      title: "Resource Type",
-      content: "Search Here",
-    },
-  ];
   return (
     <View>
       <PageHeader text="Daily Manpower" />
@@ -60,8 +44,7 @@ export const DailyManPowerScreen = () => {
             rules={{
               required: "This field is required",
               pattern: {
-                value:
-                  /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/,
+                value: PHONE_REGEX,
                 message: "Enter valid Number",
               },
             }}
@@ -97,8 +80,7 @@ export const DailyManPowerScreen = () => {
             rules={{
               required: "This field is required",
               pattern: {
-                value:
-                  /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/,
+                value: PHONE_REGEX,
                 message: "Enter valid Number",
               },
             }}

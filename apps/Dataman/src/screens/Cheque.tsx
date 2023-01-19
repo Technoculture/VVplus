@@ -11,6 +11,7 @@ import {
   CLEARED_LIST,
 } from "../components/listComponents/ChequeList";
 import { PageHeader } from "../components/PageHeader";
+import { PHONE_REGEX } from "../Utils/Validator";
 
 const Cheque = () => {
   const {
@@ -75,8 +76,7 @@ const Cheque = () => {
                     rules={{
                       required: "This field is required",
                       pattern: {
-                        value:
-                          /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/,
+                        value: PHONE_REGEX,
                         message: "Enter valid Number",
                       },
                     }}
@@ -117,8 +117,7 @@ const Cheque = () => {
                     rules={{
                       required: "This field is required",
                       pattern: {
-                        value:
-                          /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/,
+                        value: PHONE_REGEX,
                         message: "Enter valid Number",
                       },
                     }}
@@ -158,8 +157,7 @@ const Cheque = () => {
                     rules={{
                       required: "This field is required",
                       pattern: {
-                        value:
-                          /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/,
+                        value: PHONE_REGEX,
                         message: "Enter valid Number",
                       },
                     }}
@@ -199,8 +197,7 @@ const Cheque = () => {
                     rules={{
                       required: "This field is required",
                       pattern: {
-                        value:
-                          /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/,
+                        value: PHONE_REGEX,
                         message: "Enter valid Number",
                       },
                     }}
@@ -240,8 +237,7 @@ const Cheque = () => {
                     rules={{
                       required: "This field is required",
                       pattern: {
-                        value:
-                          /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/,
+                        value: PHONE_REGEX,
                         message: "Enter valid Number",
                       },
                     }}
@@ -304,8 +300,7 @@ const Cheque = () => {
                     rules={{
                       required: "This field is required",
                       pattern: {
-                        value:
-                          /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/,
+                        value: PHONE_REGEX,
                         message: "Enter valid Number",
                       },
                     }}
@@ -345,8 +340,7 @@ const Cheque = () => {
                     rules={{
                       required: "This field is required",
                       pattern: {
-                        value:
-                          /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/,
+                        value: PHONE_REGEX,
                         message: "Enter valid Number",
                       },
                     }}
@@ -386,8 +380,7 @@ const Cheque = () => {
                     rules={{
                       required: "This field is required",
                       pattern: {
-                        value:
-                          /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/,
+                        value: PHONE_REGEX,
                         message: "Enter valid Number",
                       },
                     }}
@@ -427,8 +420,7 @@ const Cheque = () => {
                     rules={{
                       required: "This field is required",
                       pattern: {
-                        value:
-                          /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/,
+                        value: PHONE_REGEX,
                         message: "Enter valid Number",
                       },
                     }}

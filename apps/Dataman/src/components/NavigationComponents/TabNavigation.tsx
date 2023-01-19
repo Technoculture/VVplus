@@ -21,11 +21,11 @@ export type TabNavigation = {
   AccountTab: undefined;
 };
 
-const TabNavigation = ({ navigation }: any) => {
+const TabNavigation = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
+        tabBarIcon: () => {
           if (route.name === "HomeTab") {
             return <SimpleLineIcons name="user" size={20} color="#969696" />;
           } else if (route.name === "Notification") {

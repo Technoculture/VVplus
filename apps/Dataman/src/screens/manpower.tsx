@@ -4,30 +4,9 @@ import { List } from "@ant-design/react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { PageHeader } from "../components/PageHeader";
 import { FormButton } from "../components/Button";
+import { stockFormOptions } from "../components/listComponents/ManPowerList";
 
 const DailyManpower = () => {
-  const stockFormOptions = [
-    {
-      label: "Date",
-      placeholder: "Enter Date",
-    },
-    {
-      label: "Party Name",
-      placeholder: "Search Here",
-    },
-    {
-      label: "Phase(Cost Name)",
-      placeholder: "Search Here",
-    },
-    {
-      label: "Resource Type",
-      placeholder: "Search Here",
-    },
-    {
-      label: "Quantity",
-    },
-    { label: "Remarks" },
-  ];
   return (
     <View>
       <ScrollView>

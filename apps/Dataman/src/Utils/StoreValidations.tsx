@@ -5,10 +5,9 @@ import { AntDesign } from "@expo/vector-icons";
 import { View, Text } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import { List, Button } from "@ant-design/react-native";
+import { PHONE_REGEX } from "./Validator";
 
 export const StoreValidations = () => {
-  const Item = List.Item;
-
   const {
     control,
     handleSubmit,
@@ -40,8 +39,7 @@ export const StoreValidations = () => {
                 rules={{
                   required: "This field is required",
                   pattern: {
-                    value:
-                      /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/,
+                    value: PHONE_REGEX,
                     message: "Enter valid Number",
                   },
                 }}
@@ -80,8 +78,7 @@ export const StoreValidations = () => {
                 rules={{
                   required: "This field is required",
                   pattern: {
-                    value:
-                      /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/,
+                    value: PHONE_REGEX,
                     message: "Enter valid Number",
                   },
                 }}
@@ -133,8 +130,7 @@ export const StoreValidations = () => {
             rules={{
               required: "This field is required",
               pattern: {
-                value:
-                  /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/,
+                value: PHONE_REGEX,
                 message: "Enter valid Number",
               },
             }}

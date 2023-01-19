@@ -4,45 +4,15 @@ import { List } from "@ant-design/react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { PageHeader } from "../components/PageHeader";
 import { StoreValidations } from "../Utils/StoreValidations";
+import { PHASE_TO_PHASE } from "../components/listComponents/BranchLists";
 
 const PhasetoPhase = () => {
-  const stockFormOptions = [
-    {
-      label: "Voucher Type",
-      placeholder: "Search Here",
-      icon: "questioncircleo",
-    },
-    {
-      label: "Date",
-      placeholder: "Enter Date",
-    },
-    {
-      label: "Issue To Which Staff",
-      placeholder: "Search Here",
-    },
-    {
-      label: "From Which Phase",
-      placeholder: "Search Here",
-    },
-    {
-      label: "Location(From)",
-      placeholder: "Search Here",
-    },
-    {
-      label: "To Phase",
-      placeholder: "Search Here",
-    },
-    {
-      label: "Location(To)",
-      placeholder: "Search Here",
-    },
-  ];
   return (
     <View>
       <ScrollView>
         <List>
           <PageHeader text="Phase To Phase Transfer" />
-          {stockFormOptions.map(
+          {PHASE_TO_PHASE.map(
             (
               item: { label: string; placeholder: string; icon?: string },
               idx
@@ -60,7 +30,6 @@ const PhasetoPhase = () => {
           )}
         </List>
         <Text className="text-center text-gray-400 text-base">Stock</Text>
-
         <StoreValidations />
       </ScrollView>
     </View>

@@ -6,6 +6,7 @@ import { InputField } from "../components/InputField";
 import { PageHeader } from "../components/PageHeader";
 import { FormButton } from "../components/Button";
 import { RECEIPT_LIST } from "../components/listComponents/ReceiptList";
+import { PHONE_REGEX } from "../Utils/Validator";
 
 const Receipt = () => {
   const Item = List.Item;
@@ -46,8 +47,7 @@ const Receipt = () => {
               rules={{
                 required: "This field is required",
                 pattern: {
-                  value:
-                    /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/,
+                  value: PHONE_REGEX,
                   message: "Enter valid Number",
                 },
               }}
@@ -85,8 +85,7 @@ const Receipt = () => {
               rules={{
                 required: "This field is required",
                 pattern: {
-                  value:
-                    /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/,
+                  value: PHONE_REGEX,
                   message: "Enter valid Number",
                 },
               }}

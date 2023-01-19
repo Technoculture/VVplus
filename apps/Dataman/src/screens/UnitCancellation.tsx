@@ -6,8 +6,9 @@ import { PageHeader } from "../components/PageHeader";
 import { FormButton } from "../components/Button";
 import { UNIT_LIST } from "../components/listComponents/UnitList";
 import { InputField } from "../components/InputField";
+import { PHONE_REGEX } from "../Utils/Validator";
 
-const UnitCancellation = () => {
+export const UnitCancellation = () => {
   const {
     control,
     handleSubmit,
@@ -47,8 +48,7 @@ const UnitCancellation = () => {
               rules={{
                 required: "This field is required",
                 pattern: {
-                  value:
-                    /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/,
+                  value: PHONE_REGEX,
                   message: "Enter valid Number",
                 },
               }}
@@ -93,8 +93,7 @@ const UnitCancellation = () => {
               rules={{
                 required: "This field is required",
                 pattern: {
-                  value:
-                    /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/,
+                  value: PHONE_REGEX,
                   message: "Enter valid Number",
                 },
               }}
@@ -132,8 +131,7 @@ const UnitCancellation = () => {
               rules={{
                 required: "This field is required",
                 pattern: {
-                  value:
-                    /^(1\s|1|)?((\(\d{3}\))|\d{3})(\\-|\s)?(\d{3})(\\-|\s)?(\d{4})$/,
+                  value: PHONE_REGEX,
                   message: "Enter valid Number",
                 },
               }}
@@ -170,4 +168,3 @@ const UnitCancellation = () => {
     </View>
   );
 };
-export default UnitCancellation;
