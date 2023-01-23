@@ -50,6 +50,9 @@ export const AccountScreen = ({ navigation }: any) => {
             style={{
               borderRadius: 25,
             }}
+            onPress={() => {
+              navigation.navigate("attendance");
+            }}
           >
             Mark Attendance
           </Button>

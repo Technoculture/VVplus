@@ -1,11 +1,24 @@
 import { Button, List } from "@ant-design/react-native";
 import * as React from "react";
+import { useState } from "react";
 import { View, Text, Image } from "react-native";
+import { PageHeader } from "../components/PageHeader";
+import { LocationScreen } from "./Location";
 
 export const AttendanceScreen = () => {
+  const [location, setLocation] = useState(false);
+
+  const handleSubmit = () => {
+    if (location === false && "Mark-in-time") {
+      setLocation(true);
+    }
+    if (location === true && "Mark-out-time") {
+      setLocation(false);
+    }
+  };
   return (
     <View className="flex-col">
-      <Text className="text-3xl font-semibold py-1 px-2">Attendance</Text>
+      <PageHeader text="Attendance" />
       <View className="h-full flex-col">
         <List
           style={{ marginVertical: 10 }}
@@ -25,18 +38,24 @@ export const AttendanceScreen = () => {
               />
             }
           >
-            <Text>UserName</Text>
+            <Text>Matt Weirzbicki</Text>
             <List.Item.Brief>
               <Text>Attendance Percentage: 75%</Text>
             </List.Item.Brief>
           </List.Item>
         </List>
-        <View className="flex-[1] flex-col justify-center items-center">
+
+        {location ? <LocationScreen /> : null}
+
+        <View className="flex flex-col justify-center items-center py-4">
           <Button
             type="ghost"
             style={{
               borderRadius: 25,
               marginBottom: 15,
+            }}
+            onPress={() => {
+              handleSubmit();
             }}
           >
             Mark In-time

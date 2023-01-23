@@ -42,6 +42,7 @@ importers:
       eslint-config-custom: workspace:*
       expo: ^47.0.0
       expo-dev-client: ~2.0.0
+      expo-location: ~15.0.1
       expo-updates: ~0.15.4
       nativewind: 2.0.10
       react: 18.1.0
@@ -61,6 +62,7 @@ importers:
       babel-plugin-import: 1.13.5
       expo: 47.0.8_@babel+core@7.20.2
       expo-dev-client: 2.0.1_expo@47.0.8
+      expo-location: 15.0.1_expo@47.0.8
       expo-updates: 0.15.6_expo@47.0.8
       nativewind: 2.0.10_react@18.1.0
       react: 18.1.0
@@ -6634,6 +6636,14 @@ packages:
 
   /expo-keep-awake/11.0.1_expo@47.0.8:
     resolution: {integrity: sha512-44ZjgLE4lnce2d40Pv8xsjMVc6R5GvgHOwZfkLYtGmgYG9TYrEJeEj5UfSeweXPL3pBFhXKfFU8xpGYMaHdP0A==}
+    peerDependencies:
+      expo: '*'
+    dependencies:
+      expo: 47.0.8_@babel+core@7.20.2
+    dev: false
+
+  /expo-location/15.0.1_expo@47.0.8:
+    resolution: {integrity: sha512-GOAP24m8fMahFcBT75H07f2+IQAOCOdNTzb8Ci/19NZ+Y/CY2lIvb55V8zu7Gn0+76FKPb7XC3ebQaq4ctn1QA==}
     peerDependencies:
       expo: '*'
     dependencies:
