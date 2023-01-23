@@ -1,37 +1,29 @@
 import * as THREE from "three";
 import "@babylonjs/loaders/glTF";
-import {
-  Canvas,
-  extend,
-  LightNode,
-  useFrame,
-  useThree,
-} from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useRef } from "react";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
-import {
-  HemisphereLight,
-  MeshStandardMaterial as _MeshStandardMaterial,
-  Vector3,
-} from "three";
+import { Vector3 } from "three";
 import { createSkyBox } from "./skybox";
-import { createGround } from "./ground";
+import { Ground } from "./Ground";
 import { createFog } from "./fog";
 import { createModel } from "./models";
-
+// import "type.d.ts";
 // TODO: Create JSON parsing with zod and handle the elemental breakdown of building model into several parts
 let scene_variable: THREE.Scene;
 let camera_variable: THREE.Camera;
-extend({ HemisphereLight, MeshStandardMaterial: _MeshStandardMaterial });
-declare module "@react-three/fiber" {
-  interface ThreeElements {
-    hemisphereLightt: LightNode<HemisphereLight, typeof HemisphereLight>;
-    // meshStandardMaterial: MaterialNode<
-    //   MeshStandardMaterial,
-    //   [MeshStandardMaterialParameters]
-    // >;
-  }
-}
+// extend({ HemisphereLight, MeshStandardMaterial: _MeshStandardMaterial });
+// declare global {
+//   namespace JSX {
+//     interface IntrinsiceElements {
+//       hemisphereLightt: LightNode<HemisphereLight, typeof HemisphereLight>;
+//     }
+//     // meshStandardMaterial: MaterialNode<
+//     //   MeshStandardMaterial,
+//     //   [MeshStandardMaterialParameters]
+//     // >;
+//   }
+// }
 const CameraControls = () => {
   const {
     camera,
@@ -61,7 +53,6 @@ const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
   function SceneInitialize() {
     const { scene } = useThree();
     createSkyBox(scene);
-    createGround(scene);
     createFog(scene);
     createModel(scene);
     scene_variable = scene;
@@ -78,7 +69,7 @@ const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
         <SceneInitialize />
         <PerspectiveCamera position={[0, 100, 10]} />
         <CameraControls />
-        {/* <hemisphereLight position={[-1, 1, -1]} intensity={0.1} /> */}
+        <Ground />
       </Canvas>
     </div>
   );
