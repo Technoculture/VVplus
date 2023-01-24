@@ -4,9 +4,8 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useRef } from "react";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { Vector3 } from "three";
-import { createSkyBox } from "./skybox";
+import { Skybox } from "./Skybox";
 import { Ground } from "./Ground";
-import { createFog } from "./fog";
 import { createModel } from "./models";
 // import "type.d.ts";
 // TODO: Create JSON parsing with zod and handle the elemental breakdown of building model into several parts
@@ -52,8 +51,6 @@ const CameraControls = () => {
 const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
   function SceneInitialize() {
     const { scene } = useThree();
-    createSkyBox(scene);
-    createFog(scene);
     createModel(scene);
     scene_variable = scene;
     return null;
@@ -69,6 +66,7 @@ const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
         <SceneInitialize />
         <PerspectiveCamera position={[0, 100, 10]} />
         <CameraControls />
+        <Skybox />
         <Ground />
       </Canvas>
     </div>
