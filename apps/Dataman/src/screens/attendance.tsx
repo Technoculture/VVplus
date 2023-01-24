@@ -6,16 +6,9 @@ import { PageHeader } from "../components/PageHeader";
 import { LocationScreen } from "./Location";
 
 export const AttendanceScreen = () => {
-  const [location, setLocation] = useState(false);
+  const [markedInTime, setMarkedInTime] = useState(false);
+  const [markedOutTime, setMarkedOutTime] = useState(false);
 
-  const handleSubmit = () => {
-    if (location === false && "Mark-in-time") {
-      setLocation(true);
-    }
-    if (location === true && "Mark-out-time") {
-      setLocation(false);
-    }
-  };
   return (
     <View className="flex-col">
       <PageHeader text="Attendance" />
@@ -45,7 +38,18 @@ export const AttendanceScreen = () => {
           </List.Item>
         </List>
 
-        {location ? <LocationScreen /> : null}
+        {markedInTime && (
+          <View>
+            <Text>Marked In At</Text>
+            <LocationScreen />
+          </View>
+        )}
+        {markedOutTime && (
+          <View>
+            <Text>Marked Out At</Text>
+            <LocationScreen />
+          </View>
+        )}
 
         <View className="flex flex-col justify-center items-center py-4">
           <Button
@@ -55,8 +59,10 @@ export const AttendanceScreen = () => {
               marginBottom: 15,
             }}
             onPress={() => {
-              handleSubmit();
+              setMarkedInTime(!markedInTime);
+              setMarkedOutTime(false);
             }}
+            disabled={markedInTime === true ? true : false}
           >
             Mark In-time
           </Button>
@@ -65,6 +71,11 @@ export const AttendanceScreen = () => {
             style={{
               borderRadius: 25,
             }}
+            onPress={() => {
+              setMarkedOutTime(!markedOutTime);
+              setMarkedInTime(false);
+            }}
+            disabled={markedOutTime === true ? true : false}
           >
             Mark Out-time
           </Button>

@@ -27,7 +27,7 @@ export const LocationScreen = () => {
 
   return (
     <View>
-      <Text>Marked In At: {text}</Text>
+      <Text> {text}</Text>
     </View>
   );
 };
