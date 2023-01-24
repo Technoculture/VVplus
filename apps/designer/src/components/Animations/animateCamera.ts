@@ -1,5 +1,6 @@
-import { camera_variable, scene_variable } from "../elements/Scene";
+import { scene_variable } from "../elements/Scene";
 import { gsap } from "gsap";
+import { camera_variable } from "../elements/Camera";
 
 const SPEED_RATIO = 3;
 const LOOP_MODE = 0;
