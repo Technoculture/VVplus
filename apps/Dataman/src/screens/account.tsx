@@ -28,9 +28,9 @@ export const AccountScreen = ({ navigation }: any) => {
           </List.Item>
         </List>
         <List>
-          {accountOptionsArray.map((item, idx) => (
+          {accountOptionsArray.map((item, index) => (
             <List.Item
-              key={idx}
+              key={index}
               style={{ borderColor: "#969696" }}
               arrow="horizontal"
               onPress={() =>
@@ -49,6 +49,9 @@ export const AccountScreen = ({ navigation }: any) => {
             type="ghost"
             style={{
               borderRadius: 25,
+            }}
+            onPress={() => {
+              navigation.navigate("attendance");
             }}
           >
             Mark Attendance

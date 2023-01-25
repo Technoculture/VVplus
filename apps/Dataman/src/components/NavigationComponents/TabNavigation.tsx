@@ -10,6 +10,7 @@ import { AccountScreen } from "../../screens/account";
 import { SettingsScreen } from "../../screens/settings";
 import { NotificationScreen } from "../../screens/notifications";
 import NativeHomeStack from "./NativeHomeStack";
+import { AttendanceScreen } from "../../screens/attendance";
 
 const Tab = createBottomTabNavigator<TabNavigation>();
 const AccountStack = createNativeStackNavigator();
@@ -74,6 +75,11 @@ const TabNavigation = () => {
             <AccountStack.Screen
               name="Settings"
               component={SettingsScreen}
+              options={{ title: "Back" }}
+            />
+            <AccountStack.Screen
+              name="attendance"
+              component={AttendanceScreen}
               options={{ title: "Back" }}
             />
           </AccountStack.Navigator>
