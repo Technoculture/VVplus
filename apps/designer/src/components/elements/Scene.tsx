@@ -1,27 +1,12 @@
 import * as THREE from "three";
-import "@babylonjs/loaders/glTF";
 import { Canvas, useThree } from "@react-three/fiber";
-import { PerspectiveCamera } from "@react-three/drei";
 import { Skybox } from "./Skybox";
 import { Ground } from "./Ground";
-import { createModel } from "./models";
+import { createModel } from "./Model";
 import { CameraControls } from "./Camera";
-// import "type.d.ts";
-// TODO: Create JSON parsing with zod and handle the elemental breakdown of building model into several parts
-let scene_variable: THREE.Scene;
-// extend({ HemisphereLight, MeshStandardMaterial: _MeshStandardMaterial });
-// declare global {
-//   namespace JSX {
-//     interface IntrinsiceElements {
-//       hemisphereLightt: LightNode<HemisphereLight, typeof HemisphereLight>;
-//     }
-//     // meshStandardMaterial: MaterialNode<
-//     //   MeshStandardMaterial,
-//     //   [MeshStandardMaterialParameters]
-//     // >;
-//   }
-// }
+import { Suspense } from "react";
 
+let scene_variable: THREE.Scene;
 const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
   function SceneInitialize() {
     const { scene } = useThree();
@@ -37,10 +22,12 @@ const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
   ${isWelcomePanelActive === true ? "z-[1] visible" : "z-[-100] hidden"}`}
     >
       <Canvas camera={{ position: [50, 100, 10] }}>
-        <SceneInitialize />
-        <CameraControls />
-        <Skybox />
-        <Ground />
+        <Suspense>
+          <CameraControls />
+          <Skybox />
+          <Ground />
+          <SceneInitialize />
+        </Suspense>
       </Canvas>
     </div>
   );

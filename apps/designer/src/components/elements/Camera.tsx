@@ -1,6 +1,3 @@
-// import * as BABYLON from "@babylonjs/core";
-// import { ArcRotateCamera, Vector3 } from "@babylonjs/core";
-
 import { OrbitControls } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useRef } from "react";
