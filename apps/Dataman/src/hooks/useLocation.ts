@@ -3,7 +3,7 @@ import * as Location from "expo-location";
 
 export const useLocation = () => {
   const [errorMsg, setErrorMsg] = useState("");
-  const [locationServiceEnabled, setLocationServiceEnabled] = useState(false);
+  const [isLocationServiceEnabled, setLocationServiceEnabled] = useState(false);
   const [displayCurrentAddress, setDisplayCurrentAddress] = useState(
     "Wait, we are fetching you location..."
   );
@@ -39,11 +39,8 @@ export const useLocation = () => {
         longitude,
       });
 
-      for (const item of response) {
-        const address = `${item.name}, ${item.country},${item.district},${item.subregion}, ${item.region},${item.postalCode}, ${item.city}`;
-        setDisplayCurrentAddress(address);
-      }
+      setDisplayCurrentAddress(JSON.stringify(response));
     }
   };
-  return [errorMsg, locationServiceEnabled, displayCurrentAddress];
+  return [errorMsg, isLocationServiceEnabled, displayCurrentAddress];
 };

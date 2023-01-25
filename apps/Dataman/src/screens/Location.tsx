@@ -1,9 +1,9 @@
 import React from "react";
 import { Text, View } from "react-native";
-import { useLocation } from "../components/useLocation";
+import { useLocation } from "../hooks/useLocation";
 
 export const LocationScreen = () => {
-  const [errorMsg, locationServiceEnabled, displayCurrentAddress] =
+  const [errorMsg, isLocationServiceEnabled, displayCurrentAddress] =
     useLocation();
 
   return (
