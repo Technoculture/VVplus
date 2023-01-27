@@ -38,7 +38,7 @@ const Accordion = () => {
           r={1000}
           a={0}
           b={0}
-          t={{ x: 100, y: 100, z: 0 }}
+          t={{ x: 100, y: 150, z: 0 }}
         >
           <SelectCarousel />
         </AccordionLayout>

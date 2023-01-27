@@ -21,7 +21,7 @@ const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
   absolute top-0 w-full h-screen
   ${isWelcomePanelActive === true ? "z-[1] visible" : "z-[-100] hidden"}`}
     >
-      <Canvas camera={{ position: [50, 100, 10] }}>
+      <Canvas camera={{ position: [175, 40, -80] }}>
         <Suspense>
           <CameraControls />
           <Skybox />

@@ -80,9 +80,9 @@ const AccordionLayout = ({
             } else {
               handleSetIndex(0);
               animation(1000, -Math.PI * 3, Math.PI / 2, {
-                x: -300,
-                y: 200,
-                z: 230,
+                x: 175,
+                y: 40,
+                z: -80,
               });
             }
           }}
