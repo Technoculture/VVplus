@@ -2,11 +2,15 @@ import { useEffect, useState } from "react";
 import { View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as Font from "expo-font";
 import TabNavigation from "./components/NavigationComponents/TabNavigation";
+import { LoginScreen } from "./screens/LoginScreen";
 
 export const App = () => {
   const [fontsLoaded, setFontsLoaded] = useState(false);
+  const RootStack = createNativeStackNavigator();
+
   useEffect(() => {
     async function loader() {
       try {
@@ -23,11 +27,15 @@ export const App = () => {
     loader();
   }, []);
   if (fontsLoaded === false) return null;
+
   return (
     <SafeAreaView>
-      <View className="h-full">
+      <View className="h-full bg-white">
         <NavigationContainer>
-          <TabNavigation />
+          <RootStack.Navigator screenOptions={{ headerShown: false }}>
+            <RootStack.Screen name="Login" component={LoginScreen} />
+            <RootStack.Screen name="TabNavigation" component={TabNavigation} />
+          </RootStack.Navigator>
         </NavigationContainer>
       </View>
     </SafeAreaView>

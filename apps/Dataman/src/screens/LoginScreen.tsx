@@ -3,9 +3,9 @@ import { Image, View } from "react-native";
 import LoginForm from "../components/FormComponents/LoginForm";
 import Header from "../components/FormComponents/Header";
 
-export const LoginScreen = () => {
+export const LoginScreen = ({ navigation }: any) => {
   return (
-    <View>
+    <View className="bg-white h-full">
       <View className="flex flex-col h-20 pl-4 justify-center">
         <Header />
       </View>
@@ -18,7 +18,7 @@ export const LoginScreen = () => {
         />
       </View>
       <View>
-        <LoginForm />
+        <LoginForm navigation={navigation} />
       </View>
     </View>
   );

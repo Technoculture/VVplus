@@ -10,6 +10,7 @@ import { AccountScreen } from "../../screens/account";
 import { SettingsScreen } from "../../screens/settings";
 import { NotificationScreen } from "../../screens/notifications";
 import NativeHomeStack from "./NativeHomeStack";
+import { AttendanceScreen } from "../../screens/attendance";
 
 const Tab = createBottomTabNavigator<TabNavigation>();
 const AccountStack = createNativeStackNavigator();
@@ -25,7 +26,7 @@ const TabNavigation = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
+        tabBarIcon: () => {
           if (route.name === "HomeTab") {
             return <SimpleLineIcons name="user" size={20} color="#969696" />;
           } else if (route.name === "Notification") {
@@ -44,6 +45,7 @@ const TabNavigation = () => {
         },
         tabBarInactiveTintColor: "gray",
         tabBarActiveTintColor: "blue",
+        tabBarHideOnKeyboard: true,
         headerShown: false,
       })}
     >
@@ -73,6 +75,11 @@ const TabNavigation = () => {
             <AccountStack.Screen
               name="Settings"
               component={SettingsScreen}
+              options={{ title: "Back" }}
+            />
+            <AccountStack.Screen
+              name="attendance"
+              component={AttendanceScreen}
               options={{ title: "Back" }}
             />
           </AccountStack.Navigator>

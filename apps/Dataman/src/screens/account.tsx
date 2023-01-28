@@ -1,26 +1,9 @@
-import { Button, List } from "@ant-design/react-native";
 import * as React from "react";
+import { Button, List } from "@ant-design/react-native";
 import { View, Text, Image } from "react-native";
+import { accountOptionsArray } from "../components/listComponents/AccountList";
 
 export const AccountScreen = ({ navigation }: any) => {
-  const accountOptionsArray = [
-    {
-      title: "Settings",
-      subtitle: "Lorem ipsum dolor sit amet, conssectetur",
-    },
-    {
-      title: "Request Advance",
-      subtitle: "Lorem ipsum dolor sit amet, conssectetur",
-    },
-    {
-      title: "File Incentive",
-      subtitle: "Lorem ipsum dolor sit amet, conssectetur",
-    },
-    {
-      title: "Leave Application",
-      subtitle: "Lorem ipsum dolor sit amet, conssectetur",
-    },
-  ];
   return (
     <View className="flex-col">
       <View>
@@ -45,9 +28,9 @@ export const AccountScreen = ({ navigation }: any) => {
           </List.Item>
         </List>
         <List>
-          {accountOptionsArray.map((item, idx) => (
+          {accountOptionsArray.map((item, index) => (
             <List.Item
-              key={idx}
+              key={index}
               style={{ borderColor: "#969696" }}
               arrow="horizontal"
               onPress={() =>
@@ -66,6 +49,9 @@ export const AccountScreen = ({ navigation }: any) => {
             type="ghost"
             style={{
               borderRadius: 25,
+            }}
+            onPress={() => {
+              navigation.navigate("attendance");
             }}
           >
             Mark Attendance

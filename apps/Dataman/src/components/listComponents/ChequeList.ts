@@ -48,3 +48,8 @@ export const CLEARED_LIST = [
     content: "Search Here",
   },
 ];
+export const TABS = [
+  { title: "Receive" },
+  { title: "Deposit" },
+  { title: "Cleared" },
+];

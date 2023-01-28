@@ -1,38 +1,127 @@
 import React, { useState } from "react";
 import { WhiteSpace } from "@ant-design/react-native";
 import { Text, View } from "react-native";
+import { useForm, Controller } from "react-hook-form";
 import { InputField } from "./InputField";
 import FormButton from "./Button";
+import { OTP_REGEX, PHONE_REGEX } from "../../Utils/Validator";
 
-const LoginForm = () => {
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [otp, setOtp] = useState("");
+export type loginNavigationProps = {
+  navigation: any;
+};
+
+const LoginForm = ({ navigation }: loginNavigationProps) => {
   const [isEnteredPhoneNumber, setEnteredPhoneNumber] = useState(false);
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  console.log(errors);
+
+  const onSubmit = (data: any) => {
+    if (isEnteredPhoneNumber === false && "Send OTP") {
+      setEnteredPhoneNumber(true);
+      console.log(data, "send otp");
+    }
+    try {
+      if (isEnteredPhoneNumber === true && "Sign In") {
+        console.log(data, "navigate to home screen");
+        navigation.navigate("TabNavigation");
+      }
+    } catch (errors) {
+      console.log(errors);
+    }
+  };
 
   return (
     <View>
       <View className="flex flex-col items-start h-50 w-full p-2">
         <Text className="text-zinc-800 text-base pl-4">Phone Number</Text>
         <View className="w-full">
-          <InputField
-            value={phoneNumber}
-            onChange={(value: any) => setPhoneNumber(value)}
-            maxLength={10}
-            placeholder={"+91"}
+          <Controller
+            control={control}
+            rules={{
+              required: "phone number is required",
+              pattern: {
+                value: PHONE_REGEX,
+                message: "Enter Valid Phone Number",
+              },
+              minLength: {
+                value: 10,
+                message: "phone number should be minimum 10 characters long",
+              },
+            }}
+            render={({ field: { onChange, value }, fieldState: { error } }) => (
+              <>
+                <View
+                  className={`border rounded bg-white ${
+                    error ? `border-red-600` : `border-white`
+                  }`}
+                >
+                  <InputField
+                    onChangeText={onChange}
+                    value={value}
+                    maxLength={10}
+                    placeholder={"+91"}
+                  />
+                </View>
+                {error && (
+                  <Text className="text-red-600 self-stretch text-center">
+                    {error.message}
+                  </Text>
+                )}
+              </>
+            )}
+            name="phoneNumber"
           />
         </View>
       </View>
-
       {isEnteredPhoneNumber ? (
         <View className="flex flex-col items-start h-50 w-full p-2">
           <Text className="text-zinc-800 text-base pl-4">OTP</Text>
           <View className="w-full">
-            <InputField
-              value={otp}
-              onChange={(value: any) => setOtp(value)}
-              maxLength={6}
-              placeholder={"6 Digit OTP"}
-            />
+            <View className="w-full">
+              <Controller
+                control={control}
+                rules={{
+                  required: "OTP is required",
+                  pattern: {
+                    value: OTP_REGEX,
+                    message: "Enter valid OTP",
+                  },
+                  minLength: {
+                    value: 6,
+                    message: "OTP should be minimum 6 characters long",
+                  },
+                }}
+                render={({
+                  field: { onChange, value },
+                  fieldState: { error },
+                }) => (
+                  <>
+                    <View
+                      className={`border rounded bg-white ${
+                        error ? `border-red-600` : `border-white`
+                      }`}
+                    >
+                      <InputField
+                        onChangeText={onChange}
+                        value={value}
+                        maxLength={6}
+                        placeholder={"6 Digit OTP"}
+                      />
+                    </View>
+                    {error && (
+                      <Text className="text-red-600 self-stretch text-center">
+                        {error.message}
+                      </Text>
+                    )}
+                  </>
+                )}
+                name="otp"
+              />
+            </View>
           </View>
         </View>
       ) : null}
@@ -42,16 +131,7 @@ const LoginForm = () => {
         <FormButton
           text={`${isEnteredPhoneNumber ? "SignIn" : "Send OTP"}`}
           PropsType={"primary"}
-          onPress={() => {
-            if (phoneNumber !== "") {
-              setEnteredPhoneNumber(true);
-              setPhoneNumber("");
-            } else if (isEnteredPhoneNumber ? "SignIn" : "") {
-              setEnteredPhoneNumber(true);
-            } else {
-              setEnteredPhoneNumber(false);
-            }
-          }}
+          onPress={handleSubmit(onSubmit)}
         />
 
         <WhiteSpace size="lg" />

@@ -1,19 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import { View, InputItem } from "@ant-design/react-native";
 
 export type inputFieldProps = {
+  value: string;
   placeholder: any;
+  onChangeText: (value: any) => void;
+  maxLength: number;
 };
-export const InputField = ({ placeholder }: inputFieldProps) => {
-  const [value, setValue] = useState("");
+export const InputField = ({
+  placeholder,
+  onChangeText,
+  value,
+  maxLength,
+}: inputFieldProps) => {
   return (
     <View>
       <InputItem
-        type="text"
+        type="number"
         value={value}
-        onChange={(value: string) => {
-          setValue(value);
-        }}
+        maxLength={maxLength}
+        onChange={onChangeText}
         placeholder={placeholder}
       />
     </View>

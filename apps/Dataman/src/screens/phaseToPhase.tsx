@@ -1,50 +1,18 @@
 import { Text, ScrollView, View } from "react-native";
-import React, { useState } from "react";
-import { Button, InputItem, List } from "@ant-design/react-native";
+import React from "react";
+import { List } from "@ant-design/react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { PageHeader } from "../components/PageHeader";
+import { StoreValidations } from "../Utils/StoreValidations";
+import { PHASE_TO_PHASE } from "../components/listComponents/BranchLists";
 
 const PhasetoPhase = () => {
-  const [quantity, setQuantity] = useState<string>();
-  const [rate, setRate] = useState<string>();
-  const [remarks, setRemarks] = useState<string>();
-  const stockFormOptions = [
-    {
-      label: "Voucher Type",
-      placeholder: "Search Here",
-      icon: "questioncircleo",
-    },
-    {
-      label: "Date",
-      placeholder: "Enter Date",
-    },
-    {
-      label: "Issue To Which Staff",
-      placeholder: "Search Here",
-    },
-    {
-      label: "From Which Phase",
-      placeholder: "Search Here",
-    },
-    {
-      label: "Location(From)",
-      placeholder: "Search Here",
-    },
-    {
-      label: "To Phase",
-      placeholder: "Search Here",
-    },
-    {
-      label: "Location(To)",
-      placeholder: "Search Here",
-    },
-  ];
   return (
     <View>
       <ScrollView>
         <List>
           <PageHeader text="Phase To Phase Transfer" />
-          {stockFormOptions.map(
+          {PHASE_TO_PHASE.map(
             (
               item: { label: string; placeholder: string; icon?: string },
               idx
@@ -62,65 +30,7 @@ const PhasetoPhase = () => {
           )}
         </List>
         <Text className="text-center text-gray-400 text-base">Stock</Text>
-        <List>
-          <List.Item arrow="horizontal">
-            <List.Item.Brief>
-              <Text>Item </Text>
-              <AntDesign name="questioncircleo" />
-            </List.Item.Brief>
-            <Text className="text-base">Search Here</Text>
-          </List.Item>
-          <List.Item>
-            <View className="flex-row justify-between">
-              <View className="flex-[1]">
-                <Text className="text-base">Request Quantity</Text>
-                <InputItem
-                  type="number"
-                  value={quantity}
-                  onChange={(value: string) => setQuantity(value)}
-                  placeholder={"Enter Number"}
-                />
-              </View>
-              <View className="flex-[1]">
-                <Text className="text-base">Rate</Text>
-                <InputItem
-                  type="number"
-                  value={rate}
-                  onChange={(value: string) => setRate(value)}
-                  placeholder="100.00"
-                />
-              </View>
-            </View>
-          </List.Item>
-          <List.Item>
-            <Text className="text-base font-bold my-1">Current Stock:</Text>
-            <View className="flex-row justify-between my-1">
-              <Text className="text-base font-bold text-blue-500">
-                Clear Item
-              </Text>
-              <Button type="primary" style={{ borderRadius: 25, height: 30 }}>
-                <Text style={{ color: "white", paddingHorizontal: 15 }}>
-                  Add Item to List
-                </Text>
-              </Button>
-            </View>
-          </List.Item>
-          <List.Item>
-            <InputItem
-              value={remarks}
-              onChange={(value: string) => setRemarks(value)}
-              placeholder={"Remarks"}
-            />
-          </List.Item>
-        </List>
-        <Text className="p-2 text-base font-bold text-blue-500">
-          Total Amount :0.00
-        </Text>
-        <View className="flex-col justify-center items-center mb-24">
-          <Button type="primary" style={{ borderRadius: 25 }}>
-            Submit
-          </Button>
-        </View>
+        <StoreValidations />
       </ScrollView>
     </View>
   );
