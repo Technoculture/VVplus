@@ -7,29 +7,16 @@ const FROM_FRAME = 0;
 const TO_FRAME = 80;
 
 interface animateCamera {
-  radius: number;
-  alpha: number;
-  beta: number;
   position: {
     x: number;
     y: number;
     z: number;
   };
-  glbTitle: string;
 }
 
 //try to implement intercollisions and better animations and ease in and ease out
 
-function AnimateActiveCamera({
-  radius,
-  alpha,
-  beta,
-  position,
-  glbTitle,
-}: animateCamera) {
-  // const { camera, scene } = useThree();
-  // camera_variable.(new Vector3(target.x, target.y, target.z));
-  // scene_variable.setRotationFromEuler();
+function AnimateActiveCamera({ position }: animateCamera) {
   const camera = camera_variable;
   if (camera === null) {
     return;

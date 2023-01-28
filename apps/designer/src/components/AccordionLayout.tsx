@@ -10,41 +10,29 @@ interface target {
 }
 interface Props {
   title: string;
-  glbTitle?: string;
   design: string;
   children: JSX.Element;
   index: number;
   activeIndex: number;
   setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
-  r: number;
-  a: number;
-  b: number;
   p: target;
   t: target;
 }
 
 const AccordionLayout = ({
   title,
-  glbTitle,
   design,
   children,
   index,
   activeIndex,
   setActiveIndex,
-  r,
-  a,
-  b,
   p,
   t,
 }: Props) => {
   const updateTarget = useStore((state) => state.changeTarget);
-  function animation(r: number, a: number, b: number, p: target, t: target) {
+  function animation(p: target, t: target) {
     AnimateActiveCamera({
-      radius: r,
-      alpha: a,
-      beta: b,
       position: p,
-      glbTitle,
     });
     updateTarget(t);
   }
@@ -71,16 +59,10 @@ const AccordionLayout = ({
           onClick={() => {
             if (index !== activeIndex) {
               handleSetIndex(index);
-              animation(r, a, b, p, t);
+              animation(p, t);
             } else {
               handleSetIndex(0);
-              animation(
-                1000,
-                -Math.PI * 3,
-                Math.PI / 2,
-                { x: 175, y: 40, z: -80 },
-                { x: 0, y: 25, z: 0 }
-              );
+              animation({ x: 175, y: 40, z: -80 }, { x: 0, y: 25, z: 0 });
             }
           }}
           className={`flex justify-between items-center h-11 w-[380px] px-5   bg-white bg-opacity-40 border-amber-100  border-[1px] rounded-2xl 
