@@ -12,7 +12,6 @@
   ],
   "compilerOptions": {
     //  "preserveSymlinks": true,
-    "types": ["babylonjs"],
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext", "esnext.asynciterable", "DOM"],
     "allowJs": true,
