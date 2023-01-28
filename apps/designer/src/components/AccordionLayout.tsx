@@ -1,8 +1,13 @@
 import React from "react";
-
 import { AiOutlineDown, AiOutlineRight } from "react-icons/ai";
-import animateActiveCamera from "./Animations/animateCamera";
+import useStore from "../global-stores/store";
+import AnimateActiveCamera from "./Animations/animateCamera";
 
+interface target {
+  x: number;
+  y: number;
+  z: number;
+}
 interface Props {
   title: string;
   glbTitle?: string;
@@ -14,17 +19,8 @@ interface Props {
   r: number;
   a: number;
   b: number;
-  t: {
-    x: number;
-    y: number;
-    z: number;
-  };
-}
-
-interface target {
-  x: number;
-  y: number;
-  z: number;
+  p: target;
+  t: target;
 }
 
 const AccordionLayout = ({
@@ -38,20 +34,19 @@ const AccordionLayout = ({
   r,
   a,
   b,
+  p,
   t,
 }: Props) => {
-  function animation(r: number, a: number, b: number, t: target) {
-    animateActiveCamera({
+  const updateTarget = useStore((state) => state.changeTarget);
+  function animation(r: number, a: number, b: number, p: target, t: target) {
+    AnimateActiveCamera({
       radius: r,
       alpha: a,
       beta: b,
-      target: {
-        x: t.x,
-        y: t.y,
-        z: t.z,
-      },
+      position: p,
       glbTitle,
     });
+    updateTarget(t);
   }
   const handleSetIndex = (index) => {
     if (index !== activeIndex) {
@@ -76,14 +71,16 @@ const AccordionLayout = ({
           onClick={() => {
             if (index !== activeIndex) {
               handleSetIndex(index);
-              animation(r, a, b, t);
+              animation(r, a, b, p, t);
             } else {
               handleSetIndex(0);
-              animation(1000, -Math.PI * 3, Math.PI / 2, {
-                x: 175,
-                y: 40,
-                z: -80,
-              });
+              animation(
+                1000,
+                -Math.PI * 3,
+                Math.PI / 2,
+                { x: 175, y: 40, z: -80 },
+                { x: 0, y: 25, z: 0 }
+              );
             }
           }}
           className={`flex justify-between items-center h-11 w-[380px] px-5   bg-white bg-opacity-40 border-amber-100  border-[1px] rounded-2xl 

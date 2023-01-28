@@ -1,4 +1,3 @@
-import { scene_variable } from "../elements/Scene";
 import { gsap } from "gsap";
 import { camera_variable } from "../elements/Camera";
 
@@ -11,7 +10,7 @@ interface animateCamera {
   radius: number;
   alpha: number;
   beta: number;
-  target: {
+  position: {
     x: number;
     y: number;
     z: number;
@@ -21,11 +20,11 @@ interface animateCamera {
 
 //try to implement intercollisions and better animations and ease in and ease out
 
-function animateActiveCamera({
+function AnimateActiveCamera({
   radius,
   alpha,
   beta,
-  target,
+  position,
   glbTitle,
 }: animateCamera) {
   // const { camera, scene } = useThree();
@@ -35,18 +34,14 @@ function animateActiveCamera({
   if (camera === null) {
     return;
   }
-  const position = scene_variable.getObjectByName(glbTitle ?? "plot-pool")
-    .children[0].position;
-  // console.log({ posi_model: position });
-  camera.lookAt(position);
   gsap.to(camera.position, {
     duration: SPEED_RATIO,
     repeat: LOOP_MODE,
-    x: target.x,
-    y: target.y,
-    z: target.z,
+    x: position.x,
+    y: position.y,
+    z: position.z,
     ease: "power3.inOut",
   });
 }
 
-export default animateActiveCamera;
+export default AnimateActiveCamera;

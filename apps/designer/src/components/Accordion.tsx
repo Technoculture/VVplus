@@ -22,7 +22,8 @@ const Accordion = () => {
           r={1000}
           a={-9.424777961}
           b={1.570796327}
-          t={{ x: 220, y: 50, z: 0 }}
+          p={{ x: 220, y: 50, z: 0 }}
+          t={{ x: 9.75, y: 0, z: 7.5 }}
         >
           <SelectCarousel />
         </AccordionLayout>
@@ -38,7 +39,8 @@ const Accordion = () => {
           r={1000}
           a={0}
           b={0}
-          t={{ x: 100, y: 150, z: 0 }}
+          p={{ x: 100, y: 150, z: 0 }}
+          t={{ x: 15, y: 0, z: -3 }}
         >
           <SelectCarousel />
         </AccordionLayout>
@@ -59,7 +61,8 @@ const Accordion = () => {
           r={1000}
           a={-9.424777961}
           b={1.570796327}
-          t={{ x: 100, y: 100, z: -50 }}
+          p={{ x: 100, y: 100, z: -50 }}
+          t={{ x: 1, y: 3.8, z: -5 }}
         >
           <SelectCarousel />
         </AccordionLayout>
@@ -79,7 +82,8 @@ const Accordion = () => {
           r={1000}
           a={0}
           b={0}
-          t={{ x: 100, y: 100, z: 0 }}
+          p={{ x: 100, y: 100, z: 0 }}
+          t={{ x: 1, y: 3.8, z: -5 }}
         >
           <SelectCarousel />
         </AccordionLayout>
