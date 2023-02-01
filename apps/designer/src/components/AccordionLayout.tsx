@@ -1,7 +1,6 @@
 import React from "react";
 import { AiOutlineDown, AiOutlineRight } from "react-icons/ai";
 import useStore from "../global-stores/store";
-import AnimateActiveCamera from "./Animations/animateCamera";
 
 interface target {
   x: number;
@@ -29,12 +28,11 @@ const AccordionLayout = ({
   p,
   t,
 }: Props) => {
-  const updateTarget = useStore((state) => state.changeTarget);
+  const updateTarget = useStore((state) => state.updateCameraTarget);
+  const updatePosition = useStore((state) => state.updateCameraPosition);
   function animation(p: target, t: target) {
-    AnimateActiveCamera({
-      position: p,
-    });
     updateTarget(t);
+    updatePosition(p);
   }
   const handleSetIndex = (index) => {
     if (index !== activeIndex) {
