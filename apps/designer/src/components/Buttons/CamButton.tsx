@@ -1,5 +1,4 @@
 import React from "react";
-import animateActiveCamera from "../Animations/animateCamera";
 
 export interface ButtonProps
   extends React.DetailedHTMLProps<
