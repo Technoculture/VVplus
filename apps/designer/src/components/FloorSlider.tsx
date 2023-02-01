@@ -1,19 +1,19 @@
 import React from "react";
 import useStore from "../global-stores/store";
-import AnimateActiveCamera from "./Animations/animateCamera";
 
 const FloorSlider = () => {
   const floor = useStore((state) => state.floor);
-  const updateTarget = useStore((state) => state.changeTarget);
+  const updateTarget = useStore((state) => state.updateCameraTarget);
+  const updatePosition = useStore((state) => state.updateCameraPosition);
   const changeFloor = useStore((state) => state.changeFloor);
   const updateFloor = (idx: number) => {
     if (floor === idx) {
       changeFloor(-1);
-      AnimateActiveCamera({ position: { x: 175, y: 40, z: -80 } });
+      updatePosition({ x: 175, y: 40, z: -80 });
       updateTarget({ x: 0, y: 25, z: 0 });
     } else {
       changeFloor(idx);
-      AnimateActiveCamera({ position: floorLevel[idx].p });
+      updatePosition(floorLevel[idx].p);
       updateTarget(floorLevel[idx].t);
     }
   };
@@ -35,8 +35,8 @@ const FloorSlider = () => {
       t: { x: 0, y: 75, z: 0 },
     },
     {
-      p: { x: 100, y: 200, z: 0 },
-      t: { x: 100, y: 200, z: 0 },
+      p: { x: 100, y: 145, z: 0 },
+      t: { x: 0, y: 125, z: 0 },
     },
   ];
   return (

@@ -17,20 +17,20 @@ const CameraControls = () => {
   const target = useStore((state) => state.cameraTarget);
   const position = useStore((state) => state.cameraPosition);
   function cameraAnimate() {
-    gsap.to(controls.current.target, {
-      duration: 1,
-      repeat: 0,
-      x: target.x,
-      y: target.y,
-      z: target.z,
-      ease: "power3.inOut",
-    });
     gsap.to(camera.position, {
       duration: 3,
       repeat: 0,
       x: position.x,
       y: position.y,
       z: position.z,
+      ease: "power3.inOut",
+    });
+    gsap.to(controls.current.target, {
+      duration: 1,
+      repeat: 0,
+      x: target.x,
+      y: target.y,
+      z: target.z,
       ease: "power3.inOut",
     });
   }
