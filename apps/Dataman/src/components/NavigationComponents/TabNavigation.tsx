@@ -4,6 +4,7 @@ import {
   MaterialCommunityIcons,
   Octicons,
 } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { AccountScreen } from "../../screens/account";
@@ -11,15 +12,19 @@ import { SettingsScreen } from "../../screens/settings";
 import { NotificationScreen } from "../../screens/notifications";
 import NativeHomeStack from "./NativeHomeStack";
 import { AttendanceScreen } from "../../screens/attendance";
+import MyContacts from "../../screens/MyContacts";
+import ProfileScreen from "../../screens/Profile";
 
 const Tab = createBottomTabNavigator<TabNavigation>();
 const AccountStack = createNativeStackNavigator();
 const NotificationStack = createNativeStackNavigator();
+const CallStack = createNativeStackNavigator();
 
 export type TabNavigation = {
   HomeTab: undefined;
   Notification: undefined;
   AccountTab: undefined;
+  callTab: undefined;
 };
 
 const TabNavigation = () => {
@@ -41,6 +46,8 @@ const TabNavigation = () => {
                 color="#969696"
               />
             );
+          } else if (route.name === "callTab") {
+            return <Feather name="phone-call" size={24} color="#969696" />;
           }
         },
         tabBarInactiveTintColor: "gray",
@@ -83,6 +90,25 @@ const TabNavigation = () => {
               options={{ title: "Back" }}
             />
           </AccountStack.Navigator>
+        )}
+      </Tab.Screen>
+      <Tab.Screen name="callTab" options={{ title: "Call" }}>
+        {() => (
+          <CallStack.Navigator>
+            <CallStack.Screen name="Contacts" component={MyContacts} />
+            <CallStack.Screen
+              name="MyContacts"
+              component={MyContacts}
+              options={{ title: "Back" }}
+            />
+            <CallStack.Screen
+              name="Profile"
+              component={ProfileScreen}
+              options={{
+                title: "Back",
+              }}
+            />
+          </CallStack.Navigator>
         )}
       </Tab.Screen>
     </Tab.Navigator>
