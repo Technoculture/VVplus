@@ -17,26 +17,32 @@ const CameraControls = () => {
   const target = useStore((state) => state.cameraTarget);
   const position = useStore((state) => state.cameraPosition);
   function cameraAnimate() {
-    gsap.to(camera.position, {
-      duration: 3,
+    const timeline = gsap.timeline();
+    timeline.to(camera.position, {
+      duration: 2,
       repeat: 0,
       x: position.x,
       y: position.y,
       z: position.z,
       ease: "power3.inOut",
     });
-    gsap.to(controls.current.target, {
-      duration: 1,
-      repeat: 0,
-      x: target.x,
-      y: target.y,
-      z: target.z,
-      ease: "power3.inOut",
-    });
+    timeline.to(
+      controls.current.target,
+      {
+        duration: 2,
+        repeat: 0,
+        x: target.x,
+        y: target.y,
+        z: target.z,
+        ease: "power3.inOut",
+      },
+      "<"
+    );
   }
   useEffect(() => {
     cameraAnimate();
   }, [target]);
+
   return (
     <OrbitControls
       ref={controls}
