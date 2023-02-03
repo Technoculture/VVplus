@@ -1,4 +1,3 @@
-import { useRef, Ref } from "react";
 import { Vector3 } from "three";
 import create from "zustand";
 import { OrbitControls } from "three-stdlib";
@@ -11,18 +10,14 @@ type Store = {
   cameraControls: OrbitControls | null;
   updateCameraControls: (controls: OrbitControls) => void;
   changeFloor: (val: number) => void;
-  updateCameraTarget: (newTarget: { x: number; y: number; z: number }) => void;
-  updateCameraPosition: (newPosition: {
-    x: number;
-    y: number;
-    z: number;
-  }) => void;
+  updateCameraTarget: (newTarget: number[]) => void;
+  updateCameraPosition: (newPosition: number[]) => void;
 };
 
 const useStore = create<Store>((set) => ({
-  cameraTarget: new Vector3(0, 25, 0),
-  cameraPosition: new Vector3(175, 40, -80),
-  floor: 8,
+  cameraTarget: new Vector3(0, 70, 0),
+  cameraPosition: new Vector3(230, 25, 0),
+  floor: 0,
   changeFloor(val) {
     set(() => ({ floor: val }));
   },
@@ -32,12 +27,12 @@ const useStore = create<Store>((set) => ({
   },
   updateCameraTarget(newTarget) {
     set(() => ({
-      cameraTarget: new Vector3(newTarget.x, newTarget.y, newTarget.z),
+      cameraTarget: new Vector3(...newTarget),
     }));
   },
   updateCameraPosition(newPosition) {
     set(() => ({
-      cameraPosition: new Vector3(newPosition.x, newPosition.y, newPosition.z),
+      cameraPosition: new Vector3(...newPosition),
     }));
   },
 }));

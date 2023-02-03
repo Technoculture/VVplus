@@ -1,106 +1,22 @@
 [
-    {
-        "name": "main_gate",
-        "top": {
-            "key": "gate top",
-            "target_value": {
-                "alpha": 0,
-                "beta": 0,
-                "radius": 1000,
-                "target": {
-                    "x": -500,
-                    "y": -700,
-                    "z": 100
-                }
-            },
-            "properties": {
-
-            }
-        },
-        "front": {
-            "key": "gate front",
-            "target_value": {
-                "alpha": -9.424777961,
-                "beta": 1.570796327,
-                "radius": 1000,
-                "target": {
-                    "x": 250,
-                    "y": 70,
-                    "z": 30
-                }
-            },
-            "properties": {
-
-            }
-        },
-        "other_views": {
-            "key": "other views",
-            "name": "closeUp",
-            "target_value": {
-                "alpha": 1000,
-                "beta": 1000,
-                "radius": 1000,
-                "target": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },
-            "properties": {
-
-            }
-        }
-    },
-    {
-        "name": "roof-top",
-        "top": {
-            "key": "roof top",
-            "target_value": {
-                "alpha": 0,
-                "beta": 0,
-                "radius": 1000,
-                "target": {
-                    "x": 0,
-                    "y": 700,
-                    "z": 430
-                }
-            },
-            "properties":{
-
-            }
-        },
-        "front": {
-            "key": "roof front",
-            "target_value": {
-                "alpha": -9.424777961,
-                "beta": 1.570796327,
-                "radius": 1000,
-                "target": {
-                    "x": 500,
-                    "y": 600,
-                    "z": 280
-                }
-            },
-            "properties":{
-                
-            }
-        },
-        "other_views": {
-            "key": "other views",
-            "name": "closeUp",
-            "target_value": {
-                "alpha": 1000,
-                "beta": 1000,
-                "radius": 1000,
-                "target": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },
-            "properties": {
-
-            }
-        }
-    }
+  {
+    "p": [230, 25, 0],
+    "t": [0, 70, 0]
+  },
+  {
+    "p": [75, 25, 0],
+    "t": [0, 25, 0]
+  },
+  {
+    "p": [75, 50, 0],
+    "t": [0, 50, 0]
+  },
+  {
+    "p": [75, 80, 0],
+    "t": [0, 75, 0]
+  },
+  {
+    "p": [100, 145, 0],
+    "t": [0, 125, 0]
+  }
 ]

@@ -1,12 +1,8 @@
 import React from "react";
 import { AiOutlineDown, AiOutlineRight } from "react-icons/ai";
 import useStore from "../global-stores/store";
+import floorLevel from "../../public/cameraAngles.json";
 
-interface target {
-  x: number;
-  y: number;
-  z: number;
-}
 interface Props {
   title: string;
   design: string;
@@ -14,8 +10,8 @@ interface Props {
   index: number;
   activeIndex: number;
   setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
-  p: target;
-  t: target;
+  p: number[];
+  t: number[];
 }
 
 const AccordionLayout = ({
@@ -30,7 +26,9 @@ const AccordionLayout = ({
 }: Props) => {
   const updateTarget = useStore((state) => state.updateCameraTarget);
   const updatePosition = useStore((state) => state.updateCameraPosition);
-  function animation(p: target, t: target) {
+  const getFloor = useStore((state) => state.floor);
+
+  function animation(p: number[], t: number[]) {
     updateTarget(t);
     updatePosition(p);
   }
@@ -60,7 +58,7 @@ const AccordionLayout = ({
               animation(p, t);
             } else {
               handleSetIndex(0);
-              animation({ x: 175, y: 40, z: -80 }, { x: 0, y: 25, z: 0 });
+              animation(floorLevel[getFloor].p, floorLevel[getFloor].t);
             }
           }}
           className={`flex justify-between items-center h-11 w-[380px] px-5   bg-white bg-opacity-40 border-amber-100  border-[1px] rounded-2xl 

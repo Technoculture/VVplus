@@ -18,8 +18,8 @@ const Accordion = () => {
           index={1}
           activeIndex={activeIndex}
           setActiveIndex={setActiveIndex}
-          p={{ x: 220, y: 0, z: 50 }}
-          t={{ x: 10, y: 10, z: 50 }}
+          p={[220, 0, 50]}
+          t={[10, 10, 50]}
         >
           <SelectCarousel />
         </AccordionLayout>
@@ -31,8 +31,8 @@ const Accordion = () => {
           index={2}
           activeIndex={activeIndex}
           setActiveIndex={setActiveIndex}
-          p={{ x: 100, y: 50, z: -3 }}
-          t={{ x: 100, y: 0, z: -3 }}
+          p={[101, 50, -3]}
+          t={[100, 0, -3]}
         >
           <SelectCarousel />
         </AccordionLayout>
@@ -49,8 +49,8 @@ const Accordion = () => {
           index={3}
           activeIndex={activeIndex}
           setActiveIndex={setActiveIndex}
-          p={{ x: 50, y: 75, z: 0 }}
-          t={{ x: 0, y: 75, z: 0 }}
+          p={[50, 75, 0]}
+          t={[0, 75, 0]}
         >
           <SelectCarousel />
         </AccordionLayout>
@@ -66,8 +66,8 @@ const Accordion = () => {
           index={4}
           activeIndex={activeIndex}
           setActiveIndex={setActiveIndex}
-          p={{ x: 100, y: 50, z: -3 }}
-          t={{ x: 100, y: 0, z: -3 }}
+          p={[101, 50, -3]}
+          t={[100, 0, -3]}
         >
           <SelectCarousel />
         </AccordionLayout>
