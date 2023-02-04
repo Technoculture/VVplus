@@ -105,7 +105,8 @@ const TabNavigation = () => {
               name="Profile"
               component={ProfileScreen}
               options={{
-                title: "Back",
+                title: "",
+                // headerShown: false,
               }}
             />
           </CallStack.Navigator>
