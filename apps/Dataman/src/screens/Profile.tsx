@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, Image } from "react-native";
 import { getColorsByLetter } from "../Utils/colors";
 import { MaterialIcons } from "@expo/vector-icons";
@@ -10,6 +10,40 @@ import { makeCall } from "../components/API/CallApi";
 const ProfileScreen = ({ route, navigation }: any) => {
   const { name, phone } = route.params.contactInfo;
   const colors = getColorsByLetter(name[0]);
+
+  const [callText, setCallText] = useState("call");
+
+  const handleCall = async () => {
+    try {
+      const response = await makeCall();
+
+      switch (response.Status) {
+        case "queued":
+          setCallText("queued");
+          break;
+        case "in-progress":
+          setCallText("in-progress");
+          break;
+        case "completed":
+          setCallText("completed");
+          break;
+        case "failed":
+          setCallText("failed");
+          break;
+        case "busy":
+          setCallText("busy");
+          break;
+        case "no-answer":
+          setCallText("no-answer");
+          break;
+        default:
+          setCallText("Call");
+          break;
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <View>
@@ -36,18 +70,18 @@ const ProfileScreen = ({ route, navigation }: any) => {
             name="call"
             size={28}
             color="blue"
-            onPress={makeCall}
+            onPress={handleCall}
           />
+
           <MaterialCommunityIcons name="comment-text" size={24} color="blue" />
           <Feather name="video" size={24} color="gray" />
         </View>
         <View className="flex flex-row justify-around mt-2">
-          <Text>Call</Text>
+          <Text>{callText}</Text>
           <Text>Text</Text>
           <Text className="text-gray-400">Video</Text>
         </View>
       </View>
-
       <View className="flex flex-column bg-white shadow-xl p-5">
         <View className="flex flex-row justify-between mb-2">
           <View className="flex flex-row">
