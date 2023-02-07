@@ -1,10 +1,11 @@
 import React from "react";
 import axios from "axios";
+import { BASE_URL } from "./endPoints";
 
 export const makeCall = async () => {
   try {
     const response = await axios.post(
-      "https://api.exotel.com/v1/Accounts/vastuvihar2/Calls/connect.json",
+      BASE_URL,
       {
         From: "+919130868050",
         To: "+919264445833 ",

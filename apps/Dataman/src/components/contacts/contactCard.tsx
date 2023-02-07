@@ -12,7 +12,7 @@ export const ContactsCard = ({ contactInfo }: ContactInfoProps) => {
 
   return (
     <View>
-      <View className="flex flex-row items-start justify-start  p-4">
+      <View className="flex flex-row items-start justify-start p-4">
         <View
           className={`w-10 h-10 rounded-full flex items-center justify-center`}
           style={{ backgroundColor: color }}

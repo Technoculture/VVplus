@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import { View, Text, Image } from "react-native";
-import { getColorsByLetter } from "../Utils/colors";
-import { MaterialIcons } from "@expo/vector-icons";
-import { Fontisto } from "@expo/vector-icons";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { Feather } from "@expo/vector-icons";
+import {
+  MaterialIcons,
+  Fontisto,
+  MaterialCommunityIcons,
+  Feather,
+} from "@expo/vector-icons";
 import { makeCall } from "../components/API/CallApi";
+import { getColorsByLetter } from "../Utils/colors";
 
 const ProfileScreen = ({ route, navigation }: any) => {
+  const [callText, setCallText] = useState("call");
   const { name, phone } = route.params.contactInfo;
   const colors = getColorsByLetter(name[0]);
-
-  const [callText, setCallText] = useState("call");
 
   const handleCall = async () => {
     try {
@@ -54,7 +55,7 @@ const ProfileScreen = ({ route, navigation }: any) => {
         />
 
         <View
-          className={`absolute top-0 left-0 right-0 bottom-0 opacity-50  flex items-center justify-center`}
+          className={`absolute top-0 left-0 right-0 bottom-0 opacity-50 flex items-center justify-center`}
           style={{ backgroundColor: colors }}
         />
         <Text
