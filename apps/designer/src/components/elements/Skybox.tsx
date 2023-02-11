@@ -7,15 +7,16 @@ export const Skybox = () => {
     ["_px.png", "_nx.png", "_py.png", "_ny.png", "_pz.png", "_nz.png"],
     { path: skyBoxUrl }
   );
-  const fogProps: ThreeElements["fogExp2"] = {
+  const fogProps: ThreeElements["fog"] = {
     color: "#CBCBCB",
-    density: 0.00105,
-    attach: "fogExp2",
+    near: 50,
+    far: 1000,
+    attach: "fog",
   };
   return (
     <>
       <EnvironmentMap map={texture} background />
-      <fogExp2 {...fogProps} />
+      <fog {...fogProps} />
     </>
   );
 };

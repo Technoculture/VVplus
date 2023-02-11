@@ -28,12 +28,8 @@ export function CreateModel() {
   }
   function floorVisiblilityToggle(idx: number) {
     if (visibleFloorIdx === 0) return true;
-    else if (visibleFloorIdx === idx + 1) return true;
-    else if (
-      visibleFloorIdx === data.floors.length - 2 &&
-      idx >= visibleFloorIdx
-    )
-      return true;
+    else if (visibleFloorIdx >= idx + 1) return true;
+    else if (visibleFloorIdx === data.floors.length - 2) return true;
     return false;
   }
   return (
