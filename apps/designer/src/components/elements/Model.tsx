@@ -1,19 +1,61 @@
 import data from "../../../public/house.json";
-import { Group, Scene } from "three";
+import { Vector3 } from "three";
 import { useGLTF } from "@react-three/drei";
+import useStore from "../../global-stores/store";
+import { Suspense } from "react";
 
-export function createModel(scene: Scene) {
+export function CreateModel() {
+  const visibleFloorIdx = useStore((state) => state.floor);
+  const floorUrlArray: string[] = [];
+  const floorTracker: number[] = [];
   data.floors.map((element) => {
-    const floor = new Group();
+    floorTracker.push(element.floorStructure.length);
     element.floorStructure.map((e) => {
-      const model = useGLTF(data.baseUrl + e.file);
-      model.scene.name = element.id + "-" + e.file.split(".")[0];
-      model.scene.scale.set(10, 10, 10);
-      model.scene.position.set(0, 0, 0);
-      floor.add(model.scene);
-      useGLTF.preload(data.baseUrl + e.file);
-      floor.name = element.id;
+      floorUrlArray.push(data.baseUrl + e.file);
     });
-    scene.add(floor);
   });
+  const models = useGLTF(floorUrlArray);
+  const floorGroupArray: typeof models[] = [];
+  let currIdx = 0;
+  for (let i = 0; i < data.floors.length; i++) {
+    const floorModels: typeof models = models.slice(
+      currIdx,
+      currIdx + floorTracker[i]
+    );
+    // console.log(floorModels, " floorModels");
+    floorGroupArray.push(floorModels);
+    currIdx += floorTracker[i];
+  }
+  function floorVisiblilityToggle(idx: number) {
+    if (visibleFloorIdx === 0) return true;
+    else if (visibleFloorIdx === idx + 1) return true;
+    else if (
+      visibleFloorIdx === data.floors.length - 2 &&
+      idx >= visibleFloorIdx
+    )
+      return true;
+    return false;
+  }
+  return (
+    <Suspense fallback={null}>
+      {floorGroupArray.map((floor, idx) => {
+        const groupProps = {
+          position: new Vector3(0, 0, 0),
+          scale: new Vector3(10, 10, 10),
+          visible: floorVisiblilityToggle(idx),
+        };
+        return (
+          <group key={idx} {...groupProps}>
+            {floor.map((model, index) => {
+              console.log(model, " model");
+              const primitiveProps = {
+                object: model.scene,
+              };
+              return <primitive key={index} {...primitiveProps} />;
+            })}
+          </group>
+        );
+      })}
+    </Suspense>
+  );
 }

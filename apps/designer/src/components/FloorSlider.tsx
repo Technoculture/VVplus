@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import useStore from "../global-stores/store";
 import floorLevel from "../../public/cameraAngles.json";
+
 const FloorSlider = () => {
   const floor = useStore((state) => state.floor);
   const updateTarget = useStore((state) => state.updateCameraTarget);
@@ -8,7 +9,6 @@ const FloorSlider = () => {
   const changeFloor = useStore((state) => state.changeFloor);
 
   const updateFloor = (idx: number) => {
-    console.log("floor: ", floor, "idx: ", idx);
     changeFloor(idx);
     updatePosition(floorLevel[idx].p);
     updateTarget(floorLevel[idx].t);

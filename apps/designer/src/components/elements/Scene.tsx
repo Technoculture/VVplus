@@ -2,7 +2,7 @@ import * as THREE from "three";
 import { Canvas, useThree } from "@react-three/fiber";
 import { Skybox } from "./Skybox";
 import { Ground } from "./Ground";
-import { createModel } from "./Model";
+import { CreateModel } from "./Model";
 import { CameraControls } from "./Camera";
 import { Suspense } from "react";
 
@@ -10,7 +10,6 @@ let scene_variable: THREE.Scene;
 const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
   function SceneInitialize() {
     const { scene } = useThree();
-    createModel(scene);
     scene_variable = scene;
     return null;
   }
@@ -27,6 +26,7 @@ const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
           <Skybox />
           <Ground />
           <SceneInitialize />
+          <CreateModel />
         </Suspense>
       </Canvas>
     </div>
