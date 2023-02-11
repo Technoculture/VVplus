@@ -14,7 +14,7 @@ type Store = {
   updateCameraPosition: (newPosition: number[]) => void;
 };
 
-const useStore = create<Store>((set) => ({
+const cameraControlsStore = create<Store>((set) => ({
   cameraTarget: new Vector3(0, 70, 0),
   cameraPosition: new Vector3(230, 25, 0),
   floor: 0,
@@ -37,7 +37,7 @@ const useStore = create<Store>((set) => ({
   },
 }));
 
-export default useStore;
+export default cameraControlsStore;
 
 // fix the store to return the value of visibility in order to check what floor is to be toggled off including all features in the floor
 // when a floor is turned off, all structures that are present in the floor will be turned off as well

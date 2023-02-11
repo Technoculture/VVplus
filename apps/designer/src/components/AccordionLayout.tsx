@@ -28,16 +28,10 @@ const AccordionLayout = ({
   const updatePosition = useStore((state) => state.updateCameraPosition);
   const getFloor = useStore((state) => state.floor);
 
-  function animation(p: number[], t: number[]) {
+  const handleSetIndex = (index, p: number[], t: number[]) => {
+    setActiveIndex(index);
     updateTarget(t);
     updatePosition(p);
-  }
-  const handleSetIndex = (index) => {
-    if (index !== activeIndex) {
-      setActiveIndex(index);
-    } else {
-      setActiveIndex(0);
-    }
   };
 
   return (
@@ -54,19 +48,20 @@ const AccordionLayout = ({
         <div
           onClick={() => {
             if (index !== activeIndex) {
-              handleSetIndex(index);
-              animation(p, t);
+              handleSetIndex(index, p, t);
             } else {
-              handleSetIndex(0);
-              animation(floorLevel[getFloor].p, floorLevel[getFloor].t);
+              handleSetIndex(
+                -1,
+                floorLevel[getFloor].cameraPosition,
+                floorLevel[getFloor].cameraTarget
+              );
             }
           }}
-          className={`flex justify-between items-center h-11 w-[380px] px-5   bg-white bg-opacity-40 border-amber-100  border-[1px] rounded-2xl 
-        ${activeIndex === index ? "border-none h-[54px] w-full " : ""}
-        
-        `}
+          className={`flex justify-between items-center h-11 w-[380px] px-5 bg-white bg-opacity-40 border-amber-100  border-[1px] rounded-2xl ${
+            activeIndex === index ? "border-none h-[54px] w-full" : ""
+          }`}
         >
-          <div className="flex ">
+          <div className="flex">
             <div className=" font-[Bodoni] text-lg ">{title}</div>
           </div>
           <div className="flex items-center justify-center gap-5">

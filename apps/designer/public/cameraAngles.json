@@ -1,22 +1,22 @@
 [
   {
-    "p": [230, 25, 0],
-    "t": [0, 70, 0]
+    "cameraPosition": [230, 25, 0],
+    "cameraTarget": [0, 70, 0]
   },
   {
-    "p": [75, 25, 0],
-    "t": [0, 25, 0]
+    "cameraPosition": [75, 25, 0],
+    "cameraTarget": [0, 25, 0]
   },
   {
-    "p": [75, 50, 0],
-    "t": [0, 50, 0]
+    "cameraPosition": [75, 50, 0],
+    "cameraTarget": [0, 50, 0]
   },
   {
-    "p": [75, 80, 0],
-    "t": [0, 75, 0]
+    "cameraPosition": [75, 80, 0],
+    "cameraTarget": [0, 75, 0]
   },
   {
-    "p": [100, 145, 0],
-    "t": [0, 125, 0]
+    "cameraPosition": [100, 145, 0],
+    "cameraTarget": [0, 125, 0]
   }
 ]

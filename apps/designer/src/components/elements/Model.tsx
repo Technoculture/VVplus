@@ -1,11 +1,11 @@
 import data from "../../../public/house.json";
 import { Vector3 } from "three";
 import { useGLTF } from "@react-three/drei";
-import useStore from "../../global-stores/store";
+import cameraControlsStore from "../../global-stores/store";
 import { Suspense } from "react";
 
 export function CreateModel() {
-  const visibleFloorIdx = useStore((state) => state.floor);
+  const visibleFloorIdx = cameraControlsStore((state) => state.floor);
   const floorUrlArray: string[] = [];
   const floorTracker: number[] = [];
   data.floors.map((element) => {

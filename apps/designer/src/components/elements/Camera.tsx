@@ -2,7 +2,7 @@ import { OrbitControls } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
 import { Vector3 } from "three";
-import useStore from "../../global-stores/store";
+import cameraControlsStore from "../../global-stores/store";
 import gsap from "gsap";
 
 let camera_variable: THREE.Camera;
@@ -14,8 +14,8 @@ const CameraControls = () => {
   camera_variable = camera;
   camera.up = new Vector3(0, 1, 0);
   const controls = useRef(null);
-  const target = useStore((state) => state.cameraTarget);
-  const position = useStore((state) => state.cameraPosition);
+  const target = cameraControlsStore((state) => state.cameraTarget);
+  const position = cameraControlsStore((state) => state.cameraPosition);
   function cameraAnimate() {
     const timeline = gsap.timeline();
     timeline.to(camera.position, {
