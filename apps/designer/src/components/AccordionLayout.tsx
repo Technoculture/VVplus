@@ -1,7 +1,7 @@
 import React from "react";
 import { AiOutlineDown, AiOutlineRight } from "react-icons/ai";
 import cameraControlsStore from "../globalStore/Navigation-Store/cameraControlsStore";
-import { cameraAngles } from "../../public/cameraPropConstants.json";
+import { cameraAnglesFloors } from "../../public/cameraPropConstants.json";
 
 interface Props {
   title: string;
@@ -10,8 +10,8 @@ interface Props {
   index: number;
   activeIndex: number;
   setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
-  p: number[];
-  t: number[];
+  cameraPosition: number[];
+  cameraTarget: number[];
 }
 
 const AccordionLayout = ({
@@ -21,8 +21,8 @@ const AccordionLayout = ({
   index,
   activeIndex,
   setActiveIndex,
-  p,
-  t,
+  cameraPosition,
+  cameraTarget,
 }: Props) => {
   const updateTarget = cameraControlsStore((state) => state.updateCameraTarget);
   const updatePosition = cameraControlsStore(
@@ -30,10 +30,14 @@ const AccordionLayout = ({
   );
   const getFloor = cameraControlsStore((state) => state.floor);
 
-  const handleSetIndex = (index, p: number[], t: number[]) => {
+  const handleSetIndex = (
+    index: number,
+    cameraPosition: number[],
+    cameraTarget: number[]
+  ): void => {
     setActiveIndex(index);
-    updateTarget(t);
-    updatePosition(p);
+    updateTarget(cameraTarget);
+    updatePosition(cameraPosition);
   };
 
   return (
@@ -50,12 +54,12 @@ const AccordionLayout = ({
         <div
           onClick={() => {
             if (index !== activeIndex) {
-              handleSetIndex(index, p, t);
+              handleSetIndex(index, cameraPosition, cameraTarget);
             } else {
               handleSetIndex(
                 -1,
-                cameraAngles[getFloor].cameraPosition,
-                cameraAngles[getFloor].cameraTarget
+                cameraAnglesFloors[getFloor].cameraPosition,
+                cameraAnglesFloors[getFloor].cameraTarget
               );
             }
           }}

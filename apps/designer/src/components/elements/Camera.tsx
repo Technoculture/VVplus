@@ -20,7 +20,7 @@ const CameraControls = () => {
   camera.up = new Vector3(...cameraInitProps.upVector);
 
   // animation function for camera movement based on target and position
-  function cameraAnimate() {
+  function cameraAnimate(): void {
     const timeline = gsap.timeline();
 
     // animate camera to new position

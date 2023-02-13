@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { Canvas, useThree } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import { Skybox } from "./Skybox";
 import { Ground } from "./Ground";
 import { CreateModel } from "./Model";
@@ -9,11 +9,6 @@ import { cameraInitProps } from "../../../public/cameraPropConstants.json";
 
 let scene_variable: THREE.Scene;
 const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
-  function SceneInitialize() {
-    const { scene } = useThree();
-    scene_variable = scene;
-    return null;
-  }
   const initPosition = cameraInitProps.initPosition;
   return (
     <div
@@ -30,7 +25,6 @@ const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
           <CameraControls />
           <Skybox />
           <Ground />
-          <SceneInitialize />
           <CreateModel />
         </Suspense>
       </Canvas>
