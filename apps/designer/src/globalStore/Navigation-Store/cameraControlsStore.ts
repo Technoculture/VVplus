@@ -2,7 +2,7 @@ import { Vector3 } from "three";
 import create from "zustand";
 import { OrbitControls } from "three-stdlib";
 import { cameraAnglesFloors } from "../../../public/cameraPropConstants.json";
-// Yet to be updated with isVisible concept with use of Zod and getFile. There will be several changes made later on.
+//TODO: Yet to be updated with isVisible concept with use of Zod and getFile. There will be several changes made later on.
 type cameraControlType = {
   cameraTarget: Vector3;
   cameraPosition: Vector3;
@@ -39,5 +39,5 @@ const cameraControlsStore = create<cameraControlType>((set) => ({
 
 export default cameraControlsStore;
 
-// fix the store to return the value of visibility in order to check what floor is to be toggled off including all features in the floor
+//TODO: fix the store to return the value of visibility in order to check what floor is to be toggled off including all features in the floor
 // when a floor is turned off, all structures that are present in the floor will be turned off as well
