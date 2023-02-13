@@ -1,7 +1,7 @@
 import { Vector3 } from "three";
 import create from "zustand";
 import { OrbitControls } from "three-stdlib";
-
+import { cameraAngles } from "../../../public/cameraPropConstants.json";
 // Yet to be updated with isVisible concept with use of Zod and getFile. There will be several changes made later on.
 type Store = {
   cameraTarget: Vector3;
@@ -15,8 +15,8 @@ type Store = {
 };
 
 const cameraControlsStore = create<Store>((set) => ({
-  cameraTarget: new Vector3(0, 70, 0),
-  cameraPosition: new Vector3(230, 25, 0),
+  cameraTarget: new Vector3(...cameraAngles[0].cameraTarget),
+  cameraPosition: new Vector3(...cameraAngles[0].cameraPosition),
   floor: 0,
   changeFloor(val) {
     set(() => ({ floor: val }));

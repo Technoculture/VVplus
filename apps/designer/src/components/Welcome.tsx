@@ -1,7 +1,7 @@
 import React from "react";
+import Accordion from "./Accordion";
 import Card from "./Cards/Card";
 import FloorToggleTab from "./FloorToggleTab";
-import SelectionPanel from "./SelectionPanel";
 
 interface WelcomePanelProps {
   isWelcomePanelActive: boolean;
@@ -69,7 +69,7 @@ const Welcome = ({
                 alt=""
               />
 
-              <SelectionPanel />
+              <Accordion />
             </div>
           )}
         </div>

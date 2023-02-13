@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import cameraControlsStore from "../global-stores/store";
-import floorLevel from "../../public/cameraAngles.json";
+import cameraControlsStore from "../globalStore/Navigation-Store/cameraControlsStore";
+import { cameraAngles } from "../../public/cameraPropConstants.json";
 
 const FloorToggleTab = () => {
   const floor = cameraControlsStore((state) => state.floor);
@@ -12,8 +12,8 @@ const FloorToggleTab = () => {
 
   const updateFloor = (idx: number) => {
     changeFloor(idx);
-    updatePosition(floorLevel[idx].cameraPosition);
-    updateTarget(floorLevel[idx].cameraTarget);
+    updatePosition(cameraAngles[idx].cameraPosition);
+    updateTarget(cameraAngles[idx].cameraTarget);
   };
   function activeFloorTab(idx: number) {
     return `${
@@ -22,7 +22,7 @@ const FloorToggleTab = () => {
     } ${
       idx === 0
         ? "rounded-l-2xl"
-        : idx === floorLevel.length - 1
+        : idx === cameraAngles.length - 1
         ? "rounded-r-2xl"
         : ""
     }`;
@@ -33,7 +33,7 @@ const FloorToggleTab = () => {
   return (
     <div className="text-white text-sm select-none   relative flex items-center justify-center  mt-2  w-[380px] font-[Roboto]">
       <div className="border-[1px] border-amber-100 items-center flex rounded-[20px] w-[380px]  h-8 z-[100] bg-black bg-opacity-40">
-        {floorLevel.map((_, idx) => (
+        {cameraAngles.map((_, idx) => (
           <div
             key={idx}
             onClick={() => updateFloor(idx)}
@@ -43,7 +43,7 @@ const FloorToggleTab = () => {
           >
             {idx === 0
               ? "Outside"
-              : idx === floorLevel.length - 1
+              : idx === cameraAngles.length - 1
               ? "Roof"
               : `Floor ${idx - 1}`}
           </div>

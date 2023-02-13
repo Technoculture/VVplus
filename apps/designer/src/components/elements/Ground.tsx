@@ -1,7 +1,7 @@
 import { useTexture } from "@react-three/drei";
 import { ThreeElements } from "@react-three/fiber";
+import { envUrl } from "../../../public/urlPaths.json";
 export const Ground = (props) => {
-  const groundUrl = "https://assets.vvplus.cc/misc/ground_texture.png";
   const meshProps: ThreeElements["mesh"] = {
     rotation: [-Math.PI / 2, 0, 0],
     position: [0, -0.5, 0],
@@ -13,7 +13,7 @@ export const Ground = (props) => {
   };
   const MeshStandardMaterialParameters: ThreeElements["meshStandardMaterial"] =
     {
-      map: useTexture(groundUrl),
+      map: useTexture(envUrl.groundUrl),
       attach: "material",
     };
   return (

@@ -1,12 +1,13 @@
 import { EnvironmentMap, useCubeTexture } from "@react-three/drei";
 import { ThreeElements } from "@react-three/fiber";
+import { envUrl } from "../../../public/urlPaths.json";
 
 export const Skybox = () => {
-  const skyBoxUrl = "https://assets.vvplus.cc/misc/skybox";
-  const texture = useCubeTexture(
-    ["_px.png", "_nx.png", "_py.png", "_ny.png", "_pz.png", "_nz.png"],
-    { path: skyBoxUrl }
-  );
+  const texture = useCubeTexture(envUrl.paths, { path: envUrl.skyBoxUrl });
+  // color:color of fog
+  // near: distance from camera where fog starts
+  // far: distance from camera where fog ends
+  // attach: attach fog to scene
   const fogProps: ThreeElements["fog"] = {
     color: "#CBCBCB",
     near: 50,

@@ -2,22 +2,28 @@ import { OrbitControls } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
 import { Vector3 } from "three";
-import cameraControlsStore from "../../global-stores/store";
+import cameraControlsStore from "../../globalStore/Navigation-Store/cameraControlsStore";
 import gsap from "gsap";
+import { cameraInitProps } from "../../../public/cameraPropConstants.json";
 
-let camera_variable: THREE.Camera;
 const CameraControls = () => {
+  //Initialize camera controls
   const {
     camera,
     gl: { domElement },
   } = useThree();
-  camera_variable = camera;
-  camera.up = new Vector3(0, 1, 0);
   const controls = useRef(null);
   const target = cameraControlsStore((state) => state.cameraTarget);
   const position = cameraControlsStore((state) => state.cameraPosition);
+  // const cameraInitValues = cameraPropConstants.cameraInitProps;
+  // camera up vector set to y axis to determine up direction
+  camera.up = new Vector3(...cameraInitProps.upVector);
+
+  // animation function for camera movement based on target and position
   function cameraAnimate() {
     const timeline = gsap.timeline();
+
+    // animate camera to new position
     timeline.to(camera.position, {
       duration: 2,
       repeat: 0,
@@ -26,6 +32,8 @@ const CameraControls = () => {
       z: position.z,
       ease: "power3.inOut",
     });
+
+    // animate camera target to new target
     timeline.to(
       controls.current.target,
       {
@@ -39,6 +47,7 @@ const CameraControls = () => {
       "<"
     );
   }
+  // on change of target or position, animate camera
   useEffect(() => {
     cameraAnimate();
   }, [target]);
@@ -47,14 +56,19 @@ const CameraControls = () => {
     <OrbitControls
       ref={controls}
       args={[camera, domElement]}
-      panSpeed={1}
-      rotateSpeed={0.6}
+      // movement speed of camera controls
+      panSpeed={cameraInitProps.panSpeed}
+      // rotation speed of camera controls
+      rotateSpeed={cameraInitProps.rotateSpeed}
       // dampingFactor={0.05}
-      minDistance={100}
-      maxDistance={300}
+      // minimum distance of camera can zoom in from target
+      minDistance={cameraInitProps.minDistance}
+      // maximum distance  camera can zoom out from target
+      maxDistance={cameraInitProps.maxDistance}
+      // maximum angle of camera from target
       maxPolarAngle={Math.PI / 2}
     />
   );
 };
 
-export { camera_variable, CameraControls };
+export { CameraControls };

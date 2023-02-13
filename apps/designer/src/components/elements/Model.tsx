@@ -1,13 +1,17 @@
 import data from "../../../public/house.json";
 import { Vector3 } from "three";
 import { useGLTF } from "@react-three/drei";
-import cameraControlsStore from "../../global-stores/store";
+import cameraControlsStore from "../../globalStore/Navigation-Store/cameraControlsStore";
 import { Suspense } from "react";
 
 export function CreateModel() {
   const visibleFloorIdx = cameraControlsStore((state) => state.floor);
   const floorUrlArray: string[] = [];
   const floorTracker: number[] = [];
+  const modelProps = {
+    position: new Vector3(0, 0, 0),
+    scale: new Vector3(10, 10, 10),
+  };
   data.floors.map((element) => {
     floorTracker.push(element.floorStructure.length);
     element.floorStructure.map((e) => {
@@ -15,17 +19,17 @@ export function CreateModel() {
     });
   });
   const models = useGLTF(floorUrlArray);
-  const floorGroupArray: typeof models[] = [];
   let currIdx = 0;
-  for (let i = 0; i < data.floors.length; i++) {
+  const floorGroupArray = data.floors.map((_, idx) => {
     const floorModels: typeof models = models.slice(
       currIdx,
-      currIdx + floorTracker[i]
+      currIdx + floorTracker[idx]
     );
-    // console.log(floorModels, " floorModels");
-    floorGroupArray.push(floorModels);
-    currIdx += floorTracker[i];
-  }
+    currIdx += floorTracker[idx];
+    return floorModels;
+  });
+
+  // returns floor visibility status
   function floorVisiblilityToggle(idx: number) {
     if (visibleFloorIdx === 0) return true;
     else if (visibleFloorIdx >= idx + 1) return true;
@@ -35,15 +39,15 @@ export function CreateModel() {
   return (
     <Suspense fallback={null}>
       {floorGroupArray.map((floor, idx) => {
+        // props for each floor group
         const groupProps = {
-          position: new Vector3(0, 0, 0),
-          scale: new Vector3(10, 10, 10),
+          position: modelProps.position,
+          scale: modelProps.scale,
           visible: floorVisiblilityToggle(idx),
         };
         return (
           <group key={idx} {...groupProps}>
             {floor.map((model, index) => {
-              console.log(model, " model");
               const primitiveProps = {
                 object: model.scene,
               };
