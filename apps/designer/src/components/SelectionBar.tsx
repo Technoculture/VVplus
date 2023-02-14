@@ -5,7 +5,7 @@ const SelectionBar = () => {
     <div className=" select-none font-Roboto text-black gap-[10px]  absolute md:flex hidden items-center justify-center bottom-10 left-[50%] translate-x-[-50%] ">
       <div className="w-fit gap-10  font-Roboto relative h-[1px] flex justify-between items-center bg-white">
         <div className="flex w-[120px] flex-col items-center">
-          <div className="flex items-center justify-center w-8 h-8 text-base font-normal bg-pink-50 border-[1px] border-[#FFCC49] rounded-full ">
+          <div className="flex items-center justify-center w-8 h-8 text-base font-normal bg-pink-50 border-[1px] border-amber-300 rounded-full ">
             1
           </div>
           <p className="text-xs italic">Choose a Base model</p>

@@ -2,6 +2,7 @@ import React from "react";
 import Accordion from "./Accordion";
 import Card from "./Cards/Card";
 import FloorToggleTab from "./FloorToggleTab";
+import { motion } from "framer-motion";
 
 interface WelcomePanelProps {
   isWelcomePanelActive: boolean;
@@ -26,20 +27,17 @@ const Welcome = ({
     </div>
   ) : (
     <>
-      <div
-        // onClick={() => {
-        //   isWelcomePanelActive === true ? handleClickForToggle() : "";
-        // }}
+      <motion.div
         className={`
           z-[100] relative font-Roboto flex items-center flex-col   justify-center   w-[80vw] mx-auto sm:w-[250px] ease-in-out duration-500 md:w-[27vw] h-[76vh]  rounded-[20px]  
           ${
             !isWelcomePanelActive
-              ? "items-center justify-center bg-gray-200  "
-              : " "
+              ? "items-center justify-center bg-gray-200"
+              : ""
           }
         ${
           isToggled === true && isWelcomePanelActive
-            ? "xl:translate-x-[70vw] md:w-[54vw] lg:w-[42vw]   backdrop-blur-[10px] bg-gradient-to-b  from-red-50/[0.98] to-rose-100/[0.48]   lg:translate-x-[70vw] md:translate-x-[75vw] !h-fit    "
+            ? "xl:translate-x-[70vw] md:w-[54vw] lg:w-[42vw]  backdrop-blur-[10px] bg-gradient-to-b  from-red-50/[0.98] to-rose-100/[0.48]   lg:translate-x-[70vw] md:translate-x-[75vw] !h-fit    "
             : ""
         }
         ${
@@ -59,8 +57,7 @@ const Welcome = ({
             "Welcome"
           ) : (
             <div
-              className={`flex py-[10px] select-none items-center justify-center  rounded-[20px] backdrop-blur-[10px] bg-gradient-to-b  from-red-50/[0.98] to-rose-100/[0.48]  flex-col gap-[10px] px-[10px] 
-          
+              className={`flex py-[10px] select-none items-center justify-center  rounded-[20px] backdrop-blur-[10px] bg-gradient-to-b  from-red-50/[0.98] to-rose-100/[0.48]  flex-col gap-[10px] px-[10px]          
             `}
             >
               <img
@@ -68,13 +65,12 @@ const Welcome = ({
                 src=" https://assets.vvplus.cc/draco/file_thumbnails/railing_sf_steel.png"
                 alt=""
               />
-
               <Accordion />
             </div>
           )}
         </div>
         {isWelcomePanelActive === true ? <FloorToggleTab /> : ""}
-      </div>
+      </motion.div>
     </>
   );
 };

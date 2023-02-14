@@ -20,7 +20,7 @@ const Navbar = ({
   //use eval("Math.PI") to find the value of pi in the js function after fetching from JSON
   return (
     <nav
-      className={`font-RobotoSerif z-[100] select-none flex justify-center left-[50%] translate-x-[-50%]     text-[21px] font-[400] items-center gap-[10px]  h-[65px] w-[222px] rounded-[20px] shadow-[0_4px_40px_rgba(74,74,74,0.05)] bg-gradient-to-r  relative bg-white border-[1px] border-[#F7F7F7] 
+      className={`font-RobotoSerif z-[100] select-none flex justify-center left-[50%] translate-x-[-50%]     text-[21px] font-[400] items-center gap-[10px]  h-[65px] w-[222px] rounded-[20px] shadow-[0_4px_40px_rgba(74,74,74,0.05)] bg-gradient-to-r  relative bg-white border-[1px] border-gray-100 
       ${isNavbarOpen === true ? "!w-fit p-[10px_0px_10px_10px]" : ""}
       `}
     >
