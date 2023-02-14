@@ -6,19 +6,14 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.cjs",
-    "**/*.mjs"
-, "postcss.config.cjs", "next.config.js"  ],
+    "**/*.mjs",
+    "postcss.config.cjs",
+    "next.config.js"
+  ],
   "compilerOptions": {
-  //  "preserveSymlinks": true,
-    "types": ["babylonjs"],
+    //  "preserveSymlinks": true,
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext",
-      "esnext.asynciterable",
-      "DOM",
-    ],
+    "lib": ["dom", "dom.iterable", "esnext", "esnext.asynciterable", "DOM"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -33,7 +28,5 @@
     "moduleResolution": "node",
     "resolveJsonModule": true
   },
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
