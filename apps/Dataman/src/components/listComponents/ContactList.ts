@@ -1,3 +1,1 @@
-export const contactList = [
-  { id: 0, name: "Sarthak Tiwary", phone: 9264445833 },
-];
+export const contactList = [{ id: 0, name: "Satyam", phone: 9113317500 }];
