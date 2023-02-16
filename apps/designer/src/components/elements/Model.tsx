@@ -4,7 +4,7 @@ import { useGLTF } from "@react-three/drei";
 import cameraControlsStore from "../../globalStore/Navigation-Store/cameraControlsStore";
 import { Suspense } from "react";
 
-export function CreateModel() {
+export function LoadModel() {
   const visibleFloorIdx = cameraControlsStore((state) => state.floor);
   const floorUrlArray: string[] = [];
   const floorTracker: number[] = [];

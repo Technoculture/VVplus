@@ -2,10 +2,11 @@ import * as THREE from "three";
 import { Canvas } from "@react-three/fiber";
 import { Skybox } from "./Skybox";
 import { Ground } from "./Ground";
-import { CreateModel } from "./Model";
+import { LoadModel } from "./Model";
 import { CameraControls } from "./Camera";
 import { Suspense } from "react";
 import { cameraInitProps } from "../../../public/cameraPropConstants.json";
+import PoolWater from "./PoolWater";
 
 let scene_variable: THREE.Scene;
 const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
@@ -25,7 +26,8 @@ const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
           <CameraControls />
           <Skybox />
           <Ground />
-          <CreateModel />
+          <LoadModel />
+          <PoolWater />
         </Suspense>
       </Canvas>
     </div>
