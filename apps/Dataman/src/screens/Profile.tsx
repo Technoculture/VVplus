@@ -14,37 +14,37 @@ const ProfileScreen = ({ route, navigation }: any) => {
   const { name, phone } = route.params.contactInfo;
   const colors = getColorsByLetter(name[0]);
 
-  // const handleCall = async () => {
-  //   try {
-  //     const response = await makeCall();
+  const handleCall = async () => {
+    try {
+      const response = await makeCall();
 
-  //     switch (response.Status) {
-  //       case "queued":
-  //         setCallText("queued");
-  //         break;
-  //       case "in-progress":
-  //         setCallText("in-progress");
-  //         break;
-  //       case "completed":
-  //         setCallText("completed");
-  //         break;
-  //       case "failed":
-  //         setCallText("failed");
-  //         break;
-  //       case "busy":
-  //         setCallText("busy");
-  //         break;
-  //       case "no-answer":
-  //         setCallText("no-answer");
-  //         break;
-  //       default:
-  //         setCallText("Call");
-  //         break;
-  //     }
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
+      switch (response.status) {
+        case "queued":
+          setCallText("queued");
+          break;
+        case "in-progress":
+          setCallText("in-progress");
+          break;
+        case "completed":
+          setCallText("completed");
+          break;
+        case "failed":
+          setCallText("failed");
+          break;
+        case "busy":
+          setCallText("busy");
+          break;
+        case "no-answer":
+          setCallText("no-answer");
+          break;
+        default:
+          setCallText("Call");
+          break;
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <View>
@@ -71,7 +71,7 @@ const ProfileScreen = ({ route, navigation }: any) => {
             name="call"
             size={28}
             color="blue"
-            onPress={makeCall}
+            onPress={handleCall}
           />
 
           <MaterialCommunityIcons name="comment-text" size={24} color="blue" />
