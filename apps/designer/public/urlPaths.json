@@ -1,0 +1,7 @@
+{
+  "envUrl": {
+    "skyBoxUrl": "https://assets.vvplus.cc/misc/skybox",
+    "paths": ["_px.png", "_nx.png", "_py.png", "_ny.png", "_pz.png", "_nz.png"],
+    "groundUrl": "https://assets.vvplus.cc/misc/ground_texture.png"
+  }
+}

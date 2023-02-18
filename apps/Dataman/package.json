@@ -14,25 +14,38 @@
     "eas-build-post-install": "pnpm run -w build:mobile"
   },
   "dependencies": {
+    "@ant-design/react-native": "^5.0.3",
+    "@react-navigation/bottom-tabs": "^6.5.2",
+    "@react-navigation/native": "^6.1.1",
+    "@react-navigation/native-stack": "^6.9.7",
+    "babel-plugin-import": "^1.13.5",
     "expo": "^47.0.0",
     "expo-dev-client": "~2.0.0",
+    "expo-location": "~15.0.1",
     "expo-updates": "~0.15.4",
+    "nativewind": "2.0.10",
     "react": "18.1.0",
     "react-dom": "18.1.0",
+    "react-hook-form": "^7.41.5",
     "react-native": "0.70.5",
+    "react-native-gesture-handler": "^2.8.0",
     "react-native-safe-area-context": "4.4.1",
     "react-native-screens": "~3.18.0",
     "react-native-web": "~0.18.7"
   },
   "devDependencies": {
-    "eslint-config-custom": "*",
     "@babel/core": "^7.19.3",
     "@babel/preset-env": "^7.1.6",
     "@types/react": "~18.0.25",
     "@types/react-dom": "~18.0.9",
     "@types/react-native": "~0.70.5",
     "babel-preset-expo": "~9.2.1",
+    "eslint-config-custom": "workspace:*",
     "typescript": "^4.7.4"
+  },
+  "resolutions": {
+    "@types/react": "^17.0.21",
+    "@types/react-dom": "^17.0.9"
   },
   "eslintConfig": {
     "extends": "eslint-config-custom",
@@ -44,7 +57,9 @@
     ],
     "overrides": [
       {
-        "files": ["*.js"],
+        "files": [
+          "*.js"
+        ],
         "env": {
           "node": true
         }

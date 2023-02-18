@@ -1,8 +1,7 @@
 import React from "react";
-
 import { AiOutlineDown, AiOutlineRight } from "react-icons/ai";
-import animateActiveCamera from "./Animations/animateCamera";
-import { scene_variable } from "./elements/Scene";
+import cameraControlsStore from "../globalStore/Navigation-Store/cameraControlsStore";
+import { cameraAnglesFloors } from "../../public/cameraPropConstants.json";
 
 interface Props {
   title: string;
@@ -11,20 +10,8 @@ interface Props {
   index: number;
   activeIndex: number;
   setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
-  r: number;
-  a: number;
-  b: number;
-  t: {
-    x: number;
-    y: number;
-    z: number;
-  };
-}
-
-interface target {
-  x: number;
-  y: number;
-  z: number;
+  cameraPosition: number[];
+  cameraTarget: number[];
 }
 
 const AccordionLayout = ({
@@ -34,29 +21,23 @@ const AccordionLayout = ({
   index,
   activeIndex,
   setActiveIndex,
-  r,
-  a,
-  b,
-  t,
+  cameraPosition,
+  cameraTarget,
 }: Props) => {
-  function animation(r: number, a: number, b: number, t: target) {
-    animateActiveCamera(scene_variable, {
-      radius: r,
-      alpha: a,
-      beta: b,
-      target: {
-        x: t.x,
-        y: t.y,
-        z: t.z,
-      },
-    });
-  }
-  const handleSetIndex = (index) => {
-    if (index !== activeIndex) {
-      setActiveIndex(index);
-    } else {
-      setActiveIndex(0);
-    }
+  const updateTarget = cameraControlsStore((state) => state.updateCameraTarget);
+  const updatePosition = cameraControlsStore(
+    (state) => state.updateCameraPosition
+  );
+  const getFloor = cameraControlsStore((state) => state.floor);
+
+  const handleSetIndex = (
+    index: number,
+    cameraPosition: number[],
+    cameraTarget: number[]
+  ): void => {
+    setActiveIndex(index);
+    updateTarget(cameraTarget);
+    updatePosition(cameraPosition);
   };
 
   return (
@@ -73,23 +54,20 @@ const AccordionLayout = ({
         <div
           onClick={() => {
             if (index !== activeIndex) {
-              handleSetIndex(index);
-              animation(r, a, b, t);
+              handleSetIndex(index, cameraPosition, cameraTarget);
             } else {
-              handleSetIndex(0);
-              animation(1000, -Math.PI * 3, Math.PI / 2, {
-                x: -300,
-                y: 200,
-                z: 230,
-              });
+              handleSetIndex(
+                -1,
+                cameraAnglesFloors[getFloor].cameraPosition,
+                cameraAnglesFloors[getFloor].cameraTarget
+              );
             }
           }}
-          className={`flex justify-between items-center h-11 w-[380px] px-5   bg-white bg-opacity-40 border-amber-100  border-[1px] rounded-2xl 
-        ${activeIndex === index ? "border-none h-[54px] w-full " : ""}
-        
-        `}
+          className={`flex justify-between items-center h-11 w-[380px] px-5 bg-white bg-opacity-40 border-amber-100  border-[1px] rounded-2xl ${
+            activeIndex === index ? "border-none h-[54px] w-full" : ""
+          }`}
         >
-          <div className="flex ">
+          <div className="flex">
             <div className=" font-[Bodoni] text-lg ">{title}</div>
           </div>
           <div className="flex items-center justify-center gap-5">
@@ -105,13 +83,7 @@ const AccordionLayout = ({
         </div>
 
         {activeIndex === index && (
-          <div
-            className={`px-5 scrollbar-hide rounded-2xl
-          
-          `}
-          >
-            {children}
-          </div>
+          <div className={`px-5 scrollbar-hide rounded-2xl`}>{children}</div>
         )}
       </div>
     </>
