@@ -1,42 +1,99 @@
-import React, { useMemo, useRef } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import { extend, useFrame, useLoader, useThree } from "@react-three/fiber";
-import { Water } from "three-stdlib";
+import { Water, Water2, Water2Options, WaterOptions } from "three-stdlib";
 import * as THREE from "three";
-import { BufferGeometryUtils, Vector3 } from "three";
+import { BufferGeometryUtils, Shape, ShapeGeometry, Vector3 } from "three";
 
 extend({ Water });
 
 const PoolWater = () => {
   const ref = useRef();
-  const {
-    gl: { outputEncoding },
-  } = useThree();
+  const { camera, gl, scene } = useThree();
+  useEffect(() => {
+    init();
+  }, []);
   const waterNormals = useLoader(THREE.TextureLoader, "/waternormals.jpeg");
-  waterNormals.wrapS = waterNormals.wrapT = THREE.RepeatWrapping;
-  const geom = new THREE.PlaneGeometry(50, 80);
-  // useMemo(() =>
-  // , []);
-  const config = {
-    textureWidth: 512,
-    textureHeight: 512,
-    waterNormals,
-    sunDirection: new THREE.Vector3(),
-    sunColor: 0xffffff,
-    waterColor: 0x001e0f,
-    distortionScale: 3.7,
-    fog: false,
-    format: outputEncoding,
-  };
-  // ),[waterNormals]);
-  const water = new Water(geom, config);
-  useFrame(
-    (state, delta) => (ref.current.material.uniforms.time.value += delta)
-  );
+  function init() {
+    waterNormals.wrapS = waterNormals.wrapT = THREE.RepeatWrapping;
+    // Create a separate WebGLRenderTarget for the reflection map
+    const reflectionRenderTarget = new THREE.WebGLRenderTarget(
+      window.innerWidth,
+      window.innerHeight,
+      {
+        format: THREE.RGBAFormat,
+      }
+    );
+
+    // Set up the camera for rendering the reflection map
+    // const reflectionCamera = camera.clone();
+    // reflectionCamera.position.y = -camera.position.y;
+    // reflectionCamera.rotation.x = -camera.rotation.x;
+    // const cameraRef = camera;
+    // // Render the reflection map
+    // gl.setRenderTarget(reflectionRenderTarget);
+    // gl.render(scene, reflectionCamera);
+
+    reflectionRenderTarget.texture.wrapS =
+      reflectionRenderTarget.texture.wrapT = THREE.RepeatWrapping;
+    // Create the water material with the reflection map as its envMap
+    const waterMaterial = new THREE.MeshStandardMaterial({
+      color: "#000000",
+      roughness: 0.2,
+      metalness: 0.6,
+      envMap: waterNormals,
+      side: THREE.DoubleSide,
+    });
+    // gl.render(scene, cameraRef);
+    // Create the water geometry and mesh
+    const shape = new Shape();
+    shape.lineTo(0, 0);
+    shape.lineTo(0, 30);
+    shape.lineTo(20, 30);
+    shape.lineTo(20, 80);
+    shape.lineTo(50, 80);
+    shape.lineTo(50, 0);
+
+    const waterGeometry = new ShapeGeometry(shape);
+    // const waterMesh = new THREE.Mesh(waterGeometry, waterMaterial);
+    // return waterMesh;
+    // useMemo(() =>
+    // , []);
+    // gl.setRenderTarget(target);
+    // const texture = target.texture;
+    // texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+
+    const config: WaterOptions = {
+      textureWidth: 512,
+      textureHeight: 512,
+      // flowMap:
+      waterNormals,
+      // sunDirection: new THREE.Vector3(),
+      // sunColor: 0xffffff,
+      waterColor: "#000044",
+      // color:
+      // reflectivity: 0,
+      // flowDirection: new THREE.Vector2(1, 1),
+      // flowSpeed: 0.5,
+      distortionScale: 3.7,
+      fog: false,
+      // encoding:
+    };
+    // ),[waterNormals]);
+    const water = new Water(waterGeometry, config);
+    // gl.setRenderTarget(null);
+    return water;
+  }
+  useFrame((state, delta) => {
+    if (ref.current) {
+      // console.log(ref.current);
+      ref.current.material.uniforms.time.value += delta;
+    }
+  });
   const waterProps = {
     ref: ref,
-    object: water,
+    object: init(),
     // args: [geom, config],
-    position: [95, 1.5, -8],
+    position: [68, 1.5, 32],
     "rotation-x": -Math.PI / 2,
   };
   return (
@@ -45,31 +102,4 @@ const PoolWater = () => {
     </>
   );
 };
-// const PoolWater = () => {
-//   const waterRef = useRef();
-
-//   // Initialize Water outside of JSX
-//   const planeGeometry = new THREE.PlaneGeometry(10, 10);
-//   const bufferGeometry = new THREE.BufferGeometry().setFromPoints([
-//     new Vector3(0, 0, 0),
-//     new Vector3(0, 0, 10),
-//     new Vector3(10, 0, 10),
-//     new Vector3(10, 0, 0),
-//   ]);
-//   const water = new Water(bufferGeometry, {
-//     waterColor: "blue",
-//   });
-//   const waterProps = {
-//     object: water,
-//     ref: waterRef,
-//     position: [0, 0, 0],
-//   };
-//   return (
-//     <>
-//       {/* Add Water to scene as a regular Three.js object */}
-//       <primitive {...waterProps} />
-//       {/* Animate Water in your React Three Fiber scene */}
-//     </>
-//   );
-// };
 export default PoolWater;

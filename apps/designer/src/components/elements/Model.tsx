@@ -50,6 +50,8 @@ export function LoadModel() {
             {floor.map((model, index) => {
               const primitiveProps = {
                 object: model.scene,
+                castShadow: true,
+                receiveShadow: true,
               };
               return <primitive key={index} {...primitiveProps} />;
             })}
