@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { View, Text, Image } from "react-native";
 import {
   MaterialIcons,
-  Fontisto,
   MaterialCommunityIcons,
   Feather,
 } from "@expo/vector-icons";
@@ -15,35 +15,57 @@ const ProfileScreen = ({ route, navigation }: any) => {
   const colors = getColorsByLetter(name[0]);
 
   const handleCall = async () => {
-    try {
-      const response = await makeCall();
+    const config = {
+      headers: {
+        Authorization:
+          "Basic MmJjNWZiOGRlZDM1ODhlZjQxZjM5NTM5ZmU5MWExMWI2ZjNlY2VjMWU2MDNkYTdhOmEwNGI5YzlmZGZlMjBkZTFiNDFlNDIzZTJmNWRmOTMwNWNmZTZiNjZiZmQ1ZmQ2Ng==",
+        "content-type": "application/json",
+      },
+    };
 
-      switch (response.status) {
-        case "queued":
-          setCallText("queued");
-          break;
-        case "in-progress":
-          setCallText("in-progress");
-          break;
-        case "completed":
-          setCallText("completed");
-          break;
-        case "failed":
-          setCallText("failed");
-          break;
-        case "busy":
-          setCallText("busy");
-          break;
-        case "no-answer":
-          setCallText("no-answer");
-          break;
-        default:
-          setCallText("Call");
-          break;
+    try {
+      const response = await makeCall(); // Make POST request to make the call
+      const callSid = response.Sid; // Get the callSid from the POST response
+
+      let status = "";
+      while (status !== "completed") {
+        const responseOfCall = await axios.get(
+          `https://api.exotel.com/v1/Accounts/vastuvihar2/Calls/${callSid}.json`,
+          config
+        );
+        status = responseOfCall.data.Call.Status;
+
+        console.log(status);
+        switch (status) {
+          case "queued":
+            setCallText("queued");
+            break;
+          case "in-progress":
+            setCallText("in-progress");
+            break;
+          case "completed":
+            setCallText("completed");
+            break;
+          case "failed":
+            setCallText("failed");
+            break;
+          case "busy":
+            setCallText("busy");
+            break;
+          case "no-answer":
+            setCallText("no-answer");
+            break;
+          default:
+            setCallText("Call");
+            break;
+        }
       }
     } catch (error) {
       console.error(error);
     }
+    // finally {
+    //   console.log(HttpStatusCode);
+    // }
   };
 
   return (
@@ -73,7 +95,6 @@ const ProfileScreen = ({ route, navigation }: any) => {
             color="blue"
             onPress={handleCall}
           />
-
           <MaterialCommunityIcons name="comment-text" size={24} color="blue" />
           <Feather name="video" size={24} color="gray" />
         </View>
@@ -83,24 +104,13 @@ const ProfileScreen = ({ route, navigation }: any) => {
           <Text className="text-gray-400">Video</Text>
         </View>
       </View>
+
       <View className="flex flex-column bg-white shadow-xl p-5">
         <View className="flex flex-row justify-between mb-2">
           <View className="flex flex-row">
             <MaterialIcons name="call" size={28} color="gray" />
             <View className="ml-5">
               <Text className="text-base">{phone}</Text>
-            </View>
-          </View>
-          <MaterialCommunityIcons name="comment-text" size={24} color="blue" />
-        </View>
-      </View>
-
-      <View className="flex flex-column bg-white shadow-xl p-5">
-        <View className="flex flex-row justify-between mb-2">
-          <View className="flex flex-row">
-            <Fontisto name="whatsapp" size={24} color="green" />
-            <View className="ml-5">
-              <Text className="text-base">Voice Call +{phone}</Text>
             </View>
           </View>
         </View>

@@ -1,28 +1,26 @@
 import React from "react";
 import axios from "axios";
 
-const makeCall = async () => {
-  const accountSid = "AC74b39c63f4820c97341e7bcce77b1d2f";
-  const callUrl = `https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Calls.json`;
-
+export const makeCall = async () => {
   try {
     const response = await axios.post(
-      callUrl,
+      "https://api.exotel.com/v1/Accounts/vastuvihar2/Calls/connect.json",
       {
-        To: "+919130868050",
-        From: "+17069481870",
-        Twiml: "<Response><Say>Ahoy there!</Say></Response>",
+        From: "+919130868050",
+        To: "+919096087980",
+        CallerId: "09513886363",
       },
       {
         headers: {
           Authorization:
-            "Basic QUM3NGIzOWM2M2Y0ODIwYzk3MzQxZTdiY2NlNzdiMWQyZjphODFlZjVhMzhhNWY1YzExYzA3MzU4NTBjYjNlOTFjNA==",
+            "Basic MmJjNWZiOGRlZDM1ODhlZjQxZjM5NTM5ZmU5MWExMWI2ZjNlY2VjMWU2MDNkYTdhOmEwNGI5YzlmZGZlMjBkZTFiNDFlNDIzZTJmNWRmOTMwNWNmZTZiNjZiZmQ1ZmQ2Ng==",
           "Content-Type": "application/x-www-form-urlencoded",
+          accept: "application/json",
+          Length: 56,
         },
       }
     );
-
-    return response.data;
+    return response.data.Call;
   } catch (error) {
     console.log(error);
   }
