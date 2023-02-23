@@ -2,7 +2,6 @@ import data from "../../../public/house.json";
 import { Vector3 } from "three";
 import { useGLTF } from "@react-three/drei";
 import cameraControlsStore from "../../globalStore/Navigation-Store/cameraControlsStore";
-import { Suspense } from "react";
 
 export function CreateModel() {
   const visibleFloorIdx = cameraControlsStore((state) => state.floor);
@@ -37,7 +36,7 @@ export function CreateModel() {
     return false;
   }
   return (
-    <Suspense fallback={null}>
+    <>
       {floorGroupArray.map((floor, idx) => {
         // props for each floor group
         const groupProps = {
@@ -56,6 +55,6 @@ export function CreateModel() {
           </group>
         );
       })}
-    </Suspense>
+    </>
   );
 }
