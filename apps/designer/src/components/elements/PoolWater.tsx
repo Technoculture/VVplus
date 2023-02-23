@@ -1,29 +1,30 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
-import { extend, useFrame, useLoader, useThree } from "@react-three/fiber";
-import { Water, Water2, Water2Options, WaterOptions } from "three-stdlib";
+import React, { useRef } from "react";
+import { extend, Node, useFrame, useLoader } from "@react-three/fiber";
+import { Water, WaterOptions } from "three-stdlib";
 import * as THREE from "three";
-import { BufferGeometryUtils, Shape, ShapeGeometry, Vector3 } from "three";
+import { BufferGeometry, Shape, ShapeGeometry, Vector3 } from "three";
+import cameraControlsStore from "../../globalStore/Navigation-Store/cameraControlsStore";
 
 extend({ Water });
-
+declare module "@react-three/fiber" {
+  interface ThreeElements {
+    water: Node<Water, typeof Water>;
+  }
+}
 const PoolWater = () => {
-  const ref = useRef();
-  // const [waterUniforms, setWaterUniforms] = useState<any>(null);
-  const { camera, gl, scene } = useThree();
-  // useEffect(() => {
-  //   init();
-  // }, []);
+  const ref = useRef<Water>();
+  const cameraPosition = cameraControlsStore((state) => state.cameraPosition);
   const waterNormals = useLoader(THREE.TextureLoader, "/waternormals.jpeg");
   // function init() {
   waterNormals.wrapS = waterNormals.wrapT = THREE.RepeatWrapping;
   // Create a separate WebGLRenderTarget for the reflection map
-  const reflectionRenderTarget = new THREE.WebGLRenderTarget(
-    window.innerWidth,
-    window.innerHeight,
-    {
-      format: THREE.RGBAFormat,
-    }
-  );
+  // const reflectionRenderTarget = new THREE.WebGLRenderTarget(
+  //   window.innerWidth,
+  //   window.innerHeight,
+  //   {
+  //     format: THREE.RGBAFormat,
+  //   }
+  // );
 
   // Set up the camera for rendering the reflection map
   // const reflectionCamera = camera.clone();
@@ -34,17 +35,16 @@ const PoolWater = () => {
   // gl.setRenderTarget(reflectionRenderTarget);
   // gl.render(scene, reflectionCamera);
 
-  reflectionRenderTarget.texture.wrapS = reflectionRenderTarget.texture.wrapT =
-    THREE.RepeatWrapping;
-  // Create the water material with the reflection map as its envMap
-  const waterMaterial = new THREE.MeshStandardMaterial({
-    color: "#000000",
-    roughness: 0.2,
-    metalness: 0.6,
-    envMap: waterNormals,
-    side: THREE.DoubleSide,
-  });
-  // gl.render(scene, cameraRef);
+  // reflectionRenderTarget.texture.wrapS = reflectionRenderTarget.texture.wrapT =
+  //   THREE.RepeatWrapping;
+  // // Create the water material with the reflection map as its envMap
+  // const waterMaterial = new THREE.MeshStandardMaterial({
+  //   color: "#000000",
+  //   roughness: 0.2,
+  //   metalness: 0.6,
+  //   envMap: waterNormals,
+  //   side: THREE.DoubleSide,
+  // });
   // Create the water geometry and mesh
   const shape = new Shape();
   shape.lineTo(0, 0);
@@ -64,46 +64,50 @@ const PoolWater = () => {
   // texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
 
   const config: WaterOptions = {
-    textureWidth: 512,
-    textureHeight: 512,
+    textureWidth: 32,
+    textureHeight: 32,
     // flowMap:
     waterNormals,
+    eye: cameraPosition,
+    alpha: 1,
+    clipBias: 5,
     // sunDirection: new THREE.Vector3(),
     // sunColor: 0xffffff,
     waterColor: "#000044",
-    // color:
     // reflectivity: 0,
     // flowDirection: new THREE.Vector2(1, 1),
     // flowSpeed: 0.5,
-    distortionScale: 3.7,
+    distortionScale: 0.8,
     fog: false,
-    // encoding:
   };
+  // const config: Water2Options = {
+  //   textureWidth: 512,
+  //   textureHeight: 512,
+  //   // waterNormals: waterNormals,
+  //   color: 0x001e0f,
+  //   clipBias: 0,
+  //   reflectivity: 1,
+  //   scale: 1,
+  //   flowDirection: new THREE.Vector2(0.05, 0.025),
+  //   // textureTransform: new THREE.Matrix3(),
+  //   // color: "white",
+  // };
   // ),[waterNormals]);
-  const water = new Water(waterGeometry, config);
-  const waterUniforms = water.material.uniforms;
   // setWaterUniforms(waterUniforms);
   // gl.setRenderTarget(null);
   //   return water;
   // }
-  useFrame((state, delta) => {
-    waterUniforms.time.value += delta;
-    // if (ref.current && ref.current.material) {
-    //   // console.log(ref.current);
-    //   ref.current.material.uniforms.time.value += delta;
-    // }
-  });
+  const args: [BufferGeometry, WaterOptions] = [waterGeometry, config];
   const waterProps = {
-    ref: ref,
-    object: water,
-    // args: [geom, config],
-    position: [68, 1.5, 32],
+    args,
+    position: new Vector3(68, 1.5, 32),
     "rotation-x": -Math.PI / 2,
+    castShadow: true,
+    receiveShadow: true,
   };
-  return (
-    <>
-      <primitive {...waterProps} />;
-    </>
-  );
+  useFrame((state, delta) => {
+    if (ref.current) ref.current.material.uniforms.time.value += delta;
+  });
+  return <water ref={ref} {...waterProps} />;
 };
 export default PoolWater;
