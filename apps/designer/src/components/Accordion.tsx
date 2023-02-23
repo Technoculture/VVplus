@@ -6,9 +6,11 @@ import { cameraAnglesObjects } from "../../public/cameraPropConstants.json";
 const Accordion = () => {
   const [activeIndex, setActiveIndex] = useState(-1);
   return (
-    <div className="flex flex-col gap-[10px] h-fit">
+    <div className="flex flex-col transition-all duration-[1000ms] gap-[10px] h-fit">
       {cameraAnglesObjects.map((floor, idx) => (
-        <div className={`select-none cursor-pointer rounded-[15px]`}>
+        <div
+          className={`select-none transition-all duration-[1000ms] cursor-pointer rounded-[15px]`}
+        >
           <AccordionLayout
             title={floor.title}
             design={floor.design}
