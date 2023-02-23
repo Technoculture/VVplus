@@ -10,7 +10,9 @@ export const Loader = () => {
           style={{ width: `${progress}%` }}
         />
       </div>
-      <div className="text-center my-2">{Math.round(progress)}% Loaded</div>
+      <div className="text-center my-2">
+        {Math.round(progress)}% Model Loaded
+      </div>
     </Html>
   );
 };
