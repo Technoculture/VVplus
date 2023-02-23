@@ -6,9 +6,7 @@ export const Loader = () => {
     <Html center className="text-lg">
       <div className="bg-gray-200 h-2 w-48 rounded-full border">
         <div
-          className={`bg-blue-500 h-full rounded-full w-{0.3} saw-{${Math.round(
-            30 / 100
-          )}}`}
+          className={`bg-blue-500 h-full rounded-full`}
           style={{ width: `${progress}%` }}
         />
       </div>
