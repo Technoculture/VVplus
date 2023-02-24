@@ -122,60 +122,54 @@ const Welcome = ({
     </div>
   ) : (
     <>
-      <AnimatePresence initial={false}>
-        <motion.div
-          animate={{ x: isWelcomePanelActive ? 500 : 0 }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
-          className={`
-          z-[100] relative font-Roboto flex items-center flex-col   justify-center   w-[80vw] mx-auto sm:w-[250px] ease-in-out duration-500 md:w-[27vw] h-[76vh]  rounded-[20px]  
+      {/* <AnimatePresence initial={false}> */}
+
+      <motion.div
+        animate={{
+          x:
+            isWelcomePanelActive === true && isToggled
+              ? "62.5vw"
+              : !isToggled && isWelcomePanelActive
+              ? "33vw"
+              : 0,
+        }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className={`
+          z-[100] absolute translate-y-[-50%] top-2 left-0 right-0 font-Roboto flex items-center flex-col m-auto  justify-center   w-[80vw]  sm:w-[250px] ease-in-out duration-500 md:w-[27vw] h-[76vh]  rounded-[20px]  
           ${
             !isWelcomePanelActive
               ? "items-center justify-center bg-gray-200"
               : ""
-          }
-         
-
-        
+          }       
         `}
-        >
-          <div
-            className={`
+      >
+        <div
+          className={`
       ${isWelcomePanelActive === false ? "cursor-pointer" : ""}
       `}
-            onClick={handleClickOnWelcome}
-          >
-            {isWelcomePanelActive === false ? (
-              "Welcome"
-            ) : (
-              <div
-                className={`flex py-[10px] select-none items-center justify-center  rounded-[20px] backdrop-blur-[10px] bg-gradient-to-b  from-red-50/[0.98] to-rose-100/[0.48]  flex-col gap-[10px] px-[10px]          
+          onClick={handleClickOnWelcome}
+        >
+          {isWelcomePanelActive === false ? (
+            "Welcome"
+          ) : (
+            <div
+              className={`flex py-[10px] select-none items-center justify-center  rounded-[20px] backdrop-blur-[10px] bg-gradient-to-b  from-red-50/[0.98] to-rose-100/[0.48]  flex-col gap-[10px] px-[10px]          
             `}
-              >
-                <img
-                  className=" rounded-[10px] border-[1px] border-amber-100  w-[380px]  h-[200px]  "
-                  src=" https://assets.vvplus.cc/draco/file_thumbnails/railing_sf_steel.png"
-                  alt=""
-                />
-                <Accordion />
-              </div>
-            )}
-          </div>
-          {isWelcomePanelActive === true ? <FloorToggleTab /> : ""}
-        </motion.div>
-      </AnimatePresence>
+            >
+              <img
+                className=" rounded-[10px] border-[1px] border-amber-100  w-[380px]  h-[200px]  "
+                src=" https://assets.vvplus.cc/draco/file_thumbnails/railing_sf_steel.png"
+                alt=""
+              />
+              <Accordion />
+            </div>
+          )}
+        </div>
+        {isWelcomePanelActive === true ? <FloorToggleTab /> : ""}
+      </motion.div>
+      {/* </AnimatePresence> */}
     </>
   );
 };
 
 export default Welcome;
-
-// ${
-//   isToggled === true && isWelcomePanelActive
-//     ? "xl:translate-x-[70vw] md:w-[54vw] lg:w-[42vw]   backdrop-blur-[10px] bg-gradient-to-b  from-red-50/[0.98] to-rose-100/[0.48]   lg:translate-x-[70vw] md:translate-x-[75vw] !h-fit    "
-//     : ""
-// }
-// ${
-//   isWelcomePanelActive && window.innerWidth > 766 && isToggled === false
-//     ? "xl:translate-x-[34vw] lg:translate-x-[28vw] md:translate-x-[24vw] !h-fit   "
-//     : ""
-// }
