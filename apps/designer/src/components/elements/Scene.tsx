@@ -7,6 +7,7 @@ import { CameraControls } from "./Camera";
 import { Suspense } from "react";
 import { cameraInitProps } from "../../../public/cameraPropConstants.json";
 import PoolWater from "./PoolWater";
+import { Loader } from "../Loader";
 
 let scene_variable: THREE.Scene;
 const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
@@ -22,7 +23,7 @@ const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
           position: [initPosition[0], initPosition[1], initPosition[2]],
         }}
       >
-        <Suspense>
+        <Suspense fallback={<Loader />}>
           <CameraControls />
           <Skybox />
           <Ground />
