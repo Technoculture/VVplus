@@ -1,42 +1,34 @@
-import SceneComp from "./SceneComp";
-import { createCamera } from "./freeCamera";
-import { createGround } from "./ground";
-import { createSkyBox } from "./skybox";
-import { createFog } from "./fog";
-import { createModel } from "./models";
-import * as BABYLON from "@babylonjs/core";
-import { HemisphericLight, Vector3 } from "@babylonjs/core";
-import "@babylonjs/loaders/glTF";
+import * as THREE from "three";
+import { Canvas } from "@react-three/fiber";
+import { Skybox } from "./Skybox";
+import { Ground } from "./Ground";
+import { CreateModel } from "./Model";
+import { CameraControls } from "./Camera";
+import { Suspense } from "react";
+import { cameraInitProps } from "../../../public/cameraPropConstants.json";
+import { Loader } from "../Loader";
 
-// TODO: Create JSON parsing with zod and handle the elemental breakdown of building model into several parts
-
-let scene_variable: BABYLON.Scene;
+let scene_variable: THREE.Scene;
 const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
-  const onSceneReady = async (scene: BABYLON.Scene) => {
-    createCamera(scene);
-    const light = new HemisphericLight("light", new Vector3(-1, 1, -1), scene);
-    light.intensity = 0.7;
-    await createSkyBox(scene);
-    await createGround();
-    await createFog(scene);
-    await createModel(scene);
-    scene_variable = scene;
-  };
-  const onRender = (scene: BABYLON.Scene) => {
-    return;
-  };
-
+  const initPosition = cameraInitProps.initPosition;
   return (
-    <div>
-      <SceneComp
-        antialias={true}
-        adaptToDeviceRatio={true}
-        onSceneReady={onSceneReady}
-        onRender={onRender}
-        className={`
+    <div
+      className={`
   absolute top-0 w-full h-screen
-  ${isWelcomePanelActive === true ? "z-[1]" : "z-[-100]"}`}
-      />
+  ${isWelcomePanelActive === true ? "z-[1] visible" : "z-[-100] hidden"}`}
+    >
+      <Canvas
+        camera={{
+          position: [initPosition[0], initPosition[1], initPosition[2]],
+        }}
+      >
+        <Suspense fallback={<Loader />}>
+          <CameraControls />
+          <Skybox />
+          <Ground />
+          <CreateModel />
+        </Suspense>
+      </Canvas>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { View, Text, Image } from "react-native";
+import { TouchableOpacity } from "react-native";
 import {
   MaterialIcons,
   MaterialCommunityIcons,
@@ -65,6 +66,9 @@ const ProfileScreen = ({ route, navigation }: any) => {
       console.error(error);
     }
   };
+  const handleCallViewClick = () => {
+    handleCall();
+  };
 
   return (
     <View>
@@ -87,12 +91,15 @@ const ProfileScreen = ({ route, navigation }: any) => {
 
       <View className="flex flex-column p-5 bg-white shadow-xl">
         <View className="flex flex-row justify-around">
-          <MaterialIcons
-            name="call"
-            size={28}
-            color="blue"
-            onPress={handleCall}
-          />
+          <TouchableOpacity onPress={handleCallViewClick}>
+            <MaterialIcons
+              name="call"
+              size={28}
+              color="blue"
+              onPress={handleCall}
+            />
+          </TouchableOpacity>
+
           <MaterialCommunityIcons name="comment-text" size={24} color="blue" />
           <Feather name="video" size={24} color="gray" />
         </View>

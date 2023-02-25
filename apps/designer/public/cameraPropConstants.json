@@ -1,0 +1,59 @@
+{
+  "cameraInitProps": {
+    "upVector": [0, 1, 0],
+    "panSpeed": 1,
+    "rotateSpeed": 0.6,
+    "dampingFactor": 0.05,
+    "minDistance": 100,
+    "maxDistance": 300,
+    "initPosition": [175, 40, -80]
+  },
+  "cameraAnglesFloors": [
+    {
+      "cameraPosition": [230, 25, 0],
+      "cameraTarget": [0, 70, 0]
+    },
+    {
+      "cameraPosition": [75, 25, 0],
+      "cameraTarget": [0, 25, 0]
+    },
+    {
+      "cameraPosition": [75, 50, 0],
+      "cameraTarget": [0, 50, 0]
+    },
+    {
+      "cameraPosition": [75, 80, 0],
+      "cameraTarget": [0, 75, 0]
+    },
+    {
+      "cameraPosition": [100, 145, 0],
+      "cameraTarget": [0, 125, 0]
+    }
+  ],
+  "cameraAnglesObjects": [
+    {
+      "title": "Main Gate",
+      "design": "Minimal Floral",
+      "cameraPosition": [220, 0, 50],
+      "cameraTarget": [10, 10, 50]
+    },
+    {
+      "title": "Garden",
+      "design": "All Steel",
+      "cameraPosition": [101, 50, -3],
+      "cameraTarget": [100, 0, -3]
+    },
+    {
+      "title": "Balcony Railings",
+      "design": "All Steel",
+      "cameraPosition": [50, 75, 0],
+      "cameraTarget": [0, 75, 0]
+    },
+    {
+      "title": "Garden",
+      "design": "All Steel",
+      "cameraPosition": [101, 50, -3],
+      "cameraTarget": [100, 0, -3]
+    }
+  ]
+}

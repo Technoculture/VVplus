@@ -1,0 +1,56 @@
+name: build
+
+on:
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: Platform to build for android
+        type: choice
+        required: true
+        default: all
+        options:
+          - android
+      profile:
+        description: EAS build profile (development/production)
+        type: choice
+        required: true
+        default: development
+        options:
+          - development
+          - production
+
+jobs:
+  dataman build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🏗 Setup repository
+        uses: actions/checkout@v3
+
+      - name: 🏗 Setup monorepo
+        uses: ./.github/actions/setup-monorepo
+        with:
+          expo-token: ${{ secrets.DATAMAN_EXPO_ACCESS_TOKEN }}
+
+      - name: 👷 Build packages for mobile
+        run: pnpm run -w build:mobile:dataman
+
+      - name: 🚀 Build mobile
+        working-directory: apps/dataman
+        run: eas build --non-interactive --wait --platform=${{ github.event.inputs.platform }} --profile=${{ github.event.inputs.profile }}
+  vvclub build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🏗 Setup repository
+        uses: actions/checkout@v3
+
+      - name: 🏗 Setup monorepo
+        uses: ./.github/actions/setup-monorepo
+        with:
+          expo-token: ${{ secrets.VVCLUB_EXPO_ACCESS_TOKEN }}
+
+      - name: 👷 Build packages for mobile
+        run: pnpm run -w build:mobile:vvclub
+
+      - name: 🚀 Build mobile
+        working-directory: apps/vvclub
+        run: eas build --non-interactive --wait --platform=${{ github.event.inputs.platform }} --profile=${{ github.event.inputs.profile }}
