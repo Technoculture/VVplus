@@ -42,6 +42,7 @@
     "@types/react-native": "~0.70.5",
     "babel-preset-expo": "~9.2.1",
     "eslint-config-custom": "workspace:*",
+    "react-native-dotenv": "^3.4.7",
     "typescript": "^4.7.4"
   },
   "resolutions": {

@@ -8,6 +8,7 @@ import {
 } from "@expo/vector-icons";
 import makeCall from "../components/API/CallApi";
 import { getColorsByLetter } from "../Utils/colors";
+import { EXOTEL_AUTHORIZATION, EXOTEL_SID } from "@env";
 
 const ProfileScreen = ({ route, navigation }: any) => {
   const [callText, setCallText] = useState("call");
@@ -17,8 +18,7 @@ const ProfileScreen = ({ route, navigation }: any) => {
   const handleCall = async () => {
     const config = {
       headers: {
-        Authorization:
-          "Basic MmJjNWZiOGRlZDM1ODhlZjQxZjM5NTM5ZmU5MWExMWI2ZjNlY2VjMWU2MDNkYTdhOmEwNGI5YzlmZGZlMjBkZTFiNDFlNDIzZTJmNWRmOTMwNWNmZTZiNjZiZmQ1ZmQ2Ng==",
+        Authorization: `Basic ${EXOTEL_AUTHORIZATION}`,
         "content-type": "application/json",
       },
     };
@@ -30,7 +30,7 @@ const ProfileScreen = ({ route, navigation }: any) => {
       let status = "";
       while (status !== "completed") {
         const responseOfCall = await axios.get(
-          `https://api.exotel.com/v1/Accounts/vastuvihar2/Calls/${callSid}.json`,
+          `https://api.exotel.com/v1/Accounts/${EXOTEL_SID}/Calls/${callSid}.json`,
           config
         );
         status = responseOfCall.data.Call.Status;
@@ -59,13 +59,11 @@ const ProfileScreen = ({ route, navigation }: any) => {
             setCallText("Call");
             break;
         }
+        await new Promise((resolve) => setTimeout(resolve, 3000));
       }
     } catch (error) {
       console.error(error);
     }
-    // finally {
-    //   console.log(HttpStatusCode);
-    // }
   };
 
   return (
