@@ -21,6 +21,7 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
     handleClickOnNewButton,
     handleClickForToggle,
     isToggled,
+    isLoaded,
   } = navigationUseStore();
 
   const { isWelcomeComponentOpen, handleClickOnNewDesign } = openWelcomeStore();
@@ -33,6 +34,7 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
         <Navbar
           isNavbarOpen={isNavbarOpen}
           isToggled={isToggled}
+          isLoaded={isLoaded}
           handleClickForToggle={handleClickForToggle}
           handleClickOnNewButton={handleClickOnNewButton}
           handleClickOnSaveButton={handleClickOnSaveButton}
@@ -52,6 +54,7 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
             isWelcomePanelActive={isWelcomePanelActive}
             handleClickForToggle={handleClickForToggle}
             isToggled={isToggled}
+            isLoaded={isLoaded}
           />
         )}
         <div

@@ -1,9 +1,11 @@
 import create from "zustand";
 type navigationStore = {
   isNavbarOpen: boolean;
-  handleClickOnWelcome: () => void;
   isWelcomePanelActive: boolean;
   isToggled: boolean;
+  isLoaded: boolean;
+  toggleLoaded: () => void;
+  handleClickOnWelcome: () => void;
   handleClickOnNewButton: () => void;
   handleClickForToggle: () => void;
 };
@@ -27,6 +29,12 @@ const navigationUseStore = create<navigationStore>((set) => ({
   handleClickForToggle: () => {
     set((state) => ({
       isToggled: !state.isToggled,
+    }));
+  },
+  isLoaded: false,
+  toggleLoaded: () => {
+    set((state) => ({
+      isLoaded: !state.isLoaded,
     }));
   },
 }));

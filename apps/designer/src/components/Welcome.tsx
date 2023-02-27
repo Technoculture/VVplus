@@ -7,6 +7,7 @@ interface WelcomePanelProps {
   isWelcomePanelActive: boolean;
   handleClickOnWelcome: () => void;
   isToggled: boolean;
+  isLoaded: boolean;
   handleClickForToggle: () => void;
 }
 //Todo : Animation when open the welcome component
@@ -15,6 +16,7 @@ const Welcome = ({
   isWelcomePanelActive,
   handleClickOnWelcome,
   isToggled,
+  isLoaded,
   handleClickForToggle,
 }: WelcomePanelProps) => {
   return window.innerWidth < 768 && isWelcomePanelActive === true ? (
@@ -32,14 +34,15 @@ const Welcome = ({
         // }}
         className={`
           z-[100] relative font-Roboto flex items-center flex-col   justify-center   w-[80vw] mx-auto sm:w-[250px] ease-in-out duration-500 md:w-[27vw] h-[76vh]  rounded-[20px]  
+          ${isWelcomePanelActive && isLoaded === false && "hidden"}
           ${
             !isWelcomePanelActive
-              ? "items-center justify-center bg-gray-200  "
+              ? "items-center justify-center bg-gray-200"
               : " "
           }
         ${
           isToggled === true && isWelcomePanelActive
-            ? "xl:translate-x-[70vw] md:w-[54vw] lg:w-[42vw]   backdrop-blur-[10px] bg-gradient-to-b  from-red-50/[0.98] to-rose-100/[0.48]   lg:translate-x-[70vw] md:translate-x-[75vw] !h-fit    "
+            ? "xl:translate-x-[70vw] md:w-[54vw] lg:w-[42vw]   backdrop-blur-[10px] bg-gradient-to-b  from-red-50/[0.98] to-rose-100/[0.48]   lg:translate-x-[70vw] md:translate-x-[75vw] !h-fit"
             : ""
         }
         ${
