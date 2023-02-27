@@ -40,8 +40,10 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
       </div>
       {children}
       <div
-        className={` relative
-    h-[90vh] md:flex md:flex-col md:justify-center items-center md:py-0 w-screen   py-2.5`}
+        className={` 
+    h-[90vh] relative md:flex md:flex-col w-screen   py-2.5 items-center
+    
+    `}
       >
         {isWelcomeComponentOpen === false && (
           <TemplateCard handleClickOnNewDesign={handleClickOnNewDesign} />
