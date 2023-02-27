@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useMemo, useRef } from "react";
 import { extend, Node, useFrame, useLoader } from "@react-three/fiber";
 import { Water, WaterOptions } from "three-stdlib";
 import * as THREE from "three";
@@ -11,16 +11,24 @@ declare module "@react-three/fiber" {
     water: Node<Water, typeof Water>;
   }
 }
-const PoolWater = () => {
+export const PoolWater = () => {
   const ref = useRef<Water>();
   const poolPosition = new Vector3(68, 1.5, 32);
+  const poolBoundaryCoordinates = [
+    [0, 0],
+    [0, 30],
+    [20, 30],
+    [20, 80],
+    [50, 80],
+    [50, 0],
+  ];
   const cameraPosition = cameraControlsStore((state) => state.cameraPosition);
   const waterNormals = useLoader(THREE.TextureLoader, "/waternormals.jpeg");
   waterNormals.wrapS = waterNormals.wrapT = THREE.RepeatWrapping;
   // Create the water config object
   const config: WaterOptions = {
-    textureWidth: 32,
-    textureHeight: 32,
+    textureWidth: 128,
+    textureHeight: 128,
     waterNormals,
     eye: cameraPosition,
     alpha: 1,
@@ -30,15 +38,13 @@ const PoolWater = () => {
     fog: false,
   };
   // Create the water geometry and mesh
-  const shape = new Shape();
-  shape.lineTo(0, 0);
-  shape.lineTo(0, 30);
-  shape.lineTo(20, 30);
-  shape.lineTo(20, 80);
-  shape.lineTo(50, 80);
-  shape.lineTo(50, 0);
-
-  const waterGeometry = new ShapeGeometry(shape);
+  const waterGeometry = useMemo(() => {
+    const shape = new Shape();
+    poolBoundaryCoordinates.map((coordinate) =>
+      shape.lineTo(coordinate[0], coordinate[1])
+    );
+    return new ShapeGeometry(shape);
+  }, []);
 
   const args: [BufferGeometry, WaterOptions] = [waterGeometry, config];
   const waterProps = {
@@ -53,4 +59,3 @@ const PoolWater = () => {
   });
   return <water ref={ref} {...waterProps} />;
 };
-export default PoolWater;
