@@ -27,8 +27,8 @@ export const PoolWater = () => {
   waterNormals.wrapS = waterNormals.wrapT = THREE.RepeatWrapping;
   // Create the water config object
   const config: WaterOptions = {
-    textureWidth: 128,
-    textureHeight: 128,
+    textureWidth: 16,
+    textureHeight: 16,
     waterNormals,
     eye: cameraPosition,
     alpha: 1,
