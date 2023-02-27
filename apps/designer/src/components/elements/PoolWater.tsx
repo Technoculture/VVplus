@@ -11,7 +11,7 @@ declare module "@react-three/fiber" {
     water: Node<Water, typeof Water>;
   }
 }
-export const PoolWater = () => {
+const WaterBody = () => {
   const ref = useRef<Water>();
   const poolPosition = new Vector3(68, 1.5, 32);
   const poolBoundaryCoordinates = [
@@ -59,3 +59,5 @@ export const PoolWater = () => {
   });
   return <water ref={ref} {...waterProps} />;
 };
+
+export const PoolWater = React.memo(WaterBody);
