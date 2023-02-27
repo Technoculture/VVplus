@@ -25,6 +25,7 @@
     "react-slider": "^2.0.3",
     "react-use-measure": "^2.1.1",
     "three": "^0.148.0",
+    "three-stdlib": "^2.21.8",
     "zod": "^3.18.0",
     "zustand": "^4.1.1"
   },

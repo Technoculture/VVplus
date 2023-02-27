@@ -3,7 +3,7 @@ import { Vector3 } from "three";
 import { useGLTF } from "@react-three/drei";
 import cameraControlsStore from "../../globalStore/Navigation-Store/cameraControlsStore";
 
-export function CreateModel() {
+export function LoadModel() {
   const visibleFloorIdx = cameraControlsStore((state) => state.floor);
   const floorUrlArray: string[] = [];
   const floorTracker: number[] = [];
@@ -49,6 +49,8 @@ export function CreateModel() {
             {floor.map((model, index) => {
               const primitiveProps = {
                 object: model.scene,
+                castShadow: true,
+                receiveShadow: true,
               };
               return <primitive key={index} {...primitiveProps} />;
             })}

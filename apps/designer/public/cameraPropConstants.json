@@ -6,7 +6,7 @@
     "dampingFactor": 0.05,
     "minDistance": 100,
     "maxDistance": 300,
-    "initPosition": [175, 40, -80]
+    "initPosition": [230, 25, 0]
   },
   "cameraAnglesFloors": [
     {
