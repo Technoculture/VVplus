@@ -1,5 +1,5 @@
 import { FlatList, View, TouchableOpacity, Text } from "react-native";
-import React, { useState } from "react";
+import React from "react";
 import { contactList } from "../components/listComponents/ContactList";
 import { ContactsCard } from "../components/contacts/contactCard";
 

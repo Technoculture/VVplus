@@ -8,13 +8,11 @@ import {
   Feather,
 } from "@expo/vector-icons";
 import makeCall from "../components/API/CallApi";
-import { getColorsByLetter } from "../Utils/colors";
 import { EXOTEL_AUTHORIZATION, EXOTEL_SID } from "@env";
 
 const ProfileScreen = ({ route, navigation }: any) => {
   const [callText, setCallText] = useState("call");
   const { name, phone } = route.params.contactInfo;
-  const colors = getColorsByLetter(name[0]);
 
   const handleCall = async () => {
     const config = {
@@ -80,10 +78,9 @@ const ProfileScreen = ({ route, navigation }: any) => {
 
         <View
           className={`absolute top-0 left-0 right-0 bottom-0 opacity-50 flex items-center justify-center`}
-          style={{ backgroundColor: colors }}
         />
         <Text
-          className={`absolute bottom-0 left-5 text-base text-white font-bold text-3xl`}
+          className={`absolute bottom-0 left-5 text-base text-black font-bold text-3xl`}
         >
           {name}
         </Text>
