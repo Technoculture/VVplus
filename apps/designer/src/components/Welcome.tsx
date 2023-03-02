@@ -24,6 +24,7 @@ const Welcome = ({
   isToggled,
   handleClickForToggle,
 }: WelcomePanelProps) => {
+  const panelWidth = 400;
   const panelAnimation = {
     key: "box",
     initial: { opacity: 0.7 },
@@ -44,7 +45,7 @@ const Welcome = ({
           <motion.div
             {...panelAnimation}
             animate={{
-              x: "62.5vw",
+              x: `calc(50vw - ${panelWidth / 2}px + 390px )`,
               opacity: 1,
             }}
             className={`
@@ -56,7 +57,7 @@ const Welcome = ({
             `}
             >
               <img
-                className=" rounded-[10px] border-[1px] border-amber-100  w-[380px]  h-[200px]  "
+                className=" rounded-[10px] border-[1px] border-amber-100  w-[380px]  h-[200px] "
                 src=" https://assets.vvplus.cc/draco/file_thumbnails/railing_sf_steel.png"
                 alt=""
               />
@@ -69,7 +70,7 @@ const Welcome = ({
           <motion.div
             {...panelAnimation}
             animate={{
-              x: "34vw",
+              x: `calc(62vw - ${panelWidth}px)`,
               opacity: 1,
             }}
             className={`

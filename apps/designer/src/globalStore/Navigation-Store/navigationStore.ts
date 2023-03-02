@@ -6,7 +6,6 @@ type navigationStore = {
   isToggled: boolean;
   handleClickOnNewButton: () => void;
   handleClickForToggle: () => void;
- 
 };
 const navigationUseStore = create<navigationStore>((set) => ({
   isWelcomePanelActive: false, //for welcome component
@@ -15,7 +14,6 @@ const navigationUseStore = create<navigationStore>((set) => ({
     set(() => ({
       isNavbarOpen: true,
       isWelcomePanelActive: true,
-      
     }));
   },
   isToggled: false,

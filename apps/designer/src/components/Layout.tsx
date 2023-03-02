@@ -28,7 +28,15 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
     savePopupStore();
 
   return (
-    <div className="py-[15px]  h-[100vh] md:justify-between  flex flex-col">
+    <div
+      className={`py-[10px]  h-[100vh] md:justify-between  flex flex-col
+    ${
+      isWelcomePanelActive === false && isWelcomeComponentOpen === true
+        ? "gap-2"
+        : ""
+    }
+    `}
+    >
       <div className="h-[10vh]">
         <Navbar
           isNavbarOpen={isNavbarOpen}
@@ -41,7 +49,7 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
       {children}
       <div
         className={` 
-    h-[90vh] relative md:flex md:flex-col w-screen   py-2.5 items-center
+        h-[90vh] relative md:flex md:flex-col w-screen justify-center items-center
     
     `}
       >
