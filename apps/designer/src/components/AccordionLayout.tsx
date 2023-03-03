@@ -2,6 +2,8 @@ import React from "react";
 import { AiOutlineDown, AiOutlineRight } from "react-icons/ai";
 import cameraControlsStore from "../globalStore/Navigation-Store/cameraControlsStore";
 import { cameraAnglesFloors } from "../../public/cameraPropConstants.json";
+import { Accordion, AccordionItem } from "@radix-ui/react-accordion";
+import { ScrollArea } from "@radix-ui/react-scroll-area";
 
 interface Props {
   title: string;
@@ -83,7 +85,9 @@ const AccordionLayout = ({
         </div>
 
         {activeIndex === index && (
-          <div className={`px-5 scrollbar-hide rounded-2xl`}>{children}</div>
+          <ScrollArea>
+            <div className={`px-5 scrollbar-hide rounded-2xl`}>{children}</div>
+          </ScrollArea>
         )}
       </div>
     </>

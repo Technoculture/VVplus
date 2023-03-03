@@ -18,7 +18,7 @@ const FloorToggleTab = () => {
   function activeFloorTabStyle(idx: number): string {
     return `${
       idx === floor &&
-      "bg-white bg-opacity-40  text-black -ml-[1px] h-8 z-[100]text-black bg-bray-200"
+      "bg-white bg-opacity-40  text-black -ml-[1px] h-8 z-[100]text-black bg-gray-200"
     } ${
       idx === 0
         ? "rounded-l-2xl"
