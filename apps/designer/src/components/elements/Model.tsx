@@ -2,6 +2,7 @@ import data from "../../../public/house.json";
 import { Vector3 } from "three";
 import { useGLTF } from "@react-three/drei";
 import cameraControlsStore from "../../globalStore/Navigation-Store/cameraControlsStore";
+import { useEffect } from "react";
 
 export function LoadModel() {
   const visibleFloorIdx = cameraControlsStore((state) => state.floor);
@@ -35,6 +36,11 @@ export function LoadModel() {
     else if (visibleFloorIdx === data.floors.length - 2) return true;
     return false;
   }
+  useEffect(() => {
+    return () => {
+      useGLTF.clear(floorUrlArray);
+    };
+  }, []);
   return (
     <>
       {floorGroupArray.map((floor, idx) => {

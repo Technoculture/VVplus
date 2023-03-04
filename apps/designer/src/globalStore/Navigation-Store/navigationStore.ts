@@ -1,10 +1,11 @@
+import { Cache } from "three";
 import create from "zustand";
 type navigationStore = {
   isNavbarOpen: boolean;
   isWelcomePanelActive: boolean;
   isToggled: boolean;
   isLoaded: boolean;
-  toggleLoaded: () => void;
+  toggleLoaded: (isLoaded: boolean) => void;
   handleClickOnWelcome: () => void;
   handleClickOnNewButton: () => void;
   handleClickForToggle: () => void;
@@ -20,10 +21,12 @@ const navigationUseStore = create<navigationStore>((set) => ({
   },
   isToggled: false,
   handleClickOnNewButton: () => {
+    Cache.clear();
     set(() => ({
       isWelcomePanelActive: false,
       isNavbarOpen: false,
       isToggled: false,
+      isLoaded: false,
     }));
   },
   handleClickForToggle: () => {
@@ -32,9 +35,9 @@ const navigationUseStore = create<navigationStore>((set) => ({
     }));
   },
   isLoaded: false,
-  toggleLoaded: () => {
-    set((state) => ({
-      isLoaded: !state.isLoaded,
+  toggleLoaded: (isLoaded) => {
+    set(() => ({
+      isLoaded: isLoaded,
     }));
   },
 }));

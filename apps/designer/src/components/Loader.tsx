@@ -7,7 +7,7 @@ export const Loader = () => {
   const toggleLoaded = navigationUseStore((state) => state.toggleLoaded);
   useEffect(() => {
     if (progress === 100) {
-      toggleLoaded();
+      toggleLoaded(true);
     }
   }, [progress]);
   return (

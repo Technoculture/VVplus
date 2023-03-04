@@ -1,6 +1,8 @@
 import { useTexture } from "@react-three/drei";
 import { ThreeElements } from "@react-three/fiber";
 import { envUrl } from "../../../public/urlPaths.json";
+import { useEffect } from "react";
+
 export const Ground = (props) => {
   const meshProps: ThreeElements["mesh"] = {
     rotation: [-Math.PI / 2, 0, 0],
@@ -16,6 +18,11 @@ export const Ground = (props) => {
       map: useTexture(envUrl.groundUrl),
       attach: "material",
     };
+  useEffect(() => {
+    return () => {
+      useTexture.clear(envUrl.groundUrl);
+    };
+  }, []);
   return (
     <mesh name="Ground" {...meshProps} {...props}>
       <planeGeometry {...planeGeometryProps} />
