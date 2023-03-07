@@ -21,7 +21,6 @@ const navigationUseStore = create<navigationStore>((set) => ({
   },
   isToggled: false,
   handleClickOnNewButton: () => {
-    Cache.clear();
     set(() => ({
       isWelcomePanelActive: false,
       isNavbarOpen: false,
