@@ -20,7 +20,7 @@ const SelectCarousel = () => {
             <div>
               <p
                 key={e.id}
-                className="absolute font-[RobotMono] lg:text-sm md:text-xs text-neutral-600  ml-[-46%] top-[85%] top-[85%]"
+                className="absolute font-[RobotMono] lg:text-sm md:text-xs text-neutral-600  ml-[-46%]  top-[85%]"
               >
                 INR {e.price}
               </p>
