@@ -8,6 +8,7 @@ interface NavbarProps {
   handleClickForToggle: () => void;
   handleClickOnNewButton: () => void;
   handleClickOnSaveButton: () => void;
+  handleClickOnCancelLoad: () => void;
 }
 import React from "react";
 
@@ -18,6 +19,7 @@ const Navbar = ({
   handleClickForToggle,
   handleClickOnNewButton,
   handleClickOnSaveButton,
+  handleClickOnCancelLoad,
 }: NavbarProps) => {
   //use eval("Math.PI") to find the value of pi in the js function after fetching from JSON
   return (
@@ -35,7 +37,7 @@ const Navbar = ({
       {isNavbarOpen === true &&
         (isLoaded === false ? (
           <div className="flex duration-500 transition-all ease-in-out gap-2 text-[20px] leading-6 ">
-            <MenuButton text={"Cancel"} onClick={handleClickOnNewButton} />
+            <MenuButton text={"Cancel"} onClick={handleClickOnCancelLoad} />
           </div>
         ) : window.innerWidth > 768 ? (
           <div className="flex duration-500 transition-all ease-in-out gap-2 text-[20px] leading-6 ">

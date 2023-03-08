@@ -27,7 +27,10 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
   const { isWelcomeComponentOpen, handleClickOnNewDesign } = openWelcomeStore();
   const { handleClickOnSaveButton, closeSavePopup, isSavePopupOpen } =
     savePopupStore();
-
+  const handleClickOnCancelLoad = () => {
+    handleClickOnNewButton();
+    handleClickOnNewDesign();
+  };
   return (
     <div
       className={`py-[10px]  h-[100vh] md:justify-between  flex flex-col
@@ -46,6 +49,7 @@ const Layout: React.FC<ScriptProps> = ({ children }) => {
           handleClickForToggle={handleClickForToggle}
           handleClickOnNewButton={handleClickOnNewButton}
           handleClickOnSaveButton={handleClickOnSaveButton}
+          handleClickOnCancelLoad={handleClickOnCancelLoad}
         />
       </div>
       {children}
