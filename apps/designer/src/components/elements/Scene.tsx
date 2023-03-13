@@ -23,7 +23,7 @@ const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
   }, []);
   const initPosition = cameraInitProps.initPosition;
   return (
-    <div className={`absolute top-0 w-full h-screen`}>
+    <div className={`absolute top-0 w-full h-screen z-[1]`}>
       <Canvas
         onCreated={onCanvasCreated}
         camera={{
