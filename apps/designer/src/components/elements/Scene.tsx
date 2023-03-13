@@ -11,19 +11,21 @@ import { Loader } from "../Loader";
 import navigationUseStore from "../../globalStore/Navigation-Store/navigationStore";
 
 let scene_variable: THREE.Scene;
-const Fallback = () => {
-  const toggleLoaded = navigationUseStore((state) => state.toggleLoaded);
-  useEffect(() => {
-    toggleLoaded(true);
-  }, []);
-  return null;
-};
 const Scene = ({ isWelcomePanelActive }: { isWelcomePanelActive: boolean }) => {
+  const toggleLoaded = navigationUseStore((state) => state.toggleLoaded);
+  const onCanvasCreated = () => {
+    toggleLoaded(true);
+  };
+  useEffect(() => {
+    return () => {
+      toggleLoaded(false);
+    };
+  }, []);
   const initPosition = cameraInitProps.initPosition;
   return (
     <div className={`absolute top-0 w-full h-screen`}>
       <Canvas
-        fallback={<Fallback />}
+        onCreated={onCanvasCreated}
         camera={{
           position: [initPosition[0], initPosition[1], initPosition[2]],
         }}
