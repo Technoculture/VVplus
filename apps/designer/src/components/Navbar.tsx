@@ -4,18 +4,22 @@ import MenuButton from "./Buttons/MenuButton";
 interface NavbarProps {
   isNavbarOpen: boolean;
   isToggled: boolean;
+  isLoaded: boolean;
   handleClickForToggle: () => void;
   handleClickOnNewButton: () => void;
   handleClickOnSaveButton: () => void;
+  handleClickOnCancelLoad: () => void;
 }
 import React from "react";
 
 const Navbar = ({
   isNavbarOpen,
   isToggled,
+  isLoaded,
   handleClickForToggle,
   handleClickOnNewButton,
   handleClickOnSaveButton,
+  handleClickOnCancelLoad,
 }: NavbarProps) => {
   //use eval("Math.PI") to find the value of pi in the js function after fetching from JSON
   return (
@@ -30,24 +34,29 @@ const Navbar = ({
         </h1>
       </div>
 
-      {isNavbarOpen === true && window.innerWidth > 768 ? (
-        <div className="flex duration-500 transition-all ease-in-out gap-2 text-[20px] leading-6 ">
-          <MenuButton text={"New"} onClick={handleClickOnNewButton} />
-          <MenuButton text={"Save"} onClick={handleClickOnSaveButton} />
-          <ToggleableMenuButton
-            isToggled={isToggled}
-            onClick={handleClickForToggle}
-          />
-        </div>
-      ) : (
-        <div
-          className={`flex  gap-2 md:hidden mr-[10px]
-                  ${isNavbarOpen === true ? "" : "hidden"}`}
-        >
-          <MenuButton text={"New"} onClick={handleClickOnNewButton} />
-          <MenuButton text={"Save"} onClick={handleClickOnSaveButton} />
-        </div>
-      )}
+      {isNavbarOpen === true &&
+        (isLoaded === false ? (
+          <div className="flex duration-500 transition-all ease-in-out gap-2 text-[20px] leading-6 ">
+            <MenuButton text={"Cancel"} onClick={handleClickOnCancelLoad} />
+          </div>
+        ) : window.innerWidth > 768 ? (
+          <div className="flex duration-500 transition-all ease-in-out gap-2 text-[20px] leading-6 ">
+            <MenuButton text={"New"} onClick={handleClickOnNewButton} />
+            <MenuButton text={"Save"} onClick={handleClickOnSaveButton} />
+            <ToggleableMenuButton
+              isToggled={isToggled}
+              onClick={handleClickForToggle}
+            />
+          </div>
+        ) : (
+          <div
+            className={`flex  gap-2 md:hidden mr-[10px]
+          `}
+          >
+            <MenuButton text={"New"} onClick={handleClickOnNewButton} />
+            <MenuButton text={"Save"} onClick={handleClickOnSaveButton} />
+          </div>
+        ))}
     </nav>
   );
 };

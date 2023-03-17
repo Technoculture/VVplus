@@ -11,7 +11,9 @@ export default function Web(): JSX.Element {
   return (
     <div>
       {/* <ReactCanvas isWelcomePanelActive={isWelcomePanelActive} /> */}
-      <Scene isWelcomePanelActive={isWelcomePanelActive} />
+      {isWelcomePanelActive === true && (
+        <Scene isWelcomePanelActive={isWelcomePanelActive} />
+      )}
     </div>
   );
 }

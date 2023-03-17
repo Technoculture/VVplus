@@ -1,8 +1,14 @@
-import React, { useMemo, useRef } from "react";
+import React, { useMemo, useRef, useEffect } from "react";
 import { extend, Node, useFrame, useLoader } from "@react-three/fiber";
 import { Water, WaterOptions } from "three-stdlib";
-import * as THREE from "three";
-import { BufferGeometry, Shape, ShapeGeometry, Vector3 } from "three";
+import {
+  BufferGeometry,
+  RepeatWrapping,
+  Shape,
+  ShapeGeometry,
+  TextureLoader,
+  Vector3,
+} from "three";
 import cameraControlsStore from "../../globalStore/Navigation-Store/cameraControlsStore";
 
 extend({ Water });
@@ -22,9 +28,10 @@ const WaterBody = () => {
     [50, 80],
     [50, 0],
   ];
+  const poolTextureUrl = "/waternormals.jpeg";
   const cameraPosition = cameraControlsStore((state) => state.cameraPosition);
-  const waterNormals = useLoader(THREE.TextureLoader, "/waternormals.jpeg");
-  waterNormals.wrapS = waterNormals.wrapT = THREE.RepeatWrapping;
+  const waterNormals = useLoader(TextureLoader, poolTextureUrl);
+  waterNormals.wrapS = waterNormals.wrapT = RepeatWrapping;
   // Create the water config object
   const config: WaterOptions = {
     textureWidth: 16,
@@ -57,6 +64,11 @@ const WaterBody = () => {
   useFrame((_, delta) => {
     if (ref.current) ref.current.material.uniforms.time.value += delta;
   });
+  useEffect(() => {
+    return () => {
+      useLoader.clear(TextureLoader, poolTextureUrl);
+    };
+  }, []);
   return <water ref={ref} {...waterProps} />;
 };
 

@@ -6,8 +6,8 @@ type openWelcomeStore = {
 export const openWelcomeStore = create<openWelcomeStore>((set) => ({
   isWelcomeComponentOpen: false,
   handleClickOnNewDesign: () => {
-    set(() => ({
-      isWelcomeComponentOpen: true,
+    set((state) => ({
+      isWelcomeComponentOpen: !state.isWelcomeComponentOpen,
     }));
   },
 }));

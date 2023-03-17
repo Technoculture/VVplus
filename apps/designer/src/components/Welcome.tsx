@@ -14,6 +14,7 @@ interface WelcomePanelProps {
   isWelcomePanelActive: boolean;
   handleClickOnWelcome: () => void;
   isToggled: boolean;
+  isLoaded: boolean;
   handleClickForToggle: () => void;
 }
 //Todo : Animation when open the welcome component
@@ -22,6 +23,7 @@ const Welcome = ({
   isWelcomePanelActive,
   handleClickOnWelcome,
   isToggled,
+  isLoaded,
   handleClickForToggle,
 }: WelcomePanelProps) => {
   const panelWidth = 400;
@@ -40,60 +42,61 @@ const Welcome = ({
     </div>
   ) : (
     <>
-      <AnimatePresence>
-        {isWelcomePanelActive === true && isToggled === true && (
-          <motion.div
-            {...panelAnimation}
-            animate={{
-              x: `calc(50vw - ${panelWidth / 2}px + 390px )`,
-              opacity: 1,
-            }}
-            className={`
+      {!(isWelcomePanelActive && isLoaded === false) && (
+        <AnimatePresence>
+          {isWelcomePanelActive === true && isToggled === true && (
+            <motion.div
+              {...panelAnimation}
+              animate={{
+                x: `calc(50vw - ${panelWidth / 2}px + 390px )`,
+                opacity: 1,
+              }}
+              className={`
             z-[100] absolute font-Roboto flex items-center flex-col   justify-center   w-[80vw]  sm:w-[250px] ease-in-out duration-500 md:w-[27vw] h-[76vh]  rounded-[20px]               
         `}
-          >
-            <div
-              className={`flex py-[10px] select-none items-center justify-center  rounded-[20px] backdrop-blur-[10px] bg-gradient-to-b  from-red-50/[0.98] to-rose-100/[0.48]  flex-col gap-[10px] px-[10px]
-            `}
             >
-              <img
-                className=" rounded-[10px] border-[1px] border-amber-100  w-[380px]  h-[200px] "
-                src=" https://assets.vvplus.cc/draco/file_thumbnails/railing_sf_steel.png"
-                alt=""
-              />
-              <Accordion />
-            </div>
-            <FloorToggleTab />
-          </motion.div>
-        )}
-        {isWelcomePanelActive === true && isToggled === false && (
-          <motion.div
-            {...panelAnimation}
-            animate={{
-              x: `calc(62vw - ${panelWidth}px)`,
-              opacity: 1,
-            }}
-            className={`
+              <div
+                className={`flex py-[10px] select-none items-center justify-center  rounded-[20px] backdrop-blur-[10px] bg-gradient-to-b  from-red-50/[0.98] to-rose-100/[0.48]  flex-col gap-[10px] px-[10px]
+            `}
+              >
+                <img
+                  className=" rounded-[10px] border-[1px] border-amber-100  w-[380px]  h-[200px] "
+                  src=" https://assets.vvplus.cc/draco/file_thumbnails/railing_sf_steel.png"
+                  alt=""
+                />
+                <Accordion />
+              </div>
+              <FloorToggleTab />
+            </motion.div>
+          )}
+          {isWelcomePanelActive === true && isToggled === false && (
+            <motion.div
+              {...panelAnimation}
+              animate={{
+                x: `calc(62vw - ${panelWidth}px)`,
+                opacity: 1,
+              }}
+              className={`
             z-[100]  font-Roboto absolute flex items-center flex-col justify-center   w-[80vw]  sm:w-[250px] ease-in-out duration-500 md:w-[27vw] h-[76vh]  rounded-[20px]               
         `}
-          >
-            <div
-              className={`flex py-[10px] select-none items-center justify-center  rounded-[20px] backdrop-blur-[10px] bg-gradient-to-b  from-red-50/[0.98] to-rose-100/[0.48]  flex-col gap-[10px] px-[10px]
-            `}
             >
-              <img
-                className=" rounded-[10px] border-[1px] border-amber-100  w-[380px]  h-[200px]  "
-                src=" https://assets.vvplus.cc/draco/file_thumbnails/railing_sf_steel.png"
-                alt=""
-              />
-              <Accordion />
-            </div>
-            <FloorToggleTab />
-          </motion.div>
-        )}
-        {isWelcomePanelActive === false && (
-          <motion.div
-            className={`
+              <div
+                className={`flex py-[10px] select-none items-center justify-center  rounded-[20px] backdrop-blur-[10px] bg-gradient-to-b  from-red-50/[0.98] to-rose-100/[0.48]  flex-col gap-[10px] px-[10px]
+            `}
+              >
+                <img
+                  className=" rounded-[10px] border-[1px] border-amber-100  w-[380px]  h-[200px]  "
+                  src=" https://assets.vvplus.cc/draco/file_thumbnails/railing_sf_steel.png"
+                  alt=""
+                />
+                <Accordion />
+              </div>
+              <FloorToggleTab />
+            </motion.div>
+          )}
+          {isWelcomePanelActive === false && (
+            <motion.div
+              className={`
             z-[100] absolute font-Roboto top-0 left-0 right-0 bottom-0 flex items-center flex-col mx-auto  justify-center   w-[80vw]  sm:w-[250px] ease-in-out duration-500 md:w-[27vw] h-[76vh]  rounded-[20px] 
           ${
             !isWelcomePanelActive
@@ -101,13 +104,14 @@ const Welcome = ({
               : ""
           }       
         `}
-          >
-            <div className="cursor-pointer" onClick={handleClickOnWelcome}>
-              welcome
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            >
+              <div className="cursor-pointer" onClick={handleClickOnWelcome}>
+                welcome
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      )}
     </>
   );
 };
